@@ -1,6 +1,7 @@
 package fr.fidorial.entity;
 
 import fr.fidorial.command.CommandSource;
+import fr.fidorial.scheduler.SchedulerSource;
 import fr.fidorial.world.ChunkPos;
 import fr.fidorial.world.Location;
 import fr.fidorial.world.World;
@@ -11,7 +12,7 @@ import net.kyori.adventure.text.event.HoverEventSource;
 
 import java.util.UUID;
 
-public interface Entity extends CommandSource, HoverEventSource<HoverEvent.ShowEntity>, Sound.Emitter, Sound.Source.Provider {
+public interface Entity extends CommandSource, HoverEventSource<HoverEvent.ShowEntity>, Sound.Emitter, Sound.Source.Provider, SchedulerSource {
 
     int entityId();
 
