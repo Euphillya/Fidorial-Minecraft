@@ -272,8 +272,7 @@ public final class FluidEngine implements FluidManager {
         return false; // bloqué : étalement horizontal
     }
 
-    private void spreadHorizontally(final ServerWorld world, final Key worldName, final int x, final int y, final int z, final FluidState self)
-            throws IOException {
+    private void spreadHorizontally(final ServerWorld world, final Key worldName, final int x, final int y, final int z, final FluidState self) {
         final FluidType type = self.type();
         if (type == null) {
             return;
@@ -283,8 +282,23 @@ public final class FluidEngine implements FluidManager {
             return;
         }
         for (final BlockFace dir : HORIZONTAL) {
-            final int tx = x + dir.dx();
-            final int tz = z + dir.dz();
+            spreadTo(world, worldName, x + dir.dx(), y, z + dir.dz(), type, spreadLevel);
+        }
+    }
+
+    private void spreadTo(final ServerWorld world, final Key worldName, final int tx, final int y, final int tz, final FluidType type, final int spreadLevel) {
+        final ChunkPos targetChunk = ChunkPos.fromBlock(tx, tz);
+        if (world.scheduler().isOwnedByCurrentThread(worldName, targetChunk)) {
+            spreadToOwned(world, worldName, tx, y, tz, type, spreadLevel);
+            return;
+        }
+        // the neighbor crosses into a region we don't currently own
+        regionizer.execute(worldName, targetChunk,
+                () -> spreadToOwned(world, worldName, tx, y, tz, type, spreadLevel));
+    }
+
+    private void spreadToOwned(final ServerWorld world, final Key worldName, final int tx, final int y, final int tz, final FluidType type, final int spreadLevel) {
+        try {
             final BlockState targetBlock = world.getBlock(tx, y, tz);
             final FluidState target = FluidBlockCodec.fromBlock(targetBlock);
 
@@ -297,6 +311,8 @@ public final class FluidEngine implements FluidManager {
             } else if (target.type() != null && target.type() != type) {
                 schedule(worldName, tx, y, tz, target.type().tickDelay());
             }
+        } catch (final IOException e) {
+            LOGGER.error("Fluid spread impossible at {},{},{}", tx, y, tz, e);
         }
     }
 

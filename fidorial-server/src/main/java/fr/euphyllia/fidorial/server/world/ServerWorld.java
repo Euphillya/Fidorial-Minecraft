@@ -6,9 +6,12 @@ import ca.spottedleaf.concurrentutil.list.COWArrayList;
 import ca.spottedleaf.concurrentutil.map.concurrent.longs.ConcurrentChainedLong2ReferenceHashTable;
 import fr.euphyllia.fidorial.server.entity.AbstractEntity;
 import fr.euphyllia.fidorial.server.entity.EntityManager;
+import fr.euphyllia.fidorial.server.entity.mob.AbstractMob;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.schedulers.LightUpdateDispatcher;
+import fr.euphyllia.fidorial.server.schedulers.ThreadedRegionRegionizer;
 import fr.euphyllia.fidorial.server.util.ConcurrentLongSet;
+import fr.euphyllia.fidorial.server.util.threading.ThreadContexts;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkColumn;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkSection;
@@ -25,6 +28,7 @@ import fr.euphyllia.fidorial.server.world.time.WorldClocks;
 import fr.euphyllia.fidorial.server.world.time.WorldTimeEngine;
 import fr.fidorial.entity.Entity;
 import fr.fidorial.registry.keys.BlockTypeKeys;
+import fr.fidorial.scheduler.RegionizedScheduler;
 import fr.fidorial.world.BlockPos;
 import fr.fidorial.world.Chunk;
 import fr.fidorial.world.ChunkPos;
@@ -68,6 +72,7 @@ public final class ServerWorld implements World {
     private final WorldLightManager lightManager;
     private volatile @Nullable LightUpdateDispatcher lightDispatcher;
     private final FloodFillLightEngine fallbackEngine;
+    private final ThreadedRegionRegionizer scheduler;
 
     private final ConcurrentChainedLong2ReferenceHashTable<ChunkColumn> loaded =
             ConcurrentChainedLong2ReferenceHashTable.createWithExpected(1024);
@@ -88,7 +93,8 @@ public final class ServerWorld implements World {
             final EntityRegionStorage entityStorage,
             final AnvilEntitySerializer entitySerializer,
             final ChunkGenerator generator,
-            final BlockStateRegistry blockStates
+            final BlockStateRegistry blockStates,
+            final ThreadedRegionRegionizer scheduler
     ) {
         this.dimension = dimension;
         this.storage = storage;
@@ -102,6 +108,7 @@ public final class ServerWorld implements World {
         this.height = dimensionType.height();
         this.lightManager = new WorldLightManager(new WorldLightAccess());
         this.fallbackEngine = new FloodFillLightEngine(minY, height);
+        this.scheduler = scheduler;
     }
 
     public void setEntityBridge(final IntSupplier entityIdSupplier, final EntitySpawnBridge entityBridge) {
@@ -147,6 +154,11 @@ public final class ServerWorld implements World {
     }
 
     @Override
+    public RegionizedScheduler scheduler() {
+        return scheduler;
+    }
+
+    @Override
     public CompletableFuture<Chunk> getChunkAsync(final int chunkX, final int chunkZ) {
         final ChunkColumn cached = loaded.get(ChunkPos.chunkKey(chunkX, chunkZ));
         if (cached != null) {
@@ -166,7 +178,7 @@ public final class ServerWorld implements World {
     @Override
     public Optional<Chunk> getChunkIfLoaded(final int chunkX, final int chunkZ) {
         final ChunkColumn cached = loaded.get(ChunkPos.chunkKey(chunkX, chunkZ));
-        return Optional.of(cached).map(this::wrap);
+        return Optional.ofNullable(cached).map(this::wrap);
     }
 
     @Override
@@ -197,6 +209,7 @@ public final class ServerWorld implements World {
 
     @Override
     public boolean setBlockStateId(final BlockPos pos, final int stateId) {
+        ThreadContexts.checkOwnedByCurrentThread(this, pos, "setBlockStateId");
         try {
             return setBlock(pos.x(), pos.y(), pos.z(), blockStates.byId(stateId));
         } catch (final IOException e) {
@@ -235,6 +248,7 @@ public final class ServerWorld implements World {
     }
 
     public void addEntity(final AbstractEntity entity) {
+        ThreadContexts.checkOwnedByCurrentThread(entity, "addEntity");
         entities.add(entity);
         markEntitiesDirty(entity.chunk().x(), entity.chunk().z());
         if (entity instanceof ServerPlayer) {
@@ -243,6 +257,7 @@ public final class ServerWorld implements World {
     }
 
     public void removeEntity(final AbstractEntity entity) {
+        ThreadContexts.checkOwnedByCurrentThread(entity, "removeEntity");
         entities.remove(entity);
         markEntitiesDirty(entity.chunk().x(), entity.chunk().z());
         if (entity instanceof ServerPlayer) {
@@ -251,10 +266,14 @@ public final class ServerWorld implements World {
     }
 
     public void entityMoved(final AbstractEntity entity, final ChunkPos from, final ChunkPos to) {
+        ThreadContexts.checkOwnedByCurrentThread(this, from, "entityMoved");
         entities.moved(entity, from, to);
         if (!from.equals(to)) {
             markEntitiesDirty(from.x(), from.z());
             markEntitiesDirty(to.x(), to.z());
+            if (entity instanceof AbstractMob) {
+                scheduler.moveTicket(key(), from, to);
+            }
         }
     }
 
@@ -389,6 +408,7 @@ public final class ServerWorld implements World {
     }
 
     public boolean setBlock(final int x, final int y, final int z, final BlockState state) throws IOException {
+        ThreadContexts.checkOwnedByCurrentThread(this, new BlockPos(x, y, z), "setBlock");
         final ChunkColumn column = getChunk(x >> 4, z >> 4);
         if (y < column.minY() || y >= column.minY() + column.height()) {
             return false;
@@ -407,6 +427,7 @@ public final class ServerWorld implements World {
     }
 
     public boolean setBiome(final int x, final int y, final int z, final Key biome) throws IOException {
+        ThreadContexts.checkOwnedByCurrentThread(this, new BlockPos(x, y, z), "setBiome");
         final ChunkColumn column = getChunk(x >> 4, z >> 4);
         if (y < column.minY() || y >= column.minY() + column.height()) {
             return false;

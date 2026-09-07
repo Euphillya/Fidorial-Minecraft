@@ -1,5 +1,6 @@
 package fr.euphyllia.fidorial.server.world;
 
+import fr.euphyllia.fidorial.server.util.threading.ThreadContexts;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkColumn;
 import fr.fidorial.world.Chunk;
@@ -53,6 +54,7 @@ public final class ServerChunk implements Chunk {
 
     @Override
     public boolean setBlockStateId(final int localX, final int worldY, final int localZ, final int stateId) {
+        ThreadContexts.checkOwnedByCurrentThread(this, "setBlockStateId");
         if (worldY < column.minY() || worldY >= column.minY() + column.height()) {
             return false;
         }
@@ -83,5 +85,28 @@ public final class ServerChunk implements Chunk {
 
     private int worldZ(final int localZ) {
         return (column.chunkZ() << 4) | (localZ & 15);
+    }
+
+    @Override
+    public boolean execute(final Runnable task) {
+        if (world.isChunkLoaded(column.chunkX(), column.chunkZ())) {
+            world().scheduler().execute(world().key(), pos(), task);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean executeDelayed(final Runnable task, final long delayTicks) {
+        if (world.isChunkLoaded(column.chunkX(), column.chunkZ())) {
+            world().scheduler().executeDelayed(world().key(), pos(), task, delayTicks);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isOwnedByCurrentThread() {
+        return world().scheduler().isOwnedByCurrentThread(world().key(), pos());
     }
 }

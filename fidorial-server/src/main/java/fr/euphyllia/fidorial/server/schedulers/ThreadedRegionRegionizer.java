@@ -225,6 +225,17 @@ public final class ThreadedRegionRegionizer implements RegionizedScheduler {
         return out;
     }
 
+    public @Nullable String describeOwningThread(final Key worldName, final ChunkPos pos) {
+        final Region region = regions.get(RegionKey.of(worldName, pos));
+        if (region == null) {
+            return null;
+        }
+        final Thread owner = region.tickingThread;
+        return owner == null
+                ? "region " + region.key + " is idle (no thread currently ticking it)"
+                : "[thread=" + owner.getName() + ",class=" + owner.getClass().getName() + "]";
+    }
+
     public void shutdown() {
         shutdown = true;
         scheduler.halt();

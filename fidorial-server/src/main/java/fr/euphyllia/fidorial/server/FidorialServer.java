@@ -167,7 +167,7 @@ public final class FidorialServer implements Server {
     private final NbtPlayerEnderChestStorage defaultEnderChestStorage =
             new NbtPlayerEnderChestStorage(config.worldPath().resolve("player"), false);
     private final ChestViewerTracker chestViewers = new ChestViewerTracker();
-    private final WorldManager worldManager = WorldManager.openOrCreate(config.worldPath(), blockStateRegistry);
+    private final WorldManager worldManager = WorldManager.openOrCreate(config.worldPath(), blockStateRegistry, regionizer);
     private final FluidEngine fluidEngine =
             new FluidEngine(worldManager, regionizer, blockStateRegistry, this::broadcast);
     private final WeatherEngine weatherEngine = new WeatherEngine(worldManager.levelData(), this::broadcast);
@@ -567,8 +567,7 @@ public final class FidorialServer implements Server {
     @Override
     public boolean unloadWorld(final Key key, final boolean save) {
         try {
-            worldManager.unloadWorld(key, save);
-            return true;
+            return worldManager.unloadWorld(key, save) != null;
         } catch (final IOException e) {
             LOGGER.error("Saving world {} before unloading failed", key, e);
             return false;
