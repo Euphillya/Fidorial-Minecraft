@@ -2,6 +2,7 @@ package fr.fidorial.scheduler;
 
 /**
  * Represents a {@code SchedulerSource}, capable of having tasks scheduled to it.
+ * @see RegionizedScheduler
  * @since 0.1.0
  */
 public interface SchedulerSource {
