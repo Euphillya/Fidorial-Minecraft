@@ -62,7 +62,7 @@ public final class LevelData {
     public boolean allowCommands = true;
 
     public int dataVersion = VersionConstants.DATA_VERSION;
-    public String versionName = VersionConstants.MINECRAFT_VERSION_ID;
+    public String versionName = VersionConstants.MINECRAFT_VERSION_NAME;
     public boolean snapshot = !VersionConstants.IS_RELEASE;
     public boolean wasModded = false;
     public final List<Integer> versionHistory = new ArrayList<>();

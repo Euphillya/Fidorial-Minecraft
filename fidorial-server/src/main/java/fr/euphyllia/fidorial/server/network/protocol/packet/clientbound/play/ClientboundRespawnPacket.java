@@ -39,8 +39,8 @@ public record ClientboundRespawnPacket(Key dimensionKey, int dimensionTypeId, lo
         buf.writeVarInt(dimensionTypeId); // dimension type (minecraft:dimension_type registry id)
         buf.writeKey(dimensionKey); // dimension name
         buf.writeLong(hashedSeed); // hashed seed (biome noise only)
-        buf.writeByte(gameMode); // game mode (unsigned byte)
-        buf.writeByte(0); // previous game mode (0 = undefined)
+        buf.writeVarInt(gameMode); // game mode (unsigned byte)
+        buf.writeVarInt(0); // previous game mode (0 = undefined)
         buf.writeBoolean(isDebug); // isDebug
         buf.writeBoolean(isFlat); // isFlat
         buf.writeBoolean(false); // has death location

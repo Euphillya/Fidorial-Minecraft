@@ -39,7 +39,7 @@ public record ClientboundLoginPacket(
         buf.writeVarInt(dimensionTypeId);
         buf.writeKey(dimensionKey);
         buf.writeLong(hashedSeed); // hashedSeed
-        buf.writeByte(gameMode); // gameMode (survie)
+        buf.writeVarInt(gameMode); // gameMode (survie)
         buf.writeByte(0); // previousGameMode
         buf.writeBoolean(isDebug); // isDebug
         buf.writeBoolean(isFlat); // isFlat
