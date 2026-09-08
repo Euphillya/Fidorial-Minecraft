@@ -1,6 +1,7 @@
 package fr.euphyllia.fidorial.server.entity;
 
 import fr.euphyllia.fidorial.server.FidorialServer;
+import fr.euphyllia.fidorial.server.entity.mob.AbstractMob;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundAddEntityPacket;
@@ -11,6 +12,7 @@ import fr.euphyllia.fidorial.server.world.ServerWorld;
 import fr.fidorial.command.CommandSender;
 import fr.fidorial.entity.Entity;
 import fr.fidorial.entity.EntityType;
+import fr.fidorial.scheduler.RegionizedScheduler;
 import fr.fidorial.world.Location;
 import fr.fidorial.world.World;
 import net.kyori.adventure.text.Component;
@@ -160,10 +162,16 @@ public abstract class AbstractEntity implements Entity {
             } else {
                 if (from instanceof final ServerWorld old) {
                     old.removeEntity(this);
+                    if (this instanceof AbstractMob) {
+                        server().regionizer().removeTicket(old.key(), previous.chunk());
+                    }
                 }
                 setWorld(target);
                 setLocation(location);
                 target.addEntity(this);
+                if (this instanceof AbstractMob) {
+                    server().regionizer().addTicket(target.key(), location.chunk());
+                }
             }
 
             sendToTrackers(new ClientboundEntityPositionSyncPacket(
@@ -182,5 +190,40 @@ public abstract class AbstractEntity implements Entity {
     @Override
     public HoverEvent<HoverEvent.ShowEntity> asHoverEvent(final UnaryOperator<HoverEvent.ShowEntity> op) {
         return HoverEvent.showEntity(op.apply(HoverEvent.ShowEntity.showEntity(type().key(), uuid(), displayName())));
+    }
+
+    @Override
+    public boolean execute(final Runnable task) {
+        if (isRemoved()) {
+            return false;
+        }
+        server().scheduler().execute(world().key(), chunk(), task);
+        return true;
+    }
+
+    @Override
+    public boolean executeDelayed(final Runnable task, final long delayTicks) {
+        if (isRemoved()) {
+            return false;
+        }
+        server().scheduler().executeDelayed(world().key(), chunk(), () -> runOrChase(task), delayTicks);
+        return true;
+    }
+
+    @Override
+    public boolean isOwnedByCurrentThread() {
+        return !isRemoved() && server().scheduler().isOwnedByCurrentThread(world().key(), chunk());
+    }
+
+    private void runOrChase(final Runnable task) {
+        if (isRemoved()) {
+            return;
+        }
+        final RegionizedScheduler scheduler = server().scheduler();
+        if (scheduler.isOwnedByCurrentThread(world().key(), chunk())) {
+            task.run();
+        } else {
+            scheduler.execute(world().key(), chunk(), () -> runOrChase(task));
+        }
     }
 }

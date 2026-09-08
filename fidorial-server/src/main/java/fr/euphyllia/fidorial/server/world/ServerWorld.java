@@ -6,8 +6,10 @@ import ca.spottedleaf.concurrentutil.list.COWArrayList;
 import ca.spottedleaf.concurrentutil.map.concurrent.longs.ConcurrentChainedLong2ReferenceHashTable;
 import fr.euphyllia.fidorial.server.entity.AbstractEntity;
 import fr.euphyllia.fidorial.server.entity.EntityManager;
+import fr.euphyllia.fidorial.server.entity.mob.AbstractMob;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.schedulers.LightUpdateDispatcher;
+import fr.euphyllia.fidorial.server.schedulers.ThreadedRegionRegionizer;
 import fr.euphyllia.fidorial.server.util.ConcurrentLongSet;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkColumn;
@@ -25,6 +27,7 @@ import fr.euphyllia.fidorial.server.world.time.WorldClocks;
 import fr.euphyllia.fidorial.server.world.time.WorldTimeEngine;
 import fr.fidorial.entity.Entity;
 import fr.fidorial.registry.keys.BlockTypeKeys;
+import fr.fidorial.scheduler.RegionizedScheduler;
 import fr.fidorial.world.BlockPos;
 import fr.fidorial.world.Chunk;
 import fr.fidorial.world.ChunkPos;
@@ -68,6 +71,7 @@ public final class ServerWorld implements World {
     private final WorldLightManager lightManager;
     private volatile @Nullable LightUpdateDispatcher lightDispatcher;
     private final FloodFillLightEngine fallbackEngine;
+    private final ThreadedRegionRegionizer scheduler;
 
     private final ConcurrentChainedLong2ReferenceHashTable<ChunkColumn> loaded =
             ConcurrentChainedLong2ReferenceHashTable.createWithExpected(1024);
@@ -88,7 +92,8 @@ public final class ServerWorld implements World {
             final EntityRegionStorage entityStorage,
             final AnvilEntitySerializer entitySerializer,
             final ChunkGenerator generator,
-            final BlockStateRegistry blockStates
+            final BlockStateRegistry blockStates,
+            final ThreadedRegionRegionizer scheduler
     ) {
         this.dimension = dimension;
         this.storage = storage;
@@ -102,6 +107,7 @@ public final class ServerWorld implements World {
         this.height = dimensionType.height();
         this.lightManager = new WorldLightManager(new WorldLightAccess());
         this.fallbackEngine = new FloodFillLightEngine(minY, height);
+        this.scheduler = scheduler;
     }
 
     public void setEntityBridge(final IntSupplier entityIdSupplier, final EntitySpawnBridge entityBridge) {
@@ -144,6 +150,11 @@ public final class ServerWorld implements World {
 
     public void setChunkLoader(final AsyncChunkLoader loader) {
         this.chunkLoader = loader;
+    }
+
+    @Override
+    public RegionizedScheduler scheduler() {
+        return scheduler;
     }
 
     @Override
@@ -255,6 +266,9 @@ public final class ServerWorld implements World {
         if (!from.equals(to)) {
             markEntitiesDirty(from.x(), from.z());
             markEntitiesDirty(to.x(), to.z());
+            if (entity instanceof AbstractMob) {
+                scheduler.moveTicket(key(), from, to);
+            }
         }
     }
 

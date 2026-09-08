@@ -4,6 +4,7 @@ import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.entity.AbstractEntity;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.schedulers.LightUpdateDispatcher;
+import fr.euphyllia.fidorial.server.schedulers.ThreadedRegionRegionizer;
 import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.entity.AnvilEntitySerializer;
@@ -39,6 +40,7 @@ public final class WorldManager implements AutoCloseable {
     private final ChunkStorage storage;
     private final EntityRegionStorage entityStorage;
     private final AnvilEntitySerializer entitySerializer;
+    private final ThreadedRegionRegionizer scheduler;
     private final Map<Key, ServerWorld> worlds = new ConcurrentHashMap<>();
     private volatile @Nullable LightUpdateDispatcher lightDispatcher;
     private final BlockStateRegistry blockStates;
@@ -53,7 +55,8 @@ public final class WorldManager implements AutoCloseable {
             final ChunkStorage storage,
             final EntityRegionStorage entityStorage,
             final AnvilEntitySerializer entitySerializer,
-            final BlockStateRegistry blockStates
+            final BlockStateRegistry blockStates,
+            final ThreadedRegionRegionizer scheduler
     ) {
         this.paths = paths;
         this.levelData = levelData;
@@ -61,9 +64,10 @@ public final class WorldManager implements AutoCloseable {
         this.entityStorage = entityStorage;
         this.entitySerializer = entitySerializer;
         this.blockStates = blockStates;
+        this.scheduler = scheduler;
     }
 
-    public static WorldManager openOrCreate(final Path worldRoot, final BlockStateRegistry blockStates) throws IOException {
+    public static WorldManager openOrCreate(final Path worldRoot, final BlockStateRegistry blockStates, final ThreadedRegionRegionizer scheduler) throws IOException {
         final WorldPaths paths = new WorldPaths(worldRoot, WorldPaths.Layout.MODERN);
 
         final LevelData levelData;
@@ -82,12 +86,12 @@ public final class WorldManager implements AutoCloseable {
         final EntityRegionStorage entityStorage = new EntityRegionStorage(paths);
         final AnvilEntitySerializer entitySerializer = new AnvilEntitySerializer();
 
-        return new WorldManager(paths, levelData, storage, entityStorage, entitySerializer, blockStates);
+        return new WorldManager(paths, levelData, storage, entityStorage, entitySerializer, blockStates, scheduler);
     }
 
     public ServerWorld registerDimension(final Dimension dim, final ChunkGenerator generator) {
         return worlds.computeIfAbsent(dim.id(), _ -> {
-            final ServerWorld world = new ServerWorld(dim, storage, entityStorage, entitySerializer, generator, blockStates);
+            final ServerWorld world = new ServerWorld(dim, storage, entityStorage, entitySerializer, generator, blockStates, scheduler);
             if (chunkLoader != null) {
                 world.setChunkLoader(chunkLoader);
             }
