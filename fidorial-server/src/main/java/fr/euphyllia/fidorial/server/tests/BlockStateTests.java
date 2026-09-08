@@ -2,7 +2,6 @@ package fr.euphyllia.fidorial.server.tests;
 
 import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.world.BlockStateRegistry;
-import fr.euphyllia.fidorial.server.world.WorldConstants;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.fidorial.registry.keys.BlockTypeKeys;
 import fr.fidorial.testing.ScenarioTestHelper;
@@ -20,7 +19,7 @@ public final class BlockStateTests {
     public static void belowWorldIsAir(final ScenarioTestHelper helper) {
         final World world = helper.world();
         final BlockStateRegistry registry = FidorialServer.getInstance().blockStateRegistry();
-        final BlockPos pos = new BlockPos(0, WorldConstants.MIN_Y - 1, 0);
+        final BlockPos pos = new BlockPos(0, world.dimensionType().minY() - 1, 0);
 
         final BlockState actual = registry.byId(world.getBlockStateId(pos));
         helper.assertTrue(actual.isAir(),

@@ -1,6 +1,7 @@
 package fr.fidorial.world;
 
 import fr.fidorial.entity.Entity;
+import fr.fidorial.scheduler.RegionizedScheduler;
 import fr.fidorial.world.dimension.DimensionTypeDefinition;
 import fr.fidorial.world.time.DayNightCycle;
 import net.kyori.adventure.audience.ForwardingAudience;
@@ -26,6 +27,13 @@ public interface World extends Keyed, ForwardingAudience {
     DimensionTypeDefinition dimensionType();
 
     DayNightCycle dayNightCycle();
+
+    /**
+     * {@return the scheduler responsible for running tasks against positions in this world}
+     *
+     * @since 0.1.0
+     */
+    RegionizedScheduler scheduler();
 
     CompletableFuture<Chunk> getChunkAsync(int chunkX, int chunkZ);
 

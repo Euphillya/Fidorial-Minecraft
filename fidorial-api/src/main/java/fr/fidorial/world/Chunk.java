@@ -1,6 +1,8 @@
 package fr.fidorial.world;
 
-public interface Chunk {
+import fr.fidorial.scheduler.SchedulerSource;
+
+public interface Chunk extends SchedulerSource {
 
     World world();
 
