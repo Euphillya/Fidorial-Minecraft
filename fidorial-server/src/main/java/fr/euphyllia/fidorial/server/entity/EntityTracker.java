@@ -5,6 +5,7 @@ import ca.spottedleaf.concurrentutil.list.COWArrayList;
 import ca.spottedleaf.concurrentutil.map.concurrent.ints.ConcurrentChainedInt2ReferenceHashTable;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
+import fr.euphyllia.fidorial.server.network.ConnectionState;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundRemoveEntitiesPacket;
 import fr.fidorial.entity.Entity;
@@ -57,6 +58,9 @@ public final class EntityTracker {
                 continue;
             }
             final ClientConnection connection = player.connection();
+            if (connection.state() != ConnectionState.PLAY) {
+                continue; // re-configuring
+            }
             final boolean tracked = current.contains(connection);
             final double limit = tracked ? untrackDistanceSq : trackDistanceSq;
             final boolean visible =

@@ -84,4 +84,27 @@ public final class ServerChunk implements Chunk {
     private int worldZ(final int localZ) {
         return (column.chunkZ() << 4) | (localZ & 15);
     }
+
+    @Override
+    public boolean execute(final Runnable task) {
+        if (world.isChunkLoaded(column.chunkX(), column.chunkZ())) {
+            world().scheduler().execute(world().key(), pos(), task);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean executeDelayed(final Runnable task, final long delayTicks) {
+        if (world.isChunkLoaded(column.chunkX(), column.chunkZ())) {
+            world().scheduler().executeDelayed(world().key(), pos(), task, delayTicks);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isOwnedByCurrentThread() {
+        return world().scheduler().isOwnedByCurrentThread(world().key(), pos());
+    }
 }

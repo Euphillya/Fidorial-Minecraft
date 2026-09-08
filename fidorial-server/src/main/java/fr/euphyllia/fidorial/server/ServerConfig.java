@@ -20,6 +20,7 @@ import java.util.UUID;
 public record ServerConfig(
         int port,
         boolean onlineMode,
+        boolean encryptOfflineModeConnections,
         int viewDistance,
         int sendDistance,
         int compressionThreshold,
@@ -96,6 +97,7 @@ public record ServerConfig(
         return new ServerConfig(
                 25565,
                 true,
+                false,
                 10,
                 10,
                 256,
@@ -148,6 +150,7 @@ public record ServerConfig(
         final ServerConfig config = new ServerConfig(
                 readInt(props, "port", defaults.port()),
                 readBool(props, "online-mode", defaults.onlineMode()),
+                readBool(props, "encrypt-offline-mode-connections", defaults.encryptOfflineModeConnections()),
                 readInt(props, "view-distance", defaults.viewDistance()),
                 readInt(props, "send-distance", defaults.sendDistance()),
                 readInt(props, "compression-threshold", defaults.compressionThreshold()),
@@ -295,6 +298,7 @@ public record ServerConfig(
         final Properties props = new Properties();
         props.setProperty("port", Integer.toString(port));
         props.setProperty("online-mode", Boolean.toString(onlineMode));
+        props.setProperty("encrypt-offline-mode-connections", Boolean.toString(encryptOfflineModeConnections));
         props.setProperty("view-distance", Integer.toString(viewDistance));
         props.setProperty("send-distance", Integer.toString(sendDistance));
         props.setProperty("compression-threshold", Integer.toString(compressionThreshold));

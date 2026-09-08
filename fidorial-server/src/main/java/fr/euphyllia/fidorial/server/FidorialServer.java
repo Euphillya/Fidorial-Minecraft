@@ -171,7 +171,7 @@ public final class FidorialServer implements Server {
     private final NbtPlayerEnderChestStorage defaultEnderChestStorage =
             new NbtPlayerEnderChestStorage(config.worldPath().resolve("player"), false);
     private final ChestViewerTracker chestViewers = new ChestViewerTracker();
-    private final WorldManager worldManager = WorldManager.openOrCreate(config.worldPath(), blockStateRegistry);
+    private final WorldManager worldManager = WorldManager.openOrCreate(config.worldPath(), blockStateRegistry, regionizer);
     private final FluidEngine fluidEngine =
             new FluidEngine(worldManager, regionizer, blockStateRegistry, this::broadcast);
     private final WeatherEngine weatherEngine = new WeatherEngine(worldManager.levelData(), this::broadcast);
@@ -278,6 +278,7 @@ public final class FidorialServer implements Server {
             loadPlugins();
             openWorlds();
             regionizer.registerTickHandler(new EntityTickHandler(worldManager, this));
+            syncServerStatusToRegistries(true);
             if (!headless) {
                 network.bind();
                 startAutoSave();
@@ -296,6 +297,11 @@ public final class FidorialServer implements Server {
         }
     }
 
+    private void syncServerStatusToRegistries(final boolean started) {
+        biomeRegistry().started.getAndSet(started);
+        dimensionTypes().started.getAndSet(started);
+    }
+
     @Override
     public void shutdown() {
         if (!running.compareAndSet(true, false)) {
@@ -305,6 +311,7 @@ public final class FidorialServer implements Server {
         LOGGER.info("Stopping the Fidorial server...");
         events.post(new ServerStoppingEvent(this));
         onlinePlayers().forEach(player -> player.kick(Component.translatable("commands.stop.stopping")));
+        syncServerStatusToRegistries(false);
 
         closeQuietly("plugins", pluginManager::close);
         closeQuietly("spark", this::disableSpark);

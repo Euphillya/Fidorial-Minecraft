@@ -6,7 +6,6 @@ import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.ServerConfig;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
 import fr.euphyllia.fidorial.server.network.ConnectionState;
-import fr.euphyllia.fidorial.server.network.protocol.ProtocolConstants;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.login.ClientboundCustomQueryPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.login.ClientboundHelloPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.login.ClientboundLoginCompressionPacket;
@@ -62,11 +61,15 @@ public final class LoginPacketHandler implements LoginPacketListener {
         if (server.config().proxyMode() == ServerConfig.ProxyMode.VELOCITY) {
             sendVelocityForwardingRequest();
         } else if (server.config().onlineMode()) {
-            sendEncryptionRequest();
+            sendEncryptionRequest(true);
         } else {
             LOGGER.warn("Offline connection (unauthenticated): {}", pendingUsername);
-            enableCompression();
-            sendLoginSuccess(offlineProfile(pendingUsername));
+            if (server.config().encryptOfflineModeConnections()) {
+                sendEncryptionRequest(false);
+            } else {
+                enableCompression();
+                sendLoginSuccess(offlineProfile(pendingUsername));
+            }
         }
     }
 
@@ -74,7 +77,6 @@ public final class LoginPacketHandler implements LoginPacketListener {
         final UUID uuid = UUID.nameUUIDFromBytes(("OfflinePlayer:" + username).getBytes(StandardCharsets.UTF_8));
         return new GameProfile(uuid, username, UUID.randomUUID(), List.of());
     }
-
 
     private void sendVelocityForwardingRequest() {
         this.velocityTransactionId = ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE);
@@ -118,11 +120,11 @@ public final class LoginPacketHandler implements LoginPacketListener {
         }
     }
 
-    private void sendEncryptionRequest() {
+    private void sendEncryptionRequest(final boolean shouldAuthenticate) {
         this.encryptionRequested = true;
         this.verifyToken = EncryptionUtils.generateVerifyToken();
         final byte[] publicKey = server.keyPair().getPublic().getEncoded();
-        connection.send(new ClientboundHelloPacket("", publicKey, verifyToken, true));
+        connection.send(new ClientboundHelloPacket("", publicKey, verifyToken, shouldAuthenticate));
     }
 
     @Override
@@ -155,6 +157,11 @@ public final class LoginPacketHandler implements LoginPacketListener {
         try {
             final Optional<GameProfile> profile = server.sessionService().hasJoined(username, serverHash);
             connection.execute(() -> {
+                if (!server.config().onlineMode()) {
+                    enableCompression();
+                    sendLoginSuccess(offlineProfile(username));
+                    return;
+                }
                 if (profile.isEmpty()) {
                     disconnect(Component.translatable("disconnect.loginFailedInfo.invalidSession"));
                 } else {

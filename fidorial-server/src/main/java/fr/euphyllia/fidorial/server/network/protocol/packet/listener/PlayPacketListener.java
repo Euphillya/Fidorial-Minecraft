@@ -2,6 +2,7 @@ package fr.euphyllia.fidorial.server.network.protocol.packet.listener;
 
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.common.ServerboundClientInformationPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundAcceptTeleportationPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundAcknowledgeConfigurationPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundAttackPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundChatCommandPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundChatPacket;
@@ -29,6 +30,8 @@ public interface PlayPacketListener extends PacketListener {
     void handlePlayerLoaded(ServerboundPlayerLoadedPacket packet);
 
     void handleAcceptTeleportation(ServerboundAcceptTeleportationPacket packet);
+
+    void handleAcknowledgeConfiguration(ServerboundAcknowledgeConfigurationPacket packet);
 
     void handleKeepAlive(ServerboundKeepAlivePacket packet);
 

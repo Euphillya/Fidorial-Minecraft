@@ -644,6 +644,11 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
                 ClientboundSetEntityMetadataPacket.Entry.ofByte(MD_DISPLAYED_SKIN_PARTS, connection().displayedSkinParts())));
     }
 
+    @Override
+    public void enterConfigurationPhase() {
+        connection.enterConfiguration();
+    }
+
     public int nextTeleportId() {
         final var id = lastTeleportId;
         lastTeleportId = id + 1;

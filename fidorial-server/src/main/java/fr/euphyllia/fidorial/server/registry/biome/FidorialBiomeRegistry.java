@@ -1,6 +1,8 @@
 package fr.euphyllia.fidorial.server.registry.biome;
 
+import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.codecs.world.BiomeCodecs;
+import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.registry.RegistryEntry;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.fidorial.registry.Registry;
@@ -31,7 +33,7 @@ public final class FidorialBiomeRegistry implements BiomeRegistry, Registry<Biom
     private static final ComponentLogger LOGGER = ComponentLogger.logger(FidorialBiomeRegistry.class);
 
     private final Key fallback;
-    private final AtomicBoolean started = new AtomicBoolean(false);
+    public final AtomicBoolean started = new AtomicBoolean(false);
 
     private volatile Snapshot snapshot;
 
@@ -203,8 +205,9 @@ public final class FidorialBiomeRegistry implements BiomeRegistry, Registry<Biom
     private void publish(final Map<Key, @Nullable BiomeDefinition> next, final String action, final Key key) {
         this.snapshot = Snapshot.of(next);
         if (started.get()) {
-            LOGGER.warn("Biome {} {} after startup: only clients connecting from now on will see the change.",
+            LOGGER.warn("Biome {} {} after startup: clients will be sent to the configuration phase to see the change.",
                     key.asString(), action);
+            FidorialServer.getInstance().players().forEach(ServerPlayer::enterConfigurationPhase);
         } else {
             LOGGER.debug("Biome {} {}.", key.asString(), action);
         }

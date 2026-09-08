@@ -58,7 +58,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -66,6 +69,8 @@ import java.util.concurrent.TimeUnit;
 public final class ClientConnection extends SimpleChannelInboundHandler<ByteBuf> implements Audience {
 
     private static final ComponentLogger LOGGER = ComponentLogger.logger(ClientConnection.class);
+
+    private static final Executor VIRTUAL_THREAD_EXECUTOR = Executors.newVirtualThreadPerTaskExecutor();
 
     private static final int KEEP_ALIVE_INTERVAL_SECONDS = 10;
     private static final int LATENCY_SMOOTHING = 3;
@@ -247,6 +252,13 @@ public final class ClientConnection extends SimpleChannelInboundHandler<ByteBuf>
                 : (int) ((previous * (long) LATENCY_SMOOTHING + sample) / (LATENCY_SMOOTHING + 1));
     }
 
+    public void pauseKeepAlive() {
+        if (keepAliveTask != null) {
+            keepAliveTask.cancel(false);
+            keepAliveTask = null;
+        }
+    }
+
     public int ping() {
         return latencyMillis;
     }
@@ -265,29 +277,34 @@ public final class ClientConnection extends SimpleChannelInboundHandler<ByteBuf>
         saveInventoryOnDisconnect();
     }
 
-    private void saveInventoryOnDisconnect() {
+    public void enterConfiguration() {
+        execute(() -> {
+            if (listener instanceof final PlayPacketHandler play) {
+                play.enterConfiguration();
+            }
+        });
+    }
+
+    public CompletableFuture<Void> saveInventoryOnDisconnect() {
         final ServerPlayer disconnecting = this.player;
         if (disconnecting == null) {
-            return;
+            return CompletableFuture.completedFuture(null);
         }
         this.player = null;
-        Thread.startVirtualThread(() -> {
+        return CompletableFuture.runAsync(() -> {
             try {
                 server.playerInventoryStorage().save(disconnecting.uuid(), disconnecting.inventory());
                 server.playerEnderChestStorage().save(disconnecting.uuid(), disconnecting.enderChest());
                 final RespawnPoint point = disconnecting.respawnPoint();
-                server.playerDataStorage()
-                        .save(
-                                disconnecting.uuid(),
-                                new PlayerDataStorage.PlayerData(
-                                        disconnecting.gameMode(),
-                                        point == null ? null : point.world().key(),
-                                        point == null ? null : point.location()));
+                server.playerDataStorage().save(disconnecting.uuid(), new PlayerDataStorage.PlayerData(
+                        disconnecting.gameMode(),
+                        point == null ? null : point.world().key(),
+                        point == null ? null : point.location()));
                 LOGGER.debug("Inventory + Ender Chest and data for {} saved", disconnecting.name());
             } catch (final Exception e) {
                 LOGGER.error("Unable to save inventory for {}", disconnecting.name(), e);
             }
-        });
+        }, VIRTUAL_THREAD_EXECUTOR);
     }
 
     @Override

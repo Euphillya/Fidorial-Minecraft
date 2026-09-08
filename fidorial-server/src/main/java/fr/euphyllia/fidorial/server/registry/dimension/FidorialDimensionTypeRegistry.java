@@ -1,6 +1,8 @@
 package fr.euphyllia.fidorial.server.registry.dimension;
 
+import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.codecs.world.DimensionTypeCodecs;
+import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.registry.RegistryEntry;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.fidorial.registry.Registry;
@@ -30,7 +32,7 @@ public final class FidorialDimensionTypeRegistry implements DimensionTypeRegistr
 
     private static final ComponentLogger LOGGER = ComponentLogger.logger(FidorialDimensionTypeRegistry.class);
 
-    private final AtomicBoolean started = new AtomicBoolean(false);
+    public final AtomicBoolean started = new AtomicBoolean(false);
 
     private volatile Snapshot snapshot;
 
@@ -178,8 +180,9 @@ public final class FidorialDimensionTypeRegistry implements DimensionTypeRegistr
     private void publish(final Map<Key, @Nullable DimensionTypeDefinition> next, final String action, final Key key) {
         this.snapshot = Snapshot.of(next);
         if (started.get()) {
-            LOGGER.warn("Dimension type {} {} after startup: only clients connecting from now on will see the change.",
+            LOGGER.warn("Dimension type {} {} after startup: clients will be sent to the configuration phase to see the change.",
                     key.asString(), action);
+            FidorialServer.getInstance().players().forEach(ServerPlayer::enterConfigurationPhase);
         } else {
             LOGGER.debug("Dimension type {} {}.", key.asString(), action);
         }

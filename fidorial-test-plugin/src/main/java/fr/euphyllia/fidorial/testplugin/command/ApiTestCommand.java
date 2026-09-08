@@ -41,6 +41,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickCallback;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 
 import java.net.URI;
@@ -204,7 +205,18 @@ public final class ApiTestCommand {
                                         })
                                         .executes(this::bossBarHide)))
                 )
+                .then(literal("reenter_configuration")
+                        .executes(ApiTestCommand::reenterConfigurationPhase))
                 .build();
+    }
+
+    private static int reenterConfigurationPhase(CommandContext<CommandSource> ctx) {
+        plugin.server().sendMessage(Component.text("[TestPlugin] Resending all players to the CONFIGURATION phase..."));
+        plugin.server().onlinePlayers().forEach(Player::enterConfigurationPhase);
+        plugin.server().sendMessage(Component.text("[TestPlugin] Resent ")
+                .append(Component.text(plugin.server().onlinePlayers().size()).decorate(TextDecoration.BOLD)
+                        .append(Component.text(" player(s)."))).color(NamedTextColor.GREEN));
+        return Command.SINGLE_SUCCESS;
     }
 
     private static int tabListBroadcast(final CommandContext<CommandSource> ctx) {

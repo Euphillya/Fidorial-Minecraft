@@ -1,7 +1,10 @@
 package fr.fidorial.entity;
 
+import fr.fidorial.Server;
 import fr.fidorial.command.CommandSender;
 import fr.fidorial.command.CommandSource;
+import fr.fidorial.event.player.PlayerJoinEvent;
+import fr.fidorial.event.player.PlayerQuitEvent;
 import fr.fidorial.inventory.EnderChestInventory;
 import fr.fidorial.inventory.PlayerInventory;
 import fr.fidorial.item.ItemStack;
@@ -18,6 +21,19 @@ import org.jspecify.annotations.Nullable;
 import java.net.InetAddress;
 import java.util.UUID;
 
+/**
+ * Represents a player currently connected to the server.
+ * <p>
+ * A {@code Player} reference is not stable across the server lifecycle, as entering the
+ * CONFIGURATION phase (see {@link #enterConfigurationPhase()}) discards the
+ * underlying player and recreates it, which invalidates every reference held
+ * before that point.
+ * {@code Player} references should not be cached, as a reference obtained from an event or lookup is only
+ * guaranteed valid for the duration of that call. Instead, re-fetch by UUID or name via
+ * {@link Server#player(UUID)} or {@link Server#player(String)}.
+ *
+ * @since 0.1.0
+ */
 public interface Player extends LivingEntity, PermissionHolder, CommandSource, CommandSender, Identified, BossBarViewer, ObjectContentsLike {
 
     void refreshCommands();
@@ -169,4 +185,14 @@ public interface Player extends LivingEntity, PermissionHolder, CommandSource, C
         setRespawnPoint(new RespawnPoint(world(), location));
     }
 
+    /**
+     * Switches this player's connection status from PLAY to CONFIGURATION.
+     * Useful for resending data synced during the CONFIGURATION phase.
+     *
+     * @since 0.1.0
+     * @apiNote This removes the player from the world fully and creates them anew,
+     * firing {@link PlayerQuitEvent}, {@link PlayerJoinEvent}, and saving their data to disk.
+     * Any reference to this {@link Player} held before this call should be considered stale.
+     */
+    void enterConfigurationPhase();
 }
