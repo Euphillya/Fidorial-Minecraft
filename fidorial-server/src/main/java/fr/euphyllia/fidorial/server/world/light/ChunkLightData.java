@@ -8,6 +8,14 @@ import java.util.Arrays;
 public class ChunkLightData {
     public static final int SECTION_BYTES = 2048;
 
+    private static final byte[] FULL_SKY = fullSky();
+
+    private static byte[] fullSky() {
+        final byte[] full = new byte[SECTION_BYTES];
+        Arrays.fill(full, (byte) 0xFF);
+        return full;
+    }
+
     private final int minY;
     private final int minSectionY;
     private final int sectionCount;
@@ -16,6 +24,10 @@ public class ChunkLightData {
     private final byte[] @Nullable [] skyLight;
 
     private final int[] heightmap;
+    private int heightmapMin;
+    private int heightmapMax;
+    private boolean heightmapBoundsDirty = true;
+
     private int skyFullFromY = Integer.MAX_VALUE;
 
     public ChunkLightData(final int minY, final int height) {
@@ -50,6 +62,22 @@ public class ChunkLightData {
 
     public void setTopOpaqueY(final int localX, final int localZ, final int y) {
         heightmap[(localZ & 15) << 4 | (localX & 15)] = y;
+        heightmapBoundsDirty = true;
+    }
+
+    private void refreshHeightmapBounds() {
+        if (!heightmapBoundsDirty) {
+            return;
+        }
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (final int top : heightmap) {
+            if (top < min) min = top;
+            if (top > max) max = top;
+        }
+        heightmapMin = min;
+        heightmapMax = max;
+        heightmapBoundsDirty = false;
     }
 
     public int get(final LightType type, final int localX, final int worldY, final int localZ) {
@@ -134,13 +162,26 @@ public class ChunkLightData {
     public void restoreHeightmap(final int[] values) {
         if (values.length == heightmap.length) {
             System.arraycopy(values, 0, heightmap, 0, heightmap.length);
+            heightmapBoundsDirty = true;
         }
     }
 
     public byte @Nullable [] materializeSkySection(final int sectionIndex) {
         if (sectionIndex < 0 || sectionIndex >= sectionCount) return null;
-        final byte[] stored = skyLight[sectionIndex];
+
+        refreshHeightmapBounds();
+
         final int sectionBottomY = (minSectionY + sectionIndex) << 4;
+        final int sectionTopY = sectionBottomY + 15;
+
+        if (sectionBottomY > heightmapMax) {
+            return FULL_SKY;
+        }
+        if (sectionTopY <= heightmapMin) {
+            return skyLight[sectionIndex];
+        }
+
+        final byte[] stored = skyLight[sectionIndex];
         byte[] out = null;
         for (int lx = 0; lx < 16; lx++) {
             for (int lz = 0; lz < 16; lz++) {
@@ -179,6 +220,7 @@ public class ChunkLightData {
             skyLight[i] = null;
         }
         Arrays.fill(heightmap, minY - 1);
+        heightmapBoundsDirty = true;
         skyFullFromY = Integer.MAX_VALUE;
     }
 }

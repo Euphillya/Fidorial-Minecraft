@@ -215,33 +215,32 @@ public final class ChunkNetworkSerializer {
         final List<byte[]> skyArrays = new ArrayList<>();
         final List<byte[]> blockArrays = new ArrayList<>();
 
+        final boolean lit = chunk.lightPopulated();
+
         for (int i = 0; i < lightSections; i++) {
-            final byte[] sky;
+            if (hasSkylight) {
+                final byte @Nullable [] sky;
+                if (i == topIndex) {
+                    sky = FULL_LIGHT;
+                } else if (!lit) {
+                    sky = null;
+                } else {
+                    sky = light.materializeSkySection(i - 1);
+                }
 
-            if (!hasSkylight) {
-                sky = null; // no sky light layer for this dimension at all
-            } else if (i == topIndex) {
-                sky = FULL_LIGHT;
-            } else if (i == 0) {
-                sky = null;
-            } else {
-                sky = light.materializeSkySection(i - 1);
+                if (sky == null || isAllZero(sky)) {
+                    setBit(emptySkyMask, i);
+                } else {
+                    setBit(skyMask, i);
+                    skyArrays.add(sky);
+                }
             }
 
-            if (sky == null) {
-                // neither mask
-            } else if (isAllZero(sky)) {
-                setBit(emptySkyMask, i);
-            } else {
-                setBit(skyMask, i);
-                skyArrays.add(sky);
-            }
+            final var block = (i == 0 || i == topIndex || !lit)
+                    ? null
+                    : light.sectionArray(LightType.BLOCK, i - 1);
 
-            final byte[] block = (i == 0 || i == topIndex) ? null : light.sectionArray(LightType.BLOCK, i - 1);
-
-            if (block == null) {
-                // neither mask
-            } else if (isAllZero(block)) {
+            if (block == null || isAllZero(block)) {
                 setBit(emptyBlockMask, i);
             } else {
                 setBit(blockMask, i);
