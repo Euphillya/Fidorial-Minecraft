@@ -150,45 +150,58 @@ public abstract class AbstractEntity implements Entity {
             return false;
         }
 
-        try {
-            final World from = world();
-            final Location previous = location();
+        final World from = world();
+        final Location previous = location();
 
-            if (from == target) {
+        if (from == target) {
+            try {
                 setLocation(location);
                 target.entityMoved(this, previous.chunk(), location.chunk());
-            } else {
-                if (from instanceof final ServerWorld old) {
-                    old.removeEntity(this);
-                    if (this instanceof AbstractMob) {
-                        server().regionizer().removeTicket(old.key(), previous.chunk());
-                    }
-                }
+                finishTeleport(location);
+                return true;
+            } catch (final Exception exception) {
+                LOGGER.error("An error occurred while teleporting the player : ", exception);
+                return false;
+            }
+        }
+
+        if (from instanceof final ServerWorld old) {
+            old.removeEntity(this);
+            if (this instanceof AbstractMob) {
+                server().regionizer().removeTicket(old.key(), previous.chunk());
+            }
+        }
+
+        target.scheduler().execute(target.key(), location.chunk(), () -> {
+            try {
                 setWorld(target);
                 setLocation(location);
                 target.addEntity(this);
                 if (this instanceof AbstractMob) {
                     server().regionizer().addTicket(target.key(), location.chunk());
                 }
+                finishTeleport(location);
+            } catch (final Exception exception) {
+                LOGGER.error("An error occurred while teleporting the player : ", exception);
             }
+        });
 
-            sendToTrackers(new ClientboundEntityPositionSyncPacket(
-                    entityId(),
-                    location.x(),
-                    location.y(),
-                    location.z(),
-                    0.0,
-                    0.0,
-                    0.0,
-                    location.yaw(),
-                    location.pitch(),
-                    false));
-            server().entityTracker().update(this, server().players());
-            return true;
-        } catch (final Exception exception) {
-            LOGGER.error("An error occurred while teleporting the player : ", exception);
-            return false;
-        }
+        return true;
+    }
+
+    private void finishTeleport(final Location location) {
+        sendToTrackers(new ClientboundEntityPositionSyncPacket(
+                entityId(),
+                location.x(),
+                location.y(),
+                location.z(),
+                0.0,
+                0.0,
+                0.0,
+                location.yaw(),
+                location.pitch(),
+                false));
+        server().entityTracker().update(this, server().players());
     }
 
     @Override

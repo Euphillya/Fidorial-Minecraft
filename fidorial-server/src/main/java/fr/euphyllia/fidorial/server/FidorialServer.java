@@ -567,8 +567,7 @@ public final class FidorialServer implements Server {
     @Override
     public boolean unloadWorld(final Key key, final boolean save) {
         try {
-            worldManager.unloadWorld(key, save);
-            return true;
+            return worldManager.unloadWorld(key, save) != null;
         } catch (final IOException e) {
             LOGGER.error("Saving world {} before unloading failed", key, e);
             return false;

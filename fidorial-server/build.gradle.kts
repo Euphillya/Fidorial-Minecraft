@@ -44,6 +44,8 @@ dependencies {
     runtimeOnly(libs.netty.epoll)
     runtimeOnly(libs.netty.iouring)
     runtimeOnly(libs.netty.kqueue)
+
+    annotationProcessor(projects.fidorialAnnotationProcessor)
 }
 
 application {
