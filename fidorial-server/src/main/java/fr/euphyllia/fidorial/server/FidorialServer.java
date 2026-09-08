@@ -23,6 +23,7 @@ import fr.euphyllia.fidorial.server.entity.player.storage.NbtPlayerEnderChestSto
 import fr.euphyllia.fidorial.server.entity.player.storage.NbtPlayerInventoryStorage;
 import fr.euphyllia.fidorial.server.events.SimpleEventBus;
 import fr.euphyllia.fidorial.server.inventory.ChestViewerTracker;
+import fr.euphyllia.fidorial.server.item.FidorialItemRegistry;
 import fr.euphyllia.fidorial.server.metrics.FidorialContext;
 import fr.euphyllia.fidorial.server.moderation.CodeOfConductManager;
 import fr.euphyllia.fidorial.server.moderation.FidorialBanManager;
@@ -42,6 +43,7 @@ import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.euphyllia.fidorial.server.registry.biome.FidorialBiomeRegistry;
 import fr.euphyllia.fidorial.server.registry.data.BlockStateIds;
 import fr.euphyllia.fidorial.server.registry.data.BlockStateLightProperties;
+import fr.euphyllia.fidorial.server.registry.data.ItemProperties;
 import fr.euphyllia.fidorial.server.registry.dialog.FidorialDialogRegistry;
 import fr.euphyllia.fidorial.server.registry.dimension.FidorialDimensionTypeRegistry;
 import fr.euphyllia.fidorial.server.schedulers.AiWorker;
@@ -74,6 +76,7 @@ import fr.fidorial.entity.mob.MobRegistry;
 import fr.fidorial.event.EventBus;
 import fr.fidorial.event.server.ServerStartedEvent;
 import fr.fidorial.event.server.ServerStoppingEvent;
+import fr.fidorial.item.ItemDefaults;
 import fr.fidorial.moderation.BanManager;
 import fr.fidorial.moderation.WhitelistManager;
 import fr.fidorial.permission.PermissionRegistry;
@@ -182,6 +185,7 @@ public final class FidorialServer implements Server {
             fluidEngine::notifyBlockChanged,
             lightDispatcher::queueBlockChange);
     private final FidorialPermissionRegistry permissionRegistry = new FidorialPermissionRegistry();
+    private final FidorialItemRegistry itemRegistry = new FidorialItemRegistry();
     private final FidorialMobRegistry mobRegistry = new FidorialMobRegistry();
     private final JavaPluginManager pluginManager =
             new JavaPluginManager(this, events, services, permissionRegistry, config.pluginsPath());
@@ -219,6 +223,7 @@ public final class FidorialServer implements Server {
         if (instance != null) {
             throw new IllegalStateException("FidorialServer is already initialized");
         }
+        bootstrapItems();
         this.headless = headless;
         instance = this;
         commandManager = new CommandManager();
@@ -229,6 +234,24 @@ public final class FidorialServer implements Server {
             throw new RuntimeException("FidorialServer is not initialized");
         }
         return instance;
+    }
+
+    private static void bootstrapItems() {
+
+        ItemProperties.bootstrap();
+
+        ItemDefaults.install(new ItemDefaults.Source() {
+
+            @Override
+            public int maxStackSize(final Key item) {
+                return ItemProperties.maxStackSize(item);
+            }
+
+            @Override
+            public int maxDamage(final Key item) {
+                return ItemProperties.maxDamage(item);
+            }
+        });
     }
 
     private static FidorialBlockRegistry bootstrapBlocks() {
@@ -539,6 +562,11 @@ public final class FidorialServer implements Server {
     @Override
     public FidorialMobRegistry mobs() {
         return mobRegistry;
+    }
+
+    @Override
+    public FidorialItemRegistry items() {
+        return itemRegistry;
     }
 
     public FidorialBiomeRegistry biomeRegistry() {

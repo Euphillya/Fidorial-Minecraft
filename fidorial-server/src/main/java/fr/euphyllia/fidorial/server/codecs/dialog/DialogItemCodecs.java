@@ -3,7 +3,10 @@ package fr.euphyllia.fidorial.server.codecs.dialog;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.component.ItemLore;
+import fr.fidorial.item.data.DataComponentMap;
+import fr.fidorial.item.data.DataComponentTypes;
 import net.kyori.adventure.text.Component;
 
 import java.util.List;
@@ -34,13 +37,15 @@ public class DialogItemCodecs {
                     })
     ).apply(instance, (id, count, components) -> {
         final ItemComponents resolved = components.orElse(ItemComponents.EMPTY);
+        final DataComponentMap.Builder builder = DataComponentMap.builder()
+                .setIfPresent(DataComponentTypes.CUSTOM_NAME, resolved.customName().orElse(null))
+                .setIfPresent(DataComponentTypes.ITEM_NAME, resolved.itemName().orElse(null))
+                .setIfPresent(DataComponentTypes.LORE, resolved.lore().map(ItemLore::of).orElse(null));
         return new ItemStack(
                 id,
                 count,
-                resolved.customName().orElse(null),
-                resolved.itemName().orElse(null),
-                resolved.lore().orElse(List.of()),
-                List.of());
+                builder.build()
+        );
     }));
 
     private DialogItemCodecs() {
@@ -56,10 +61,15 @@ public class DialogItemCodecs {
         static final ItemComponents EMPTY = new ItemComponents(Optional.empty(), Optional.empty(), Optional.empty());
 
         static ItemComponents of(final ItemStack stack) {
+            final Component customName = stack.components().get(DataComponentTypes.CUSTOM_NAME);
+            final Component itemName = stack.components().get(DataComponentTypes.ITEM_NAME);
+            final ItemLore lore = stack.components().get(DataComponentTypes.LORE);
+            final List<Component> loreList = lore != null ? lore.lines() : null;
             return new ItemComponents(
-                    Optional.ofNullable(stack.customName()),
-                    Optional.ofNullable(stack.itemName()),
-                    stack.lore().isEmpty() ? Optional.empty() : Optional.of(stack.lore()));
+                    Optional.ofNullable(customName),
+                    Optional.ofNullable(itemName),
+                    Optional.ofNullable(loreList)
+            );
         }
 
         boolean isEmpty() {

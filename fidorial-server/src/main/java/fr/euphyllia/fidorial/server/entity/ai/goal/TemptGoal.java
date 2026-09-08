@@ -4,7 +4,7 @@ import fr.euphyllia.fidorial.server.entity.mob.AbstractPathfinderMob;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.entity.ai.Goal;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.world.BlockPos;
 import fr.fidorial.world.Location;
 import net.kyori.adventure.key.Key;

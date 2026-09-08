@@ -22,6 +22,14 @@ public final class RegistryHolder {
         return new RegistryHolder(Collections.unmodifiableMap(new LinkedHashMap<>(registries)));
     }
 
+    public static RegistryHolder merged(final RegistryHolder... holders) {
+        final Map<Key, Registry> merged = new LinkedHashMap<>();
+        for (final RegistryHolder holder : holders) {
+            merged.putAll(holder.registries);
+        }
+        return new RegistryHolder(Collections.unmodifiableMap(merged));
+    }
+
     public static RegistryHolder empty() {
         return EMPTY;
     }

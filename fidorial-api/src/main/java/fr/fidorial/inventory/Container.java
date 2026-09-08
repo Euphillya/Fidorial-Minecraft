@@ -1,5 +1,6 @@
 package fr.fidorial.inventory;
 
+import fr.fidorial.item.ItemStack;
 import org.jspecify.annotations.Nullable;
 
 public interface Container {

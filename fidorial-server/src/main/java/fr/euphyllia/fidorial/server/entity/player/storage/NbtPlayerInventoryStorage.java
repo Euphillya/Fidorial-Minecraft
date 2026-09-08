@@ -1,5 +1,6 @@
 package fr.euphyllia.fidorial.server.entity.player.storage;
 
+import fr.euphyllia.fidorial.server.codecs.container.PlayerInventoryCodec;
 import fr.fidorial.inventory.PlayerInventory;
 import fr.fidorial.storage.player.PlayerInventoryStorage;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;

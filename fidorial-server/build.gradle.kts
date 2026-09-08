@@ -1,6 +1,7 @@
 import fr.euphyllia.fidorial.gradle.libraries.GenerateApiPackageIndexTask
 import fr.euphyllia.fidorial.gradle.libraries.PrepareBootstrapPayloadTask
 import fr.fidorial.registrygen.task.GenerateBlockStatesTask
+import fr.fidorial.registrygen.task.GenerateItemPropertiesTask
 
 extra.set("readUnnamedModules", setOf("fr.fidorial", "fr.fidorial.server"))
 
@@ -177,10 +178,14 @@ tasks.withType<GenerateBlockStatesTask>().configureEach {
     blockTypeKeysPackage.set("fr.fidorial.registry.keys")
 }
 
+tasks.withType<GenerateItemPropertiesTask>().configureEach {
+    itemKeysPackage.set("fr.fidorial.registry.keys")
+}
+
 fidorialRegistryGenerator {
     minecraftVersion.set("26.2")
     prismarineMinecraftData.set("26.2")
-    prismarineDataRepository.set("Euphillya/minecraft-data") // PrismarineJS/minecraft-data
+    prismarineDataRepository.set("Fidorial/minecraft-data") // PrismarineJS/minecraft-data
     prismarineDataRef.set("ver/26.2") // master
 
     generatedPackage.set(
@@ -202,13 +207,22 @@ fidorialRegistryGenerator {
     )
 
     dataGeneratorArguments.set(
-        listOf("--reports")
+        listOf("--reports", "--server")
     )
 
     registries.set(
         mapOf(
             "minecraft:command_argument_type" to "ArgumentType",
             "minecraft:block_entity_type" to "BlockEntityType"
+        )
+    )
+
+    frozenRegistries.set(
+        listOf(
+            "minecraft:item",
+            "minecraft:data_component_type",
+            "minecraft:menu",
+            "minecraft:attribute"
         )
     )
 
