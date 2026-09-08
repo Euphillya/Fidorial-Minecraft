@@ -43,6 +43,7 @@ import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.euphyllia.fidorial.server.registry.biome.FidorialBiomeRegistry;
 import fr.euphyllia.fidorial.server.registry.data.BlockStateIds;
 import fr.euphyllia.fidorial.server.registry.data.BlockStateLightProperties;
+import fr.euphyllia.fidorial.server.registry.data.ItemProperties;
 import fr.euphyllia.fidorial.server.registry.dialog.FidorialDialogRegistry;
 import fr.euphyllia.fidorial.server.registry.dimension.FidorialDimensionTypeRegistry;
 import fr.euphyllia.fidorial.server.schedulers.AiWorker;
@@ -75,6 +76,7 @@ import fr.fidorial.entity.mob.MobRegistry;
 import fr.fidorial.event.EventBus;
 import fr.fidorial.event.server.ServerStartedEvent;
 import fr.fidorial.event.server.ServerStoppingEvent;
+import fr.fidorial.item.ItemDefaults;
 import fr.fidorial.moderation.BanManager;
 import fr.fidorial.moderation.WhitelistManager;
 import fr.fidorial.permission.PermissionRegistry;
@@ -221,6 +223,7 @@ public final class FidorialServer implements Server {
         if (instance != null) {
             throw new IllegalStateException("FidorialServer is already initialized");
         }
+        bootstrapItems();
         this.headless = headless;
         instance = this;
         commandManager = new CommandManager();
@@ -231,6 +234,24 @@ public final class FidorialServer implements Server {
             throw new RuntimeException("FidorialServer is not initialized");
         }
         return instance;
+    }
+
+    private static void bootstrapItems() {
+
+        ItemProperties.bootstrap();
+
+        ItemDefaults.install(new ItemDefaults.Source() {
+
+            @Override
+            public int maxStackSize(final Key item) {
+                return ItemProperties.maxStackSize(item);
+            }
+
+            @Override
+            public int maxDamage(final Key item) {
+                return ItemProperties.maxDamage(item);
+            }
+        });
     }
 
     private static FidorialBlockRegistry bootstrapBlocks() {

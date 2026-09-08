@@ -185,7 +185,7 @@ tasks.withType<GenerateItemPropertiesTask>().configureEach {
 fidorialRegistryGenerator {
     minecraftVersion.set("26.2")
     prismarineMinecraftData.set("26.2")
-    prismarineDataRepository.set("Euphillya/minecraft-data") // PrismarineJS/minecraft-data
+    prismarineDataRepository.set("Fidorial/minecraft-data") // PrismarineJS/minecraft-data
     prismarineDataRef.set("ver/26.2") // master
 
     generatedPackage.set(
@@ -207,7 +207,7 @@ fidorialRegistryGenerator {
     )
 
     dataGeneratorArguments.set(
-        listOf("--reports")
+        listOf("--reports", "--server")
     )
 
     registries.set(

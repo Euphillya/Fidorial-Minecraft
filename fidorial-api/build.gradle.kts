@@ -104,7 +104,6 @@ tasks.named("check") { dependsOn(verifyRegistryDataset) }
 
 fidorialRegistryGenerator {
     minecraftVersion.set("26.2")
-    prismarineMinecraftData.set("26.2")
 
     generatedSourcesDirectory.set(
         layout.projectDirectory.dir(

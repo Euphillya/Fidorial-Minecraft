@@ -29,7 +29,7 @@ public final class SupportedRegistries {
 
     public static final RegistryTypeDefinition DIMENSION_TYPE = registry("minecraft:dimension_type", "DimensionType", RegistrySync.DYNAMIC);
 
-    public static final RegistryTypeDefinition ITEM = registry("minecraft:item", "Item");
+    public static final RegistryTypeDefinition ITEM = registry("minecraft:item", "Item", RegistrySync.FROZEN);
 
     public static final List<RegistryTypeDefinition> ALL = List.of(
             registry("minecraft:attribute", "Attribute"),
