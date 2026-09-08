@@ -23,6 +23,7 @@ import fr.euphyllia.fidorial.server.entity.player.storage.NbtPlayerEnderChestSto
 import fr.euphyllia.fidorial.server.entity.player.storage.NbtPlayerInventoryStorage;
 import fr.euphyllia.fidorial.server.events.SimpleEventBus;
 import fr.euphyllia.fidorial.server.inventory.ChestViewerTracker;
+import fr.euphyllia.fidorial.server.item.FidorialItemRegistry;
 import fr.euphyllia.fidorial.server.metrics.FidorialContext;
 import fr.euphyllia.fidorial.server.moderation.CodeOfConductManager;
 import fr.euphyllia.fidorial.server.moderation.FidorialBanManager;
@@ -182,6 +183,7 @@ public final class FidorialServer implements Server {
             fluidEngine::notifyBlockChanged,
             lightDispatcher::queueBlockChange);
     private final FidorialPermissionRegistry permissionRegistry = new FidorialPermissionRegistry();
+    private final FidorialItemRegistry itemRegistry = new FidorialItemRegistry();
     private final FidorialMobRegistry mobRegistry = new FidorialMobRegistry();
     private final JavaPluginManager pluginManager =
             new JavaPluginManager(this, events, services, permissionRegistry, config.pluginsPath());
@@ -539,6 +541,11 @@ public final class FidorialServer implements Server {
     @Override
     public FidorialMobRegistry mobs() {
         return mobRegistry;
+    }
+
+    @Override
+    public FidorialItemRegistry items() {
+        return itemRegistry;
     }
 
     public FidorialBiomeRegistry biomeRegistry() {

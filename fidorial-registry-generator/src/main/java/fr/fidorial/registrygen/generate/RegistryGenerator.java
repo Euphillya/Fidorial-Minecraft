@@ -3,6 +3,7 @@ package fr.fidorial.registrygen.generate;
 import fr.fidorial.registrygen.model.BlockReportDefinition;
 import fr.fidorial.registrygen.model.PacketCatalogs;
 import fr.fidorial.registrygen.model.PrismarineBlockLightPropertiesDefinition;
+import fr.fidorial.registrygen.model.PrismarineItemDefinition;
 import fr.fidorial.registrygen.model.ProtocolIdRegistries;
 import fr.fidorial.registrygen.model.ProtocolIdTarget;
 import fr.fidorial.registrygen.model.RegistriesHolder;
@@ -16,6 +17,7 @@ import fr.fidorial.registrygen.model.SupportedRegistries;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +45,9 @@ public final class RegistryGenerator {
     private final PrismarineBlockReportParser prismarineBlockReportParser;
     private final BlockStateGenerator blockStateGenerator;
     private final DimensionTypesGenerator dimensionTypesGenerator;
+    private final PrismarineItemReportParser prismarineItemReportParser;
+    private final ItemPropertiesGenerator itemPropertiesGenerator;
+    private final FrozenRegistriesGenerator frozenRegistriesGenerator;
 
     /**
      * Creates a registry generator using the standard parser and
@@ -104,6 +109,9 @@ public final class RegistryGenerator {
         this.prismarineBlockReportParser = Objects.requireNonNull(prismarineBlockReportParser, "prismarineBlockReportParser");
         this.blockStateGenerator = Objects.requireNonNull(blockStateGenerator, "blockStateGenerator");
         this.dimensionTypesGenerator = Objects.requireNonNull(dimensionTypesGenerator, "dimensionTypesGenerator");
+        this.prismarineItemReportParser = new PrismarineItemReportParser();
+        this.itemPropertiesGenerator = new ItemPropertiesGenerator();
+        this.frozenRegistriesGenerator = new FrozenRegistriesGenerator();
     }
 
     /**
@@ -276,6 +284,86 @@ public final class RegistryGenerator {
                 : Map.of();
 
         blockStateGenerator.generate(blocks, lighting, blockPackage, generatedPackage, registryDataPackage, blockTypeKeysPackage, outputDirectory);
+    }
+
+    /**
+     * Generates {@code ItemProperties} from Mojang's item registry and Prismarine's
+     * items report.
+     *
+     * @param registriesJson      path to Mojang's {@code registries.json}
+     * @param prismarineItemsJson path to Prismarine's {@code items.json}
+     * @param outputDirectory     generated Java source root
+     * @param registryDataPackage package the generated class is written into
+     * @param itemKeysPackage     package holding the generated {@code ItemKeys} class
+     *
+     * @throws IOException if parsing or source generation fails
+     */
+    public void generateItemProperties(final Path registriesJson,
+                                       final Path prismarineItemsJson,
+                                       final Path outputDirectory,
+                                       final String registryDataPackage,
+                                       final String itemKeysPackage) throws IOException {
+
+        Objects.requireNonNull(registriesJson, "registriesJson");
+        Objects.requireNonNull(prismarineItemsJson, "prismarineItemsJson");
+        Objects.requireNonNull(outputDirectory, "outputDirectory");
+
+        validateInput(registriesJson);
+
+        final RegistriesHolder registries = parser.parse(registriesJson);
+        final Optional<RegistryDefinition> items = registries.registry(SupportedRegistries.ITEM.identifier());
+
+        if (items.isEmpty()) {
+            System.out.println("Registry missing from report: " + SupportedRegistries.ITEM.identifier());
+            return;
+        }
+
+        final Map<String, PrismarineItemDefinition> prismarineItems =
+                prismarineItemReportParser.parse(prismarineItemsJson);
+
+        Files.createDirectories(outputDirectory);
+
+        itemPropertiesGenerator.generate(
+                items.get().entries(),
+                prismarineItems,
+                registryDataPackage,
+                itemKeysPackage,
+                outputDirectory);
+    }
+
+    /**
+     * Generates {@code FrozenRegistries} from Mojang's registry report.
+     *
+     * @param registriesJson      path to Mojang's {@code registries.json}
+     * @param outputDirectory     generated Java source root
+     * @param registryDataPackage package the class is written into
+     * @param frozenRegistries    namespaced identifiers of the registries to emit
+     * @throws IOException if a registry is missing, or if generation fails
+     */
+    public void generateFrozenRegistries(final Path registriesJson,
+                                         final Path outputDirectory,
+                                         final String registryDataPackage,
+                                         final List<String> frozenRegistries) throws IOException {
+
+        Objects.requireNonNull(registriesJson, "registriesJson");
+        Objects.requireNonNull(outputDirectory, "outputDirectory");
+        Objects.requireNonNull(registryDataPackage, "registryDataPackage");
+        Objects.requireNonNull(frozenRegistries, "frozenRegistries");
+
+        validateInput(registriesJson);
+
+        final RegistriesHolder registries = parser.parse(registriesJson);
+        final List<RegistryDefinition> resolved = new ArrayList<>();
+
+        for (final String identifier : frozenRegistries) {
+            resolved.add(registries.registry(identifier).orElseThrow(() -> new IOException(
+                    "Registry '" + identifier + "' is absent from " + registriesJson
+                            + "; it cannot be emitted as a frozen registry.")));
+        }
+
+        Files.createDirectories(outputDirectory);
+
+        frozenRegistriesGenerator.generate(resolved, registryDataPackage, outputDirectory);
     }
 
     /**

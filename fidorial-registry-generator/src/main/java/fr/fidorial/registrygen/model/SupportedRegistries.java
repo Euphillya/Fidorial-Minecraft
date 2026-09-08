@@ -29,6 +29,8 @@ public final class SupportedRegistries {
 
     public static final RegistryTypeDefinition DIMENSION_TYPE = registry("minecraft:dimension_type", "DimensionType", RegistrySync.DYNAMIC);
 
+    public static final RegistryTypeDefinition ITEM = registry("minecraft:item", "Item");
+
     public static final List<RegistryTypeDefinition> ALL = List.of(
             registry("minecraft:attribute", "Attribute"),
             registry("minecraft:banner_pattern", "BannerPattern", RegistrySync.DYNAMIC),
@@ -50,7 +52,7 @@ public final class SupportedRegistries {
             registry("minecraft:game_event", "GameEvent"),
             registry("minecraft:game_rule", "GameRule"),
             registry("minecraft:instrument", "Instrument", RegistrySync.DYNAMIC),
-            registry("minecraft:item", "Item", RegistrySync.FROZEN),
+            ITEM,
             registry("minecraft:jukebox_song", "JukeboxSong", RegistrySync.DYNAMIC),
             registry("minecraft:map_decoration_type", "MapDecorationType"),
             registry("minecraft:menu", "MenuType"),

@@ -17,7 +17,7 @@ import fr.fidorial.command.argument.resolvers.selector.PlayerSelectorArgumentRes
 import fr.fidorial.entity.Entity;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.entity.Player;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.registry.RegistryKey;
 import fr.fidorial.registry.TypedKey;
 import fr.fidorial.world.World;

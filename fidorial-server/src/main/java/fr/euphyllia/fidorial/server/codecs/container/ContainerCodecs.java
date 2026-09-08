@@ -1,10 +1,12 @@
-package fr.euphyllia.fidorial.server.entity.player.storage;
+package fr.euphyllia.fidorial.server.codecs.container;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import fr.euphyllia.fidorial.server.codecs.item.ItemStackCodecs;
 import fr.fidorial.inventory.Container;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.data.DataComponentMap;
 import io.papermc.adventurex.nbt.dfu.BinaryTagOps;
 import net.kyori.adventure.nbt.BinaryTagIO;
 import net.kyori.adventure.nbt.CompoundBinaryTag;
@@ -30,8 +32,11 @@ public final class ContainerCodecs {
     private static final MapCodec<SlotEntry> SLOT_ENTRY_CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Codec.BYTE.fieldOf("Slot").forGetter(e -> (byte) e.slot()),
             KEY_CODEC.fieldOf("id").forGetter(e -> e.stack().id()),
-            Codec.INT.fieldOf("count").forGetter(e -> e.stack().count())
-    ).apply(instance, (slot, id, count) -> new SlotEntry(slot & 0xFF, new ItemStack(id, count))));
+            Codec.INT.fieldOf("count").forGetter(e -> e.stack().count()),
+            ItemStackCodecs.COMPONENT_MAP_CODEC.optionalFieldOf("components", DataComponentMap.EMPTY)
+                    .forGetter(e -> e.stack().components())
+    ).apply(instance, (slot, id, count, components) ->
+            new SlotEntry(slot & 0xFF, new ItemStack(id, count, components))));
 
     public static <C extends Container> Codec<C> containerCodec(final Supplier<C> factory) {
         return SLOT_ENTRY_CODEC.codec().listOf().xmap(

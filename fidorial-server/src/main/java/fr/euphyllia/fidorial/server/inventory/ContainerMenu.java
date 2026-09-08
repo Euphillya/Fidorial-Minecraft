@@ -5,8 +5,8 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundContainerClickPacket;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.fidorial.inventory.Container;
-import fr.fidorial.inventory.ItemStack;
 import fr.fidorial.inventory.PlayerInventory;
+import fr.fidorial.item.ItemStack;
 import net.kyori.adventure.text.Component;
 
 import java.util.ArrayList;
@@ -48,11 +48,10 @@ public abstract class ContainerMenu {
         if (a.isEmpty() || b.isEmpty()) {
             return false;
         }
+
         return a.id().equals(b.id())
-                && java.util.Objects.equals(a.customName(), b.customName())
-                && java.util.Objects.equals(a.itemName(), b.itemName())
-                && a.lore().equals(b.lore())
-                && a.attributeModifiers().equals(b.attributeModifiers());
+                && a.components().equals(b.components())
+                && a.count() < maxStackSize(a);
     }
 
     private static int maxStackSize(final ItemStack stack) {

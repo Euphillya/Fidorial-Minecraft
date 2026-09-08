@@ -7,8 +7,8 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.ItemStackWriter;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
-import fr.fidorial.inventory.ItemStack;
 import fr.fidorial.inventory.PlayerInventory;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.registry.keys.BlockTypeKeys;
 import net.kyori.adventure.key.Key;
 

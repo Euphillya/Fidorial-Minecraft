@@ -18,7 +18,7 @@ import fr.fidorial.command.argument.ArgumentTypes;
 import fr.fidorial.command.argument.resolvers.BlockPosResolver;
 import fr.fidorial.command.argument.resolvers.NbtPathResolver;
 import fr.fidorial.entity.Player;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.registry.RegistryKey;
 import fr.fidorial.registry.data.SoundEvent;
 import fr.fidorial.scheduler.RegionTps;
@@ -183,7 +183,7 @@ public final class ApiTestCommand {
                         .then(literal("hide")
                                 .requires(source -> {
                                     final CommandSender sender = source.sender();
-                                    if (!(sender instanceof Player player)) {
+                                    if (!(sender instanceof final Player player)) {
                                         return false;
                                     }
 
@@ -193,7 +193,7 @@ public final class ApiTestCommand {
                                         .suggests((ctx, builder) -> {
                                             final CommandSender sender = ctx.getSource().sender();
 
-                                            if (!(sender instanceof Player player)) {
+                                            if (!(sender instanceof final Player player)) {
                                                 return builder.buildFuture();
                                             }
 
@@ -210,7 +210,7 @@ public final class ApiTestCommand {
                 .build();
     }
 
-    private static int reenterConfigurationPhase(CommandContext<CommandSource> ctx) {
+    private static int reenterConfigurationPhase(final CommandContext<CommandSource> ctx) {
         plugin.server().sendMessage(Component.text("[TestPlugin] Resending all players to the CONFIGURATION phase..."));
         plugin.server().onlinePlayers().forEach(Player::enterConfigurationPhase);
         plugin.server().sendMessage(Component.text("[TestPlugin] Resent ")
@@ -619,7 +619,7 @@ public final class ApiTestCommand {
                 .lifetime(ClickCallback.DEFAULT_LIFETIME)
                 .build();
 
-        Component callbackComponent = Component.text("[Click me!]", NamedTextColor.GREEN).clickEvent(ClickEvent.callback(callback, options));
+        final Component callbackComponent = Component.text("[Click me!]", NamedTextColor.GREEN).clickEvent(ClickEvent.callback(callback, options));
         ctx.getSource().sender().sendMessage(callbackComponent);
         return Command.SINGLE_SUCCESS;
     }

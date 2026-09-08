@@ -4,6 +4,7 @@ import fr.euphyllia.fidorial.testplugin.command.ApiTestCommand;
 import fr.euphyllia.fidorial.testplugin.command.BiomeCommand;
 import fr.euphyllia.fidorial.testplugin.command.CustomMobCommand;
 import fr.euphyllia.fidorial.testplugin.command.DialogCommand;
+import fr.euphyllia.fidorial.testplugin.command.ItemCommand;
 import fr.euphyllia.fidorial.testplugin.command.PregenCommand;
 import fr.euphyllia.fidorial.testplugin.command.WorldgenCommand;
 import fr.euphyllia.fidorial.testplugin.dialog.TestDialogs;
@@ -287,5 +288,6 @@ public final class TestPlugin implements Plugin {
         registry.register(context.meta(), new WorldgenCommand(this).create());
         registry.register(context.meta(), new DialogCommand(this).create());
         registry.register(context.meta(), new CustomMobCommand(this).create());
+        registry.register(context.meta(), new ItemCommand(this).create());
     }
 }

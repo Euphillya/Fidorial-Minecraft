@@ -15,7 +15,7 @@ import fr.fidorial.dialog.DialogRegistry;
 import fr.fidorial.dialog.MultiActionDialog;
 import fr.fidorial.dialog.NoticeDialog;
 import fr.fidorial.dialog.ServerLinksDialog;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.nbt.CompoundBinaryTag;
 import net.kyori.adventure.text.Component;

@@ -82,6 +82,9 @@ module fr.fidorial {
     exports fr.fidorial.world.environment;
     exports fr.fidorial.world.dimension;
     exports fr.fidorial.world.dimension.types;
+    exports fr.fidorial.item;
+    exports fr.fidorial.item.data;
+    exports fr.fidorial.item.component;
 
     requires com.google.common;
     requires com.google.gson;

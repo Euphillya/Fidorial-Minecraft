@@ -1,4 +1,4 @@
-package fr.euphyllia.fidorial.server.entity.player.storage;
+package fr.euphyllia.fidorial.server.codecs.container;
 
 import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
 import fr.fidorial.inventory.PlayerInventory;

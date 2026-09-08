@@ -6,6 +6,7 @@ import fr.fidorial.entity.OfflinePlayers;
 import fr.fidorial.entity.Player;
 import fr.fidorial.entity.mob.MobRegistry;
 import fr.fidorial.event.EventBus;
+import fr.fidorial.item.ItemRegistry;
 import fr.fidorial.moderation.BanManager;
 import fr.fidorial.moderation.WhitelistManager;
 import fr.fidorial.permission.PermissionRegistry;
@@ -188,6 +189,18 @@ public interface Server extends ForwardingAudience {
      */
     @Contract(pure = true)
     MobRegistry mobs();
+
+    /**
+     * Gets the server-wide item registry.
+     *
+     * <p>Where plugins {@linkplain ItemRegistry#register register} items of their own,
+     * rendered client-side as the vanilla item they name.</p>
+     *
+     * @return the item registry
+     * @since 0.1.0
+     */
+    @Contract(pure = true)
+    ItemRegistry items();
 
     Collection<? extends World> worlds();
 

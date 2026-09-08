@@ -7,6 +7,7 @@ import fr.fidorial.event.player.PlayerJoinEvent;
 import fr.fidorial.event.player.PlayerQuitEvent;
 import fr.fidorial.inventory.EnderChestInventory;
 import fr.fidorial.inventory.PlayerInventory;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.permission.PermissionHolder;
 import fr.fidorial.world.Location;
 import fr.fidorial.world.World;
@@ -88,6 +89,38 @@ public interface Player extends LivingEntity, PermissionHolder, CommandSource, C
 
     EnderChestInventory enderChest();
 
+    /**
+     * @return the hotbar slot ({@code 0}-{@code 8}) currently selected by this player
+     * @since 0.1.0
+     */
+    int selectedSlot();
+
+    /**
+     * @param slot the hotbar slot to select, {@code 0}-{@code 8}
+     * @throws IllegalArgumentException if {@code slot} is out of {@code [0, 8]}
+     * @since 0.1.0
+     */
+    void setSelectedSlot(int slot);
+
+    /**
+     * @return the stack in the currently {@linkplain #selectedSlot() selected} hotbar slot,
+     * never {@code null} ({@link ItemStack#EMPTY} when nothing is held)
+     * @since 0.1.0
+     */
+    default ItemStack heldItem() {
+        return inventory().get(selectedSlot());
+    }
+
+    /**
+     * Replaces the stack in the currently {@linkplain #selectedSlot() selected} hotbar slot.
+     *
+     * @param stack the new stack, {@code null} is normalized to {@link ItemStack#EMPTY}
+     * @since 0.1.0
+     */
+    default void setHeldItem(final @Nullable ItemStack stack) {
+        inventory().set(selectedSlot(), stack);
+    }
+
     GameMode gameMode();
 
     void setGameMode(GameMode gameMode);
@@ -154,4 +187,15 @@ public interface Player extends LivingEntity, PermissionHolder, CommandSource, C
      * Any reference to this {@link Player} held before this call should be considered stale.
      */
     void enterConfigurationPhase();
+
+    /**
+     * Updates the player's inventory on the client side.
+     *
+     * <p>This is useful when the server has changed the inventory contents, and the client needs to be
+     * informed of those changes. This method should be called after any modifications to the player's
+     * inventory, such as adding or removing items, to ensure that the client sees the correct state.
+     *
+     * @since 0.1.0
+     */
+    void updateInventory();
 }

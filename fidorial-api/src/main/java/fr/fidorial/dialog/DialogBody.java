@@ -1,6 +1,6 @@
 package fr.fidorial.dialog;
 
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.ComponentLike;
 import org.jetbrains.annotations.Contract;
