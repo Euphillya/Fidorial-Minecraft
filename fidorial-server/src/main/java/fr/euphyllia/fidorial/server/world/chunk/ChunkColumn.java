@@ -215,26 +215,14 @@ public final class ChunkColumn {
         return s == null ? BlockState.of(BlockTypeKeys.AIR.key()) : s.getBlock(localX, worldY & 15, localZ);
     }
 
-    public long[] computeHeightmap(final Predicate<BlockState> solid) {
-        final int bits = BitPacking.bitsFor(height + 1, 1);
-        final int[] values = new int[256];
-        for (int z = 0; z < 16; z++) {
-            for (int x = 0; x < 16; x++) {
-                int top = minY;
-                for (int worldY = minY + height - 1; worldY >= minY; worldY--) {
-                    if (solid.test(getBlock(x, worldY, z))) {
-                        top = worldY + 1;
-                        break;
-                    }
-                }
-                values[z * 16 + x] = top - minY;
-            }
-        }
-        return BitPacking.pack(values, bits);
+    public static final Predicate<BlockState> WORLD_SURFACE = state -> !state.isAir();
+    public static final Predicate<BlockState> MOTION_BLOCKING = state -> !state.isAir();
+
+    public int heightmapBits() {
+        return BitPacking.bitsFor(height + 1, 1);
     }
 
-    public long[] computeMotionBlockingHeightmap() {
-        final int bits = BitPacking.bitsFor(height + 1, 1);
+    public long[] computeHeightmap(final Predicate<BlockState> occupied) {
         final int[] values = new int[256];
         int remaining = 256;
 
@@ -249,7 +237,7 @@ public final class ChunkColumn {
                     if (values[col] != 0) continue; // already found from a higher section
 
                     for (int ly = 15; ly >= 0; ly--) {
-                        if (!section.getBlock(x, ly, z).isAir()) {
+                        if (occupied.test(section.getBlock(x, ly, z))) {
                             values[col] = sectionBaseY + ly + 1 - minY;
                             remaining--;
                             break;
@@ -258,7 +246,15 @@ public final class ChunkColumn {
                 }
             }
         }
-        return BitPacking.pack(values, bits);
+        return BitPacking.pack(values, heightmapBits());
+    }
+
+    public long[] computeMotionBlockingHeightmap() {
+        return computeHeightmap(MOTION_BLOCKING);
+    }
+
+    public long[] computeWorldSurfaceHeightmap() {
+        return computeHeightmap(WORLD_SURFACE);
     }
 
     public int topNonEmptySectionY() {
