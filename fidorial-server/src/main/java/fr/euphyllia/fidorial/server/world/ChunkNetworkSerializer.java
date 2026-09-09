@@ -29,6 +29,9 @@ public final class ChunkNetworkSerializer {
     private final FidorialBiomeRegistry biomes;
     private static final int MAX_INDIRECT_BIOME_BITS = 3;
 
+    private static final int HEIGHTMAP_WORLD_SURFACE = 1;
+    private static final int HEIGHTMAP_MOTION_BLOCKING = 4;
+
     public ChunkNetworkSerializer(final BlockStateRegistry blockRegistry, final FidorialBiomeRegistry biomes) {
         this.blockRegistry = blockRegistry;
         this.biomes = biomes;
@@ -37,7 +40,7 @@ public final class ChunkNetworkSerializer {
     public void writeChunk(final PacketBuffer p, final ByteBufAllocator alloc, final ChunkColumn chunk, final boolean hasSkylight) {
         p.writeInt(chunk.chunkX());
         p.writeInt(chunk.chunkZ());
-        p.writeVarInt(0); // heightmaps : 0 → le client recalcule
+        writeHeightmaps(p, chunk);
 
         final byte[] sections = buildSections(alloc, chunk);
         p.writeByteArray(sections);
@@ -82,6 +85,23 @@ public final class ChunkNetworkSerializer {
             p.writeNbt(blockEntity.data());
             LOGGER.debug("BlockEntity : {} protocolId : {}", blockEntity.type(), blockEntity.protocolId());
         }
+    }
+
+    private void writeHeightmaps(final PacketBuffer p, final ChunkColumn chunk) {
+        if (false) { // Todo :activate this active condition: Bikini Bottom
+            p.writeVarInt(0);
+            return;
+        }
+        final long[] motionBlocking = chunk.computeMotionBlockingHeightmap();
+        final long[] worldSurface = chunk.computeWorldSurfaceHeightmap();
+
+        p.writeVarInt(2);
+
+        p.writeVarInt(HEIGHTMAP_WORLD_SURFACE);
+        p.writeLongArray(worldSurface);
+
+        p.writeVarInt(HEIGHTMAP_MOTION_BLOCKING);
+        p.writeLongArray(motionBlocking);
     }
 
     private byte[] buildSections(final ByteBufAllocator alloc, final ChunkColumn chunk) {
