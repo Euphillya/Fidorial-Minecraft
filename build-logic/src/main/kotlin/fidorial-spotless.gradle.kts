@@ -5,7 +5,6 @@ plugins {
 spotless {
     format("misc") {
         target(
-            "*.gradle.kts",
             "*.md",
             "*.properties",
             "*.json",

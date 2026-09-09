@@ -5,14 +5,10 @@ import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.component.ModuleComponentIdentifier
-import org.gradle.api.artifacts.result.ResolvedArtifactResult
-import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.plugins.JavaPluginExtension
-import org.gradle.api.provider.ListProperty
 import org.gradle.api.tasks.CacheableTask
-import org.gradle.api.tasks.Classpath
-import org.gradle.api.tasks.Internal
+import org.gradle.api.tasks.Nested
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.TaskAction
@@ -29,11 +25,8 @@ import org.gradle.kotlin.dsl.register
 @CacheableTask
 abstract class GeneratePluginLibraryLockTask : DefaultTask() {
 
-    @get:Internal
-    abstract val libraryArtifacts: ListProperty<ResolvedArtifactResult>
-
-    @get:Classpath
-    abstract val libraryFiles: ConfigurableFileCollection
+    @get:Nested
+    abstract val libraries: ResolvedLibrariesList
 
     @get:OutputDirectory
     abstract val outputDirectory: DirectoryProperty
@@ -43,8 +36,9 @@ abstract class GeneratePluginLibraryLockTask : DefaultTask() {
         val output = outputDirectory.get().asFile
         output.deleteRecursively()
 
-        val lines = libraryArtifacts.get().map { artifact ->
-            val identifier = artifact.id.componentIdentifier
+        val lines = libraries.artifacts().map { artifact ->
+            val identifier = artifact.identifier.componentIdentifier
+
             if (identifier !is ModuleComponentIdentifier) {
                 throw GradleException(
                     "${artifact.file} has no Maven coordinates, so the server cannot download it. " +
@@ -52,16 +46,22 @@ abstract class GeneratePluginLibraryLockTask : DefaultTask() {
                             "and shade it yourself.",
                 )
             }
+
             val coordinates = LibraryLists.coordinatesOf(identifier, artifact.file)
+
             "$coordinates ${LibraryLists.sha256(artifact.file)} ${artifact.file.length()}"
-        }.sorted()
+        }
 
         val file = output.resolve("META-INF/fidorial/libraries.list")
         file.parentFile.mkdirs()
+
         file.writeText(
-            LibraryLists.header("Downloaded by the server before this plugin is loaded.", name) +
-                    lines.joinToString("\n", postfix = "\n"),
+            LibraryLists.header(
+                "Downloaded by the server before this plugin is loaded.",
+                name,
+            ) + lines.sorted().joinToString("\n", postfix = "\n"),
         )
+
         logger.lifecycle("Plugin library lock: ${lines.size} artifact(s)")
     }
 }
@@ -75,10 +75,12 @@ abstract class GeneratePluginLibraryLockTask : DefaultTask() {
 class PluginLibrariesPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
-        val library = project.configurations.create("fidorialLibrary") {
-            isCanBeConsumed = false
-            isCanBeResolved = true
+        val library = project.configurations.dependencyScope("fidorialLibrary") {
             description = "Libraries the server downloads before loading this plugin"
+        }
+
+        val libraryResolvable = project.configurations.resolvable("fidorialLibraryResolvable") {
+            extendsFrom(library)
         }
 
         project.configurations.named("compileOnly") { extendsFrom(library) }
@@ -87,9 +89,12 @@ class PluginLibrariesPlugin : Plugin<Project> {
         val lock = project.tasks.register<GeneratePluginLibraryLockTask>("generateLibraryLock") {
             group = "build"
             description = "Writes META-INF/fidorial/libraries.list into the plugin jar."
-            libraryArtifacts.set(library.incoming.artifacts.resolvedArtifacts)
-            libraryFiles.from(library)
-            outputDirectory.set(project.layout.buildDirectory.dir("generated/fidorial-libraries"))
+
+            libraries.setFrom(libraryResolvable.map { it.incoming.artifacts })
+
+            outputDirectory.set(
+                project.layout.buildDirectory.dir("generated/fidorial-libraries"),
+            )
         }
 
         project.extensions.getByType<JavaPluginExtension>()

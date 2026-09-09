@@ -3,13 +3,17 @@ package fr.euphyllia.fidorial.gradle.libraries
 import org.gradle.api.DefaultTask
 import org.gradle.api.GradleException
 import org.gradle.api.artifacts.component.ModuleComponentIdentifier
-import org.gradle.api.artifacts.result.ResolvedArtifactResult
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.SetProperty
-import org.gradle.api.tasks.*
+import org.gradle.api.tasks.CacheableTask
+import org.gradle.api.tasks.Classpath
+import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.Nested
+import org.gradle.api.tasks.OutputDirectory
+import org.gradle.api.tasks.TaskAction
 import java.io.File
 
 /**
@@ -25,13 +29,9 @@ import java.io.File
 @CacheableTask
 abstract class PrepareBootstrapPayloadTask : DefaultTask() {
 
-    /** `configurations.runtimeClasspath.incoming.artifacts.resolvedArtifacts` — this is what carries the coordinates. */
-    @get:Internal
-    abstract val runtimeArtifacts: ListProperty<ResolvedArtifactResult>
-
-    /** The same files, declared properly so Gradle can decide whether to rerun us. */
-    @get:Classpath
-    abstract val runtimeFiles: ConfigurableFileCollection
+    /** Resolved runtime artifacts, including their Maven coordinates. */
+    @get:Nested
+    abstract val runtime: ResolvedLibrariesList
 
     /** Jars to bundle that are not on the runtime classpath — chiefly the server's own jar. */
     @get:Classpath
@@ -79,10 +79,13 @@ abstract class PrepareBootstrapPayloadTask : DefaultTask() {
         // wins over whatever a repository might serve under the same package name.
         extraBundled.files.forEach { bundled[it.name] = it }
 
-        runtimeArtifacts.get().forEach { artifact ->
-            val identifier = artifact.id.componentIdentifier
+        runtime.artifacts().forEach { artifact ->
+            val identifier = artifact.identifier.componentIdentifier
+
             if (identifier is ModuleComponentIdentifier) {
-                if ("${identifier.group}:${identifier.module}" in excluded) return@forEach
+                if ("${identifier.group}:${identifier.module}" in excluded) {
+                    return@forEach
+                }
 
                 // A -SNAPSHOT is stored remotely under a timestamped name
                 // (foo-1.0-20250114.093312-7.jar) that only maven-metadata.xml knows about,
@@ -96,6 +99,7 @@ abstract class PrepareBootstrapPayloadTask : DefaultTask() {
                     } else {
                         null
                     }
+
                     if (pinned == null) {
                         snapshots += "${identifier.group}:${identifier.module}:${identifier.version}"
                         bundled[artifact.file.name] = artifact.file
@@ -104,16 +108,21 @@ abstract class PrepareBootstrapPayloadTask : DefaultTask() {
                         external[coordinates] = artifact.file
                         pinnedSnapshots += coordinates
                     }
+
                     return@forEach
                 }
 
                 val coordinates = LibraryLists.coordinatesOf(identifier, artifact.file)
                 val previous = external.put(coordinates, artifact.file)
+
                 if (previous != null && previous != artifact.file) {
-                    throw GradleException("two files resolved for $coordinates: $previous and ${artifact.file}")
+                    throw GradleException(
+                        "two files resolved for $coordinates: $previous and ${artifact.file}",
+                    )
                 }
             } else {
                 val previous = bundled.put(artifact.file.name, artifact.file)
+
                 if (previous != null && previous != artifact.file) {
                     throw GradleException(
                         "two bundled jars are named ${artifact.file.name} ($previous and ${artifact.file}); " +
@@ -143,18 +152,25 @@ abstract class PrepareBootstrapPayloadTask : DefaultTask() {
             file.copyTo(output.resolve(name), overwrite = true)
             "$name ${LibraryLists.sha256(file)} ${file.length()}"
         }
+
         val externalLines = external.toSortedMap().map { (coordinates, file) ->
             "$coordinates ${LibraryLists.sha256(file)} ${file.length()}"
         }
 
         output.resolve("bundled.list").writeText(
-            LibraryLists.header("Jars shipped inside the launcher, unpacked into libraries/.fidorial/.", name) +
-                    bundledLines.joinToString("\n", postfix = "\n"),
+            LibraryLists.header(
+                "Jars shipped inside the launcher, unpacked into libraries/.fidorial/.",
+                name,
+            ) + bundledLines.joinToString("\n", postfix = "\n"),
         )
+
         output.resolve("libraries.list").writeText(
-            LibraryLists.header("Downloaded at boot. Format: group:artifact:version[:classifier] sha256 size", name) +
-                    externalLines.joinToString("\n", postfix = "\n"),
+            LibraryLists.header(
+                "Downloaded at boot. Format: group:artifact:version[:classifier] sha256 size",
+                name,
+            ) + externalLines.joinToString("\n", postfix = "\n"),
         )
+
         // Written only when explicitly configured: an embedded list takes precedence over
         // the launcher's own defaults, so emitting one unconditionally would silently
         // disable every fallback mirror.
@@ -170,5 +186,4 @@ abstract class PrepareBootstrapPayloadTask : DefaultTask() {
                     "(${external.values.sumOf { it.length() } / (1024 * 1024)} MiB kept out of the release jar)",
         )
     }
-
 }
