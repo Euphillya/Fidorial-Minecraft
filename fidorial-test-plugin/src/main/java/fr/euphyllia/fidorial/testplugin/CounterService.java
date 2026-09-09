@@ -5,4 +5,3 @@ public interface CounterService {
 
     long current();
 }
-
