@@ -12,13 +12,28 @@ plugins {
     id("fr.fidorial.registry-generator")
 }
 
+val apiSurface =
+    configurations.dependencyScope("apiSurface") {
+        description = "fidorial-api and everything it re-exports to plugins"
+    }
+
+val bootstrapLauncher =
+    configurations.dependencyScope("bootstrapLauncher") {
+        description = "The launcher classes that sit at the root of the release jar"
+    }
+
+configurations.implementation {
+    extendsFrom(apiSurface, bootstrapLauncher)
+}
+
 repositories {
     maven("https://repo.faststats.dev/releases")
     maven("https://repo.lucko.me/")
 }
 
 dependencies {
-    implementation(projects.fidorialBootstrap)
+    apiSurface(projects.fidorialApi)
+
     implementation(libs.faststats.config)
     implementation(libs.faststats.core)
     implementation(libs.jline.ffm)
@@ -26,7 +41,6 @@ dependencies {
     implementation(libs.logback.classic)
     implementation(libs.netty.all)
     implementation(libs.classgraph)
-    implementation(projects.fidorialApi)
     implementation(projects.fidorialAuth)
     implementation(libs.dfu)
     implementation(libs.adventure.nbt.dfu)
@@ -47,6 +61,12 @@ dependencies {
     runtimeOnly(libs.netty.kqueue)
 
     annotationProcessor(projects.fidorialAnnotationProcessor)
+
+    bootstrapLauncher(projects.fidorialBootstrap)
+}
+
+fidorialBuild {
+    readUnnamedModules = setOf("fr.fidorial", "fr.fidorial.server")
 }
 
 fidorialBuild {
@@ -79,22 +99,16 @@ java {
     }
 }
 
-val apiSurface =
-    configurations.register("apiSurface") {
-        isCanBeConsumed = false
-        isCanBeResolved = true
-        description = "fidorial-api and everything it re-exports to plugins"
+val apiSurfaceResolvable =
+    configurations.resolvable("apiSurfaceResolvable") {
+        extendsFrom(apiSurface)
     }
-
-dependencies {
-    apiSurface(projects.fidorialApi)
-}
 
 val generateApiPackageIndex =
     tasks.register<GenerateApiPackageIndexTask>("generateApiPackageIndex") {
         group = "build"
         description = "Records which packages plugins must always load from the server."
-        apiSurface.from(configurations.named("apiSurface"))
+        apiSurface.from(apiSurfaceResolvable)
         outputDirectory.set(layout.buildDirectory.dir("generated/fidorial-api-index"))
     }
 
@@ -102,36 +116,28 @@ sourceSets.main {
     resources.srcDir(generateApiPackageIndex)
 }
 
-val bootstrapLauncher =
-    configurations.register("bootstrapLauncher") {
-        isCanBeConsumed = false
-        isCanBeResolved = true
-        isTransitive = false
-        description = "The launcher classes that sit at the root of the release jar"
-    }
-
-dependencies {
-    bootstrapLauncher(projects.fidorialBootstrap)
-}
-
 val bootstrapPayload =
     tasks.register<PrepareBootstrapPayloadTask>("prepareBootstrapPayload") {
         group = "build"
         description = "Splits the runtime classpath into bundled jars and downloadable libraries."
 
-        val runtimeClasspath = configurations.named("runtimeClasspath")
-        runtimeArtifacts.set(runtimeClasspath.flatMap { it.incoming.artifacts.resolvedArtifacts })
-        runtimeFiles.from(runtimeClasspath)
+        runtime.setFrom(configurations.runtimeClasspath.map { it.incoming.artifacts })
 
-        extraBundled.from(tasks.named("jar"))
+        extraBundled.from(tasks.jar)
 
         excludedModules.set(setOf("com.mojang:brigadier"))
 
         pinSnapshots.set(false)
 
-        repositories.set(emptyList<String>())
+        repositories.set(emptyList())
 
         outputDirectory.set(layout.buildDirectory.dir("bootstrap-payload"))
+    }
+
+val bootstrapLauncherResolvable =
+    configurations.resolvable("bootstrapLauncherResolvable") {
+        isTransitive = false
+        extendsFrom(bootstrapLauncher)
     }
 
 val bootstrapJar =
@@ -142,7 +148,7 @@ val bootstrapJar =
         archiveBaseName.set("Fidorial")
         archiveClassifier.set("")
 
-        from(zipTree(bootstrapLauncher.flatMap { it.elements.map { it.single().asFile } }))
+        from(zipTree(bootstrapLauncherResolvable.flatMap { it.elements.map { it.single().asFile } }))
         into("META-INF/fidorial") {
             from(bootstrapPayload)
         }
@@ -173,28 +179,29 @@ tasks.run {
     }
 }
 
-tasks.register<JavaExec>("testScenarios") {
-    description = "Run scenario tests against a real server"
-    group = "verification"
+val testScenarios =
+    tasks.register<JavaExec>("testScenarios") {
+        description = "Run scenario tests against a real server"
+        group = "verification"
 
-    val pluginsDir = layout.projectDirectory.dir("run/plugins").asFile
+        val pluginsDir = layout.projectDirectory.dir("run/plugins").asFile
 
-    standardInput = System.`in`
-    classpath(sourceSets.main.map { it.runtimeClasspath })
-    workingDir = layout.projectDirectory.file("build/tmp/scenario-tests").asFile
-    jvmArgs = listOf("--enable-native-access=ALL-UNNAMED")
-    mainClass = "fr.euphyllia.fidorial.server.testing.ScenarioTestMain"
-    args = listOf("fr.euphyllia.fidorial.server.tests", "fr.euphyllia.fidorial.testplugin.tests")
-    dependsOn(":fidorial-test-plugin:deployToRun")
-    doFirst {
-        workingDir.deleteRecursively()
-        workingDir.mkdirs()
-        pluginsDir.resolve("TestPlugin.jar").copyTo(workingDir.resolve("plugins/TestPlugin.jar"))
+        standardInput = System.`in`
+        classpath(sourceSets.main.map { it.runtimeClasspath })
+        workingDir = layout.projectDirectory.file("build/tmp/scenario-tests").asFile
+        jvmArgs = listOf("--enable-native-access=ALL-UNNAMED")
+        mainClass = "fr.euphyllia.fidorial.server.testing.ScenarioTestMain"
+        args = listOf("fr.euphyllia.fidorial.server.tests", "fr.euphyllia.fidorial.testplugin.tests")
+        dependsOn(":fidorial-test-plugin:deployToRun")
+        doFirst {
+            workingDir.deleteRecursively()
+            workingDir.mkdirs()
+            pluginsDir.resolve("TestPlugin.jar").copyTo(workingDir.resolve("plugins/TestPlugin.jar"))
+        }
     }
-}
 
 tasks.test {
-    dependsOn("testScenarios")
+    dependsOn(testScenarios)
 }
 
 tasks.withType<GenerateBlockStatesTask>().configureEach {

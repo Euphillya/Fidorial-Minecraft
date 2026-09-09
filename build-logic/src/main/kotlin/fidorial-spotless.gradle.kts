@@ -3,11 +3,8 @@ plugins {
 }
 
 spotless {
-    ratchetFrom("origin/master")
-
     format("misc") {
         target(
-            "*.gradle.kts",
             "*.md",
             "*.properties",
             "*.json",

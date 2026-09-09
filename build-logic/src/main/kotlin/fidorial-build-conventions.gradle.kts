@@ -25,8 +25,8 @@ tasks.withType<JavaCompile>().configureEach {
     fidorialBuild.readUnnamedModules.get().forEach {
         options.compilerArgs.addAll(
             listOf(
-            "--add-reads",
-            "$it=ALL-UNNAMED"
+                "--add-reads",
+                "$it=ALL-UNNAMED"
             )
         )
     }

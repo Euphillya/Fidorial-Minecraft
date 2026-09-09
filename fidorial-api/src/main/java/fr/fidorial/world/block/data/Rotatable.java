@@ -12,4 +12,3 @@ public interface Rotatable extends BlockData {
         return (Rotatable) with("rotation", String.valueOf(rotation));
     }
 }
-

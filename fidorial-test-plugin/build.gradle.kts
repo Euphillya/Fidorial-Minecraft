@@ -20,6 +20,10 @@ dependencies {
     fidorialLibrary("org.apache.commons:commons-text:1.12.0")
 }
 
+fidorialBuild {
+    readUnnamedModules = setOf("fr.fidorial.test", "fr.fidorial")
+}
+
 tasks.jar {
     enabled = false
 }

@@ -6,6 +6,5 @@ import org.jspecify.annotations.Nullable;
 @FunctionalInterface
 public interface BlockGetter {
 
-    @Nullable
-    BlockData blockAt(BlockPos pos);
+    @Nullable BlockData blockAt(BlockPos pos);
 }
