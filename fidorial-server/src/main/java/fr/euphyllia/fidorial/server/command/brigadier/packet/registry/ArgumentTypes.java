@@ -11,6 +11,7 @@ import fr.euphyllia.fidorial.server.command.brigadier.argument.entity.UuidArgume
 import fr.euphyllia.fidorial.server.command.brigadier.argument.generic.TimeArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.item.ItemArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.item.ItemPredicateArgument;
+import fr.euphyllia.fidorial.server.command.brigadier.argument.item.component.SwingAnimationTypeArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.AngleArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.BlockPositionArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.DimensionArgument;
@@ -62,6 +63,7 @@ public final class ArgumentTypes {
         register(new TimeArgument.Info(), ArgumentTypeIds.TIME_ARGUMENT_ID);
         register(new ResourceArgument.Info<>(), ArgumentTypeIds.RESOURCE_ARGUMENT_ID);
         register(new ResourceKeyArgument.Info<>(), ArgumentTypeIds.RESOURCE_KEY_ARGUMENT_ID);
+        register(new SwingAnimationTypeArgument.Info(), ArgumentTypeIds.SWING_ANIMATION_ARGUMENT_ID);
         register(new UuidArgument.Info(), ArgumentTypeIds.UUID_ARGUMENT_ID);
 
         ArgumentTypeRegistry.register(new ForcedSuggestionsArgumentType.Info()); // custom arguments
