@@ -1,7 +1,7 @@
-extra.set("readUnnamedModules", setOf("fr.fidorial"))
-
 plugins {
     `maven-publish`
+    id("fidorial-spotless")
+    id("fidorial-build-conventions")
     id("fr.fidorial.registry-generator")
 }
 
@@ -17,6 +17,10 @@ dependencies {
     api(platform(libs.adventure.bom))
     api(libs.fastutil)
     compileOnly(libs.jetbrains.annotations)
+}
+
+fidorialBuild {
+    readUnnamedModules = setOf("fr.fidorial")
 }
 
 java {
@@ -50,7 +54,7 @@ tasks.javadoc {
 
     opt.bottom(
         "MIT © 2026 Euphyllia Bierque — " +
-                "<a href=\"https://github.com/Euphillya/Fidorial\">GitHub</a>"
+            "<a href=\"https://github.com/Euphillya/Fidorial\">GitHub</a>",
     )
 }
 
@@ -79,46 +83,50 @@ publishing {
     }
 }
 
+val verifyRegistryDataset =
+    tasks.register("verifyRegistryDataset") {
+        group = "verification"
+        description = "Fails if the generated registry dataset is missing from the packaged resources."
 
-val verifyRegistryDataset = tasks.register("verifyRegistryDataset") {
-    group = "verification"
-    description = "Fails if the generated registry dataset is missing from the packaged resources."
+        dependsOn(tasks.processResources)
 
-    dependsOn(tasks.processResources)
+        val datasetDirectory =
+            sourceSets.main
+                .get()
+                .output.resourcesDir!!
+                .resolve("fidorial-data")
+        val expected = listOf("registries_frozen.json", "registries_dynamic.json")
 
-    val datasetDirectory = sourceSets.main.get().output.resourcesDir!!.resolve("fidorial-data")
-    val expected = listOf("registries_frozen.json", "registries_dynamic.json")
-
-    doLast {
-        val missing = expected.filter { datasetDirectory.resolve(it).length() <= 2 }
-        if (missing.isNotEmpty()) {
-            throw GradleException(
-                "Registry dataset missing or empty: ${missing.joinToString()}. " +
-                        "Run ':fidorial-api:generateRegistries'."
-            )
+        doLast {
+            val missing = expected.filter { datasetDirectory.resolve(it).length() <= 2 }
+            if (missing.isNotEmpty()) {
+                throw GradleException(
+                    "Registry dataset missing or empty: ${missing.joinToString()}. " +
+                        "Run ':fidorial-api:generateRegistries'.",
+                )
+            }
         }
     }
-}
 
 tasks.named("check") { dependsOn(verifyRegistryDataset) }
 
 fidorialRegistryGenerator {
-    minecraftVersion.set("26.2")
+    minecraftVersion.set(providers.gradleProperty("minecraftVersion"))
 
     generatedSourcesDirectory.set(
         layout.projectDirectory.dir(
-            "src/generated/java"
-        )
+            "src/generated/java",
+        ),
     )
 
     // "--server" additionally dumps the vanilla tag files the dataset is built from.
     dataGeneratorArguments.set(
-        listOf("--reports", "--server")
+        listOf("--reports", "--server"),
     )
 
     registriesDatasetDirectory.set(
         layout.projectDirectory.dir(
-            "src/generated/resources/fidorial-data"
-        )
+            "src/generated/resources/fidorial-data",
+        ),
     )
 }

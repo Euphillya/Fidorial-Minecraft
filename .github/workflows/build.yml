@@ -59,10 +59,10 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Format check
-        run: ./gradlew spotlessCheck --no-daemon --no-configuration-cache
+        run: ./gradlew spotlessCheck --no-daemon
 
       - name: Build and test
-        run: ./gradlew build --no-daemon --no-configuration-cache
+        run: ./gradlew build --no-daemon
 
       - name: Collect jar metadata
         id: jar

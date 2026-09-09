@@ -1,7 +1,7 @@
-extra.set("readUnnamedModules", setOf("fr.fidorial.test", "fr.fidorial"))
-
 plugins {
+    id("fidorial-spotless")
     id("com.gradleup.shadow")
+    id("fidorial-build-conventions")
     id("fr.fidorial.plugin-libraries")
 }
 
@@ -16,6 +16,10 @@ dependencies {
     fidorialLibrary("org.apache.commons:commons-text:1.12.0")
 }
 
+fidorialBuild {
+    readUnnamedModules = setOf("fr.fidorial.test", "fr.fidorial")
+}
+
 tasks.jar {
     enabled = false
 }
@@ -25,12 +29,16 @@ tasks.shadowJar {
     archiveClassifier.set("")
 }
 
-val deployToRun = tasks.register<Copy>("deployToRun") {
-    from(tasks.shadowJar)
-    rename { "TestPlugin.jar" }
-    val destination = rootProject.layout.projectDirectory.dir("fidorial-server/run/plugins").asFile
-    into(destination)
-    doFirst {
-        destination.resolve("TestPlugin.jar").delete()
+val deployToRun =
+    tasks.register<Copy>("deployToRun") {
+        from(tasks.shadowJar)
+        rename { "TestPlugin.jar" }
+        val destination =
+            isolated.rootProject.projectDirectory
+                .dir("fidorial-server/run/plugins")
+                .asFile
+        into(destination)
+        doFirst {
+            destination.resolve("TestPlugin.jar").delete()
+        }
     }
-}
