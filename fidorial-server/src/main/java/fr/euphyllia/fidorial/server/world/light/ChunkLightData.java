@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class ChunkLightData {
     public static final int SECTION_BYTES = 2048;
 
+    public static final long ALL_SECTIONS = -1L;
+
     private static final byte[] FULL_SKY = fullSky();
 
     private static byte[] fullSky() {
@@ -30,6 +32,9 @@ public class ChunkLightData {
 
     private int skyFullFromY = Integer.MAX_VALUE;
 
+    private long dirtySections = ALL_SECTIONS;
+    private final boolean sectionMaskUnsupported;
+
     public ChunkLightData(final int minY, final int height) {
         this.minY = minY;
         this.minSectionY = minY >> 4;
@@ -38,6 +43,7 @@ public class ChunkLightData {
         this.skyLight = new byte[sectionCount][];
         this.heightmap = new int[256];
         Arrays.fill(this.heightmap, minY - 1);
+        this.sectionMaskUnsupported = sectionCount > 64;
     }
 
     public int minY() {
@@ -56,13 +62,47 @@ public class ChunkLightData {
         return (worldY >> 4) - minSectionY;
     }
 
+    private void markSection(final int sectionIndex) {
+        if (sectionIndex >= 0 && sectionIndex < 64) {
+            dirtySections |= 1L << sectionIndex;
+        }
+    }
+
+    private void markSectionRange(final int fromWorldY, final int toWorldY) {
+        final int lowY = Math.max(Math.min(fromWorldY, toWorldY), minY);
+        final int highY = Math.min(Math.max(fromWorldY, toWorldY), minY + (sectionCount << 4) - 1);
+        if (highY < lowY) {
+            return;
+        }
+        final int from = Math.max(0, sectionIndexForY(lowY));
+        final int to = Math.min(sectionCount - 1, sectionIndexForY(highY));
+        for (int s = from; s <= to; s++) {
+            markSection(s);
+        }
+    }
+
+    public long consumeDirtySections() {
+        if (sectionMaskUnsupported) {
+            return ALL_SECTIONS;
+        }
+        final long mask = dirtySections;
+        dirtySections = 0L;
+        return mask;
+    }
+
     public int topOpaqueY(final int localX, final int localZ) {
         return heightmap[(localZ & 15) << 4 | (localX & 15)];
     }
 
     public void setTopOpaqueY(final int localX, final int localZ, final int y) {
-        heightmap[(localZ & 15) << 4 | (localX & 15)] = y;
+        final int i = (localZ & 15) << 4 | (localX & 15);
+        final int old = heightmap[i];
+        if (old == y) {
+            return;
+        }
+        heightmap[i] = y;
         heightmapBoundsDirty = true;
+        markSectionRange(old, y);
     }
 
     private void refreshHeightmapBounds() {
@@ -120,11 +160,17 @@ public class ChunkLightData {
         final int byteIndex = index >> 1;
         final int current = data[byteIndex] & 0xFF;
         final int clamped = level & 0x0F;
-        if ((index & 1) == 0) {
-            data[byteIndex] = (byte) ((current & 0xF0) | clamped);
-        } else {
-            data[byteIndex] = (byte) ((current & 0x0F) | (clamped << 4));
+        final boolean low = (index & 1) == 0;
+
+        final int previous = low ? (current & 0x0F) : (current >> 4);
+        if (previous == clamped) {
+            return;
         }
+
+        data[byteIndex] = low
+                ? (byte) ((current & 0xF0) | clamped)
+                : (byte) ((current & 0x0F) | (clamped << 4));
+        markSection(section);
     }
 
     public byte @Nullable [] sectionArray(final LightType type, final int sectionIndex) {
@@ -142,8 +188,10 @@ public class ChunkLightData {
         final byte[] @Nullable [] layerType = layer(type);
         if (data == null) {
             layerType[sectionIndex] = null;
+            markSection(sectionIndex);
         } else if (data.length == SECTION_BYTES) {
             layerType[sectionIndex] = data;
+            markSection(sectionIndex);
         }
     }
 
@@ -163,7 +211,13 @@ public class ChunkLightData {
         if (values.length == heightmap.length) {
             System.arraycopy(values, 0, heightmap, 0, heightmap.length);
             heightmapBoundsDirty = true;
+            dirtySections = ALL_SECTIONS;
         }
+    }
+
+    public int highestBlockingY() {
+        refreshHeightmapBounds();
+        return heightmapMax;
     }
 
     public byte @Nullable [] materializeSkySection(final int sectionIndex) {
@@ -222,5 +276,6 @@ public class ChunkLightData {
         Arrays.fill(heightmap, minY - 1);
         heightmapBoundsDirty = true;
         skyFullFromY = Integer.MAX_VALUE;
+        dirtySections = ALL_SECTIONS;
     }
 }

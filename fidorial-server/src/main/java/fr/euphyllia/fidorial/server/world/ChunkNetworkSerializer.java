@@ -17,7 +17,6 @@ import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public final class ChunkNetworkSerializer {
@@ -25,7 +24,6 @@ public final class ChunkNetworkSerializer {
     private static final ComponentLogger LOGGER = ComponentLogger.logger(ChunkNetworkSerializer.class);
 
     private final BlockStateRegistry blockRegistry;
-    private static final byte[] FULL_LIGHT = fullLight();
     private final FidorialBiomeRegistry biomes;
     private static final int MAX_INDIRECT_BIOME_BITS = 3;
 
@@ -201,9 +199,13 @@ public final class ChunkNetworkSerializer {
     }
 
     public void writeLightData(final PacketBuffer p, final ChunkColumn chunk, final boolean hasSkylight) {
+        writeLightData(p, chunk, hasSkylight, ChunkLightData.ALL_SECTIONS);
+    }
+
+    public void writeLightData(final PacketBuffer p, final ChunkColumn chunk, final boolean hasSkylight,
+                               final long sectionMask) {
         final int worldSections = chunk.sectionCount();
         final int lightSections = worldSections + 2;
-        final int topIndex = lightSections - 1;
 
         final ChunkLightData light = chunk.lightData();
 
@@ -217,34 +219,44 @@ public final class ChunkNetworkSerializer {
 
         final boolean lit = chunk.lightPopulated();
 
-        for (int i = 0; i < lightSections; i++) {
-            if (hasSkylight) {
-                final byte @Nullable [] sky;
-                if (i == topIndex) {
-                    sky = FULL_LIGHT;
-                } else if (!lit) {
-                    sky = null;
-                } else {
-                    sky = light.materializeSkySection(i - 1);
-                }
+        final int minSectionY = light.minY() >> 4;
+        final int highestBlocking = lit ? light.highestBlockingY() : Integer.MAX_VALUE;
 
-                if (sky == null || isAllZero(sky)) {
-                    setBit(emptySkyMask, i);
-                } else {
-                    setBit(skyMask, i);
-                    skyArrays.add(sky);
+        final boolean fullSend = sectionMask == ChunkLightData.ALL_SECTIONS;
+
+        for (int i = 0; i < lightSections; i++) {
+            final int sectionBottomY = (minSectionY + i - 1) << 4;
+            final boolean insideWorld = i >= 1 && i <= worldSections;
+
+            if (!fullSend) {
+                final int storageIndex = i - 1;
+                if (storageIndex < 0 || storageIndex >= 64
+                        || (sectionMask & (1L << storageIndex)) == 0L) {
+                    continue;
                 }
             }
 
-            final var block = (i == 0 || i == topIndex || !lit)
-                    ? null
-                    : light.sectionArray(LightType.BLOCK, i - 1);
+            if (hasSkylight) {
+                if (sectionBottomY <= highestBlocking) {
+                    final byte @Nullable [] sky = light.materializeSkySection(i - 1);
+                    if (sky == null || isAllZero(sky)) {
+                        setBit(emptySkyMask, i);
+                    } else {
+                        setBit(skyMask, i);
+                        skyArrays.add(sky);
+                    }
+                }
+            }
 
-            if (block == null || isAllZero(block)) {
-                setBit(emptyBlockMask, i);
-            } else {
+            final byte @Nullable [] block = insideWorld
+                    ? light.sectionArray(LightType.BLOCK, i - 1)
+                    : null;
+
+            if (block != null && !isAllZero(block)) {
                 setBit(blockMask, i);
                 blockArrays.add(block);
+            } else if (lit && insideWorld) {
+                setBit(emptyBlockMask, i);
             }
         }
 
@@ -275,9 +287,4 @@ public final class ChunkNetworkSerializer {
         return true;
     }
 
-    private static byte[] fullLight() {
-        final byte[] full = new byte[ChunkLightData.SECTION_BYTES];
-        Arrays.fill(full, (byte) 0xFF);
-        return full;
-    }
 }
