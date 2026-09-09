@@ -69,10 +69,6 @@ fidorialBuild {
     readUnnamedModules = setOf("fr.fidorial", "fr.fidorial.server")
 }
 
-fidorialBuild {
-    readUnnamedModules = setOf("fr.fidorial", "fr.fidorial.server")
-}
-
 application {
     mainClass.set("fr.euphyllia.fidorial.server.Main")
 }

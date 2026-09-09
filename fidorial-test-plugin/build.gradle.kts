@@ -9,10 +9,6 @@ repositories {
     maven("https://jitpack.io/")
 }
 
-fidorialBuild {
-    readUnnamedModules = setOf("fr.fidorial.test", "fr.fidorial")
-}
-
 dependencies {
     compileOnly(libs.brigadier)
     compileOnly(projects.fidorialApi)
