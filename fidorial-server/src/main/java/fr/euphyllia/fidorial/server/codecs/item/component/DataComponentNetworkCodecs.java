@@ -4,6 +4,7 @@ import fr.euphyllia.fidorial.server.network.PacketBuffer;
 import fr.euphyllia.fidorial.server.registry.Registry;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.fidorial.item.component.ItemLore;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.item.data.DataComponentType;
 import fr.fidorial.item.data.DataComponentTypes;
 import io.netty.handler.codec.DecoderException;
@@ -34,7 +35,6 @@ public class DataComponentNetworkCodecs {
     private static final Map<DataComponentType<?>, Codec<?>> CODECS = new LinkedHashMap<>();
 
     static {
-
         register(DataComponentTypes.MAX_STACK_SIZE, varIntCodec());
         register(DataComponentTypes.MAX_DAMAGE, varIntCodec());
         register(DataComponentTypes.DAMAGE, varIntCodec());
@@ -42,6 +42,8 @@ public class DataComponentNetworkCodecs {
         register(DataComponentTypes.CUSTOM_NAME, textCodec());
         register(DataComponentTypes.ITEM_NAME, textCodec());
         register(DataComponentTypes.LORE, loreCodec());
+        register(DataComponentTypes.ATTACK_ANIMATION, swingAnimationCodec());
+        register(DataComponentTypes.INTERACT_ANIMATION, swingAnimationCodec());
     }
 
     private DataComponentNetworkCodecs() {
@@ -70,7 +72,7 @@ public class DataComponentNetworkCodecs {
         if (codec == null) {
             throw new IllegalStateException("No wire codec for component " + type);
         }
-        codec.write(buf, frozen, (T) type.valueType().cast(value));
+        codec.write(buf, frozen, type.valueType().cast(value));
     }
 
     private static Codec<Integer> varIntCodec() {
@@ -150,6 +152,38 @@ public class DataComponentNetworkCodecs {
 
                 return new ItemLore(lines);
             }
+        };
+    }
+
+    private static Codec<SwingAnimation> swingAnimationCodec() {
+        return new Codec<>() {
+            @Override
+            public void write(final PacketBuffer buf, final RegistryHolder frozen, final SwingAnimation value) {
+                buf.writeVarInt(networkId(value.type()));
+                buf.writeVarInt(value.duration());
+            }
+
+            @Override
+            public SwingAnimation read(final PacketBuffer buf, final RegistryHolder frozen) {
+                final SwingAnimation.SwingAnimationType type = fromNetworkId(buf.readVarInt());
+                final int duration = buf.readVarInt();
+                return new SwingAnimation(type, duration);
+            }
+        };
+    }
+
+    private static int networkId(final SwingAnimation.SwingAnimationType type) {
+        return switch (type) {
+            case WHACK -> 1;
+            case STAB -> 2;
+        };
+    }
+
+    private static SwingAnimation.SwingAnimationType fromNetworkId(final int id) {
+        return switch (id) {
+            case 1 -> SwingAnimation.SwingAnimationType.WHACK;
+            case 2 -> SwingAnimation.SwingAnimationType.STAB;
+            default -> throw new DecoderException("Unknown swing animation type id: " + id);
         };
     }
 

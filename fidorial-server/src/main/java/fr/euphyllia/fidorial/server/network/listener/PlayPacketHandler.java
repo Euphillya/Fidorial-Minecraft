@@ -83,6 +83,8 @@ import fr.fidorial.inventory.EquipmentSlotGroup;
 import fr.fidorial.inventory.PlayerInventory;
 import fr.fidorial.item.ItemDefaults;
 import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.component.SwingAnimation;
+import fr.fidorial.item.data.DataComponentTypes;
 import fr.fidorial.registry.keys.BlockTypeKeys;
 import fr.fidorial.storage.player.PlayerDataStorage;
 import fr.fidorial.world.BlockFace;
@@ -449,12 +451,14 @@ public final class PlayPacketHandler implements PlayPacketListener {
             final BlockPos target = clicked.relative(clickedFace);
             final ItemStack held = acting.inventory().get(acting.selectedSlot());
             final BlockState state = held.isEmpty() ? null : blockToPlace(held, target, clickedFace, packet.cursorY());
+            final SwingAnimation interactAnimation = held.getOrDefault(DataComponentTypes.INTERACT_ANIMATION, SwingAnimation.DEFAULT);
 
             if (state != null) {
                 final BlockPlaceEvent event = server.events()
                         .post(new BlockPlaceEvent(acting, target, server.blockStateRegistry().networkId(state)));
                 if (!event.isCancelled()) {
                     server.blockEdits().set(world, target, state);
+                    acting.sendToTrackers(new ClientboundSwingAnimationPacket(acting.entityId(), packet.hand() == 0, interactAnimation));
                 }
             }
             connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
@@ -822,8 +826,8 @@ public final class PlayPacketHandler implements PlayPacketListener {
             return;
         }
         player.resetAttackCooldown();
-        // DataComponentType attackAnimation = player.heldItem().get(DataComponentTypes.ATTACK_ANIMATION); - feat/itemstack
-        player.sendToTrackers(new ClientboundSwingAnimationPacket(player.entityId(), true /* main hand */, /* attackAnimation */ null));
+        final SwingAnimation attackAnimation = player.heldItem().getOrDefault(DataComponentTypes.ATTACK_ANIMATION, SwingAnimation.DEFAULT);
+        player.sendToTrackers(new ClientboundSwingAnimationPacket(player.entityId(), true, attackAnimation));
     }
 
     @Override
