@@ -1,5 +1,6 @@
 package fr.euphyllia.fidorial.server.world;
 
+import fr.euphyllia.fidorial.server.util.threading.ThreadContexts;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkColumn;
 import fr.fidorial.world.Chunk;
@@ -53,6 +54,7 @@ public final class ServerChunk implements Chunk {
 
     @Override
     public boolean setBlockStateId(final int localX, final int worldY, final int localZ, final int stateId) {
+        ThreadContexts.checkOwnedByCurrentThread(this, "setBlockStateId");
         if (worldY < column.minY() || worldY >= column.minY() + column.height()) {
             return false;
         }

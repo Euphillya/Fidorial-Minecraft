@@ -67,15 +67,15 @@ public final class SummonCommand {
         }
 
         final FidorialServer server = FidorialServer.getInstance();
+        final CommandSource source = context.getSource();
 
-        final AbstractMob mob = MobFactories.create(entity, server.entityIds().allocate(), world, location);
+        world.scheduler().execute(world.key(), location.chunk(), () -> {
+            final AbstractMob mob = MobFactories.create(entity, server.entityIds().allocate(), world, location);
+            server.spawnEntity(mob);
 
-        server.spawnEntity(mob);
-
-        context.getSource()
-                .sender()
-                .sendMessage(Component.translatable(
-                        "command.summon.done", Component.text(entity.key().value()), Component.text(mob.entityId())));
+            source.sender().sendMessage(Component.translatable(
+                    "command.summon.done", Component.text(entity.key().value()), Component.text(mob.entityId())));
+        });
 
         return Command.SINGLE_SUCCESS;
     }

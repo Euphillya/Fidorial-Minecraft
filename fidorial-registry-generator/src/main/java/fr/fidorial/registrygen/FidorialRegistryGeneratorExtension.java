@@ -43,6 +43,12 @@ public abstract class FidorialRegistryGeneratorExtension {
     public abstract Property<String> getRegistryDataPackage();
 
     /**
+     * Registries whose network IDs the client hard-codes, emitted as {@code FrozenRegistries}
+     * in {@code protocol_id} order.
+     */
+    public abstract ListProperty<String> getFrozenRegistries();
+
+    /**
      * Registry identifier to generated class name.
      * Example: {@code minecraft:entity_type -> EntityTypes}.
      */

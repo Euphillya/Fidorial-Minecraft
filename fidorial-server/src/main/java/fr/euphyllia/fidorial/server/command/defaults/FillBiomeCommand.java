@@ -1,5 +1,6 @@
 package fr.euphyllia.fidorial.server.command.defaults;
 
+import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.LiteralCommandNode;
@@ -23,14 +24,18 @@ import org.jspecify.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static fr.fidorial.command.Commands.argument;
 import static fr.fidorial.command.Commands.literal;
 
-public class FillBiomeCommand {
+public final class FillBiomeCommand {
 
     private static final String PERMISSION = "fidorial.command.fillbiome";
 
@@ -61,7 +66,6 @@ public class FillBiomeCommand {
         final FidorialServer server = FidorialServer.getInstance();
         final BiomeRegistry biomes = server.biomes();
 
-        @SuppressWarnings("unchecked")
         final Biome target = context.getArgument("biome", Biome.class);
         final Key biome = target.key();
 
@@ -94,58 +98,96 @@ public class FillBiomeCommand {
             return 0;
         }
 
-        final Set<ChunkPos> touched = new LinkedHashSet<>();
-        int changed = 0;
+        final Map<ChunkPos, List<int[]>> byChunk = new LinkedHashMap<>();
+        for (int x = minX & ~3; x <= maxX; x += 4) {
+            for (int z = minZ & ~3; z <= maxZ; z += 4) {
+                final ChunkPos chunkPos = new ChunkPos(x >> 4, z >> 4);
+                for (int y = minY & ~3; y <= maxY; y += 4) {
+                    byChunk.computeIfAbsent(chunkPos, _ -> new ArrayList<>()).add(new int[] {x, y, z});
+                }
+            }
+        }
 
-        try {
-            for (int x = minX & ~3; x <= maxX; x += 4) {
-                for (int z = minZ & ~3; z <= maxZ; z += 4) {
-                    for (int y = minY & ~3; y <= maxY; y += 4) {
+        final AtomicInteger changed = new AtomicInteger();
+        final Set<ChunkPos> touched = ConcurrentHashMap.newKeySet();
+        final List<CompletableFuture<Void>> pending = new ArrayList<>(byChunk.size());
+
+        for (final Map.Entry<ChunkPos, List<int[]>> entry : byChunk.entrySet()) {
+            final ChunkPos chunkPos = entry.getKey();
+            final List<int[]> points = entry.getValue();
+            final CompletableFuture<Void> future = new CompletableFuture<>();
+            pending.add(future);
+
+            world.scheduler().execute(world.key(), chunkPos, () -> {
+                try {
+                    for (final int[] p : points) {
+                        final int x = p[0];
+                        final int y = p[1];
+                        final int z = p[2];
                         if (filter != null && !filter.equals(world.getBiome(x, y, z))) {
                             continue;
                         }
                         if (world.setBiome(x, y, z, biome)) {
-                            changed++;
-                            touched.add(new ChunkPos(x >> 4, z >> 4));
+                            changed.incrementAndGet();
+                            touched.add(chunkPos);
                         }
                     }
+                    future.complete(null);
+                } catch (final IOException failure) {
+                    future.completeExceptionally(failure);
                 }
-            }
-        } catch (final IOException failure) {
-            context.getSource().sender().sendMessage(Component.translatable(
-                    "command.fillbiome.failed", Component.text(String.valueOf(failure.getMessage()))));
-            return 0;
+            });
         }
 
-        resend(server, world, touched);
+        CompletableFuture.allOf(pending.toArray(new CompletableFuture[0])).whenComplete((_, failure) -> {
+            if (failure != null) {
+                context.getSource().sender().sendMessage(Component.translatable(
+                        "command.fillbiome.failed", Component.text(rootMessage(failure))));
+                return;
+            }
 
-        context.getSource().sender().sendMessage(Component.translatable(
-                "command.fillbiome.success",
-                Component.text(changed),
-                Component.text(biome.asString())));
+            resend(server, world, touched);
 
-        return changed;
+            context.getSource().sender().sendMessage(Component.translatable(
+                    "command.fillbiome.success",
+                    Component.text(changed.get()),
+                    Component.text(biome.asString())));
+        });
+
+        return Command.SINGLE_SUCCESS;
+    }
+
+    private static String rootMessage(final Throwable failure) {
+        Throwable cause = failure;
+        while (cause.getCause() != null) {
+            cause = cause.getCause();
+        }
+        return cause.getMessage();
     }
 
     private static void resend(final FidorialServer server, final ServerWorld world, final Set<ChunkPos> chunks) {
+        if (chunks.isEmpty()) {
+            return;
+        }
+
         final List<ChunkColumn> columns = new ArrayList<>(chunks.size());
         for (final ChunkPos pos : chunks) {
             try {
                 columns.add(world.getChunk(pos.x(), pos.z()));
-            } catch (final IOException ignored) {
+            } catch (final IOException _) {
             }
+        }
 
-            if (columns.isEmpty()) {
-                return;
-            }
+        if (columns.isEmpty()) {
+            return;
+        }
 
-            final ClientboundChunksBiomesPacket packet =
-                    new ClientboundChunksBiomesPacket(server.chunkSerializer(), columns);
+        final ClientboundChunksBiomesPacket packet =
+                new ClientboundChunksBiomesPacket(server.chunkSerializer(), columns);
 
-            for (final ServerPlayer player : server.players()) {
-                if (!player.isRemoved() && player.world() == world) {
-                    player.connection().send(packet);
-                }
+        for (final ServerPlayer player : server.players()) {
+            if (!player.isRemoved() && player.world() == world) {
+                player.connection().send(packet);
             }
         }
     }

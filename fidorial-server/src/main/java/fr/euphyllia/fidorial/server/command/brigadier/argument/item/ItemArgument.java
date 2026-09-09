@@ -12,7 +12,7 @@ import fr.euphyllia.fidorial.server.command.brigadier.argument.util.ExceptionFac
 import fr.euphyllia.fidorial.server.command.brigadier.argument.util.KeyReader;
 import fr.euphyllia.fidorial.server.command.brigadier.packet.registry.ArgumentTypeRegistrar;
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.registry.TypedKey;
 import fr.fidorial.registry.keys.ItemKeys;
 import net.kyori.adventure.key.Key;

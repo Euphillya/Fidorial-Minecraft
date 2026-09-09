@@ -5,6 +5,7 @@ import fr.euphyllia.fidorial.server.entity.AbstractEntity;
 import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.schedulers.LightUpdateDispatcher;
 import fr.euphyllia.fidorial.server.schedulers.ThreadedRegionRegionizer;
+import fr.euphyllia.fidorial.server.util.annotations.NeedsToBeRevisited;
 import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.entity.AnvilEntitySerializer;
@@ -185,6 +186,8 @@ public final class WorldManager implements AutoCloseable {
         return world;
     }
 
+    // FIXME: VERY likely needs a rework to use the scheduler, this can cause races, when entities/players are mid-teleport into this world, causing this method to miss them.
+    @NeedsToBeRevisited("Is prone to a race")
     public @Nullable ServerWorld unloadWorld(final Key key, final boolean save) throws IOException {
         final ServerWorld world = world(key);
         if (world == null) {

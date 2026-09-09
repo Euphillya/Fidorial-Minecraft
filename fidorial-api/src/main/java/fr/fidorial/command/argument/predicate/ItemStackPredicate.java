@@ -1,6 +1,6 @@
 package fr.fidorial.command.argument.predicate;
 
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.function.Predicate;

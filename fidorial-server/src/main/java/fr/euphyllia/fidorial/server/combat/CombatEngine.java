@@ -27,7 +27,7 @@ import fr.fidorial.event.entity.EntityDamageEvent;
 import fr.fidorial.event.entity.EntityDeathEvent;
 import fr.fidorial.event.player.PlayerAttackEntityEvent;
 import fr.fidorial.event.player.PlayerDeathEvent;
-import fr.fidorial.inventory.ItemStack;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.sound.SoundEvents;
 import fr.fidorial.world.Location;
 import net.kyori.adventure.key.Key;

@@ -11,6 +11,7 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.common.C
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundAddEntityPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundBossEventPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundContainerClosePacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundContainerSetContentPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundEntityEventPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundGameEventPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundOpenScreenPacket;
@@ -25,6 +26,7 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundStopSoundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSystemChatPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundTabListPacket;
+import fr.euphyllia.fidorial.server.util.annotations.NeedsToBeRevisited;
 import fr.euphyllia.fidorial.server.world.ServerWorld;
 import fr.fidorial.combat.DamageSource;
 import fr.fidorial.command.CommandSender;
@@ -37,8 +39,8 @@ import fr.fidorial.entity.PlayerProfile;
 import fr.fidorial.entity.RespawnPoint;
 import fr.fidorial.event.player.PlayerRespawnEvent;
 import fr.fidorial.inventory.EnderChestInventory;
-import fr.fidorial.inventory.ItemStack;
 import fr.fidorial.inventory.PlayerInventory;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.permission.PermissionResolver;
 import fr.fidorial.permission.PermissionState;
 import fr.fidorial.permission.PermissionStateHolder;
@@ -251,6 +253,7 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
         return connection;
     }
 
+    @NeedsToBeRevisited("This currently relies fully on the bits the client sends; without any server-side validation")
     public boolean onGround() {
         // FIXME: This currently relies fully on the bits the client sends; without any server-side validation.
         // Needs to be revisited in the future.
@@ -611,6 +614,20 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
     @Override
     public void enterConfigurationPhase() {
         connection.enterConfiguration();
+    }
+
+    @Override
+    public void updateInventory() {
+        final ContainerMenu menu = openMenu;
+        if (menu == null) {
+            connection.send(ClientboundContainerSetContentPacket.ofPlayerInventory(
+                    inventory,
+                    0,
+                    ItemStack.EMPTY,
+                    connection.server().registries().network()));
+            return;
+        }
+        connection.send(menu.buildSyncPacket(connection.server().registries().network()));
     }
 
     public int nextTeleportId() {

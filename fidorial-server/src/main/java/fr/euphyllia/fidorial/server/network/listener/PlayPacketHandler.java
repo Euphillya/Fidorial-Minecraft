@@ -59,7 +59,6 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.Ser
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundSetCreativeModeSlotPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundUseItemOnPacket;
 import fr.euphyllia.fidorial.server.network.session.ChunkViewTracker;
-import fr.euphyllia.fidorial.server.registry.Registry;
 import fr.euphyllia.fidorial.server.registry.RegistryHolder;
 import fr.euphyllia.fidorial.server.world.ChunkGeneratorConfig;
 import fr.euphyllia.fidorial.server.world.ChunkNetworkSerializer;
@@ -81,8 +80,9 @@ import fr.fidorial.event.player.PlayerQuitEvent;
 import fr.fidorial.event.player.PlayerRespawnEvent;
 import fr.fidorial.inventory.EnderChestInventory;
 import fr.fidorial.inventory.EquipmentSlotGroup;
-import fr.fidorial.inventory.ItemStack;
 import fr.fidorial.inventory.PlayerInventory;
+import fr.fidorial.item.ItemDefaults;
+import fr.fidorial.item.ItemStack;
 import fr.fidorial.registry.keys.BlockTypeKeys;
 import fr.fidorial.storage.player.PlayerDataStorage;
 import fr.fidorial.world.BlockFace;
@@ -133,22 +133,25 @@ public final class PlayPacketHandler implements PlayPacketListener {
         final Location spawn = player.location();
 
         connection.setPlayer(player);
-        world.addEntity(player);
 
-        sendLoginSequence();
-        openChunkView(world, dynamic, spawn.chunk());
-        spawnPlayer(spawn);
+        world.scheduler().execute(world.key(), spawn.chunk(), () -> {
+            world.addEntity(player);
 
-        connection.flushPendingMessages();
-        connection.startKeepAlive();
-        server.addPlayerConnection(connection);
-        for (final ServerPlayer other : server.players()) {
-            if (other == player) continue;
-            connection.send(new ClientboundPlayerInfoUpdatePacket(other.profile(), other.gameMode().id(), other.ping()));
-            other.connection().send(new ClientboundPlayerInfoUpdatePacket(player.profile(), player.gameMode().id(), player.ping()));
-        }
-        server.events().post(new PlayerJoinEvent(player));
-        LOGGER.info("{} logged with uuid {}", player.name(), player.uuid());
+            sendLoginSequence();
+            openChunkView(world, dynamic, spawn.chunk());
+            spawnPlayer(spawn);
+
+            connection.flushPendingMessages();
+            connection.startKeepAlive();
+            server.addPlayerConnection(connection);
+            for (final ServerPlayer other : server.players()) {
+                if (other == player) continue;
+                connection.send(new ClientboundPlayerInfoUpdatePacket(other.profile(), other.gameMode().id(), other.ping()));
+                other.connection().send(new ClientboundPlayerInfoUpdatePacket(player.profile(), player.gameMode().id(), player.ping()));
+            }
+            server.events().post(new PlayerJoinEvent(player));
+            LOGGER.info("{} logged with uuid {}", player.name(), player.uuid());
+        });
     }
 
     @Override
@@ -165,14 +168,19 @@ public final class PlayPacketHandler implements PlayPacketListener {
         if (player != null) {
             closeOpenMenu(false);
             server.events().post(new PlayerQuitEvent(player));
-            serverWorld().removeEntity(player);
-            player.permissions().revokeAll();
-            player.remove();
-            server.entityTracker().untrack(player);
-            for (final ServerPlayer other : server.players()) {
-                if (other == player) continue;
-                other.connection().send(new ClientboundPlayerInfoRemovePacket(player.uuid()));
-            }
+
+            final ServerPlayer leaving = player;
+            final ServerWorld world = serverWorld();
+            world.scheduler().execute(world.key(), leaving.chunk(), () -> {
+                world.removeEntity(leaving);
+                leaving.permissions().revokeAll();
+                leaving.remove();
+                server.entityTracker().untrack(leaving);
+                for (final ServerPlayer other : server.players()) {
+                    if (other == leaving) continue;
+                    other.connection().send(new ClientboundPlayerInfoRemovePacket(leaving.uuid()));
+                }
+            });
         }
     }
 
@@ -367,26 +375,28 @@ public final class PlayPacketHandler implements PlayPacketListener {
     }
 
     @Override
-    @SuppressWarnings("PatternValidation")
     public void handleSetCreativeModeSlot(final ServerboundSetCreativeModeSlotPacket packet) {
+        if (player == null) {
+            return;
+        }
         if (player.gameMode() != GameMode.CREATIVE) {
-            LOGGER.debug("{} envoie un paquet creatif hors mode creatif (ignore)", player.name());
+            LOGGER.debug("{} sends a creative packet out of creative mode (ignore)", player.name());
             return;
         }
         final int slot = InventorySlots.fromWindow(packet.slot());
         if (slot == InventorySlots.INVALID || slot >= player.inventory().size()) {
             return;
         }
-        if (packet.count() <= 0 || packet.itemId() < 0) {
+
+        final ItemStack stack = packet.stack();
+
+        if (stack.isEmpty()) {
             player.inventory().set(slot, ItemStack.EMPTY);
             return;
         }
-        final Registry items = server.registries().frozen().get(Key.key("item"));
-        if (items == null || packet.itemId() >= items.entries().size()) {
-            LOGGER.warn("{} envoie un id d'item hors borne : {}", player.name(), packet.itemId());
-            return;
-        }
-        player.inventory().set(slot, new ItemStack(items.entries().get(packet.itemId()), packet.count()));
+
+        final int maxCount = Math.max(1, ItemDefaults.maxStackSize(stack.id(), stack));
+        player.inventory().set(slot, stack.count() > maxCount ? stack.withCount(maxCount) : stack);
     }
 
     @Override
@@ -417,28 +427,38 @@ public final class PlayPacketHandler implements PlayPacketListener {
 
     @Override
     public void handleUseItemOn(final ServerboundUseItemOnPacket packet) {
+        if (player == null) {
+            return;
+        }
         if (player.gameMode() == GameMode.SPECTATOR) {
             connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
             return;
         }
-        if (interactWithBlock(packet.target())) {
-            connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
-            return;
-        }
-        final BlockFace clickedFace = BlockFace.byId(packet.face());
-        final BlockPos target = packet.target().relative(clickedFace);
-        final ItemStack held = player.inventory().get(player.selectedSlot());
-        final BlockState state = held.isEmpty() ? null : blockToPlace(held, target, clickedFace, packet.cursorY());
 
-        if (state != null) {
-            final BlockPlaceEvent event = server.events()
-                    .post(new BlockPlaceEvent(
-                            player, target, server.blockStateRegistry().networkId(state)));
-            if (!event.isCancelled()) {
-                server.blockEdits().set(serverWorld(), target, state);
+        final ServerPlayer acting = player;
+        final ServerWorld world = serverWorld();
+        final BlockPos clicked = packet.target();
+        final ChunkPos chunkPos = ChunkPos.fromBlock(clicked.x(), clicked.z());
+
+        world.scheduler().execute(world.key(), chunkPos, () -> {
+            if (interactWithBlock(clicked)) {
+                connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+                return;
             }
-        }
-        connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+            final BlockFace clickedFace = BlockFace.byId(packet.face());
+            final BlockPos target = clicked.relative(clickedFace);
+            final ItemStack held = acting.inventory().get(acting.selectedSlot());
+            final BlockState state = held.isEmpty() ? null : blockToPlace(held, target, clickedFace, packet.cursorY());
+
+            if (state != null) {
+                final BlockPlaceEvent event = server.events()
+                        .post(new BlockPlaceEvent(acting, target, server.blockStateRegistry().networkId(state)));
+                if (!event.isCancelled()) {
+                    server.blockEdits().set(world, target, state);
+                }
+            }
+            connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+        });
     }
 
     private @Nullable BlockState blockToPlace(
@@ -560,23 +580,35 @@ public final class PlayPacketHandler implements PlayPacketListener {
 
     @Override
     public void handlePlayerAction(final ServerboundPlayerActionPacket packet) {
+        if (player == null) {
+            return;
+        }
+        final ServerPlayer acting = player;
         final int status = packet.status();
         final boolean breaking =
-                switch (player.gameMode()) {
+                switch (acting.gameMode()) {
                     case CREATIVE -> status == ServerboundPlayerActionPacket.START_DESTROY_BLOCK;
                     case SURVIVAL ->
                             status == ServerboundPlayerActionPacket.START_DESTROY_BLOCK && instantMine(packet.position())
                                     || status == ServerboundPlayerActionPacket.FINISH_DESTROY_BLOCK;
                     case ADVENTURE, SPECTATOR -> false;
                 };
-        if (breaking) {
-            final BlockBreakEvent event = server.events().post(new BlockBreakEvent(player, packet.position()));
+        if (!breaking) {
+            connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+            return;
+        }
+
+        final ServerWorld world = serverWorld();
+        final ChunkPos chunkPos = ChunkPos.fromBlock(packet.position().x(), packet.position().z());
+
+        world.scheduler().execute(world.key(), chunkPos, () -> {
+            final BlockBreakEvent event = server.events().post(new BlockBreakEvent(acting, packet.position()));
             if (!event.isCancelled()) {
                 onBlockDestroyed(packet.position());
-                server.blockEdits().set(serverWorld(), packet.position(), BlockState.of(BlockTypeKeys.AIR.key()));
+                server.blockEdits().set(world, packet.position(), BlockState.of(BlockTypeKeys.AIR.key()));
             }
-        }
-        connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+            connection.send(new ClientboundBlockChangedAckPacket(packet.sequence()));
+        });
     }
 
     private void onBlockDestroyed(final BlockPos position) {
@@ -632,108 +664,129 @@ public final class PlayPacketHandler implements PlayPacketListener {
     }
 
     private void onMoved(final double x, final double y, final double z, final float yaw, final float pitch, final int flags) {
-        final Location previous = player.location();
-        final Location current = new Location(x, y, z, yaw, pitch);
-        final boolean wasOnGround = player.onGround();
-        final boolean isOnGround = (flags & 0x01) != 0;
-        trackFall(previous, current, wasOnGround, isOnGround);
-        player.setLocation(current);
-        player.setOnGround(isOnGround);
-        serverWorld().entityManager().moved(player, previous.chunk(), current.chunk());
-
-        player.sendToTrackers(new ClientboundEntityPositionSyncPacket(
-                player.entityId(),
-                new PositionData.LinearPositionPath(LocationPositionData.vec3(current)),
-                LocationPositionData.floatRotation(current),
-                player.onGround()));
-        player.sendToTrackers(new ClientboundRotateHeadPacket(player.entityId(), yaw));
-        server.entityTracker().update(player, server.players());
-
-        final ChunkPos chunk = current.chunk();
-        if (!chunkView.moveTo(chunk.x(), chunk.z())) {
+        if (player == null) {
             return;
         }
-        server.regionizer().moveTicket(worldId(), ticket, chunk);
-        ticket = chunk;
+
+        final ServerPlayer moving = player;
+        final ServerWorld world = serverWorld();
+        final Location previous = moving.location();
+        final ChunkPos fromChunk = previous.chunk();
+        final boolean wasOnGround = moving.onGround();
+        final boolean isOnGround = (flags & 0x01) != 0;
+
+        world.scheduler().execute(world.key(), fromChunk, () -> {
+            final Location current = new Location(x, y, z, yaw, pitch);
+            trackFall(previous, current, wasOnGround, isOnGround);
+            moving.setLocation(current);
+            moving.setOnGround(isOnGround);
+
+            world.entityMoved(moving, fromChunk, current.chunk());
+
+            moving.sendToTrackers(new ClientboundEntityPositionSyncPacket(
+                    moving.entityId(),
+                    new PositionData.LinearPositionPath(LocationPositionData.vec3(current)),
+                    LocationPositionData.floatRotation(current),
+                    moving.onGround()));
+            moving.sendToTrackers(new ClientboundRotateHeadPacket(moving.entityId(), yaw));
+            server.entityTracker().update(moving, server.players());
+
+            final ChunkPos chunk = current.chunk();
+            if (chunkView == null || !chunkView.moveTo(chunk.x(), chunk.z())) {
+                return;
+            }
+            server.regionizer().moveTicket(worldId(), ticket, chunk);
+            ticket = chunk;
+        });
     }
 
     public boolean teleport(final ServerWorld target, final Location location) {
         if (player == null) {
             return false;
         }
-        final ServerWorld from = (ServerWorld) player.world();
+        final ServerPlayer teleporting = player;
+        final ServerWorld from = (ServerWorld) teleporting.world();
         final ChunkPos destChunk = location.chunk();
 
         if (from == target) {
-            final Location previous = player.location();
-            player.setLocation(location);
-            from.entityManager().moved(player, previous.chunk(), destChunk);
-            connection.send(new ClientboundPlayerPositionPacket(
-                    player.nextTeleportId(),
-                    new PositionData.PositionMoveRotationData(
-                            LocationPositionData.vec3(location),
-                            new PositionData.Vec3D(0.0, 0.0, 0.0),
-                            LocationPositionData.floatRotation(location))));
+            final Location previous = teleporting.location();
+            final ChunkPos fromChunk = previous.chunk();
+            from.scheduler().execute(from.key(), fromChunk, () -> {
+                teleporting.setLocation(location);
+                from.entityMoved(teleporting, fromChunk, destChunk);
+                connection.send(new ClientboundPlayerPositionPacket(
+                        teleporting.nextTeleportId(),
+                        new PositionData.PositionMoveRotationData(
+                                LocationPositionData.vec3(location),
+                                new PositionData.Vec3D(0.0, 0.0, 0.0),
+                                LocationPositionData.floatRotation(location))));
 
-            player.sendToTrackers(new ClientboundEntityPositionSyncPacket(
-                    player.entityId(),
-                    new PositionData.LinearPositionPath(LocationPositionData.vec3(location)),
-                    LocationPositionData.floatRotation(location),
-                    player.onGround()));
-            player.sendToTrackers(new ClientboundRotateHeadPacket(player.entityId(), location.yaw()));
+                teleporting.sendToTrackers(new ClientboundEntityPositionSyncPacket(
+                        teleporting.entityId(),
+                        new PositionData.LinearPositionPath(LocationPositionData.vec3(location)),
+                        LocationPositionData.floatRotation(location),
+                        teleporting.onGround()));
 
-            if (chunkView != null && chunkView.moveTo(destChunk.x(), destChunk.z()) && ticket != null) {
-                server.regionizer().moveTicket(from.dimension().id(), ticket, destChunk);
-                ticket = destChunk;
-            }
-            server.entityTracker().update(player, server.players());
+                teleporting.sendToTrackers(new ClientboundRotateHeadPacket(teleporting.entityId(), location.yaw()));
+
+                if (chunkView != null && chunkView.moveTo(destChunk.x(), destChunk.z()) && ticket != null) {
+                    server.regionizer().moveTicket(from.dimension().id(), ticket, destChunk);
+                    ticket = destChunk;
+                }
+                server.entityTracker().update(teleporting, server.players());
+            });
             return true;
         }
         return teleportCrossWorld(from, target, location, destChunk);
     }
 
-    private boolean teleportCrossWorld(
-            final ServerWorld from, final ServerWorld target, final Location location, final ChunkPos destChunk) {
+    private boolean teleportCrossWorld(final ServerWorld from, final ServerWorld target, final Location location, final ChunkPos destChunk) {
         if (player == null) {
             throw new RuntimeException("Attempt to teleport a player who does not exist!");
         }
-        if (chunkView != null) {
-            chunkView.close();
-            from.removeViewer(chunkView);
-            chunkView = null;
-        }
-        if (ticket != null) {
-            server.regionizer().removeTicket(from.dimension().id(), ticket);
-            ticket = null;
-        }
-        from.removeEntity(player);
-        server.entityTracker().untrack(player);
 
-        player.setWorld(target);
-        player.setLocation(location);
-        target.addEntity(player);
+        final ServerPlayer teleporting = player;
+        final ChunkPos fromChunk = teleporting.chunk();
+        from.scheduler().execute(from.key(), fromChunk, () -> {
+            if (chunkView != null) {
+                chunkView.close();
+                from.removeViewer(chunkView);
+                chunkView = null;
+            }
+            if (ticket != null) {
+                server.regionizer().removeTicket(from.dimension().id(), ticket);
+                ticket = null;
+            }
+            from.removeEntity(teleporting);
+            server.entityTracker().untrack(teleporting);
+            target.scheduler().execute(target.key(), destChunk, () -> {
+                teleporting.setWorld(target);
+                teleporting.setLocation(location);
+                target.addEntity(teleporting);
 
-        final RegistryHolder dynamic = server.dynamicRegistries();
-        final int dimensionType = server.dimensionTypes().networkId(target.generator.dimensionType().key());
-        connection.send(new ClientboundRespawnPacket(
-                target.dimension().id(),
-                dimensionType,
-                worldManager().levelData().hashedSeed(),
-                player.gameMode().id(),
-                ClientboundRespawnPacket.KEEP_ALL,
-                describeGenerator(target) instanceof ChunkGeneratorConfig.Debug,
-                describeGenerator(target) instanceof ChunkGeneratorConfig.Flat));
-        connection.send(ClientboundPlayerAbilitiesPacket.forGameMode(player.gameMode()));
-        connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.START_WAITING_FOR_CHUNKS, 0f));
-        openChunkView(target, dynamic, destChunk);
-        connection.send(new ClientboundPlayerPositionPacket(
-                player.nextTeleportId(),
-                new PositionData.PositionMoveRotationData(
-                        LocationPositionData.vec3(location),
-                        new PositionData.Vec3D(0.0, 0.0, 0.0),
-                        LocationPositionData.floatRotation(location))));
-        server.dayNightEngine().syncTo(target, connection::send);
-        server.entityTracker().update(player, server.players());
+                final RegistryHolder dynamic = server.dynamicRegistries();
+                final int dimensionType = server.dimensionTypes().networkId(target.generator.dimensionType().key());
+                connection.send(new ClientboundRespawnPacket(
+                        target.dimension().id(),
+                        dimensionType,
+                        worldManager().levelData().hashedSeed(),
+                        teleporting.gameMode().id(),
+                        ClientboundRespawnPacket.KEEP_ALL,
+                        describeGenerator(target) instanceof ChunkGeneratorConfig.Debug,
+                        describeGenerator(target) instanceof ChunkGeneratorConfig.Flat));
+                connection.send(ClientboundPlayerAbilitiesPacket.forGameMode(teleporting.gameMode()));
+                connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.START_WAITING_FOR_CHUNKS, 0f));
+                openChunkView(target, dynamic, destChunk);
+                connection.send(new ClientboundPlayerPositionPacket(
+                        teleporting.nextTeleportId(),
+                        new PositionData.PositionMoveRotationData(
+                                LocationPositionData.vec3(location),
+                                new PositionData.Vec3D(0.0, 0.0, 0.0),
+                                LocationPositionData.floatRotation(location))));
+                server.dayNightEngine().syncTo(target, connection::send);
+                server.entityTracker().update(teleporting, server.players());
+            });
+        });
         return true;
     }
 
@@ -865,38 +918,49 @@ public final class PlayPacketHandler implements PlayPacketListener {
 
 
     private void moveToRespawnPoint(final ServerWorld world, final Location spawn) {
-        final ServerWorld from = (ServerWorld) player.world();
+        final ServerPlayer respawning = player;
+        final ServerWorld from = (ServerWorld) respawning.world();
         final ChunkPos destination = spawn.chunk();
 
         if (from == world) {
-            final Location previous = player.location();
-            player.setLocation(spawn);
-            from.entityManager().moved(player, previous.chunk(), destination);
-            if (chunkView != null) {
-                chunkView.resend(destination);
-            }
-            if (ticket != null && !ticket.equals(destination)) {
-                server.regionizer().moveTicket(from.dimension().id(), ticket, destination);
-                ticket = destination;
-            }
+            final Location previous = respawning.location();
+            final ChunkPos fromChunk = previous.chunk();
+
+            from.scheduler().execute(from.key(), fromChunk, () -> {
+                respawning.setLocation(spawn);
+                from.entityMoved(respawning, fromChunk, destination);
+                if (chunkView != null) {
+                    chunkView.resend(destination);
+                }
+                if (ticket != null && !ticket.equals(destination)) {
+                    server.regionizer().moveTicket(from.dimension().id(), ticket, destination);
+                    ticket = destination;
+                }
+            });
             return;
         }
 
-        if (chunkView != null) {
-            chunkView.close();
-            from.removeViewer(chunkView);
-            chunkView = null;
-        }
-        if (ticket != null) {
-            server.regionizer().removeTicket(from.dimension().id(), ticket);
-            ticket = null;
-        }
-        from.removeEntity(player);
-        server.entityTracker().untrack(player);
-        player.setWorld(world);
-        player.setLocation(spawn);
-        world.addEntity(player);
-        openChunkView(world, server.dynamicRegistries(), destination);
+        final ChunkPos fromChunk = respawning.chunk();
+        from.scheduler().execute(from.key(), fromChunk, () -> {
+            if (chunkView != null) {
+                chunkView.close();
+                from.removeViewer(chunkView);
+                chunkView = null;
+            }
+            if (ticket != null) {
+                server.regionizer().removeTicket(from.dimension().id(), ticket);
+                ticket = null;
+            }
+            from.removeEntity(respawning);
+            server.entityTracker().untrack(respawning);
+
+            world.scheduler().execute(world.key(), destination, () -> {
+                respawning.setWorld(world);
+                respawning.setLocation(spawn);
+                world.addEntity(respawning);
+                openChunkView(world, server.dynamicRegistries(), destination);
+            });
+        });
     }
 
     private void trackFall(final Location previous, final Location current, final boolean wasOnGround, final boolean isOnGround) {

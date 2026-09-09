@@ -11,6 +11,7 @@ import fr.euphyllia.fidorial.server.entity.player.ServerPlayer;
 import fr.euphyllia.fidorial.server.schedulers.LightUpdateDispatcher;
 import fr.euphyllia.fidorial.server.schedulers.ThreadedRegionRegionizer;
 import fr.euphyllia.fidorial.server.util.ConcurrentLongSet;
+import fr.euphyllia.fidorial.server.util.threading.ThreadContexts;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkColumn;
 import fr.euphyllia.fidorial.server.world.chunk.ChunkSection;
@@ -208,6 +209,7 @@ public final class ServerWorld implements World {
 
     @Override
     public boolean setBlockStateId(final BlockPos pos, final int stateId) {
+        ThreadContexts.checkOwnedByCurrentThread(this, pos, "setBlockStateId");
         try {
             return setBlock(pos.x(), pos.y(), pos.z(), blockStates.byId(stateId));
         } catch (final IOException e) {
@@ -246,6 +248,7 @@ public final class ServerWorld implements World {
     }
 
     public void addEntity(final AbstractEntity entity) {
+        ThreadContexts.checkOwnedByCurrentThread(entity, "addEntity");
         entities.add(entity);
         markEntitiesDirty(entity.chunk().x(), entity.chunk().z());
         if (entity instanceof ServerPlayer) {
@@ -254,6 +257,7 @@ public final class ServerWorld implements World {
     }
 
     public void removeEntity(final AbstractEntity entity) {
+        ThreadContexts.checkOwnedByCurrentThread(entity, "removeEntity");
         entities.remove(entity);
         markEntitiesDirty(entity.chunk().x(), entity.chunk().z());
         if (entity instanceof ServerPlayer) {
@@ -262,6 +266,7 @@ public final class ServerWorld implements World {
     }
 
     public void entityMoved(final AbstractEntity entity, final ChunkPos from, final ChunkPos to) {
+        ThreadContexts.checkOwnedByCurrentThread(this, from, "entityMoved");
         entities.moved(entity, from, to);
         if (!from.equals(to)) {
             markEntitiesDirty(from.x(), from.z());
@@ -403,6 +408,7 @@ public final class ServerWorld implements World {
     }
 
     public boolean setBlock(final int x, final int y, final int z, final BlockState state) throws IOException {
+        ThreadContexts.checkOwnedByCurrentThread(this, new BlockPos(x, y, z), "setBlock");
         final ChunkColumn column = getChunk(x >> 4, z >> 4);
         if (y < column.minY() || y >= column.minY() + column.height()) {
             return false;
@@ -421,6 +427,7 @@ public final class ServerWorld implements World {
     }
 
     public boolean setBiome(final int x, final int y, final int z, final Key biome) throws IOException {
+        ThreadContexts.checkOwnedByCurrentThread(this, new BlockPos(x, y, z), "setBiome");
         final ChunkColumn column = getChunk(x >> 4, z >> 4);
         if (y < column.minY() || y >= column.minY() + column.height()) {
             return false;
