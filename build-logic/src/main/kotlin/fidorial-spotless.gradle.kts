@@ -3,7 +3,7 @@ plugins {
 }
 
 spotless {
-    ratchetFrom("origin/master")
+    ratchetFrom("origin/HEAD")
 
     format("misc") {
         target(
