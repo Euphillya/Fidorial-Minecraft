@@ -1,9 +1,13 @@
 package fr.euphyllia.fidorial.server.codecs.container;
 
+import ca.spottedleaf.converter.types.MapType;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.euphyllia.fidorial.server.codecs.item.ItemStackCodecs;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.registry.DataFixersRegistry;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.nbt.NbtMapType;
 import fr.fidorial.inventory.Container;
 import fr.fidorial.item.ItemStack;
 import fr.fidorial.item.data.DataComponentMap;
@@ -78,8 +82,16 @@ public final class ContainerCodecs {
         return baos.toByteArray();
     }
 
-    public static <C extends Container> C decode(final byte[] payload, final String listFieldName, final Codec<C> containerCodec) throws IOException {
-        final CompoundBinaryTag root = BinaryTagIO.reader().readNamed(new ByteArrayInputStream(payload)).getValue();
+    public static <C extends Container> C decode(final byte[] payload, final String listFieldName, final Codec<C> containerCodec, final DataFixerType fixerType) throws IOException {
+        CompoundBinaryTag root = BinaryTagIO.reader().readNamed(new ByteArrayInputStream(payload)).getValue();
+
+        final int sourceVersion = root.getInt("DataVersion");
+        final int latest = DataFixersRegistry.latestDataFixerVersion();
+        if (sourceVersion < latest) {
+            final MapType fixed = DataFixersRegistry.update(fixerType, NbtMapType.of(root), sourceVersion);
+            root = ((NbtMapType) fixed).toCompound();
+        }
+
         return containerCodec.fieldOf(listFieldName).codec()
                 .parse(BinaryTagOps.binaryTagOps(), root)
                 .getOrThrow(msg -> new IOException("Failed to decode " + listFieldName + ": " + msg));

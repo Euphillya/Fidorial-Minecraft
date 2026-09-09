@@ -1,6 +1,7 @@
 package fr.euphyllia.fidorial.server.codecs.container;
 
 import fr.euphyllia.fidorial.server.VersionConstants;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
 import fr.fidorial.inventory.EnderChestInventory;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ public final class PlayerEnderChestCodec {
     }
 
     public static EnderChestInventory decode(final byte[] payload) throws IOException {
-        return ContainerCodecs.decode(payload, LIST_NAME, ContainerCodecs.containerCodec(EnderChestInventory::new));
+        return ContainerCodecs.decode(payload, LIST_NAME,
+                ContainerCodecs.containerCodec(EnderChestInventory::new), DataFixerType.PLAYER);
     }
 }

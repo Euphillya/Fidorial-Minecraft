@@ -1,5 +1,7 @@
 package fr.euphyllia.fidorial.server.world.storage;
 
+import fr.euphyllia.fidorial.server.util.annotations.NeedsToBeRevisited;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -44,6 +46,7 @@ public class WorldPaths {
     }
 
     // Maybe we should store data per-dimension like Paper for multi-world
+    @NeedsToBeRevisited("Might not allow for proper multi-dimension support")
     public Path dataDir() {
         return worldRoot.resolve("data");
     }

@@ -64,6 +64,7 @@ import fr.euphyllia.fidorial.server.world.WorldManager;
 import fr.euphyllia.fidorial.server.world.block.FidorialBlockRegistry;
 import fr.euphyllia.fidorial.server.world.chunk.BlockStateProperties;
 import fr.euphyllia.fidorial.server.world.fluid.FluidEngine;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.registry.DataFixersRegistry;
 import fr.euphyllia.fidorial.server.world.weather.WeatherEngine;
 import fr.fidorial.Server;
 import fr.fidorial.combat.CombatService;
@@ -273,6 +274,7 @@ public final class FidorialServer implements Server {
         LOGGER.info("Starting Fidorial (Minecraft {} / protocol {})", minecraftVersion(), protocolVersion());
         try {
             metrics.ready();
+            DataFixersRegistry.initialize();
             loadData();
             registerDefaultServices();
             enableSpark();

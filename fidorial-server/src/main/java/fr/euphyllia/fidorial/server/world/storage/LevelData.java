@@ -1,10 +1,14 @@
 package fr.euphyllia.fidorial.server.world.storage;
 
+import ca.spottedleaf.converter.types.MapType;
 import com.google.common.hash.Hashing;
 import fr.euphyllia.fidorial.server.VersionConstants;
 import fr.euphyllia.fidorial.server.world.ChunkGeneratorConfig;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.entity.AnvilEntitySerializer;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.registry.DataFixersRegistry;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.nbt.NbtMapType;
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.nbt.BinaryTag;
@@ -117,10 +121,18 @@ public final class LevelData {
 
     public static LevelData read(final Path dataDir, final Path levelDat) throws IOException {
         final Map.Entry<String, CompoundBinaryTag> named = BinaryTagIO.reader().readNamed(levelDat, BinaryTagIO.Compression.GZIP);
-        final CompoundBinaryTag data = named.getValue().getCompound("Data");
-        final LevelData l = new LevelData();
+        CompoundBinaryTag data = named.getValue().getCompound("Data");
 
-        l.dataVersion = data.getInt("DataVersion");
+        final int sourceVersion = data.getInt("DataVersion");
+        final int latest = DataFixersRegistry.latestDataFixerVersion();
+        if (sourceVersion < latest) {
+            final MapType fixed = DataFixersRegistry.update(
+                    DataFixerType.LEVEL, NbtMapType.of(data), sourceVersion);
+            data = ((NbtMapType) fixed).toCompound();
+        }
+
+        final LevelData l = new LevelData();
+        l.dataVersion = VersionConstants.DATA_VERSION;
         l.levelName = data.getString("LevelName");
         l.time = data.getLong("Time");
         l.dayTime = data.getLong("DayTime");
@@ -166,30 +178,57 @@ public final class LevelData {
             l.spawnZ = spawnPos[2];
         }
 
-        l.readDimensionData(dataDir);
+        l.readDimensionData(data, dataDir);
         return l;
     }
 
-    private void readDimensionData(final Path dataDir) throws IOException {
-        readIfPresent(dataDir.resolve(GAME_RULES_PATH), gameRules -> {
+    private void readDimensionData(final CompoundBinaryTag legacyData, final Path dataDir) throws IOException {
+        if (Files.isRegularFile(dataDir.resolve(GAME_RULES_PATH))) {
+            readIfPresent(dataDir.resolve(GAME_RULES_PATH), gameRules -> {
+                if (gameRules.contains("doDaylightCycle")) {
+                    doDaylightCycle = !"false".equals(gameRules.getString("doDaylightCycle"));
+                }
+            });
+        } else if (legacyData.contains("GameRules")) {
+            final CompoundBinaryTag gameRules = legacyData.getCompound("GameRules");
             if (gameRules.contains("doDaylightCycle")) {
                 doDaylightCycle = !"false".equals(gameRules.getString("doDaylightCycle"));
             }
-        });
+        }
 
-        readIfPresent(dataDir.resolve(WEATHER_PATH), weather -> {
-            raining = weather.getBoolean("raining");
-            rainTime = weather.getInt("rain_time");
-            thundering = weather.getBoolean("thundering");
-            thunderTime = weather.getInt("thunder_time");
-            clearWeatherTime = weather.getInt("clear_weather_time");
-        });
+        if (Files.isRegularFile(dataDir.resolve(WEATHER_PATH))) {
+            readIfPresent(dataDir.resolve(WEATHER_PATH), weather -> {
+                raining = weather.getBoolean("raining");
+                rainTime = weather.getInt("rain_time");
+                thundering = weather.getBoolean("thundering");
+                thunderTime = weather.getInt("thunder_time");
+                clearWeatherTime = weather.getInt("clear_weather_time");
+            });
+        } else if (legacyData.contains("raining")) {
+            raining = legacyData.getBoolean("raining");
+            rainTime = legacyData.getInt("rainTime");
+            thundering = legacyData.getBoolean("thundering");
+            thunderTime = legacyData.getInt("thunderTime");
+            clearWeatherTime = legacyData.getInt("clearWeatherTime");
+        }
 
-        readIfPresent(dataDir.resolve(WORLD_GEN_SETTINGS_PATH), wgs -> seed = wgs.getLong("seed"));
+        if (Files.isRegularFile(dataDir.resolve(WORLD_GEN_SETTINGS_PATH))) {
+            readIfPresent(dataDir.resolve(WORLD_GEN_SETTINGS_PATH), wgs -> seed = wgs.getLong("seed"));
+        } else if (legacyData.contains("WorldGenSettings")) {
+            seed = legacyData.getCompound("WorldGenSettings").getLong("seed");
+        }
 
-        readIfPresent(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH), this::readCustomBossEvents);
+        if (Files.isRegularFile(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH))) {
+            readIfPresent(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH), this::readCustomBossEvents);
+        } else if (legacyData.contains("CustomBossEvents")) {
+            readCustomBossEvents(legacyData.getCompound("CustomBossEvents"));
+        }
 
-        readIfPresent(dataDir.resolve(WORLD_CLOCKS_PATH), this::readWorldClocks);
+        if (Files.isRegularFile(dataDir.resolve(WORLD_CLOCKS_PATH))) {
+            readIfPresent(dataDir.resolve(WORLD_CLOCKS_PATH), this::readWorldClocks);
+        } else if (legacyData.contains("Fidorial")) {
+            readWorldClocks(legacyData.getCompound("Fidorial"));
+        }
     }
 
     @FunctionalInterface
@@ -259,13 +298,13 @@ public final class LevelData {
         Files.createDirectories(levelDat.getParent());
 
         final CompoundBinaryTag.Builder data = CompoundBinaryTag.builder();
-        data.putInt("DataVersion", dataVersion);
+        data.putInt("DataVersion", VersionConstants.DATA_VERSION);
 
         final CompoundBinaryTag.Builder version = CompoundBinaryTag.builder();
-        version.putInt("Id", dataVersion);
-        version.putString("Name", versionName);
+        version.putInt("Id", VersionConstants.DATA_VERSION);
+        version.putString("Name", VersionConstants.MINECRAFT_VERSION_NAME);
         version.putString("Series", "main");
-        version.putBoolean("Snapshot", snapshot);
+        version.putBoolean("Snapshot", !VersionConstants.IS_RELEASE);
         data.put("Version", version.build());
 
         if (versionHistory.isEmpty() || versionHistory.getLast() != dataVersion) {
@@ -344,7 +383,7 @@ public final class LevelData {
         Files.createDirectories(path.getParent());
 
         final CompoundBinaryTag.Builder root = CompoundBinaryTag.builder();
-        root.putInt("DataVersion", dataVersion);
+        root.putInt("DataVersion", VersionConstants.DATA_VERSION);
         payload.accept(root);
 
         BinaryTagIO.writer().writeNamed(Map.entry("", root.build()), path, BinaryTagIO.Compression.GZIP);
