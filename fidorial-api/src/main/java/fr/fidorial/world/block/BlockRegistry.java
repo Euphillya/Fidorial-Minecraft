@@ -17,8 +17,7 @@ public interface BlockRegistry {
         return type(Key.key(key));
     }
 
-    @Nullable
-    BlockData fromNetworkId(int networkId);
+    @Nullable BlockData fromNetworkId(int networkId);
 
     void register(BlockType type);
 

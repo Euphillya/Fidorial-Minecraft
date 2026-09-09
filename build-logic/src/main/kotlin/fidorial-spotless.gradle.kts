@@ -3,8 +3,6 @@ plugins {
 }
 
 spotless {
-    ratchetFrom("origin/HEAD")
-
     format("misc") {
         target(
             "*.gradle.kts",

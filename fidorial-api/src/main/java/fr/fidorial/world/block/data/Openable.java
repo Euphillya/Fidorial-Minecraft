@@ -12,4 +12,3 @@ public interface Openable extends BlockData {
         return (Openable) with("open", String.valueOf(open));
     }
 }
-
