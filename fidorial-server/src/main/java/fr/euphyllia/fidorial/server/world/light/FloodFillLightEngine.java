@@ -65,59 +65,24 @@ public class FloodFillLightEngine implements LightEngine {
         }
 
         final int oldTop = data.topOpaqueY(x & 15, z & 15);
-        final boolean occludesNow = BlockLightProperties.occludes(access.blockAt(x, y, z));
-        if (occludesNow && y > oldTop) {
-            final LongIntQueue decrease = scratchDecrease;
-            final LongIntQueue increase = scratchIncrease;
-            decrease.reset();
-            increase.reset();
-            final long chunkKey = ChunkPos.chunkKey(x >> 4, z >> 4);
-
-            final int oldLevel = data.get(LightType.SKY, x, y, z);
-            data.setTopOpaqueY(x & 15, z & 15, y);
-            if (oldLevel > 0) {
-                data.set(LightType.SKY, x, y, z, 0);
-                dirtyChunks.add(chunkKey);
-                decrease.push(x, y, z, oldLevel);
-            }
-
-            for (int cy = y - 1; cy > oldTop; cy--) {
-                final int currentLevel = data.get(LightType.SKY, x, cy, z);
-                if (currentLevel == 0) {
-                    continue;
-                }
-                data.set(LightType.SKY, x, cy, z, 0);
-                dirtyChunks.add(chunkKey);
-                decrease.push(x, cy, z, currentLevel);
-            }
-
-            propagateDecrease(access, LightType.SKY, decrease, increase, dirtyChunks);
-            propagateIncrease(access, LightType.SKY, increase, dirtyChunks);
-            return;
-        }
-
-        if (!occludesNow && y == oldTop) {
-            int newTop = y - 1;
-            while (newTop >= minY && !BlockLightProperties.occludes(access.blockAt(x, newTop, z))) {
-                newTop--;
-            }
-
-            data.setTopOpaqueY(x & 15, z & 15, newTop);
-
-            final LongIntQueue increase = scratchIncrease;
-            increase.reset();
-            final long chunkKey = ChunkPos.chunkKey(x >> 4, z >> 4);
-            for (int cy = y; cy > newTop; cy--) {
-                data.set(LightType.SKY, x, cy, z, MAX_LEVEL);
-                dirtyChunks.add(chunkKey);
-                increase.push(x, cy, z, MAX_LEVEL);
-            }
-
-            propagateIncrease(access, LightType.SKY, increase, dirtyChunks);
-            return;
-        }
+        final BlockState state = access.blockAt(x, y, z);
+        final int opacity = BlockLightProperties.opacity(state);
+        final long chunkKey = ChunkPos.chunkKey(x >> 4, z >> 4);
 
         if (y > oldTop) {
+            if (opacity == 0) {
+                return;
+            }
+            raiseBoundary(access, data, x, y, z, oldTop, opacity, chunkKey, dirtyChunks);
+            return;
+        }
+
+        if (y == oldTop) {
+            if (opacity > 0) {
+                checkBlockForType(LightType.SKY, x, y, z, data, access, dirtyChunks);
+                return;
+            }
+            lowerBoundary(access, data, x, y, z, chunkKey, dirtyChunks);
             return;
         }
 
@@ -406,14 +371,16 @@ public class FloodFillLightEngine implements LightEngine {
 
                     for (int y = scanStart; y >= minY; y--) {
                         final BlockState block = col.blockAt(lx, y, lz);
-                        if (BlockLightProperties.occludes(block)) {
+                        final int opacity = BlockLightProperties.opacity(block);
+                        if (opacity > 0 && topOpaque == minY - 1) {
                             topOpaque = y;
+                        }
+                        if (BlockLightProperties.occludes(block)) {
                             break;
                         }
                         if (sky <= 0) break;
                         data.set(LightType.SKY, worldX, y, worldZ, sky);
                         if (sky == MAX_LEVEL) queue.add(packPos(worldX, y, worldZ), -1);
-                        final int opacity = BlockLightProperties.opacity(block);
                         if (opacity > 0) {
                             sky = Math.max(0, sky - opacity);
                             queue.add(packPos(worldX, y, worldZ), -1);
@@ -629,6 +596,54 @@ public class FloodFillLightEngine implements LightEngine {
         }
 
         return level;
+    }
+
+    private void raiseBoundary(final LightAccess access, final ChunkLightData data, final int x, final int y, final int z, final int oldTop, final int opacity, final long chunkKey, final LongSet dirtyChunks) {
+        final LongIntQueue decrease = scratchDecrease;
+        final LongIntQueue increase = scratchIncrease;
+        decrease.reset();
+        increase.reset();
+
+        if (oldTop >= minY) {
+            final int oldBoundaryLevel = data.get(LightType.SKY, x, oldTop, z);
+            if (oldBoundaryLevel > 0) {
+                data.set(LightType.SKY, x, oldTop, z, 0);
+                decrease.push(x, oldTop, z, oldBoundaryLevel);
+            }
+        }
+
+        data.setTopOpaqueY(x & 15, z & 15, y);
+        dirtyChunks.add(chunkKey);
+
+        if (y + 1 < maxY) {
+            increase.push(x, y + 1, z, MAX_LEVEL);
+        } else {
+            final int level = MAX_LEVEL - opacity;
+            if (level > 0) {
+                data.set(LightType.SKY, x, y, z, level);
+                if (level > 1) {
+                    increase.push(x, y, z, level);
+                }
+            }
+        }
+
+        propagateDecrease(access, LightType.SKY, decrease, increase, dirtyChunks);
+        propagateIncrease(access, LightType.SKY, increase, dirtyChunks);
+    }
+
+    private void lowerBoundary(final LightAccess access, final ChunkLightData data, final int x, final int y, final int z, final long chunkKey, final LongSet dirtyChunks) {
+        int newTop = y - 1;
+        while (newTop >= minY && BlockLightProperties.opacity(access.blockAt(x, newTop, z)) == 0) {
+            newTop--;
+        }
+
+        data.setTopOpaqueY(x & 15, z & 15, newTop);
+        dirtyChunks.add(chunkKey);
+
+        final LongIntQueue increase = scratchIncrease;
+        increase.reset();
+        increase.push(x, newTop + 1, z, MAX_LEVEL);
+        propagateIncrease(access, LightType.SKY, increase, dirtyChunks);
     }
 
     private static final class LongQueue {
