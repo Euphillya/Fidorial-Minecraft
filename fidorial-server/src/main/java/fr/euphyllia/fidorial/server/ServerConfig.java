@@ -1,7 +1,6 @@
 package fr.euphyllia.fidorial.server;
 
 import fr.euphyllia.fidorial.server.moderation.CodeOfConductManager;
-import fr.euphyllia.fidorial.server.world.WorldConstants;
 import fr.fidorial.entity.GameMode;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
@@ -110,9 +109,9 @@ public record ServerConfig(
                 Math.max(2, cpus / 8),
                 5,
                 GameMode.SURVIVAL,
-                WorldConstants.DEFAULT_SPAWN_X,
-                WorldConstants.DEFAULT_SPAWN_Y,
-                WorldConstants.DEFAULT_SPAWN_Z,
+                8.5,
+                -48.0,
+                8.5,
                 "",
                 100,
                 true,
