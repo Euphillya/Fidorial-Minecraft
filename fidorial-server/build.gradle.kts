@@ -211,9 +211,9 @@ tasks.withType<GenerateItemPropertiesTask>().configureEach {
 
 fidorialRegistryGenerator {
     minecraftVersion.set(providers.gradleProperty("minecraftVersion"))
-    prismarineMinecraftData.set("26.3-snapshot-10")
+    prismarineMinecraftData.set("26.3-rc-1")
     prismarineDataRepository.set("Toffikk/minecraft-data") // PrismarineJS/minecraft-data
-    prismarineDataRef.set("ver/26.3-snapshot-10") // master
+    prismarineDataRef.set("ver/26.3-rc-1") // master
 
     generatedPackage.set(
         "fr.euphyllia.fidorial.server",
