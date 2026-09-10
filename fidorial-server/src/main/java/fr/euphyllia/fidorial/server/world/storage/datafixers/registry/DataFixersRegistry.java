@@ -21,17 +21,16 @@ public final class DataFixersRegistry {
 
     private static final List<CompletableFuture<DataFixer>> CHAIN = new ArrayList<>();
 
-    static {
-        register("26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.minecraft.V26_3.DataFixers::buildDataFixers);
-        register("fidorial-26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.fidorial.V26_3.DataFixers::buildDataFixers);
-    }
-
     private DataFixersRegistry() {
         throw new UnsupportedOperationException("DataFixersRegistry cannot be instantiated.");
     }
 
-    // used to load constants and trigger datafixer building
-    public static void initialize() {
+    /**
+     * Builds all datafixers in order to remove the init overhead during actual world upgrades.
+     */
+    public static void bootstrap() {
+        register("26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.minecraft.V26_3.DataFixers::buildDataFixers);
+        register("fidorial-26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.fidorial.V26_3.DataFixers::buildDataFixers);
     }
 
     public static int latestDataFixerVersion() {
