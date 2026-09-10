@@ -209,10 +209,10 @@ public class AnvilChunkSerializer {
 
         blockEntitiesFromNbt(root, chunk);
 
-        if (root.contains("LightHeightmap")) {
+        if (root.contains("LightHeightmap") && root.getBoolean("isLightOn")) {
             light.restoreHeightmap(root.getIntArray("LightHeightmap"));
-            chunk.setLightPopulated(root.getBoolean("isLightOn"));
         }
+        chunk.setLightPopulated(root.contains("isLightOn") && root.getBoolean("isLightOn"));
 
         return chunk;
     }

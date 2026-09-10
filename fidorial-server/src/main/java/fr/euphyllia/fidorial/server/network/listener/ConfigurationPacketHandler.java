@@ -185,7 +185,7 @@ public final class ConfigurationPacketHandler implements ConfigurationPacketList
 
     private void sendTags() {
         connection.send(new ClientboundUpdateTagsPacket(
-                server.dynamicRegistries(), server.biomeRegistry(), server.dialogs(), server.dimensionTypes()));
+                server.registries().network(), server.biomeRegistry(), server.dialogs(), server.dimensionTypes()));
     }
 
     private boolean sendResourcePackIfConfigured() {

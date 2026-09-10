@@ -20,6 +20,7 @@ java {
 
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = Charsets.UTF_8.name()
+    options.isFork = true
     options.release = 25
 
     fidorialBuild.readUnnamedModules.get().forEach {
@@ -30,6 +31,10 @@ tasks.withType<JavaCompile>().configureEach {
             )
         )
     }
+}
+
+tasks.withType<ProcessResources>().configureEach {
+    filteringCharset = Charsets.UTF_8.name()
 }
 
 tasks.withType<Test>().configureEach {

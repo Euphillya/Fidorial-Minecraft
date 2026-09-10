@@ -9,6 +9,7 @@ public class ChunkLightData {
     public static final int SECTION_BYTES = 2048;
 
     private final int minY;
+    private final int height;
     private final int minSectionY;
     private final int sectionCount;
 
@@ -20,12 +21,13 @@ public class ChunkLightData {
 
     public ChunkLightData(final int minY, final int height) {
         this.minY = minY;
+        this.height = height;
         this.minSectionY = minY >> 4;
         this.sectionCount = height >> 4;
         this.blockLight = new byte[sectionCount][];
         this.skyLight = new byte[sectionCount][];
         this.heightmap = new int[256];
-        Arrays.fill(this.heightmap, minY - 1);
+        Arrays.fill(this.heightmap, minY + height);
     }
 
     public int minY() {
@@ -178,7 +180,7 @@ public class ChunkLightData {
             blockLight[i] = null;
             skyLight[i] = null;
         }
-        Arrays.fill(heightmap, minY - 1);
+        Arrays.fill(heightmap, minY + height);
         skyFullFromY = Integer.MAX_VALUE;
     }
 }

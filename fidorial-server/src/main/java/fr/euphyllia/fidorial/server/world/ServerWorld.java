@@ -620,7 +620,6 @@ public final class ServerWorld implements World {
         return loaded.get(ChunkPos.chunkKey(chunkX, chunkZ));
     }
 
-
     public int loadedChunkCount() {
         return loaded.size();
     }
