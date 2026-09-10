@@ -3,7 +3,7 @@ package fr.euphyllia.fidorial.server.world.storage.datafixers;
 import ca.spottedleaf.converter.DataConverter;
 import ca.spottedleaf.converter.datatypes.DataWalker;
 import ca.spottedleaf.converter.types.MapType;
-import fr.euphyllia.fidorial.server.world.storage.datafixers.util.NestedList;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.NestedType;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -14,9 +14,9 @@ import java.util.Objects;
 public final class DataFixerBuilder {
 
     private final Map<DataFixerType, List<DataConverter<MapType, MapType>>> fixers = new EnumMap<>(DataFixerType.class);
-    private final Map<DataFixerType, DataWalker<MapType>> walkers = new EnumMap<>(DataFixerType.class);
-    private final Map<DataFixerType, List<NestedList>> nesting = new EnumMap<>(DataFixerType.class);
-    private final Map<DataFixerType, List<NestedList>> nestedMaps = new EnumMap<>(DataFixerType.class);
+    private final Map<DataFixerType, List<DataWalker<MapType>>> walkers = new EnumMap<>(DataFixerType.class);
+    private final Map<DataFixerType, List<NestedType>> nesting = new EnumMap<>(DataFixerType.class);
+    private final Map<DataFixerType, List<NestedType>> nestedMaps = new EnumMap<>(DataFixerType.class);
 
     public DataFixerBuilder addFixer(final DataFixerType type, final DataConverter<MapType, MapType> fixer) {
         fixers.computeIfAbsent(type, _ -> new ArrayList<>()).add(Objects.requireNonNull(fixer, "fixer"));
@@ -28,7 +28,8 @@ public final class DataFixerBuilder {
      * @param walker the walker to run after {@code type}'s fixer chain
      */
     public DataFixerBuilder addWalker(final DataFixerType type, final DataWalker<MapType> walker) {
-        walkers.put(type, Objects.requireNonNull(walker, "walker"));
+        walkers.computeIfAbsent(type, _ -> new ArrayList<>())
+                .add(Objects.requireNonNull(walker, "walker"));
         return this;
     }
 
@@ -39,7 +40,7 @@ public final class DataFixerBuilder {
      */
     public DataFixerBuilder nestList(final DataFixerType type, final String key, final DataFixerType nestedType) {
         nesting.computeIfAbsent(type, _ -> new ArrayList<>())
-                .add(new NestedList(Objects.requireNonNull(key, "key"), Objects.requireNonNull(nestedType, "nestedType")));
+                .add(new NestedType(Objects.requireNonNull(key, "key"), Objects.requireNonNull(nestedType, "nestedType")));
         return this;
     }
 
@@ -50,7 +51,7 @@ public final class DataFixerBuilder {
      */
     public DataFixerBuilder nestMap(final DataFixerType type, final String key, final DataFixerType nestedType) {
         nestedMaps.computeIfAbsent(type, _ -> new ArrayList<>())
-                .add(new NestedList(Objects.requireNonNull(key), Objects.requireNonNull(nestedType)));
+                .add(new NestedType(Objects.requireNonNull(key), Objects.requireNonNull(nestedType)));
         return this;
     }
 
@@ -64,13 +65,13 @@ public final class DataFixerBuilder {
             registries.put(entry.getKey(), registry);
         }
 
-        final Map<DataFixerType, List<NestedList>> copiedNesting = new EnumMap<>(DataFixerType.class);
-        for (final Map.Entry<DataFixerType, List<NestedList>> entry : nesting.entrySet()) {
+        final Map<DataFixerType, List<NestedType>> copiedNesting = new EnumMap<>(DataFixerType.class);
+        for (final Map.Entry<DataFixerType, List<NestedType>> entry : nesting.entrySet()) {
             copiedNesting.put(entry.getKey(), List.copyOf(entry.getValue()));
         }
 
-        final Map<DataFixerType, List<NestedList>> copiedNestedMaps = new EnumMap<>(DataFixerType.class);
-        for (final Map.Entry<DataFixerType, List<NestedList>> entry : nestedMaps.entrySet()) {
+        final Map<DataFixerType, List<NestedType>> copiedNestedMaps = new EnumMap<>(DataFixerType.class);
+        for (final Map.Entry<DataFixerType, List<NestedType>> entry : nestedMaps.entrySet()) {
             copiedNestedMaps.put(entry.getKey(), List.copyOf(entry.getValue()));
         }
 

@@ -10,23 +10,27 @@ import org.jspecify.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Supplier;
 
 public final class DataFixersRegistry {
 
     private static final ComponentLogger LOGGER = ComponentLogger.logger(DataFixersRegistry.class);
+    private static final ExecutorService BOOTSTRAP_POOL = Executors.newThreadPerTaskExecutor(Thread.ofVirtual().name("fidorial-datafixer-builder-", 0).factory());
 
     private static final List<CompletableFuture<DataFixer>> CHAIN = new ArrayList<>();
 
-    private static final CompletableFuture<DataFixer> V26_3 = register("26.3",
-            fr.euphyllia.fidorial.server.world.storage.datafixers.minecraft.V26_3.DataFixers::buildDataFixers);
-    private static final CompletableFuture<DataFixer> FIDORIAL_V26_3 = register("fidorial-26.3",
-            fr.euphyllia.fidorial.server.world.storage.datafixers.fidorial.V26_3.DataFixers::buildDataFixers);
+    static {
+        register("26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.minecraft.V26_3.DataFixers::buildDataFixers);
+        register("fidorial-26.3", fr.euphyllia.fidorial.server.world.storage.datafixers.fidorial.V26_3.DataFixers::buildDataFixers);
+    }
 
     private DataFixersRegistry() {
         throw new UnsupportedOperationException("DataFixersRegistry cannot be instantiated.");
     }
 
+    // used to load constants and trigger datafixer building
     public static void initialize() {
     }
 
@@ -38,7 +42,7 @@ public final class DataFixersRegistry {
         return max;
     }
 
-    @Nullable public static MapType update(final DataFixerType type, final @Nullable MapType data, final int sourceDataVersion) {
+    public static @Nullable MapType update(final DataFixerType type, final @Nullable MapType data, final int sourceDataVersion) {
         if (data == null) {
             return null;
         }
@@ -61,15 +65,14 @@ public final class DataFixersRegistry {
         }
     }
 
-    private static CompletableFuture<DataFixer> register(final String name, final Supplier<DataFixer> builder) {
+    private static void register(final String name, final Supplier<DataFixer> builder) {
         final CompletableFuture<DataFixer> future = CompletableFuture.supplyAsync(() -> {
             final long start = System.nanoTime();
             final DataFixer fixer = builder.get();
             LOGGER.debug("{} datafixers built in {}ms (target DataVersion {})",
                     name, (System.nanoTime() - start) / 1_000_000, fixer.targetDataVersion());
             return fixer;
-        }, r -> Thread.ofPlatform().name("fidorial-datafixer-bootstrap-" + name).start(r));
+        }, BOOTSTRAP_POOL);
         CHAIN.add(future);
-        return future;
     }
 }

@@ -4,7 +4,7 @@ import ca.spottedleaf.converter.DataConverter;
 import ca.spottedleaf.converter.datatypes.DataWalker;
 import ca.spottedleaf.converter.types.ListType;
 import ca.spottedleaf.converter.types.MapType;
-import fr.euphyllia.fidorial.server.world.storage.datafixers.util.NestedList;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.NestedType;
 import org.jspecify.annotations.Nullable;
 
 import java.util.List;
@@ -15,16 +15,16 @@ public final class DataFixer {
     private final int targetDataVersion;
     private final long encodedTargetVersion;
     private final Map<DataFixerType, DataFixerRegistry> registries;
-    private final Map<DataFixerType, DataWalker<MapType>> walkers;
-    private final Map<DataFixerType, List<NestedList>> nesting;
-    private final Map<DataFixerType, List<NestedList>> nestedMaps;
+    private final Map<DataFixerType, List<DataWalker<MapType>>> walkers;
+    private final Map<DataFixerType, List<NestedType>> nesting;
+    private final Map<DataFixerType, List<NestedType>> nestedMaps;
 
     DataFixer(
             final int targetDataVersion,
             final Map<DataFixerType, DataFixerRegistry> registries,
-            final Map<DataFixerType, DataWalker<MapType>> walkers,
-            final Map<DataFixerType, List<NestedList>> nesting,
-            final Map<DataFixerType, List<NestedList>> nestedMaps
+            final Map<DataFixerType, List<DataWalker<MapType>>> walkers,
+            final Map<DataFixerType, List<NestedType>> nesting,
+            final Map<DataFixerType, List<NestedType>> nestedMaps
     ) {
         this.targetDataVersion = targetDataVersion;
         this.encodedTargetVersion = DataConverter.encodeVersions(targetDataVersion, 0);
@@ -49,21 +49,23 @@ public final class DataFixer {
             current = registry.apply(current, sourceDataVersion);
         }
 
-        final DataWalker<MapType> walker = walkers.get(type);
-        if (walker != null) {
-            current = walker.walk(current, sourceDataVersion, encodedTargetVersion);
+        List<DataWalker<MapType>> walkers = this.walkers.get(type);
+        if (walkers != null) {
+            for (DataWalker<MapType> walker : walkers) {
+                current = walker.walk(current, sourceDataVersion, encodedTargetVersion);
+            }
         }
 
-        final List<NestedList> rules = nesting.get(type);
+        final List<NestedType> rules = nesting.get(type);
         if (rules != null && current != null) {
-            for (final NestedList rule : rules) {
+            for (final NestedType rule : rules) {
                 updateList(rule.nestedType(), current.getListUnchecked(rule.key(), null), sourceDataVersion);
             }
         }
 
-        final List<NestedList> mapRules = nestedMaps.get(type);
+        final List<NestedType> mapRules = nestedMaps.get(type);
         if (mapRules != null && current != null) {
-            for (final NestedList rule : mapRules) {
+            for (final NestedType rule : mapRules) {
                 final MapType nested = current.getMap(rule.key(), null);
                 if (nested != null) {
                     update(rule.nestedType(), nested, sourceDataVersion);
