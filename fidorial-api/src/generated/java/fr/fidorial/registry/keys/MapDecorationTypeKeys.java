@@ -12,6 +12,16 @@ import net.kyori.adventure.key.KeyPattern;
  */
 public final class MapDecorationTypeKeys {
     /**
+     * Key for {@code minecraft:abandoned_camp}.
+     */
+    public static final TypedKey<MapDecorationType> ABANDONED_CAMP = create("abandoned_camp");
+
+    /**
+     * Key for {@code minecraft:ancient_city}.
+     */
+    public static final TypedKey<MapDecorationType> ANCIENT_CITY = create("ancient_city");
+
+    /**
      * Key for {@code minecraft:banner_black}.
      */
     public static final TypedKey<MapDecorationType> BANNER_BLACK = create("banner_black");
@@ -97,6 +107,11 @@ public final class MapDecorationTypeKeys {
     public static final TypedKey<MapDecorationType> BLUE_MARKER = create("blue_marker");
 
     /**
+     * Key for {@code minecraft:desert_pyramid}.
+     */
+    public static final TypedKey<MapDecorationType> DESERT_PYRAMID = create("desert_pyramid");
+
+    /**
      * Key for {@code minecraft:frame}.
      */
     public static final TypedKey<MapDecorationType> FRAME = create("frame");
@@ -112,9 +127,19 @@ public final class MapDecorationTypeKeys {
     public static final TypedKey<MapDecorationType> MANSION = create("mansion");
 
     /**
+     * Key for {@code minecraft:mineshaft}.
+     */
+    public static final TypedKey<MapDecorationType> MINESHAFT = create("mineshaft");
+
+    /**
      * Key for {@code minecraft:monument}.
      */
     public static final TypedKey<MapDecorationType> MONUMENT = create("monument");
+
+    /**
+     * Key for {@code minecraft:ocean_ruin_warm}.
+     */
+    public static final TypedKey<MapDecorationType> OCEAN_RUIN_WARM = create("ocean_ruin_warm");
 
     /**
      * Key for {@code minecraft:player}.
@@ -187,6 +212,8 @@ public final class MapDecorationTypeKeys {
     public static final TypedKey<MapDecorationType> VILLAGE_TAIGA = create("village_taiga");
 
     private static final List<TypedKey<MapDecorationType>> VALUES = List.of(
+        ABANDONED_CAMP,
+        ANCIENT_CITY,
         BANNER_BLACK,
         BANNER_BLUE,
         BANNER_BROWN,
@@ -204,10 +231,13 @@ public final class MapDecorationTypeKeys {
         BANNER_WHITE,
         BANNER_YELLOW,
         BLUE_MARKER,
+        DESERT_PYRAMID,
         FRAME,
         JUNGLE_TEMPLE,
         MANSION,
+        MINESHAFT,
         MONUMENT,
+        OCEAN_RUIN_WARM,
         PLAYER,
         PLAYER_OFF_LIMITS,
         PLAYER_OFF_MAP,

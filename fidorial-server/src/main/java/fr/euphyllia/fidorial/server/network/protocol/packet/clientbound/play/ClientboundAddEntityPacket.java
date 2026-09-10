@@ -5,6 +5,9 @@ import fr.euphyllia.fidorial.server.entity.EntityTypes;
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
 import fr.euphyllia.fidorial.server.network.protocol.catalog.PlayClientboundPackets;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.LocationPositionData;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
+import fr.fidorial.entity.LivingEntity;
 import fr.fidorial.world.Location;
 import net.kyori.adventure.key.Key;
 
@@ -15,12 +18,8 @@ public record ClientboundAddEntityPacket(
         int entityId,
         UUID uuid,
         int typeNetworkId,
-        double x,
-        double y,
-        double z,
-        double velocityX,
-        double velocityY,
-        double velocityZ,
+        PositionData.Vec3D position,
+        PositionData.VelocityVec3D velocity,
         float pitch,
         float yaw,
         float headYaw,
@@ -33,15 +32,11 @@ public record ClientboundAddEntityPacket(
                 entity.entityId(),
                 entity.uuid(),
                 EntityTypes.networkId(entity.type()),
-                location.x(),
-                location.y(),
-                location.z(),
-                0.0,
-                0.0,
-                0.0,
+                LocationPositionData.vec3(location),
+                new PositionData.VelocityVec3D(0.0, 0.0, 0.0),
                 location.pitch(),
                 location.yaw(),
-                location.yaw(),
+                entity instanceof LivingEntity living ? living.headYaw() : 0.0f,
                 0);
     }
 
@@ -55,10 +50,8 @@ public record ClientboundAddEntityPacket(
         buf.writeVarInt(entityId);
         buf.writeUuid(uuid);
         buf.writeVarInt(typeNetworkId);
-        buf.writeDouble(x);
-        buf.writeDouble(y);
-        buf.writeDouble(z);
-        buf.writeLpVec3(velocityX, velocityY, velocityZ);
+        position.writeTo(buf);
+        velocity.writeTo(buf);
         buf.writeAngle(pitch);
         buf.writeAngle(yaw);
         buf.writeAngle(headYaw);

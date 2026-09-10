@@ -17,6 +17,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> ADDITIONAL_TRADE_COST = create("additional_trade_cost");
 
     /**
+     * Key for {@code minecraft:attack_animation}.
+     */
+    public static final TypedKey<DataComponentType> ATTACK_ANIMATION = create("attack_animation");
+
+    /**
      * Key for {@code minecraft:attack_range}.
      */
     public static final TypedKey<DataComponentType> ATTACK_RANGE = create("attack_range");
@@ -57,6 +62,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> BLOCK_STATE = create("block_state");
 
     /**
+     * Key for {@code minecraft:block_transformer}.
+     */
+    public static final TypedKey<DataComponentType> BLOCK_TRANSFORMER = create("block_transformer");
+
+    /**
      * Key for {@code minecraft:blocks_attacks}.
      */
     public static final TypedKey<DataComponentType> BLOCKS_ATTACKS = create("blocks_attacks");
@@ -65,6 +75,11 @@ public final class DataComponentTypeKeys {
      * Key for {@code minecraft:break_sound}.
      */
     public static final TypedKey<DataComponentType> BREAK_SOUND = create("break_sound");
+
+    /**
+     * Key for {@code minecraft:brewing_fuel}.
+     */
+    public static final TypedKey<DataComponentType> BREWING_FUEL = create("brewing_fuel");
 
     /**
      * Key for {@code minecraft:bucket_entity_data}.
@@ -117,6 +132,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> CHICKEN_VARIANT = create("chicken/variant");
 
     /**
+     * Key for {@code minecraft:compostable}.
+     */
+    public static final TypedKey<DataComponentType> COMPOSTABLE = create("compostable");
+
+    /**
      * Key for {@code minecraft:consumable}.
      */
     public static final TypedKey<DataComponentType> CONSUMABLE = create("consumable");
@@ -132,6 +152,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> CONTAINER_LOOT = create("container_loot");
 
     /**
+     * Key for {@code minecraft:cooking_fuel}.
+     */
+    public static final TypedKey<DataComponentType> COOKING_FUEL = create("cooking_fuel");
+
+    /**
      * Key for {@code minecraft:cow/sound_variant}.
      */
     public static final TypedKey<DataComponentType> COW_SOUND_VARIANT = create("cow/sound_variant");
@@ -145,6 +170,11 @@ public final class DataComponentTypeKeys {
      * Key for {@code minecraft:creative_slot_lock}.
      */
     public static final TypedKey<DataComponentType> CREATIVE_SLOT_LOCK = create("creative_slot_lock");
+
+    /**
+     * Key for {@code minecraft:cushion/color}.
+     */
+    public static final TypedKey<DataComponentType> CUSHION_COLOR = create("cushion/color");
 
     /**
      * Key for {@code minecraft:custom_data}.
@@ -267,6 +297,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> INTANGIBLE_PROJECTILE = create("intangible_projectile");
 
     /**
+     * Key for {@code minecraft:interact_animation}.
+     */
+    public static final TypedKey<DataComponentType> INTERACT_ANIMATION = create("interact_animation");
+
+    /**
      * Key for {@code minecraft:item_model}.
      */
     public static final TypedKey<DataComponentType> ITEM_MODEL = create("item_model");
@@ -307,11 +342,6 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> LORE = create("lore");
 
     /**
-     * Key for {@code minecraft:map_color}.
-     */
-    public static final TypedKey<DataComponentType> MAP_COLOR = create("map_color");
-
-    /**
      * Key for {@code minecraft:map_decorations}.
      */
     public static final TypedKey<DataComponentType> MAP_DECORATIONS = create("map_decorations");
@@ -340,6 +370,11 @@ public final class DataComponentTypeKeys {
      * Key for {@code minecraft:minimum_attack_charge}.
      */
     public static final TypedKey<DataComponentType> MINIMUM_ATTACK_CHARGE = create("minimum_attack_charge");
+
+    /**
+     * Key for {@code minecraft:mob_visibility}.
+     */
+    public static final TypedKey<DataComponentType> MOB_VISIBILITY = create("mob_visibility");
 
     /**
      * Key for {@code minecraft:mooshroom/variant}.
@@ -407,6 +442,11 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> PROVIDES_BANNER_PATTERNS = create("provides_banner_patterns");
 
     /**
+     * Key for {@code minecraft:provides_pottery_pattern}.
+     */
+    public static final TypedKey<DataComponentType> PROVIDES_POTTERY_PATTERN = create("provides_pottery_pattern");
+
+    /**
      * Key for {@code minecraft:provides_trim_material}.
      */
     public static final TypedKey<DataComponentType> PROVIDES_TRIM_MATERIAL = create("provides_trim_material");
@@ -452,6 +492,16 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> SHULKER_COLOR = create("shulker/color");
 
     /**
+     * Key for {@code minecraft:sign_text_back}.
+     */
+    public static final TypedKey<DataComponentType> SIGN_TEXT_BACK = create("sign_text_back");
+
+    /**
+     * Key for {@code minecraft:sign_text_front}.
+     */
+    public static final TypedKey<DataComponentType> SIGN_TEXT_FRONT = create("sign_text_front");
+
+    /**
      * Key for {@code minecraft:stored_enchantments}.
      */
     public static final TypedKey<DataComponentType> STORED_ENCHANTMENTS = create("stored_enchantments");
@@ -465,11 +515,6 @@ public final class DataComponentTypeKeys {
      * Key for {@code minecraft:suspicious_stew_effects}.
      */
     public static final TypedKey<DataComponentType> SUSPICIOUS_STEW_EFFECTS = create("suspicious_stew_effects");
-
-    /**
-     * Key for {@code minecraft:swing_animation}.
-     */
-    public static final TypedKey<DataComponentType> SWING_ANIMATION = create("swing_animation");
 
     /**
      * Key for {@code minecraft:tool}.
@@ -532,6 +577,16 @@ public final class DataComponentTypeKeys {
     public static final TypedKey<DataComponentType> VILLAGER_VARIANT = create("villager/variant");
 
     /**
+     * Key for {@code minecraft:villager_food}.
+     */
+    public static final TypedKey<DataComponentType> VILLAGER_FOOD = create("villager_food");
+
+    /**
+     * Key for {@code minecraft:waxed}.
+     */
+    public static final TypedKey<DataComponentType> WAXED = create("waxed");
+
+    /**
      * Key for {@code minecraft:weapon}.
      */
     public static final TypedKey<DataComponentType> WEAPON = create("weapon");
@@ -568,6 +623,7 @@ public final class DataComponentTypeKeys {
 
     private static final List<TypedKey<DataComponentType>> VALUES = List.of(
         ADDITIONAL_TRADE_COST,
+        ATTACK_ANIMATION,
         ATTACK_RANGE,
         ATTRIBUTE_MODIFIERS,
         AXOLOTL_VARIANT,
@@ -576,8 +632,10 @@ public final class DataComponentTypeKeys {
         BEES,
         BLOCK_ENTITY_DATA,
         BLOCK_STATE,
+        BLOCK_TRANSFORMER,
         BLOCKS_ATTACKS,
         BREAK_SOUND,
+        BREWING_FUEL,
         BUCKET_ENTITY_DATA,
         BUNDLE_CONTENTS,
         CAN_BREAK,
@@ -588,12 +646,15 @@ public final class DataComponentTypeKeys {
         CHARGED_PROJECTILES,
         CHICKEN_SOUND_VARIANT,
         CHICKEN_VARIANT,
+        COMPOSTABLE,
         CONSUMABLE,
         CONTAINER,
         CONTAINER_LOOT,
+        COOKING_FUEL,
         COW_SOUND_VARIANT,
         COW_VARIANT,
         CREATIVE_SLOT_LOCK,
+        CUSHION_COLOR,
         CUSTOM_DATA,
         CUSTOM_MODEL_DATA,
         CUSTOM_NAME,
@@ -618,6 +679,7 @@ public final class DataComponentTypeKeys {
         HORSE_VARIANT,
         INSTRUMENT,
         INTANGIBLE_PROJECTILE,
+        INTERACT_ANIMATION,
         ITEM_MODEL,
         ITEM_NAME,
         JUKEBOX_PLAYABLE,
@@ -626,13 +688,13 @@ public final class DataComponentTypeKeys {
         LOCK,
         LODESTONE_TRACKER,
         LORE,
-        MAP_COLOR,
         MAP_DECORATIONS,
         MAP_ID,
         MAP_POST_PROCESSING,
         MAX_DAMAGE,
         MAX_STACK_SIZE,
         MINIMUM_ATTACK_CHARGE,
+        MOB_VISIBILITY,
         MOOSHROOM_VARIANT,
         NOTE_BLOCK_SOUND,
         OMINOUS_BOTTLE_AMPLIFIER,
@@ -646,6 +708,7 @@ public final class DataComponentTypeKeys {
         POTION_DURATION_SCALE,
         PROFILE,
         PROVIDES_BANNER_PATTERNS,
+        PROVIDES_POTTERY_PATTERN,
         PROVIDES_TRIM_MATERIAL,
         RABBIT_VARIANT,
         RARITY,
@@ -655,10 +718,11 @@ public final class DataComponentTypeKeys {
         SALMON_SIZE,
         SHEEP_COLOR,
         SHULKER_COLOR,
+        SIGN_TEXT_BACK,
+        SIGN_TEXT_FRONT,
         STORED_ENCHANTMENTS,
         SULFUR_CUBE_CONTENT,
         SUSPICIOUS_STEW_EFFECTS,
-        SWING_ANIMATION,
         TOOL,
         TOOLTIP_DISPLAY,
         TOOLTIP_STYLE,
@@ -671,6 +735,8 @@ public final class DataComponentTypeKeys {
         USE_EFFECTS,
         USE_REMAINDER,
         VILLAGER_VARIANT,
+        VILLAGER_FOOD,
+        WAXED,
         WEAPON,
         WOLF_COLLAR,
         WOLF_SOUND_VARIANT,

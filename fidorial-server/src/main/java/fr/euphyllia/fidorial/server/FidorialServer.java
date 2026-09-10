@@ -30,7 +30,6 @@ import fr.euphyllia.fidorial.server.moderation.FidorialBanManager;
 import fr.euphyllia.fidorial.server.moderation.FidorialWhitelist;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
 import fr.euphyllia.fidorial.server.network.NettyServer;
-import fr.euphyllia.fidorial.server.network.protocol.ProtocolConstants;
 import fr.euphyllia.fidorial.server.network.protocol.ProtocolMap;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundBlockUpdatePacket;
@@ -123,6 +122,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static fr.euphyllia.fidorial.server.VersionConstants.MINECRAFT_VERSION_ID;
+import static fr.euphyllia.fidorial.server.VersionConstants.PROTOCOL_VERSION;
 
 public final class FidorialServer implements Server {
 
@@ -472,12 +474,12 @@ public final class FidorialServer implements Server {
 
     @Override
     public String minecraftVersion() {
-        return ProtocolConstants.MINECRAFT_VERSION;
+        return MINECRAFT_VERSION_ID;
     }
 
     @Override
     public int protocolVersion() {
-        return ProtocolConstants.PROTOCOL_VERSION;
+        return PROTOCOL_VERSION;
     }
 
     @Override

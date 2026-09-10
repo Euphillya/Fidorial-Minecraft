@@ -1,15 +1,21 @@
 package fr.euphyllia.fidorial.server.world.storage;
 
+import ca.spottedleaf.converter.types.MapType;
+import com.google.common.hash.Hashing;
+import fr.euphyllia.fidorial.server.VersionConstants;
 import fr.euphyllia.fidorial.server.world.ChunkGeneratorConfig;
-import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.euphyllia.fidorial.server.world.entity.AnvilEntitySerializer;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.registry.DataFixersRegistry;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.nbt.NbtMapType;
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.nbt.BinaryTag;
 import net.kyori.adventure.nbt.BinaryTagIO;
 import net.kyori.adventure.nbt.CompoundBinaryTag;
 import net.kyori.adventure.nbt.IntArrayBinaryTag;
+import net.kyori.adventure.nbt.IntBinaryTag;
 import net.kyori.adventure.nbt.ListBinaryTag;
 import net.kyori.adventure.nbt.StringBinaryTag;
 import net.kyori.adventure.text.Component;
@@ -19,34 +25,53 @@ import org.jspecify.annotations.Nullable;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-public class LevelData {
+public final class LevelData {
 
-    private static final String FIDORIAL = "Fidorial";
+    private static final String DIMENSIONS = "dimensions";
     private static final String WORLD_CLOCKS = "WorldClocks";
-    private static final String CUSTOM_BOSS_EVENTS = "CustomBossEvents";
+
+    private static final Path GAME_RULES_PATH = Path.of("minecraft", "game_rules.dat");
+    private static final Path WORLD_GEN_SETTINGS_PATH = Path.of("minecraft", "world_gen_settings.dat");
+    private static final Path CUSTOM_BOSS_EVENTS_PATH = Path.of("minecraft", "custom_boss_events.dat");
+    private static final Path WEATHER_PATH = Path.of("minecraft", "weather.dat");
+    private static final Path WORLD_CLOCKS_PATH = Path.of("minecraft", "world_clocks.dat");
+
     public final Map<Key, ChunkGeneratorConfig> generators = new LinkedHashMap<>();
 
     public String levelName = "Fidorial";
     public long seed = 0L;
     public long time = 0L;
     public long dayTime = 0L;
+
+    public Key spawnDimension = Dimension.OVERWORLD.id();
     public int spawnX = 8;
     public int spawnY = -48;
     public int spawnZ = 8;
-    public float spawnAngle = 0f;
-    public int gameType = 0;       // 0 = survie
+    public int spawnYaw = 0;
+    public int spawnPitch = 0;
+
+    public int gameType = 0;       // 0 = survival
     public int difficulty = 2;     // 2 = normal
     public boolean hardcore = false;
+    public boolean difficultyLocked = false;
     public boolean allowCommands = true;
-    public int dataVersion = AnvilChunkSerializer.DATA_VERSION_26_2;
-    public String versionName = "26.2";
+
+    public int dataVersion = VersionConstants.DATA_VERSION;
+    public String versionName = VersionConstants.MINECRAFT_VERSION_NAME;
+    public boolean snapshot = !VersionConstants.IS_RELEASE;
+    public boolean wasModded = false;
+    public final List<Integer> versionHistory = new ArrayList<>();
+
+    public @Nullable UUID singleplayerUuid;
 
     public boolean raining = false;
     public int rainTime = 0;
@@ -94,45 +119,133 @@ public class LevelData {
     ) {
     }
 
-    public static LevelData read(final Path levelDat) throws IOException {
-        final Map.Entry<String, CompoundBinaryTag> named =
-                BinaryTagIO.reader().readNamed(levelDat, BinaryTagIO.Compression.GZIP);
-        final CompoundBinaryTag data = named.getValue().getCompound("Data");
-        final LevelData l = new LevelData();
+    public static LevelData read(final Path dataDir, final Path levelDat) throws IOException {
+        final Map.Entry<String, CompoundBinaryTag> named = BinaryTagIO.reader().readNamed(levelDat, BinaryTagIO.Compression.GZIP);
+        CompoundBinaryTag data = named.getValue().getCompound("Data");
 
-        l.dataVersion = data.getInt("DataVersion");
+        final int sourceVersion = data.getInt("DataVersion");
+        final int latest = DataFixersRegistry.latestDataFixerVersion();
+        if (sourceVersion < latest) {
+            final MapType fixed = DataFixersRegistry.update(
+                    DataFixerType.LEVEL, NbtMapType.of(data), sourceVersion);
+            data = ((NbtMapType) fixed).toCompound();
+        }
+
+        final LevelData l = new LevelData();
+        l.dataVersion = VersionConstants.DATA_VERSION;
         l.levelName = data.getString("LevelName");
         l.time = data.getLong("Time");
         l.dayTime = data.getLong("DayTime");
-        l.spawnX = data.getInt("SpawnX");
-        l.spawnY = data.getInt("SpawnY");
-        l.spawnZ = data.getInt("SpawnZ");
-        l.spawnAngle = data.getFloat("SpawnAngle");
         l.gameType = data.getInt("GameType");
-        l.difficulty = data.getByte("Difficulty");
-        l.hardcore = data.getBoolean("hardcore");
         l.allowCommands = data.getBoolean("allowCommands");
-        l.raining = data.getBoolean("raining");
-        l.rainTime = data.getInt("rainTime");
-        l.thundering = data.getBoolean("thundering");
-        l.thunderTime = data.getInt("thunderTime");
-        l.clearWeatherTime = data.getInt("clearWeatherTime");
+        l.wasModded = data.getBoolean("WasModded");
 
-        final CompoundBinaryTag gameRules = data.getCompound("GameRules");
-        if (gameRules.contains("doDaylightCycle")) {
-            l.doDaylightCycle = !"false".equals(gameRules.getString("doDaylightCycle"));
+        final CompoundBinaryTag version = data.getCompound("Version");
+        if (version.contains("Name")) {
+            l.versionName = version.getString("Name");
         }
-        l.readWorldClocks(data);
-        l.readCustomBossEvents(data);
+        if (version.contains("Snapshot")) {
+            l.snapshot = version.getBoolean("Snapshot");
+        }
+        for (final BinaryTag entry : data.getList("version_history")) {
+            if (entry instanceof final IntBinaryTag tag) {
+                l.versionHistory.add(tag.value());
+            }
+        }
 
-        l.seed = data.getCompound("WorldGenSettings").getLong("seed");
+        final CompoundBinaryTag difficultySettings = data.getCompound("difficulty_settings");
+        l.difficulty = difficultySettings.getInt("difficulty");
+        l.hardcore = difficultySettings.getBoolean("hardcore");
+        l.difficultyLocked = difficultySettings.getBoolean("locked");
+
+        if (data.contains("singleplayer_uuid")) {
+            final int[] uuid = data.getIntArray("singleplayer_uuid");
+            if (uuid.length == 4) {
+                l.singleplayerUuid = AnvilEntitySerializer.uuidFromInts(uuid);
+            }
+        }
+
+        final CompoundBinaryTag spawn = data.getCompound("spawn");
+        if (spawn.contains("dimension")) {
+            l.spawnDimension = Key.key(spawn.getString("dimension"));
+        }
+        l.spawnYaw = spawn.getInt("yaw");
+        l.spawnPitch = spawn.getInt("pitch");
+        final int[] spawnPos = spawn.getIntArray("pos");
+        if (spawnPos.length == 3) {
+            l.spawnX = spawnPos[0];
+            l.spawnY = spawnPos[1];
+            l.spawnZ = spawnPos[2];
+        }
+
+        l.readDimensionData(data, dataDir);
         return l;
     }
 
-    private void readWorldClocks(final CompoundBinaryTag data) {
-        final CompoundBinaryTag fidorial = data.getCompound(FIDORIAL);
+    private void readDimensionData(final CompoundBinaryTag legacyData, final Path dataDir) throws IOException {
+        if (Files.isRegularFile(dataDir.resolve(GAME_RULES_PATH))) {
+            readIfPresent(dataDir.resolve(GAME_RULES_PATH), gameRules -> {
+                if (gameRules.contains("doDaylightCycle")) {
+                    doDaylightCycle = !"false".equals(gameRules.getString("doDaylightCycle"));
+                }
+            });
+        } else if (legacyData.contains("GameRules")) {
+            final CompoundBinaryTag gameRules = legacyData.getCompound("GameRules");
+            if (gameRules.contains("doDaylightCycle")) {
+                doDaylightCycle = !"false".equals(gameRules.getString("doDaylightCycle"));
+            }
+        }
 
-        for (final BinaryTag entry : fidorial.getList(WORLD_CLOCKS)) {
+        if (Files.isRegularFile(dataDir.resolve(WEATHER_PATH))) {
+            readIfPresent(dataDir.resolve(WEATHER_PATH), weather -> {
+                raining = weather.getBoolean("raining");
+                rainTime = weather.getInt("rain_time");
+                thundering = weather.getBoolean("thundering");
+                thunderTime = weather.getInt("thunder_time");
+                clearWeatherTime = weather.getInt("clear_weather_time");
+            });
+        } else if (legacyData.contains("raining")) {
+            raining = legacyData.getBoolean("raining");
+            rainTime = legacyData.getInt("rainTime");
+            thundering = legacyData.getBoolean("thundering");
+            thunderTime = legacyData.getInt("thunderTime");
+            clearWeatherTime = legacyData.getInt("clearWeatherTime");
+        }
+
+        if (Files.isRegularFile(dataDir.resolve(WORLD_GEN_SETTINGS_PATH))) {
+            readIfPresent(dataDir.resolve(WORLD_GEN_SETTINGS_PATH), wgs -> seed = wgs.getLong("seed"));
+        } else if (legacyData.contains("WorldGenSettings")) {
+            seed = legacyData.getCompound("WorldGenSettings").getLong("seed");
+        }
+
+        if (Files.isRegularFile(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH))) {
+            readIfPresent(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH), this::readCustomBossEvents);
+        } else if (legacyData.contains("CustomBossEvents")) {
+            readCustomBossEvents(legacyData.getCompound("CustomBossEvents"));
+        }
+
+        if (Files.isRegularFile(dataDir.resolve(WORLD_CLOCKS_PATH))) {
+            readIfPresent(dataDir.resolve(WORLD_CLOCKS_PATH), this::readWorldClocks);
+        } else if (legacyData.contains("Fidorial")) {
+            readWorldClocks(legacyData.getCompound("Fidorial"));
+        }
+    }
+
+    @FunctionalInterface
+    private interface DimensionDataReader {
+        void accept(CompoundBinaryTag root) throws IOException;
+    }
+
+    private static void readIfPresent(final Path path, final DimensionDataReader reader) throws IOException {
+        if (!Files.isRegularFile(path)) {
+            return;
+        }
+        final CompoundBinaryTag root = BinaryTagIO.reader().readNamed(path, BinaryTagIO.Compression.GZIP).getValue();
+        reader.accept(root);
+    }
+
+    private void readWorldClocks(final CompoundBinaryTag root) {
+        for (final BinaryTag entry : root.getList(WORLD_CLOCKS)) {
             if (!(entry instanceof final CompoundBinaryTag clock)) continue;
             final String dimension = clock.getString("Dimension");
             if (dimension.isEmpty()) continue;
@@ -144,11 +257,10 @@ public class LevelData {
         }
     }
 
-    private void readCustomBossEvents(final CompoundBinaryTag data) {
-        final CompoundBinaryTag events = data.getCompound(CUSTOM_BOSS_EVENTS);
-
+    private void readCustomBossEvents(final CompoundBinaryTag events) {
         for (final String id : events.keySet()) {
-            final CompoundBinaryTag bar = events.getCompound(id);
+            if (id.equals("DataVersion")) continue;
+            if (!(events.get(id) instanceof final CompoundBinaryTag bar)) continue;
 
             final Set<UUID> players = new HashSet<>();
             for (final BinaryTag entry : bar.getList("Players")) {
@@ -177,60 +289,61 @@ public class LevelData {
         }
     }
 
-    public void write(final Path levelDat) throws IOException {
+    public void write(final Path dataDir, final Path levelDat) throws IOException {
+        writeLevelDat(levelDat);
+        writeDimensionData(dataDir);
+    }
+
+    private void writeLevelDat(final Path levelDat) throws IOException {
         Files.createDirectories(levelDat.getParent());
 
         final CompoundBinaryTag.Builder data = CompoundBinaryTag.builder();
-        data.putInt("DataVersion", dataVersion);
+        data.putInt("DataVersion", VersionConstants.DATA_VERSION);
 
         final CompoundBinaryTag.Builder version = CompoundBinaryTag.builder();
-        version.putInt("Id", dataVersion);
-        version.putString("Name", versionName);
+        version.putInt("Id", VersionConstants.DATA_VERSION);
+        version.putString("Name", VersionConstants.MINECRAFT_VERSION_NAME);
         version.putString("Series", "main");
-        version.putBoolean("Snapshot", false);
+        version.putBoolean("Snapshot", !VersionConstants.IS_RELEASE);
         data.put("Version", version.build());
 
-        data.putInt("version", 19133); // version du format de niveau (Anvil)
+        if (versionHistory.isEmpty() || versionHistory.getLast() != dataVersion) {
+            versionHistory.add(dataVersion);
+        }
+        final ListBinaryTag.Builder<BinaryTag> history = ListBinaryTag.builder();
+        for (final int v : versionHistory) {
+            history.add(net.kyori.adventure.nbt.IntBinaryTag.intBinaryTag(v));
+        }
+        data.put("version_history", history.build());
+
+        data.putInt("version", 19133); // Anvil level format version
         data.putBoolean("initialized", true);
         data.putString("LevelName", levelName);
         data.putLong("Time", time);
         data.putLong("DayTime", dayTime);
         data.putLong("LastPlayed", System.currentTimeMillis());
+        data.putBoolean("WasModded", wasModded);
 
-        data.putInt("SpawnX", spawnX);
-        data.putInt("SpawnY", spawnY);
-        data.putInt("SpawnZ", spawnZ);
-        data.putFloat("SpawnAngle", spawnAngle);
+        if (singleplayerUuid != null) {
+            data.putIntArray("singleplayer_uuid", AnvilEntitySerializer.uuidToInts(singleplayerUuid));
+        }
+
+        final CompoundBinaryTag.Builder spawn = CompoundBinaryTag.builder();
+        spawn.putString("dimension", spawnDimension.asString());
+        spawn.putIntArray("pos", new int[] {spawnX, spawnY, spawnZ});
+        spawn.putInt("yaw", spawnYaw);
+        spawn.putInt("pitch", spawnPitch);
+        data.put("spawn", spawn.build());
 
         data.putInt("GameType", gameType);
-        data.putBoolean("hardcore", hardcore);
-        data.putByte("Difficulty", (byte) difficulty);
-        data.putBoolean("DifficultyLocked", false);
+
+        final CompoundBinaryTag.Builder difficultySettings = CompoundBinaryTag.builder();
+        difficultySettings.putByte("difficulty", (byte) difficulty);
+        difficultySettings.putBoolean("hardcore", hardcore);
+        difficultySettings.putBoolean("locked", difficultyLocked);
+        data.put("difficulty_settings", difficultySettings.build());
+
         data.putBoolean("allowCommands", allowCommands);
-
-        data.putInt("clearWeatherTime", clearWeatherTime);
-        data.putInt("rainTime", rainTime);
-        data.putBoolean("raining", raining);
-        data.putInt("thunderTime", thunderTime);
-        data.putBoolean("thundering", thundering);
-
-        final CompoundBinaryTag.Builder gameRules = CompoundBinaryTag.builder();
-        gameRules.putString("doDaylightCycle", Boolean.toString(doDaylightCycle));
-        data.put("GameRules", gameRules.build());
-
-        data.put(FIDORIAL, buildFidorialData());
-        data.put(CUSTOM_BOSS_EVENTS, buildCustomBossEvents());
-
-        // Bordure de monde (valeurs par défaut vanilla)
-        data.putDouble("BorderCenterX", 0d);
-        data.putDouble("BorderCenterZ", 0d);
-        data.putDouble("BorderSize", 59_999_968d);
-        data.putDouble("BorderSafeZone", 5d);
-        data.putDouble("BorderWarningBlocks", 5d);
-        data.putDouble("BorderWarningTime", 15d);
-        data.putDouble("BorderSizeLerpTarget", 59_999_968d);
-        data.putLong("BorderSizeLerpTime", 0L);
-        data.putDouble("BorderDamagePerBlock", 0.2d);
 
         final CompoundBinaryTag.Builder dataPacks = CompoundBinaryTag.builder();
         dataPacks.put("Enabled", ListBinaryTag.builder().add(StringBinaryTag.stringBinaryTag("vanilla")).build());
@@ -239,14 +352,44 @@ public class LevelData {
 
         data.put("ServerBrands", ListBinaryTag.builder().add(StringBinaryTag.stringBinaryTag("Fidorial")).build());
 
-        data.put("WorldGenSettings", buildWorldGenSettings());
-
         final CompoundBinaryTag root = CompoundBinaryTag.builder().put("Data", data.build()).build();
 
         BinaryTagIO.writer().writeNamed(Map.entry("", root), levelDat, BinaryTagIO.Compression.GZIP);
     }
 
-    private CompoundBinaryTag buildFidorialData() {
+    private void writeDimensionData(final Path dataDir) throws IOException {
+        writeDatFile(dataDir.resolve(GAME_RULES_PATH), gameRules ->
+                gameRules.putString("doDaylightCycle", Boolean.toString(doDaylightCycle)));
+
+        writeDatFile(dataDir.resolve(WEATHER_PATH), weather -> {
+            weather.putBoolean("raining", raining);
+            weather.putInt("rain_time", rainTime);
+            weather.putBoolean("thundering", thundering);
+            weather.putInt("thunder_time", thunderTime);
+            weather.putInt("clear_weather_time", clearWeatherTime);
+        });
+
+        writeDatFile(dataDir.resolve(WORLD_GEN_SETTINGS_PATH), this::buildWorldGenSettings);
+        writeDatFile(dataDir.resolve(CUSTOM_BOSS_EVENTS_PATH), this::buildCustomBossEvents);
+        writeDatFile(dataDir.resolve(WORLD_CLOCKS_PATH), this::buildWorldClocksInto);
+    }
+
+    @FunctionalInterface
+    private interface DimensionDataWriter {
+        void accept(CompoundBinaryTag.Builder root);
+    }
+
+    private void writeDatFile(final Path path, final DimensionDataWriter payload) throws IOException {
+        Files.createDirectories(path.getParent());
+
+        final CompoundBinaryTag.Builder root = CompoundBinaryTag.builder();
+        root.putInt("DataVersion", VersionConstants.DATA_VERSION);
+        payload.accept(root);
+
+        BinaryTagIO.writer().writeNamed(Map.entry("", root.build()), path, BinaryTagIO.Compression.GZIP);
+    }
+
+    private void buildWorldClocksInto(final CompoundBinaryTag.Builder root) {
         final ListBinaryTag.Builder<BinaryTag> clocks = ListBinaryTag.builder();
         for (final Map.Entry<Key, WorldTime> entry : worldTimes.entrySet()) {
             final WorldTime value = entry.getValue();
@@ -257,13 +400,11 @@ public class LevelData {
             clock.putBoolean("DoDaylightCycle", value.doDaylightCycle());
             clocks.add(clock.build());
         }
-        return CompoundBinaryTag.builder().put(WORLD_CLOCKS, clocks.build()).build();
+        root.put(WORLD_CLOCKS, clocks.build());
     }
 
-    // this is the framework for built-in /bossbars command which DOES persist, unlike plugin ones
-    private CompoundBinaryTag buildCustomBossEvents() {
-        final CompoundBinaryTag.Builder root = CompoundBinaryTag.builder();
-
+    // this is the framework for the built-in /bossbars command, which DOES persist, unlike plugin ones
+    private void buildCustomBossEvents(final CompoundBinaryTag.Builder root) {
         for (final Map.Entry<Key, BossBarData> entry : bossBars.entrySet()) {
             final BossBarData value = entry.getValue();
             final CompoundBinaryTag.Builder bar = CompoundBinaryTag.builder();
@@ -286,22 +427,18 @@ public class LevelData {
 
             root.put(entry.getKey().asString(), bar.build());
         }
-
-        return root.build();
     }
 
-    private CompoundBinaryTag buildWorldGenSettings() {
-        final CompoundBinaryTag.Builder wgs = CompoundBinaryTag.builder();
+    private void buildWorldGenSettings(final CompoundBinaryTag.Builder wgs) {
         wgs.putLong("seed", seed);
-        wgs.putBoolean("generate_features", true);
+        wgs.putBoolean("generate_structures", true);
         wgs.putBoolean("bonus_chest", false);
 
         final CompoundBinaryTag.Builder dimensions = CompoundBinaryTag.builder();
         for (final Map.Entry<Key, ChunkGeneratorConfig> entry : generators.entrySet()) {
             dimensions.put(entry.getKey().asString(), buildDimension(entry.getKey(), entry.getValue()));
         }
-        wgs.put("dimensions", dimensions.build());
-        return wgs.build();
+        wgs.put(DIMENSIONS, dimensions.build());
     }
 
     private CompoundBinaryTag buildDimension(final Key dimensionId, final ChunkGeneratorConfig config) {
@@ -351,6 +488,10 @@ public class LevelData {
                 yield generator.build();
             }
         };
+    }
+
+    public long hashedSeed() {
+        return Hashing.sha256().hashLong(seed).asLong();
     }
 
     public boolean exists(final Path levelDat) {

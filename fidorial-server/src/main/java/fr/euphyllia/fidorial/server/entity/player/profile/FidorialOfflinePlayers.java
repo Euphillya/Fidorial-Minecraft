@@ -293,7 +293,7 @@ public final class FidorialOfflinePlayers implements OfflinePlayers, Closeable {
                     return Optional.empty();
                 }
                 final PlayerDataStorage.PlayerData loaded =
-                        data.load(uuid, new PlayerDataStorage.PlayerData(server.config().defaultGameMode(), null, null));
+                        data.load(uuid, new PlayerDataStorage.PlayerData(server.config().defaultGameMode(), null, null, null, null));
                 return Optional.of(new OfflinePlayerSnapshot(
                         uuid,
                         loaded.gameMode(),

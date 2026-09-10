@@ -3,9 +3,10 @@ package fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play;
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
 import fr.euphyllia.fidorial.server.network.protocol.catalog.PlayClientboundPackets;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import net.kyori.adventure.key.Key;
 
-public record ClientboundPlayerPositionPacket(int teleportId, double x, double y, double z)
+public record ClientboundPlayerPositionPacket(int teleportId, PositionData.PositionMoveRotationData moveData)
         implements ClientboundPacket {
 
     @Override
@@ -16,9 +17,7 @@ public record ClientboundPlayerPositionPacket(int teleportId, double x, double y
     @Override
     public void write(PacketBuffer buf) {
         buf.writeVarInt(teleportId);
-        buf.writeDouble(x).writeDouble(y).writeDouble(z);
-        buf.writeDouble(0).writeDouble(0).writeDouble(0);   // velocite
-        buf.writeFloat(0f).writeFloat(0f);                  // yaw / pitch
+        moveData.writeTo(buf);
         buf.writeInt(0);                                    // flags (tout absolu)
     }
 }

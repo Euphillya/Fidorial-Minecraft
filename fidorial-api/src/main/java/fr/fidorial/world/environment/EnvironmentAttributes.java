@@ -1,6 +1,7 @@
 package fr.fidorial.world.environment;
 
 import net.kyori.adventure.key.Key;
+import net.kyori.adventure.util.TriState;
 import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.Nullable;
 
@@ -10,59 +11,105 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @param fogColor                    distance fog color, packed RGB — {@code minecraft:visual/fog_color}
- * @param fogStartDistance            distance in blocks at which fog begins — {@code minecraft:visual/fog_start_distance}
- * @param fogEndDistance               distance in blocks at which fog reaches full density — {@code minecraft:visual/fog_end_distance}
- * @param skyColor                    sky color, packed RGB — {@code minecraft:visual/sky_color}
- * @param cloudColor                  cloud color, packed ARGB — {@code minecraft:visual/cloud_color}
- * @param cloudHeight                 height, in blocks, at which clouds render — {@code minecraft:visual/cloud_height}
- * @param skyLightColor               sky light color, packed RGB — {@code minecraft:visual/sky_light_color}
- * @param skyLightFactor              multiplier applied to sky light, within {@code [0, 1]} — {@code minecraft:visual/sky_light_factor}
- * @param ambientLightColor           ambient light color, packed RGB — {@code minecraft:visual/ambient_light_color}
- * @param defaultDripstoneParticle    particle used by dripping dripstone — {@code minecraft:visual/default_dripstone_particle}
- * @param waterFogColor               underwater fog color, packed RGB — {@code minecraft:visual/water_fog_color}
- * @param waterFogEndDistance         distance in blocks at which underwater fog reaches full density — {@code minecraft:visual/water_fog_end_distance}
- * @param musicVolume                 volume music fades to, within {@code [0, 1]} — {@code minecraft:audio/music_volume}
- * @param canStartRaid                whether a raid can begin here — {@code minecraft:gameplay/can_start_raid}
- * @param canPillagerPatrolSpawn      whether pillager patrols spawn here — {@code minecraft:gameplay/can_pillager_patrol_spawn}
- * @param waterEvaporates             whether placed water evaporates — {@code minecraft:gameplay/water_evaporates}
- * @param bedRule                     when beds are usable to sleep/set spawn — {@code minecraft:gameplay/bed_rule}
- * @param respawnAnchorWorks          whether respawn anchors set spawn instead of exploding — {@code minecraft:gameplay/respawn_anchor_works}
- * @param netherPortalSpawnsPiglin    whether entering a nether portal can spawn a piglin — {@code minecraft:gameplay/nether_portal_spawns_piglin}
- * @param fastLava                    whether lava flows and spreads at Nether speed — {@code minecraft:gameplay/fast_lava}
- * @param increasedFireBurnout        whether fire burns out faster — {@code minecraft:gameplay/increased_fire_burnout}
- * @param piglinsZombify              whether piglins and hoglins zombify — {@code minecraft:gameplay/piglins_zombify}
- * @param snowGolemMelts              whether snow golems take damage — {@code minecraft:gameplay/snow_golem_melts}
- * @param skyLightLevel               sky light level, within {@code [0, 15]} — {@code minecraft:gameplay/sky_light_level}
- * @param ambientParticles            particles randomly spawned around the camera, possibly empty — {@code minecraft:visual/ambient_particles}
- * @param ambientSounds                looping, mood and additions sounds — {@code minecraft:audio/ambient_sounds}
- * @param backgroundMusic              music tracks — {@code minecraft:audio/background_music}
+ * @param fogColor                          distance fog color, packed RGB — {@code minecraft:visual/fog_color}
+ * @param fogStartDistance                  distance in blocks at which fog begins — {@code minecraft:visual/fog_start_distance}
+ * @param fogEndDistance                     distance in blocks at which fog reaches full density — {@code minecraft:visual/fog_end_distance}
+ * @param skyFogEndDistance                 distance in blocks at which sky-visible fog reaches full density — {@code minecraft:visual/sky_fog_end_distance}
+ * @param cloudFogEndDistance               distance in blocks at which cloud-visible fog reaches full density — {@code minecraft:visual/cloud_fog_end_distance}
+ * @param skyColor                          sky color, packed RGB — {@code minecraft:visual/sky_color}
+ * @param sunriseSunsetColor                sunrise/sunset gradient color, packed ARGB — {@code minecraft:visual/sunrise_sunset_color}
+ * @param cloudColor                        cloud color, packed ARGB — {@code minecraft:visual/cloud_color}
+ * @param cloudHeight                       height, in blocks, at which clouds render — {@code minecraft:visual/cloud_height}
+ * @param sunAngle                          sun angle offset, in degrees — {@code minecraft:visual/sun_angle}
+ * @param moonAngle                         moon angle offset, in degrees — {@code minecraft:visual/moon_angle}
+ * @param starAngle                         star angle offset, in degrees — {@code minecraft:visual/star_angle}
+ * @param moonPhase                         moon phase index, within {@code [0, 7]} — {@code minecraft:visual/moon_phase}
+ * @param starBrightness                    star brightness, within {@code [0, 1]} — {@code minecraft:visual/star_brightness}
+ * @param blockLightTint                    tint applied to block light, packed RGB — {@code minecraft:visual/block_light_tint}
+ * @param skyLightColor                     sky light color, packed RGB — {@code minecraft:visual/sky_light_color}
+ * @param skyLightFactor                    multiplier applied to sky light, within {@code [0, 1]} — {@code minecraft:visual/sky_light_factor}
+ * @param nightVisionColor                  tint applied by Night Vision, packed RGB — {@code minecraft:visual/night_vision_color}
+ * @param ambientLightColor                 ambient light color, packed RGB — {@code minecraft:visual/ambient_light_color}
+ * @param defaultDripstoneParticle          particle used by dripping dripstone — {@code minecraft:visual/default_dripstone_particle}
+ * @param waterFogColor                     underwater fog color, packed RGB — {@code minecraft:visual/water_fog_color}
+ * @param waterFogStartDistance             distance in blocks at which underwater fog begins — {@code minecraft:visual/water_fog_start_distance}
+ * @param waterFogEndDistance               distance in blocks at which underwater fog reaches full density — {@code minecraft:visual/water_fog_end_distance}
+ * @param musicVolume                       volume music fades to, within {@code [0, 1]} — {@code minecraft:audio/music_volume}
+ * @param fireflyBushSounds                 whether firefly bushes emit ambient sound — {@code minecraft:audio/firefly_bush_sounds}
+ * @param canStartRaid                      whether a raid can begin here — {@code minecraft:gameplay/can_start_raid}
+ * @param canPillagerPatrolSpawn            whether pillager patrols spawn here — {@code minecraft:gameplay/can_pillager_patrol_spawn}
+ * @param waterEvaporates                   whether placed water evaporates — {@code minecraft:gameplay/water_evaporates}
+ * @param bedRule                           when beds are usable to sleep/set spawn — {@code minecraft:gameplay/bed_rule}
+ * @param strawBedRule                      when straw beds are usable to sleep/set spawn — {@code minecraft:gameplay/straw_bed_rule}
+ * @param respawnAnchorWorks                whether respawn anchors set spawn instead of exploding — {@code minecraft:gameplay/respawn_anchor_works}
+ * @param netherPortalSpawnsPiglin          whether entering a nether portal can spawn a piglin — {@code minecraft:gameplay/nether_portal_spawns_piglin}
+ * @param fastLava                          whether lava flows and spreads at Nether speed — {@code minecraft:gameplay/fast_lava}
+ * @param increasedFireBurnout              whether fire burns out faster — {@code minecraft:gameplay/increased_fire_burnout}
+ * @param eyeblossomOpen                    whether eyeblossoms are forced open/closed, or left to their default day cycle — {@code minecraft:gameplay/eyeblossom_open}
+ * @param turtleEggHatchChance              chance a turtle egg hatches per random tick, within {@code [0, 1]} — {@code minecraft:gameplay/turtle_egg_hatch_chance}
+ * @param piglinsZombify                    whether piglins and hoglins zombify — {@code minecraft:gameplay/piglins_zombify}
+ * @param snowGolemMelts                    whether snow golems take damage — {@code minecraft:gameplay/snow_golem_melts}
+ * @param creakingActive                    whether creakings are active — {@code minecraft:gameplay/creaking_active}
+ * @param surfaceSlimeSpawnChance           chance a slime spawns on the surface, within {@code [0, 1]} — {@code minecraft:gameplay/surface_slime_spawn_chance}
+ * @param catWakingUpGiftChance             chance a cat gives a gift on waking up, within {@code [0, 1]} — {@code minecraft:gameplay/cat_waking_up_gift_chance}
+ * @param beesStayInHive                    whether bees refuse to leave their hive — {@code minecraft:gameplay/bees_stay_in_hive}
+ * @param monstersBurn                      whether monsters burn in daylight — {@code minecraft:gameplay/monsters_burn}
+ * @param creatureWorldGenSpawnProbability  probability creatures spawn during world generation, within {@code [0, 1]} — {@code minecraft:gameplay/creature_world_gen_spawn_probability}
+ * @param villagerActivity                  forced villager schedule activity — {@code minecraft:gameplay/villager_activity}
+ * @param babyVillagerActivity              forced baby villager schedule activity — {@code minecraft:gameplay/baby_villager_activity}
+ * @param skyLightLevel                     sky light level, within {@code [0, 15]} — {@code minecraft:gameplay/sky_light_level}
+ * @param ambientParticles                  particles randomly spawned around the camera, possibly empty — {@code minecraft:visual/ambient_particles}
+ * @param ambientSounds                      looping, mood and additions sounds — {@code minecraft:audio/ambient_sounds}
+ * @param backgroundMusic                    music tracks — {@code minecraft:audio/background_music}
  * @since 0.1.0
  */
 public record EnvironmentAttributes(
         @Nullable Attribute<Integer> fogColor,
         @Nullable Attribute<Float> fogStartDistance,
         @Nullable Attribute<Float> fogEndDistance,
+        @Nullable Attribute<Float> skyFogEndDistance,
+        @Nullable Attribute<Float> cloudFogEndDistance,
         @Nullable Attribute<Integer> skyColor,
+        @Nullable Attribute<Integer> sunriseSunsetColor,
         @Nullable Attribute<Integer> cloudColor,
         @Nullable Attribute<Float> cloudHeight,
+        @Nullable Attribute<Float> sunAngle,
+        @Nullable Attribute<Float> moonAngle,
+        @Nullable Attribute<Float> starAngle,
+        @Nullable Attribute<Integer> moonPhase,
+        @Nullable Attribute<Float> starBrightness,
+        @Nullable Attribute<Integer> blockLightTint,
         @Nullable Attribute<Integer> skyLightColor,
         @Nullable Attribute<Float> skyLightFactor,
+        @Nullable Attribute<Integer> nightVisionColor,
         @Nullable Attribute<Integer> ambientLightColor,
         @Nullable Attribute<Key> defaultDripstoneParticle,
         @Nullable Attribute<Integer> waterFogColor,
+        @Nullable Attribute<Float> waterFogStartDistance,
         @Nullable Attribute<Float> waterFogEndDistance,
         @Nullable Attribute<Float> musicVolume,
+        @Nullable Attribute<Boolean> fireflyBushSounds,
         @Nullable Attribute<Boolean> canStartRaid,
         @Nullable Attribute<Boolean> canPillagerPatrolSpawn,
         @Nullable Attribute<Boolean> waterEvaporates,
         @Nullable Attribute<BedRule> bedRule,
+        @Nullable Attribute<BedRule> strawBedRule,
         @Nullable Attribute<Boolean> respawnAnchorWorks,
         @Nullable Attribute<Boolean> netherPortalSpawnsPiglin,
         @Nullable Attribute<Boolean> fastLava,
         @Nullable Attribute<Boolean> increasedFireBurnout,
+        @Nullable Attribute<TriState> eyeblossomOpen,
+        @Nullable Attribute<Float> turtleEggHatchChance,
         @Nullable Attribute<Boolean> piglinsZombify,
         @Nullable Attribute<Boolean> snowGolemMelts,
+        @Nullable Attribute<Boolean> creakingActive,
+        @Nullable Attribute<Float> surfaceSlimeSpawnChance,
+        @Nullable Attribute<Float> catWakingUpGiftChance,
+        @Nullable Attribute<Boolean> beesStayInHive,
+        @Nullable Attribute<Boolean> monstersBurn,
+        @Nullable Attribute<Float> creatureWorldGenSpawnProbability,
+        @Nullable Attribute<Key> villagerActivity,
+        @Nullable Attribute<Key> babyVillagerActivity,
         @Nullable Attribute<Float> skyLightLevel,
         List<AmbientParticle> ambientParticles,
         @Nullable AmbientSounds ambientSounds,
@@ -124,26 +171,49 @@ public record EnvironmentAttributes(
         private @Nullable Attribute<Integer> fogColor;
         private @Nullable Attribute<Float> fogStartDistance;
         private @Nullable Attribute<Float> fogEndDistance;
+        private @Nullable Attribute<Float> skyFogEndDistance;
+        private @Nullable Attribute<Float> cloudFogEndDistance;
         private @Nullable Attribute<Integer> skyColor;
+        private @Nullable Attribute<Integer> sunriseSunsetColor;
         private @Nullable Attribute<Integer> cloudColor;
         private @Nullable Attribute<Float> cloudHeight;
+        private @Nullable Attribute<Float> sunAngle;
+        private @Nullable Attribute<Float> moonAngle;
+        private @Nullable Attribute<Float> starAngle;
+        private @Nullable Attribute<Integer> moonPhase;
+        private @Nullable Attribute<Float> starBrightness;
+        private @Nullable Attribute<Integer> blockLightTint;
         private @Nullable Attribute<Integer> skyLightColor;
         private @Nullable Attribute<Float> skyLightFactor;
+        private @Nullable Attribute<Integer> nightVisionColor;
         private @Nullable Attribute<Integer> ambientLightColor;
         private @Nullable Attribute<Key> defaultDripstoneParticle;
         private @Nullable Attribute<Integer> waterFogColor;
+        private @Nullable Attribute<Float> waterFogStartDistance;
         private @Nullable Attribute<Float> waterFogEndDistance;
         private @Nullable Attribute<Float> musicVolume;
+        private @Nullable Attribute<Boolean> fireflyBushSounds;
         private @Nullable Attribute<Boolean> canStartRaid;
         private @Nullable Attribute<Boolean> canPillagerPatrolSpawn;
         private @Nullable Attribute<Boolean> waterEvaporates;
         private @Nullable Attribute<BedRule> bedRule;
+        private @Nullable Attribute<BedRule> strawBedRule;
         private @Nullable Attribute<Boolean> respawnAnchorWorks;
         private @Nullable Attribute<Boolean> netherPortalSpawnsPiglin;
         private @Nullable Attribute<Boolean> fastLava;
         private @Nullable Attribute<Boolean> increasedFireBurnout;
+        private @Nullable Attribute<TriState> eyeblossomOpen;
+        private @Nullable Attribute<Float> turtleEggHatchChance;
         private @Nullable Attribute<Boolean> piglinsZombify;
         private @Nullable Attribute<Boolean> snowGolemMelts;
+        private @Nullable Attribute<Boolean> creakingActive;
+        private @Nullable Attribute<Float> surfaceSlimeSpawnChance;
+        private @Nullable Attribute<Float> catWakingUpGiftChance;
+        private @Nullable Attribute<Boolean> beesStayInHive;
+        private @Nullable Attribute<Boolean> monstersBurn;
+        private @Nullable Attribute<Float> creatureWorldGenSpawnProbability;
+        private @Nullable Attribute<Key> villagerActivity;
+        private @Nullable Attribute<Key> babyVillagerActivity;
         private @Nullable Attribute<Float> skyLightLevel;
         private @Nullable AmbientSounds ambientSounds;
         private @Nullable BackgroundMusic backgroundMusic;
@@ -155,26 +225,49 @@ public record EnvironmentAttributes(
             this.fogColor = attributes.fogColor;
             this.fogStartDistance = attributes.fogStartDistance;
             this.fogEndDistance = attributes.fogEndDistance;
+            this.skyFogEndDistance = attributes.skyFogEndDistance;
+            this.cloudFogEndDistance = attributes.cloudFogEndDistance;
             this.skyColor = attributes.skyColor;
+            this.sunriseSunsetColor = attributes.sunriseSunsetColor;
             this.cloudColor = attributes.cloudColor;
             this.cloudHeight = attributes.cloudHeight;
+            this.sunAngle = attributes.sunAngle;
+            this.moonAngle = attributes.moonAngle;
+            this.starAngle = attributes.starAngle;
+            this.moonPhase = attributes.moonPhase;
+            this.starBrightness = attributes.starBrightness;
+            this.blockLightTint = attributes.blockLightTint;
             this.skyLightColor = attributes.skyLightColor;
             this.skyLightFactor = attributes.skyLightFactor;
+            this.nightVisionColor = attributes.nightVisionColor;
             this.ambientLightColor = attributes.ambientLightColor;
             this.defaultDripstoneParticle = attributes.defaultDripstoneParticle;
             this.waterFogColor = attributes.waterFogColor;
+            this.waterFogStartDistance = attributes.waterFogStartDistance;
             this.waterFogEndDistance = attributes.waterFogEndDistance;
             this.musicVolume = attributes.musicVolume;
+            this.fireflyBushSounds = attributes.fireflyBushSounds;
             this.canStartRaid = attributes.canStartRaid;
             this.canPillagerPatrolSpawn = attributes.canPillagerPatrolSpawn;
             this.waterEvaporates = attributes.waterEvaporates;
             this.bedRule = attributes.bedRule;
+            this.strawBedRule = attributes.strawBedRule;
             this.respawnAnchorWorks = attributes.respawnAnchorWorks;
             this.netherPortalSpawnsPiglin = attributes.netherPortalSpawnsPiglin;
             this.fastLava = attributes.fastLava;
             this.increasedFireBurnout = attributes.increasedFireBurnout;
+            this.eyeblossomOpen = attributes.eyeblossomOpen;
+            this.turtleEggHatchChance = attributes.turtleEggHatchChance;
             this.piglinsZombify = attributes.piglinsZombify;
             this.snowGolemMelts = attributes.snowGolemMelts;
+            this.creakingActive = attributes.creakingActive;
+            this.surfaceSlimeSpawnChance = attributes.surfaceSlimeSpawnChance;
+            this.catWakingUpGiftChance = attributes.catWakingUpGiftChance;
+            this.beesStayInHive = attributes.beesStayInHive;
+            this.monstersBurn = attributes.monstersBurn;
+            this.creatureWorldGenSpawnProbability = attributes.creatureWorldGenSpawnProbability;
+            this.villagerActivity = attributes.villagerActivity;
+            this.babyVillagerActivity = attributes.babyVillagerActivity;
             this.skyLightLevel = attributes.skyLightLevel;
             this.ambientParticles.addAll(attributes.ambientParticles);
             this.ambientSounds = attributes.ambientSounds;
@@ -257,6 +350,56 @@ public record EnvironmentAttributes(
         }
 
         /**
+         * Sets {@code minecraft:visual/sky_fog_end_distance} as a plain override.
+         *
+         * @param value distance in blocks at which sky-visible fog reaches full density, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder skyFogEndDistance(final @Nullable Float value) {
+            this.skyFogEndDistance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/sky_fog_end_distance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder skyFogEndDistance(final Float value, final Modifier modifier) {
+            this.skyFogEndDistance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/cloud_fog_end_distance} as a plain override.
+         *
+         * @param value distance in blocks at which cloud-visible fog reaches full density, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder cloudFogEndDistance(final @Nullable Float value) {
+            this.cloudFogEndDistance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/cloud_fog_end_distance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder cloudFogEndDistance(final Float value, final Modifier modifier) {
+            this.cloudFogEndDistance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
          * Sets {@code minecraft:visual/sky_color} as a plain override.
          *
          * @param value sky color, packed RGB, or {@code null} to leave unset
@@ -278,6 +421,31 @@ public record EnvironmentAttributes(
         @Contract("_, _ -> this")
         public Builder skyColor(final Integer value, final Modifier modifier) {
             this.skyColor = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/sunrise_sunset_color} as a plain override.
+         *
+         * @param value sunrise/sunset gradient color, packed ARGB, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder sunriseSunsetColor(final @Nullable Integer value) {
+            this.sunriseSunsetColor = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/sunrise_sunset_color}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder sunriseSunsetColor(final Integer value, final Modifier modifier) {
+            this.sunriseSunsetColor = Attribute.of(value, modifier);
             return this;
         }
 
@@ -332,6 +500,156 @@ public record EnvironmentAttributes(
         }
 
         /**
+         * Sets {@code minecraft:visual/sun_angle} as a plain override.
+         *
+         * @param value sun angle offset, in degrees, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder sunAngle(final @Nullable Float value) {
+            this.sunAngle = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/sun_angle}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder sunAngle(final Float value, final Modifier modifier) {
+            this.sunAngle = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/moon_angle} as a plain override.
+         *
+         * @param value moon angle offset, in degrees, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder moonAngle(final @Nullable Float value) {
+            this.moonAngle = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/moon_angle}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder moonAngle(final Float value, final Modifier modifier) {
+            this.moonAngle = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/star_angle} as a plain override.
+         *
+         * @param value star angle offset, in degrees, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder starAngle(final @Nullable Float value) {
+            this.starAngle = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/star_angle}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder starAngle(final Float value, final Modifier modifier) {
+            this.starAngle = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/moon_phase} as a plain override.
+         *
+         * @param value moon phase index, within {@code [0, 7]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder moonPhase(final @Nullable Integer value) {
+            this.moonPhase = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/moon_phase}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder moonPhase(final Integer value, final Modifier modifier) {
+            this.moonPhase = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/star_brightness} as a plain override.
+         *
+         * @param value star brightness, within {@code [0, 1]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder starBrightness(final @Nullable Float value) {
+            this.starBrightness = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/star_brightness}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder starBrightness(final Float value, final Modifier modifier) {
+            this.starBrightness = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/block_light_tint} as a plain override.
+         *
+         * @param value tint applied to block light, packed RGB, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder blockLightTint(final @Nullable Integer value) {
+            this.blockLightTint = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/block_light_tint}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder blockLightTint(final Integer value, final Modifier modifier) {
+            this.blockLightTint = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
          * Sets {@code minecraft:visual/sky_light_color} as a plain override.
          *
          * @param value sky light color, packed RGB, or {@code null} to leave unset
@@ -378,6 +696,31 @@ public record EnvironmentAttributes(
         @Contract("_, _ -> this")
         public Builder skyLightFactor(final Float value, final Modifier modifier) {
             this.skyLightFactor = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/night_vision_color} as a plain override.
+         *
+         * @param value tint applied by Night Vision, packed RGB, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder nightVisionColor(final @Nullable Integer value) {
+            this.nightVisionColor = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/night_vision_color}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder nightVisionColor(final Integer value, final Modifier modifier) {
+            this.nightVisionColor = Attribute.of(value, modifier);
             return this;
         }
 
@@ -457,6 +800,31 @@ public record EnvironmentAttributes(
         }
 
         /**
+         * Sets {@code minecraft:visual/water_fog_start_distance} as a plain override.
+         *
+         * @param value distance in blocks at which underwater fog begins, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder waterFogStartDistance(final @Nullable Float value) {
+            this.waterFogStartDistance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:visual/water_fog_start_distance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder waterFogStartDistance(final Float value, final Modifier modifier) {
+            this.waterFogStartDistance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
          * Sets {@code minecraft:visual/water_fog_end_distance} as a plain override.
          *
          * @param value distance in blocks at which underwater fog reaches full density, or {@code null} to leave unset
@@ -503,6 +871,31 @@ public record EnvironmentAttributes(
         @Contract("_, _ -> this")
         public Builder musicVolume(final Float value, final Modifier modifier) {
             this.musicVolume = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:audio/firefly_bush_sounds} as a plain override.
+         *
+         * @param value whether firefly bushes emit ambient sound, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder fireflyBushSounds(final @Nullable Boolean value) {
+            this.fireflyBushSounds = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:audio/firefly_bush_sounds}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder fireflyBushSounds(final Boolean value, final Modifier modifier) {
+            this.fireflyBushSounds = Attribute.of(value, modifier);
             return this;
         }
 
@@ -607,6 +1000,31 @@ public record EnvironmentAttributes(
         }
 
         /**
+         * Sets {@code minecraft:gameplay/straw_bed_rule} as a plain override.
+         *
+         * @param value when straw beds are usable to sleep/set spawn, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder strawBedRule(final @Nullable BedRule value) {
+            this.strawBedRule = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/straw_bed_rule}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder strawBedRule(final BedRule value, final Modifier modifier) {
+            this.strawBedRule = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
          * Sets {@code minecraft:gameplay/respawn_anchor_works} as a plain override.
          *
          * @param value whether respawn anchors set spawn instead of exploding, or {@code null} to leave unset
@@ -707,6 +1125,56 @@ public record EnvironmentAttributes(
         }
 
         /**
+         * Sets {@code minecraft:gameplay/eyeblossom_open} as a plain override.
+         *
+         * @param value whether eyeblossoms are forced open/closed, or {@link TriState#NOT_SET} to leave their default day cycle, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder eyeblossomOpen(final @Nullable TriState value) {
+            this.eyeblossomOpen = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/eyeblossom_open}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder eyeblossomOpen(final TriState value, final Modifier modifier) {
+            this.eyeblossomOpen = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/turtle_egg_hatch_chance} as a plain override.
+         *
+         * @param value chance a turtle egg hatches per random tick, within {@code [0, 1]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder turtleEggHatchChance(final @Nullable Float value) {
+            this.turtleEggHatchChance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/turtle_egg_hatch_chance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder turtleEggHatchChance(final Float value, final Modifier modifier) {
+            this.turtleEggHatchChance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
          * Sets {@code minecraft:gameplay/piglins_zombify} as a plain override.
          *
          * @param value whether piglins and hoglins zombify, or {@code null} to leave unset
@@ -753,6 +1221,206 @@ public record EnvironmentAttributes(
         @Contract("_, _ -> this")
         public Builder snowGolemMelts(final Boolean value, final Modifier modifier) {
             this.snowGolemMelts = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/creaking_active} as a plain override.
+         *
+         * @param value whether creakings are active, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder creakingActive(final @Nullable Boolean value) {
+            this.creakingActive = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/creaking_active}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder creakingActive(final Boolean value, final Modifier modifier) {
+            this.creakingActive = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/surface_slime_spawn_chance} as a plain override.
+         *
+         * @param value chance a slime spawns on the surface, within {@code [0, 1]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder surfaceSlimeSpawnChance(final @Nullable Float value) {
+            this.surfaceSlimeSpawnChance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/surface_slime_spawn_chance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder surfaceSlimeSpawnChance(final Float value, final Modifier modifier) {
+            this.surfaceSlimeSpawnChance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/cat_waking_up_gift_chance} as a plain override.
+         *
+         * @param value chance a cat gives a gift on waking up, within {@code [0, 1]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder catWakingUpGiftChance(final @Nullable Float value) {
+            this.catWakingUpGiftChance = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/cat_waking_up_gift_chance}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder catWakingUpGiftChance(final Float value, final Modifier modifier) {
+            this.catWakingUpGiftChance = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/bees_stay_in_hive} as a plain override.
+         *
+         * @param value whether bees refuse to leave their hive, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder beesStayInHive(final @Nullable Boolean value) {
+            this.beesStayInHive = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/bees_stay_in_hive}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder beesStayInHive(final Boolean value, final Modifier modifier) {
+            this.beesStayInHive = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/monsters_burn} as a plain override.
+         *
+         * @param value whether monsters burn in daylight, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder monstersBurn(final @Nullable Boolean value) {
+            this.monstersBurn = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/monsters_burn}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder monstersBurn(final Boolean value, final Modifier modifier) {
+            this.monstersBurn = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/creature_world_gen_spawn_probability} as a plain override.
+         *
+         * @param value probability creatures spawn during world generation, within {@code [0, 1]}, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder creatureWorldGenSpawnProbability(final @Nullable Float value) {
+            this.creatureWorldGenSpawnProbability = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/creature_world_gen_spawn_probability}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder creatureWorldGenSpawnProbability(final Float value, final Modifier modifier) {
+            this.creatureWorldGenSpawnProbability = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/villager_activity} as a plain override.
+         *
+         * @param value forced villager schedule activity, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder villagerActivity(final @Nullable Key value) {
+            this.villagerActivity = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/villager_activity}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder villagerActivity(final Key value, final Modifier modifier) {
+            this.villagerActivity = Attribute.of(value, modifier);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/baby_villager_activity} as a plain override.
+         *
+         * @param value forced baby villager schedule activity, or {@code null} to leave unset
+         * @return this builder
+         */
+        @Contract("_ -> this")
+        public Builder babyVillagerActivity(final @Nullable Key value) {
+            this.babyVillagerActivity = value == null ? null : Attribute.of(value);
+            return this;
+        }
+
+        /**
+         * Sets {@code minecraft:gameplay/baby_villager_activity}, deriving from the dimension's value.
+         *
+         * @param value    the modifier argument
+         * @param modifier how to combine it
+         * @return this builder
+         */
+        @Contract("_, _ -> this")
+        public Builder babyVillagerActivity(final Key value, final Modifier modifier) {
+            this.babyVillagerActivity = Attribute.of(value, modifier);
             return this;
         }
 
@@ -839,26 +1507,49 @@ public record EnvironmentAttributes(
                     fogColor,
                     fogStartDistance,
                     fogEndDistance,
+                    skyFogEndDistance,
+                    cloudFogEndDistance,
                     skyColor,
+                    sunriseSunsetColor,
                     cloudColor,
                     cloudHeight,
+                    sunAngle,
+                    moonAngle,
+                    starAngle,
+                    moonPhase,
+                    starBrightness,
+                    blockLightTint,
                     skyLightColor,
                     skyLightFactor,
+                    nightVisionColor,
                     ambientLightColor,
                     defaultDripstoneParticle,
                     waterFogColor,
+                    waterFogStartDistance,
                     waterFogEndDistance,
                     musicVolume,
+                    fireflyBushSounds,
                     canStartRaid,
                     canPillagerPatrolSpawn,
                     waterEvaporates,
                     bedRule,
+                    strawBedRule,
                     respawnAnchorWorks,
                     netherPortalSpawnsPiglin,
                     fastLava,
                     increasedFireBurnout,
+                    eyeblossomOpen,
+                    turtleEggHatchChance,
                     piglinsZombify,
                     snowGolemMelts,
+                    creakingActive,
+                    surfaceSlimeSpawnChance,
+                    catWakingUpGiftChance,
+                    beesStayInHive,
+                    monstersBurn,
+                    creatureWorldGenSpawnProbability,
+                    villagerActivity,
+                    babyVillagerActivity,
                     skyLightLevel,
                     List.copyOf(ambientParticles),
                     ambientSounds,

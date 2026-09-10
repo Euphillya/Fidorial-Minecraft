@@ -36,6 +36,7 @@ public final class RegistryGenerator {
 
     private final RegistryReportParser parser;
     private final RegistryTagReportParser tagReportParser;
+    private final DatapackRegistryDiscoverer datapackRegistryDiscoverer;
     private final RegistryDataGenerator dataGenerator;
     private final RegistryKeysGenerator keysGenerator;
     private final RegistryDatasetGenerator datasetGenerator;
@@ -57,6 +58,7 @@ public final class RegistryGenerator {
 
         this(new RegistryReportParser(),
                 new RegistryTagReportParser(),
+                new DatapackRegistryDiscoverer(),
                 new RegistryDataGenerator(),
                 new RegistryKeysGenerator(),
                 new RegistryDatasetGenerator(),
@@ -76,6 +78,7 @@ public final class RegistryGenerator {
      *
      * @param parser                      registry report parser
      * @param tagReportParser             vanilla tag file parser
+     * @param datapackRegistryDiscoverer      scanner that discovers datapack-driven registries missing from the report
      * @param dataGenerator               marker-interface generator
      * @param keysGenerator               typed registry-entry key generator
      * @param datasetGenerator            runtime registry dataset generator
@@ -88,6 +91,7 @@ public final class RegistryGenerator {
      */
     public RegistryGenerator(final RegistryReportParser parser,
                              final RegistryTagReportParser tagReportParser,
+                             final DatapackRegistryDiscoverer datapackRegistryDiscoverer,
                              final RegistryDataGenerator dataGenerator,
                              final RegistryKeysGenerator keysGenerator,
                              final RegistryDatasetGenerator datasetGenerator,
@@ -100,6 +104,7 @@ public final class RegistryGenerator {
 
         this.parser = Objects.requireNonNull(parser, "parser");
         this.tagReportParser = Objects.requireNonNull(tagReportParser, "tagReportParser");
+        this.datapackRegistryDiscoverer = Objects.requireNonNull(datapackRegistryDiscoverer, "dynamicRegistryScanner");
         this.dataGenerator = Objects.requireNonNull(dataGenerator, "dataGenerator");
         this.keysGenerator = Objects.requireNonNull(keysGenerator, "keysGenerator");
         this.datasetGenerator = Objects.requireNonNull(datasetGenerator, "datasetGenerator");
@@ -163,7 +168,12 @@ public final class RegistryGenerator {
 
         for (final RegistryTypeDefinition registryType : registryTypes) {
 
-            final Optional<RegistryDefinition> registryDefinition = registries.registry(registryType.identifier());
+            Optional<RegistryDefinition> registryDefinition = registries.registry(registryType.identifier());
+
+            if (registryDefinition.isEmpty()) {
+                registryDefinition = datapackRegistryDiscoverer.scan(vanillaDataDirectory, registryType);
+            }
+
             if (registryDefinition.isEmpty()) {
                 System.out.println("Registry missing from report: " + registryType.identifier());
                 continue;

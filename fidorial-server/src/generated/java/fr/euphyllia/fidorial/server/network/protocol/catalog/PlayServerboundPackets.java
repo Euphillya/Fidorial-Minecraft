@@ -244,6 +244,11 @@ public final class PlayServerboundPackets {
     public static final Key PONG = Key.key("pong");
 
     /**
+     * {@code minecraft:punch}
+     */
+    public static final Key PUNCH = Key.key("punch");
+
+    /**
      * {@code minecraft:recipe_book_change_settings}
      */
     public static final Key RECIPE_BOOK_CHANGE_SETTINGS = Key.key("recipe_book_change_settings");
@@ -327,11 +332,6 @@ public final class PlayServerboundPackets {
      * {@code minecraft:spectator_action}
      */
     public static final Key SPECTATOR_ACTION = Key.key("spectator_action");
-
-    /**
-     * {@code minecraft:swing}
-     */
-    public static final Key SWING = Key.key("swing");
 
     /**
      * {@code minecraft:teleport_to_entity}

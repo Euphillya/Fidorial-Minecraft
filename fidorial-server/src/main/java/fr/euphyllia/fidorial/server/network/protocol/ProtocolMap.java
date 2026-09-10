@@ -18,6 +18,8 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
+import static fr.euphyllia.fidorial.server.VersionConstants.MINECRAFT_VERSION_ID;
+
 public final class ProtocolMap {
 
     private static final ComponentLogger LOGGER = ComponentLogger.logger(ProtocolMap.class);
@@ -39,7 +41,7 @@ public final class ProtocolMap {
         final ProtocolMap map = new ProtocolMap();
         LOGGER.info(
                 "Loaded {} protocol table from the generated packet catalogs.",
-                ProtocolConstants.MINECRAFT_VERSION);
+                MINECRAFT_VERSION_ID);
         return map;
     }
 

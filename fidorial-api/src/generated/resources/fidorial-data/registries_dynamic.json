@@ -122,6 +122,7 @@
       "minecraft:cherry_grove",
       "minecraft:cold_ocean",
       "minecraft:crimson_forest",
+      "minecraft:dappled_forest",
       "minecraft:dark_forest",
       "minecraft:deep_cold_ocean",
       "minecraft:deep_dark",
@@ -189,6 +190,60 @@
       "minecraft:allows_tropical_fish_spawns_at_any_height": [
         "minecraft:lush_caves"
       ],
+      "minecraft:has_structure/abandoned_camp_bamboo_jungle": [
+        "minecraft:bamboo_jungle"
+      ],
+      "minecraft:has_structure/abandoned_camp_birch_forest": [
+        "minecraft:birch_forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_cherry_grove": [
+        "minecraft:cherry_grove"
+      ],
+      "minecraft:has_structure/abandoned_camp_dappled_forest": [
+        "minecraft:dappled_forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_flower_forest": [
+        "minecraft:flower_forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_forest": [
+        "minecraft:forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_meadow": [
+        "minecraft:meadow"
+      ],
+      "minecraft:has_structure/abandoned_camp_old_growth_birch_forest": [
+        "minecraft:old_growth_birch_forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_old_growth_pine_taiga": [
+        "minecraft:old_growth_pine_taiga"
+      ],
+      "minecraft:has_structure/abandoned_camp_old_growth_spruce_taiga": [
+        "minecraft:old_growth_spruce_taiga"
+      ],
+      "minecraft:has_structure/abandoned_camp_pale_garden": [
+        "minecraft:pale_garden"
+      ],
+      "minecraft:has_structure/abandoned_camp_savanna": [
+        "minecraft:savanna"
+      ],
+      "minecraft:has_structure/abandoned_camp_snowy_taiga": [
+        "minecraft:snowy_taiga"
+      ],
+      "minecraft:has_structure/abandoned_camp_sparse_jungle": [
+        "minecraft:sparse_jungle"
+      ],
+      "minecraft:has_structure/abandoned_camp_swamp": [
+        "minecraft:swamp"
+      ],
+      "minecraft:has_structure/abandoned_camp_taiga": [
+        "minecraft:taiga"
+      ],
+      "minecraft:has_structure/abandoned_camp_windswept_forest": [
+        "minecraft:windswept_forest"
+      ],
+      "minecraft:has_structure/abandoned_camp_wooded_badlands": [
+        "minecraft:wooded_badlands"
+      ],
       "minecraft:has_structure/ancient_city": [
         "minecraft:deep_dark"
       ],
@@ -224,6 +279,7 @@
         "minecraft:birch_forest",
         "minecraft:cherry_grove",
         "minecraft:cold_ocean",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:deep_cold_ocean",
         "minecraft:deep_frozen_ocean",
@@ -365,6 +421,7 @@
       "minecraft:has_structure/ruined_portal_standard": [
         "minecraft:beach",
         "minecraft:birch_forest",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:dripstone_caves",
         "minecraft:flower_forest",
@@ -414,6 +471,7 @@
         "minecraft:birch_forest",
         "minecraft:cherry_grove",
         "minecraft:cold_ocean",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:deep_cold_ocean",
         "minecraft:deep_dark",
@@ -482,6 +540,7 @@
         "minecraft:birch_forest",
         "minecraft:cherry_grove",
         "minecraft:cold_ocean",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:deep_cold_ocean",
         "minecraft:deep_frozen_ocean",
@@ -575,6 +634,7 @@
       ],
       "minecraft:is_forest": [
         "minecraft:birch_forest",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:flower_forest",
         "minecraft:forest",
@@ -625,6 +685,7 @@
         "minecraft:birch_forest",
         "minecraft:cherry_grove",
         "minecraft:cold_ocean",
+        "minecraft:dappled_forest",
         "minecraft:dark_forest",
         "minecraft:deep_cold_ocean",
         "minecraft:deep_dark",
@@ -723,6 +784,7 @@
       ],
       "minecraft:spawns_cold_variant_farm_animals": [
         "minecraft:cold_ocean",
+        "minecraft:dappled_forest",
         "minecraft:deep_cold_ocean",
         "minecraft:deep_dark",
         "minecraft:deep_frozen_ocean",
@@ -901,6 +963,14 @@
       ]
     }
   },
+  "minecraft:block_transformer": {
+    "entries": [
+      "minecraft:axe",
+      "minecraft:hoe",
+      "minecraft:shovel"
+    ],
+    "tags": {}
+  },
   "minecraft:cat_sound_variant": {
     "entries": [
       "minecraft:classic",
@@ -1077,6 +1147,7 @@
         "minecraft:starve",
         "minecraft:wither"
       ],
+      "minecraft:bypasses_cooldown": [],
       "minecraft:bypasses_effects": [
         "minecraft:starve"
       ],
@@ -1239,6 +1310,9 @@
         "minecraft:sweet_berry_bush",
         "minecraft:wither"
       ],
+      "minecraft:no_wolf_retaliation": [
+        "minecraft:sulfur_cube_hot"
+      ],
       "minecraft:panic_causes": [
         "minecraft:arrow",
         "minecraft:cactus",
@@ -1330,6 +1404,34 @@
       "minecraft:pause_screen_additions": [],
       "minecraft:quick_actions": []
     }
+  },
+  "minecraft:decorated_pot_pattern": {
+    "entries": [
+      "minecraft:angler",
+      "minecraft:archer",
+      "minecraft:arms_up",
+      "minecraft:blade",
+      "minecraft:brewer",
+      "minecraft:burn",
+      "minecraft:danger",
+      "minecraft:explorer",
+      "minecraft:flow",
+      "minecraft:friend",
+      "minecraft:guster",
+      "minecraft:heart",
+      "minecraft:heartbreak",
+      "minecraft:howl",
+      "minecraft:miner",
+      "minecraft:mourner",
+      "minecraft:plenty",
+      "minecraft:prize",
+      "minecraft:scrape",
+      "minecraft:sheaf",
+      "minecraft:shelter",
+      "minecraft:skull",
+      "minecraft:snort"
+    ],
+    "tags": {}
   },
   "minecraft:dimension_type": {
     "entries": [

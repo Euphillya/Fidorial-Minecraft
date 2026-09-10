@@ -17,12 +17,12 @@ public interface ConfigurationClientboundPacketIds {
     /**
      * {@code minecraft:clear_dialog}
      */
-    int CLEAR_DIALOG_ID = 17;
+    int CLEAR_DIALOG_ID = 18;
 
     /**
      * {@code minecraft:code_of_conduct}
      */
-    int CODE_OF_CONDUCT_ID = 19;
+    int CODE_OF_CONDUCT_ID = 20;
 
     /**
      * {@code minecraft:cookie_request}
@@ -37,7 +37,7 @@ public interface ConfigurationClientboundPacketIds {
     /**
      * {@code minecraft:custom_report_details}
      */
-    int CUSTOM_REPORT_DETAILS_ID = 15;
+    int CUSTOM_REPORT_DETAILS_ID = 16;
 
     /**
      * {@code minecraft:disconnect}
@@ -58,6 +58,11 @@ public interface ConfigurationClientboundPacketIds {
      * {@code minecraft:ping}
      */
     int PING_ID = 5;
+
+    /**
+     * {@code minecraft:post_effects}
+     */
+    int POST_EFFECTS_ID = 10;
 
     /**
      * {@code minecraft:registry_data}
@@ -82,37 +87,37 @@ public interface ConfigurationClientboundPacketIds {
     /**
      * {@code minecraft:select_known_packs}
      */
-    int SELECT_KNOWN_PACKS_ID = 14;
+    int SELECT_KNOWN_PACKS_ID = 15;
 
     /**
      * {@code minecraft:server_links}
      */
-    int SERVER_LINKS_ID = 16;
+    int SERVER_LINKS_ID = 17;
 
     /**
      * {@code minecraft:show_dialog}
      */
-    int SHOW_DIALOG_ID = 18;
+    int SHOW_DIALOG_ID = 19;
 
     /**
      * {@code minecraft:store_cookie}
      */
-    int STORE_COOKIE_ID = 10;
+    int STORE_COOKIE_ID = 11;
 
     /**
      * {@code minecraft:transfer}
      */
-    int TRANSFER_ID = 11;
+    int TRANSFER_ID = 12;
 
     /**
      * {@code minecraft:update_enabled_features}
      */
-    int UPDATE_ENABLED_FEATURES_ID = 12;
+    int UPDATE_ENABLED_FEATURES_ID = 13;
 
     /**
      * {@code minecraft:update_tags}
      */
-    int UPDATE_TAGS_ID = 13;
+    int UPDATE_TAGS_ID = 14;
 
     /**
      * Immutable identifier to protocol ID lookup table.
@@ -127,6 +132,7 @@ public interface ConfigurationClientboundPacketIds {
         Map.entry(Key.key("finish_configuration"), FINISH_CONFIGURATION_ID),
         Map.entry(Key.key("keep_alive"), KEEP_ALIVE_ID),
         Map.entry(Key.key("ping"), PING_ID),
+        Map.entry(Key.key("post_effects"), POST_EFFECTS_ID),
         Map.entry(Key.key("registry_data"), REGISTRY_DATA_ID),
         Map.entry(Key.key("reset_chat"), RESET_CHAT_ID),
         Map.entry(Key.key("resource_pack_pop"), RESOURCE_PACK_POP_ID),

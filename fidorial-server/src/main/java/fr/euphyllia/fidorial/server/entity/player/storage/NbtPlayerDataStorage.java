@@ -1,12 +1,15 @@
 package fr.euphyllia.fidorial.server.entity.player.storage;
 
-import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
+import fr.euphyllia.fidorial.server.VersionConstants;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.storage.player.PlayerDataStorage;
 import fr.fidorial.world.Location;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.nbt.BinaryTagIO;
 import net.kyori.adventure.nbt.CompoundBinaryTag;
+import net.kyori.adventure.nbt.DoubleBinaryTag;
+import net.kyori.adventure.nbt.FloatBinaryTag;
+import net.kyori.adventure.nbt.ListBinaryTag;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 
 import java.io.ByteArrayInputStream;
@@ -24,12 +27,18 @@ public class NbtPlayerDataStorage implements PlayerDataStorage {
 
     private static final ComponentLogger LOGGER = ComponentLogger.logger(NbtPlayerDataStorage.class);
     private static final String ROOT_NAME = "PlayerData";
+
+    // https://minecraft.wiki/w/Player.dat_format
     private static final String SPAWN_DIMENSION = "SpawnDimension";
     private static final String SPAWN_X = "SpawnX";
     private static final String SPAWN_Y = "SpawnY";
     private static final String SPAWN_Z = "SpawnZ";
     private static final String SPAWN_ANGLE = "SpawnAngle";
     private static final String SPAWN_PITCH = "SpawnPitch";
+
+    private static final String DIMENSION = "Dimension";
+    private static final String POS = "Pos";
+    private static final String ROTATION = "Rotation";
 
     private final Path dataDir;
     private final boolean gzip;
@@ -104,7 +113,28 @@ public class NbtPlayerDataStorage implements PlayerDataStorage {
                         root.contains(SPAWN_PITCH) ? root.getFloat(SPAWN_PITCH) : 0f);
             }
         }
-        return new PlayerData(gameMode, respawnWorld, respawnLocation);
+
+        Key world = defaults.world();
+        Location location = defaults.location();
+        if (root.contains(DIMENSION) && root.contains(POS)) {
+            final String dimension = root.getString(DIMENSION);
+            if (!Key.parseable(dimension)) {
+                LOGGER.warn("Invalid last-played dimension for {}, spawn location used instead", uuid);
+            } else {
+                final ListBinaryTag pos = root.getList(POS);
+                if (pos.size() != 3) {
+                    LOGGER.warn("Malformed last-played position for {}, spawn location used instead", uuid);
+                } else {
+                    final ListBinaryTag rotation = root.getList(ROTATION);
+                    world = Key.key(dimension);
+                    location = new Location(
+                            doubleAt(pos, 0), doubleAt(pos, 1), doubleAt(pos, 2),
+                            floatAt(rotation, 0), floatAt(rotation, 1));
+                }
+            }
+        }
+
+        return new PlayerData(gameMode, respawnWorld, respawnLocation, world, location);
     }
 
     @Override
@@ -112,7 +142,7 @@ public class NbtPlayerDataStorage implements PlayerDataStorage {
         Files.createDirectories(dataDir);
 
         final CompoundBinaryTag.Builder root = CompoundBinaryTag.builder();
-        root.putInt("DataVersion", AnvilChunkSerializer.DATA_VERSION_26_2);
+        root.putInt("DataVersion", VersionConstants.DATA_VERSION);
         root.putInt("playerGameModeId", data.gameMode().id());
 
         final Key respawnWorld = data.respawnWorld();
@@ -124,6 +154,14 @@ public class NbtPlayerDataStorage implements PlayerDataStorage {
             root.putDouble(SPAWN_Z, respawnLocation.z());
             root.putFloat(SPAWN_ANGLE, respawnLocation.yaw());
             root.putFloat(SPAWN_PITCH, respawnLocation.pitch());
+        }
+
+        final Key world = data.world();
+        final Location location = data.location();
+        if (world != null && location != null) {
+            root.putString(DIMENSION, world.asString());
+            root.put(POS, doubleList(location.x(), location.y(), location.z()));
+            root.put(ROTATION, floatList(location.yaw(), location.pitch()));
         }
 
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -146,5 +184,28 @@ public class NbtPlayerDataStorage implements PlayerDataStorage {
 
     public Path dataDir() {
         return dataDir;
+    }
+
+    private static double doubleAt(final ListBinaryTag list, final int index) {
+        return index < list.size() && list.get(index) instanceof final DoubleBinaryTag tag ? tag.value() : 0.0;
+    }
+
+    private static float floatAt(final ListBinaryTag list, final int index) {
+        return index < list.size() && list.get(index) instanceof final FloatBinaryTag tag ? tag.value() : 0f;
+    }
+
+    private static ListBinaryTag doubleList(final double a, final double b, final double c) {
+        return ListBinaryTag.builder()
+                .add(DoubleBinaryTag.doubleBinaryTag(a))
+                .add(DoubleBinaryTag.doubleBinaryTag(b))
+                .add(DoubleBinaryTag.doubleBinaryTag(c))
+                .build();
+    }
+
+    private static ListBinaryTag floatList(final float a, final float b) {
+        return ListBinaryTag.builder()
+                .add(FloatBinaryTag.floatBinaryTag(a))
+                .add(FloatBinaryTag.floatBinaryTag(b))
+                .build();
     }
 }

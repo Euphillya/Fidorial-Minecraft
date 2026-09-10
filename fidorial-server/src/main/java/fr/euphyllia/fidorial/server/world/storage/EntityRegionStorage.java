@@ -1,7 +1,11 @@
 package fr.euphyllia.fidorial.server.world.storage;
 
+import ca.spottedleaf.converter.types.MapType;
 import fr.euphyllia.fidorial.server.world.anvil.RegionConstants;
 import fr.euphyllia.fidorial.server.world.anvil.RegionFile;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.registry.DataFixersRegistry;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.util.nbt.NbtMapType;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.nbt.CompoundBinaryTag;
 import org.jspecify.annotations.Nullable;
@@ -27,7 +31,7 @@ public final class EntityRegionStorage implements AutoCloseable {
         final int rx = RegionConstants.chunkToRegion(chunkX);
         final int rz = RegionConstants.chunkToRegion(chunkZ);
         final RegionKey key = new RegionKey(dim.id(), rx, rz);
-        return regionCache.computeIfAbsent(key, k -> {
+        return regionCache.computeIfAbsent(key, _ -> {
             final Path file = paths.entitiesDir(dim).resolve(RegionConstants.fileName(rx, rz));
             try {
                 return new RegionFile(file);
@@ -50,7 +54,20 @@ public final class EntityRegionStorage implements AutoCloseable {
             if (!rf.hasChunk(chunkX, chunkZ)) {
                 return null;
             }
-            return rf.readChunk(chunkX, chunkZ);
+            CompoundBinaryTag nbt = rf.readChunk(chunkX, chunkZ);
+            if (nbt == null) {
+                return null;
+            }
+
+            final int sourceVersion = nbt.getInt("DataVersion");
+            final int latest = DataFixersRegistry.latestDataFixerVersion();
+            if (sourceVersion < latest) {
+                final MapType fixed = DataFixersRegistry.update(
+                        DataFixerType.ENTITY, NbtMapType.of(nbt), sourceVersion);
+                nbt = ((NbtMapType) fixed).toCompound().putInt("DataVersion", latest);
+            }
+
+            return nbt;
         }
     }
 

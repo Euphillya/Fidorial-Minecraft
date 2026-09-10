@@ -26,6 +26,7 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundStopSoundPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSystemChatPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundTabListPacket;
+import fr.euphyllia.fidorial.server.util.annotations.NeedsToBeRevisited;
 import fr.euphyllia.fidorial.server.world.ServerWorld;
 import fr.fidorial.combat.DamageSource;
 import fr.fidorial.command.CommandSender;
@@ -45,7 +46,6 @@ import fr.fidorial.permission.PermissionState;
 import fr.fidorial.permission.PermissionStateHolder;
 import fr.fidorial.sound.SoundEvents;
 import fr.fidorial.translation.TranslationStore;
-import fr.fidorial.world.BlockPos;
 import fr.fidorial.world.Location;
 import fr.fidorial.world.World;
 import net.kyori.adventure.bossbar.BossBar;
@@ -106,7 +106,7 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
     private final AtomicInteger ticksSinceLastAttack = new AtomicInteger(MAX_TRACKED_ATTACK_TICKS);
     private volatile int airSupply = MAX_AIR_SUPPLY;
     private volatile int lastTeleportId;
-    private volatile boolean flying;
+    private volatile boolean onGround;
     private volatile @Nullable ContainerMenu openMenu;
     private volatile @Nullable RespawnPoint respawnPoint;
     private int nextWindowId = 1;
@@ -253,23 +253,15 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
         return connection;
     }
 
-    public boolean isFlying() {
-        return /*flying &&*/ !isOnGround(); // broken
+    @NeedsToBeRevisited("This currently relies fully on the bits the client sends; without any server-side validation")
+    public boolean onGround() {
+        // FIXME: This currently relies fully on the bits the client sends; without any server-side validation.
+        // Needs to be revisited in the future.
+        return this.onGround;
     }
 
-    public void setFlying(final boolean flying) {
-        this.flying = flying;
-    }
-
-    private boolean isOnGround() {
-        final Location loc = location();
-
-        final BlockPos below =
-                new BlockPos((int) Math.floor(loc.x()), (int) Math.floor(loc.y() - 0.01), (int) Math.floor(loc.z()));
-
-        final int stateId = world().getBlockStateId(below);
-
-        return stateId != 0;
+    public void setOnGround(final boolean onGround) {
+        this.onGround = onGround;
     }
 
     public void setLocale(final String language) {
@@ -611,7 +603,7 @@ public final class ServerPlayer extends AbstractLivingEntity implements Player, 
 
     @Override
     public void sendSpawnPackets(final ClientConnection viewer) {
-        viewer.send(new ClientboundPlayerInfoUpdatePacket(profile(), gameMode().id(), 0));
+        viewer.send(new ClientboundPlayerInfoUpdatePacket(profile(), gameMode().id(), ping()));
         viewer.send(ClientboundAddEntityPacket.of(this));
         viewer.send(new ClientboundRotateHeadPacket(entityId(), location().yaw()));
         viewer.send(ClientboundSetEntityMetadataPacket.of(

@@ -37,6 +37,16 @@ public interface LivingEntity extends Entity {
     void setAbsorptionAmount(float absorption);
 
     /**
+     * @return the current head yaw
+     */
+    float headYaw();
+
+    /**
+     * @param headYaw the head yaw to set
+     */
+    void setHeadYaw(float headYaw);
+
+    /**
      * @return the armor points reducing incoming damage, {@code 0} when unarmored
      */
     default double armor() {

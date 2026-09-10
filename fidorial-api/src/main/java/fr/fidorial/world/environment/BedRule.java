@@ -9,7 +9,12 @@ import java.util.Optional;
  *
  * @since 0.1.0
  */
-public record BedRule(AccessCondition sleepAllowed, AccessCondition spawnAllowed, boolean explodes, Optional<Component> failureMessage) {
+public record BedRule(
+        AccessCondition sleepAllowed,
+        AccessCondition spawnAllowed,
+        boolean destroysOnUse,
+        boolean destroysOnLeave,
+        Optional<Component> failureMessage) {
 
     /**
      * Allows beds to always be used to sleep and set a spawn point.
@@ -18,7 +23,7 @@ public record BedRule(AccessCondition sleepAllowed, AccessCondition spawnAllowed
      * @since 0.1.0
      */
     public static BedRule alwaysAllowed() {
-        return new BedRule(AccessCondition.ALWAYS, AccessCondition.ALWAYS, false, Optional.empty());
+        return new BedRule(AccessCondition.ALWAYS, AccessCondition.ALWAYS, false, false, Optional.empty());
     }
 
     /**
@@ -28,7 +33,7 @@ public record BedRule(AccessCondition sleepAllowed, AccessCondition spawnAllowed
      * @since 0.1.0
      */
     public static BedRule allowedAtNight() {
-        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.ALWAYS, false, Optional.empty());
+        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.ALWAYS, false, false, Optional.empty());
     }
 
     /**
@@ -39,17 +44,41 @@ public record BedRule(AccessCondition sleepAllowed, AccessCondition spawnAllowed
      * @since 0.1.0
      */
     public static BedRule allowedAtNight(final Component reason) {
-        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.ALWAYS, false, Optional.of(reason));
+        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.ALWAYS, false, false, Optional.of(reason));
     }
 
     /**
-     * Forbids beds from ever being used to sleep and set a spawn point.
+     * Forbids beds from ever being used to sleep or set a spawn point; attempting to use one
+     * destroys it immediately.
      *
      * @return bed rule
      * @since 0.1.0
      */
     public static BedRule neverAllowed() {
-        return new BedRule(AccessCondition.NEVER, AccessCondition.NEVER, true, Optional.empty());
+        return new BedRule(AccessCondition.NEVER, AccessCondition.NEVER, true, false, Optional.empty());
+    }
+
+    /**
+     * Allows sleeping at night but never setting a spawn point; the bed is destroyed once the
+     * player leaves it (e.g. straw beds).
+     *
+     * @return bed rule
+     * @since 0.1.0
+     */
+    public static BedRule destroyedOnLeave() {
+        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.NEVER, false, true, Optional.empty());
+    }
+
+    /**
+     * Same as {@link #destroyedOnLeave()}, with a message shown when sleep is refused outside the
+     * allowed window.
+     *
+     * @param reason the reason shown to the player for why sleep is not allowed
+     * @return bed rule
+     * @since 0.1.0
+     */
+    public static BedRule destroyedOnLeave(final Component reason) {
+        return new BedRule(AccessCondition.WHEN_DARK, AccessCondition.NEVER, false, true, Optional.of(reason));
     }
 
     /**

@@ -41,6 +41,7 @@ public final class TestDimensionTypes {
                             BedRule.AccessCondition.NEVER,
                             BedRule.AccessCondition.WHEN_DARK,
                             false,
+                            true,
                             Optional.of(
                                     Component.translatable("fidorial.bed.sleep.not_allowed")
                             ))

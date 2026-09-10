@@ -2882,6 +2882,36 @@ public final class SoundEventKeys {
     public static final TypedKey<SoundEvent> BLOCK_POLISHED_TUFF_STEP = create("block.polished_tuff.step");
 
     /**
+     * Key for {@code minecraft:block.poplar_leaves.ambient}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_AMBIENT = create("block.poplar_leaves.ambient");
+
+    /**
+     * Key for {@code minecraft:block.poplar_leaves.break}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_BREAK = create("block.poplar_leaves.break");
+
+    /**
+     * Key for {@code minecraft:block.poplar_leaves.fall}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_FALL = create("block.poplar_leaves.fall");
+
+    /**
+     * Key for {@code minecraft:block.poplar_leaves.hit}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_HIT = create("block.poplar_leaves.hit");
+
+    /**
+     * Key for {@code minecraft:block.poplar_leaves.place}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_PLACE = create("block.poplar_leaves.place");
+
+    /**
+     * Key for {@code minecraft:block.poplar_leaves.step}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_POPLAR_LEAVES_STEP = create("block.poplar_leaves.step");
+
+    /**
      * Key for {@code minecraft:block.portal.ambient}.
      */
     public static final TypedKey<SoundEvent> BLOCK_PORTAL_AMBIENT = create("block.portal.ambient");
@@ -2975,6 +3005,16 @@ public final class SoundEventKeys {
      * Key for {@code minecraft:block.pumpkin.carve}.
      */
     public static final TypedKey<SoundEvent> BLOCK_PUMPKIN_CARVE = create("block.pumpkin.carve");
+
+    /**
+     * Key for {@code minecraft:block.red_shrub.break}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_RED_SHRUB_BREAK = create("block.red_shrub.break");
+
+    /**
+     * Key for {@code minecraft:block.red_shrub.place}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_RED_SHRUB_PLACE = create("block.red_shrub.place");
 
     /**
      * Key for {@code minecraft:block.redstone_torch.burnout}.
@@ -3362,6 +3402,31 @@ public final class SoundEventKeys {
     public static final TypedKey<SoundEvent> BLOCK_SHELF_TAKE_ITEM = create("block.shelf.take_item");
 
     /**
+     * Key for {@code minecraft:block.shelf_mushroom.bounce}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_SHELF_MUSHROOM_BOUNCE = create("block.shelf_mushroom.bounce");
+
+    /**
+     * Key for {@code minecraft:block.shelf_mushroom.break}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_SHELF_MUSHROOM_BREAK = create("block.shelf_mushroom.break");
+
+    /**
+     * Key for {@code minecraft:block.shelf_mushroom.fall}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_SHELF_MUSHROOM_FALL = create("block.shelf_mushroom.fall");
+
+    /**
+     * Key for {@code minecraft:block.shelf_mushroom.place}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_SHELF_MUSHROOM_PLACE = create("block.shelf_mushroom.place");
+
+    /**
+     * Key for {@code minecraft:block.shelf_mushroom.step}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_SHELF_MUSHROOM_STEP = create("block.shelf_mushroom.step");
+
+    /**
      * Key for {@code minecraft:block.shroomlight.break}.
      */
     public static final TypedKey<SoundEvent> BLOCK_SHROOMLIGHT_BREAK = create("block.shroomlight.break");
@@ -3710,6 +3775,36 @@ public final class SoundEventKeys {
      * Key for {@code minecraft:block.stone_pressure_plate.click_on}.
      */
     public static final TypedKey<SoundEvent> BLOCK_STONE_PRESSURE_PLATE_CLICK_ON = create("block.stone_pressure_plate.click_on");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.break}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_BREAK = create("block.straw_bed.break");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.break_leave}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_BREAK_LEAVE = create("block.straw_bed.break_leave");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.fall}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_FALL = create("block.straw_bed.fall");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.hit}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_HIT = create("block.straw_bed.hit");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.place}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_PLACE = create("block.straw_bed.place");
+
+    /**
+     * Key for {@code minecraft:block.straw_bed.step}.
+     */
+    public static final TypedKey<SoundEvent> BLOCK_STRAW_BED_STEP = create("block.straw_bed.step");
 
     /**
      * Key for {@code minecraft:block.sulfur.break}.
@@ -5305,6 +5400,26 @@ public final class SoundEventKeys {
      * Key for {@code minecraft:entity.creeper.primed}.
      */
     public static final TypedKey<SoundEvent> ENTITY_CREEPER_PRIMED = create("entity.creeper.primed");
+
+    /**
+     * Key for {@code minecraft:entity.cushion.break}.
+     */
+    public static final TypedKey<SoundEvent> ENTITY_CUSHION_BREAK = create("entity.cushion.break");
+
+    /**
+     * Key for {@code minecraft:entity.cushion.get_up}.
+     */
+    public static final TypedKey<SoundEvent> ENTITY_CUSHION_GET_UP = create("entity.cushion.get_up");
+
+    /**
+     * Key for {@code minecraft:entity.cushion.place}.
+     */
+    public static final TypedKey<SoundEvent> ENTITY_CUSHION_PLACE = create("entity.cushion.place");
+
+    /**
+     * Key for {@code minecraft:entity.cushion.sit}.
+     */
+    public static final TypedKey<SoundEvent> ENTITY_CUSHION_SIT = create("entity.cushion.sit");
 
     /**
      * Key for {@code minecraft:entity.dolphin.ambient}.
@@ -10426,6 +10541,12 @@ public final class SoundEventKeys {
         BLOCK_POLISHED_TUFF_HIT,
         BLOCK_POLISHED_TUFF_PLACE,
         BLOCK_POLISHED_TUFF_STEP,
+        BLOCK_POPLAR_LEAVES_AMBIENT,
+        BLOCK_POPLAR_LEAVES_BREAK,
+        BLOCK_POPLAR_LEAVES_FALL,
+        BLOCK_POPLAR_LEAVES_HIT,
+        BLOCK_POPLAR_LEAVES_PLACE,
+        BLOCK_POPLAR_LEAVES_STEP,
         BLOCK_PORTAL_AMBIENT,
         BLOCK_PORTAL_TRAVEL,
         BLOCK_PORTAL_TRIGGER,
@@ -10445,6 +10566,8 @@ public final class SoundEventKeys {
         BLOCK_POWDER_SNOW_PLACE,
         BLOCK_POWDER_SNOW_STEP,
         BLOCK_PUMPKIN_CARVE,
+        BLOCK_RED_SHRUB_BREAK,
+        BLOCK_RED_SHRUB_PLACE,
         BLOCK_REDSTONE_TORCH_BURNOUT,
         BLOCK_RESIN_BREAK,
         BLOCK_RESIN_FALL,
@@ -10522,6 +10645,11 @@ public final class SoundEventKeys {
         BLOCK_SHELF_SINGLE_SWAP,
         BLOCK_SHELF_STEP,
         BLOCK_SHELF_TAKE_ITEM,
+        BLOCK_SHELF_MUSHROOM_BOUNCE,
+        BLOCK_SHELF_MUSHROOM_BREAK,
+        BLOCK_SHELF_MUSHROOM_FALL,
+        BLOCK_SHELF_MUSHROOM_PLACE,
+        BLOCK_SHELF_MUSHROOM_STEP,
         BLOCK_SHROOMLIGHT_BREAK,
         BLOCK_SHROOMLIGHT_FALL,
         BLOCK_SHROOMLIGHT_HIT,
@@ -10592,6 +10720,12 @@ public final class SoundEventKeys {
         BLOCK_STONE_BUTTON_CLICK_ON,
         BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF,
         BLOCK_STONE_PRESSURE_PLATE_CLICK_ON,
+        BLOCK_STRAW_BED_BREAK,
+        BLOCK_STRAW_BED_BREAK_LEAVE,
+        BLOCK_STRAW_BED_FALL,
+        BLOCK_STRAW_BED_HIT,
+        BLOCK_STRAW_BED_PLACE,
+        BLOCK_STRAW_BED_STEP,
         BLOCK_SULFUR_BREAK,
         BLOCK_SULFUR_FALL,
         BLOCK_SULFUR_HIT,
@@ -10911,6 +11045,10 @@ public final class SoundEventKeys {
         ENTITY_CREEPER_DEATH,
         ENTITY_CREEPER_HURT,
         ENTITY_CREEPER_PRIMED,
+        ENTITY_CUSHION_BREAK,
+        ENTITY_CUSHION_GET_UP,
+        ENTITY_CUSHION_PLACE,
+        ENTITY_CUSHION_SIT,
         ENTITY_DOLPHIN_AMBIENT,
         ENTITY_DOLPHIN_AMBIENT_WATER,
         ENTITY_DOLPHIN_ATTACK,

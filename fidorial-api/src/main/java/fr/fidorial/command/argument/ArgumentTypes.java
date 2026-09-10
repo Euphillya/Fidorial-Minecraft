@@ -18,6 +18,7 @@ import fr.fidorial.entity.Entity;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.entity.Player;
 import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.registry.Registry;
 import fr.fidorial.registry.RegistryKey;
 import fr.fidorial.registry.TypedKey;
@@ -642,5 +643,15 @@ public final class ArgumentTypes {
      */
     public static ArgumentType<NbtPathResolver> nbtPath() {
         return provider().nbtPath();
+    }
+
+    /**
+     * An argument for parsing {@link SwingAnimation.SwingAnimationType}s.
+     *
+     * @return argument
+     * @since 0.1.0
+     */
+    public static ArgumentType<SwingAnimation.SwingAnimationType> swingAnimationType() {
+        return provider().swingAnimationType();
     }
 }

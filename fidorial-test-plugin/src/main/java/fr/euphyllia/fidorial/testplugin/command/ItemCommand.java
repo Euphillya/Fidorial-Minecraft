@@ -10,6 +10,7 @@ import fr.fidorial.entity.Player;
 import fr.fidorial.item.ItemDefaults;
 import fr.fidorial.item.ItemStack;
 import fr.fidorial.item.component.ItemLore;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.item.data.DataComponentMap;
 import fr.fidorial.item.data.DataComponentTypes;
 import fr.fidorial.registry.keys.ItemKeys;
@@ -55,6 +56,7 @@ public final class ItemCommand {
                     components.set(DataComponentTypes.ITEM_NAME, Component.text("Legendary sword"));
                     components.set(DataComponentTypes.DAMAGE, 80);
                     components.set(DataComponentTypes.MAX_DAMAGE, 250);
+                    components.set(DataComponentTypes.ATTACK_ANIMATION, new SwingAnimation(SwingAnimation.SwingAnimationType.STAB, 2000));
                     final ItemLore lore = new ItemLore(List.of(
                             Component.text("A legendary sword forged in the depths of the Nether."),
                             Component.text("It is said to possess immense power and durability.")
@@ -89,6 +91,7 @@ public final class ItemCommand {
         final int damage = components.getOrDefault(DataComponentTypes.DAMAGE, -1);
         final int maxDamage = components.getOrDefault(DataComponentTypes.MAX_DAMAGE, -1);
         final Component customName = components.get(DataComponentTypes.CUSTOM_NAME);
+        final SwingAnimation customAnimation = components.get(DataComponentTypes.ATTACK_ANIMATION);
 
         player.sendMessage(Component.text("[TestPlugin] Item info:"));
         player.sendMessage(Component.text("  - Translation key: " + held.translationKey()));
@@ -100,6 +103,7 @@ public final class ItemCommand {
         player.sendMessage(Component.text("  - Damage: " + (damage != -1 ? damage : "<none>")));
         player.sendMessage(Component.text("  - Max damage: " + (maxDamage != -1 ? maxDamage : "<none>")));
         player.sendMessage(Component.text("  - Custom name: " + (customName != null ? customName : "<none>")));
+        player.sendMessage(Component.text("  - Attack animation : " + (customAnimation != null ? customAnimation.toString() : "<none>")));
 
 
 

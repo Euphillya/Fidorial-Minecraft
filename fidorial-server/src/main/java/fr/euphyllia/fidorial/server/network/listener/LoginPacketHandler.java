@@ -4,6 +4,7 @@ import fr.euphyllia.fidorial.auth.EncryptionUtils;
 import fr.euphyllia.fidorial.auth.GameProfile;
 import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.ServerConfig;
+import fr.euphyllia.fidorial.server.VersionConstants;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
 import fr.euphyllia.fidorial.server.network.ConnectionState;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.login.ClientboundCustomQueryPacket;
@@ -55,6 +56,11 @@ public final class LoginPacketHandler implements LoginPacketListener {
         if (pendingUsername != null) {
             connection.close();
             return;
+        }
+        if (connection.clientProtocol() < VersionConstants.PROTOCOL_VERSION) {
+            disconnect(Component.translatable("multiplayer.disconnect.outdated_client", Component.text(VersionConstants.MINECRAFT_VERSION_NAME)));
+        } else if (connection.clientProtocol() > VersionConstants.PROTOCOL_VERSION) {
+            disconnect(Component.translatable("multiplayer.disconnect.outdated_server", Component.text(VersionConstants.MINECRAFT_VERSION_NAME)));
         }
         this.pendingUsername = packet.username();
         connection.setUsername(pendingUsername);

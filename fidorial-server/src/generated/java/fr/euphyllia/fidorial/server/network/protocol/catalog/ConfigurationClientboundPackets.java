@@ -54,6 +54,11 @@ public final class ConfigurationClientboundPackets {
     public static final Key PING = Key.key("ping");
 
     /**
+     * {@code minecraft:post_effects}
+     */
+    public static final Key POST_EFFECTS = Key.key("post_effects");
+
+    /**
      * {@code minecraft:registry_data}
      */
     public static final Key REGISTRY_DATA = Key.key("registry_data");

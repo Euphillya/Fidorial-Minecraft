@@ -1,0 +1,17 @@
+package fr.euphyllia.fidorial.server;
+
+/**
+ * Holds the constants for the current Minecraft version targeted by Fidorial.
+ */
+public final class VersionConstants {
+
+    public static final String MINECRAFT_VERSION_ID = "{{ minecraftVersionId }}";
+    public static final String MINECRAFT_VERSION_NAME = "{{ minecraftVersionName }}";
+    public static final boolean IS_RELEASE = {{ isRelease }};
+
+    public static final int PROTOCOL_VERSION = {{ protocolVersion }};
+    public static final int DATA_VERSION = {{ dataVersion }};
+
+    private VersionConstants() {
+    }
+}

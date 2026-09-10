@@ -9,6 +9,8 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundMoveEntityPosRotPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundMoveEntityRotPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundRotateHeadPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.LocationPositionData;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import fr.euphyllia.fidorial.server.world.ServerWorld;
 import fr.fidorial.entity.Entity;
 import fr.fidorial.entity.EntityType;
@@ -271,6 +273,7 @@ public abstract class AbstractMovingMob extends AbstractMob implements Mob {
 
     protected final void syncToClients() {
         final Location current = location();
+        final PositionData.Vec3D currentVec = LocationPositionData.vec3(current);
         final double dx = current.x() - sentX;
         final double dy = current.y() - sentY;
         final double dz = current.z() - sentZ;
@@ -286,14 +289,8 @@ public abstract class AbstractMovingMob extends AbstractMob implements Mob {
         if (needsAbsoluteSync && (moved || rotated || ticksSinceSync >= POSITION_SYNC_INTERVAL)) {
             sendToTrackers(new ClientboundEntityPositionSyncPacket(
                     entityId(),
-                    current.x(),
-                    current.y(),
-                    current.z(),
-                    velocityX,
-                    velocityY,
-                    velocityZ,
-                    yaw,
-                    pitch,
+                    new PositionData.LinearPositionPath(currentVec),
+                    new PositionData.FloatRotation(yaw, pitch),
                     onGround));
             sentX = current.x();
             sentY = current.y();
@@ -302,21 +299,24 @@ public abstract class AbstractMovingMob extends AbstractMob implements Mob {
             sentPitch = pitch;
             ticksSinceSync = 0;
         } else if (moved) {
-            final short qx = (short) Math.round(dx * 4096.0);
-            final short qy = (short) Math.round(dy * 4096.0);
-            final short qz = (short) Math.round(dz * 4096.0);
+            final PositionData.DeltaVec3D delta = PositionData.DeltaVec3D.between(new PositionData.Vec3D(sentX, sentY, sentZ), currentVec);
+            if (delta == null) {
+                throw new IllegalStateException("Unexpected delta size");
+            }
             if (rotated) {
-                sendToTrackers(new ClientboundMoveEntityPosRotPacket(entityId(), qx, qy, qz, yaw, pitch, onGround));
+                sendToTrackers(new ClientboundMoveEntityPosRotPacket(
+                        entityId(), delta, new PositionData.AngleRotation(yaw, pitch), onGround));
                 sentYaw = yaw;
                 sentPitch = pitch;
             } else {
-                sendToTrackers(new ClientboundMoveEntityPosPacket(entityId(), qx, qy, qz, onGround));
+                sendToTrackers(new ClientboundMoveEntityPosPacket(entityId(), delta, onGround));
             }
-            sentX += qx / 4096.0;
-            sentY += qy / 4096.0;
-            sentZ += qz / 4096.0;
+
+            sentX += delta.x() / 4096.0;
+            sentY += delta.y() / 4096.0;
+            sentZ += delta.z() / 4096.0;
         } else if (rotated) {
-            sendToTrackers(new ClientboundMoveEntityRotPacket(entityId(), yaw, pitch, onGround));
+            sendToTrackers(new ClientboundMoveEntityRotPacket(entityId(), new PositionData.AngleRotation(yaw, pitch), onGround));
             sentYaw = yaw;
             sentPitch = pitch;
         }

@@ -5,7 +5,7 @@ import fr.euphyllia.fidorial.server.network.protocol.catalog.PlayClientboundPack
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
 import net.kyori.adventure.key.Key;
 
-public record ClientboundRespawnPacket(Key dimensionKey, int dimensionTypeId, int gameMode, int dataToKeep, boolean isDebug, boolean isFlat)
+public record ClientboundRespawnPacket(Key dimensionKey, int dimensionTypeId, long hashedSeed, int gameMode, int dataToKeep, boolean isDebug, boolean isFlat)
         implements ClientboundPacket {
 
     /**
@@ -25,8 +25,8 @@ public record ClientboundRespawnPacket(Key dimensionKey, int dimensionTypeId, in
      */
     public static final int KEEP_ALL = KEEP_ATTRIBUTES | KEEP_METADATA;
 
-    public ClientboundRespawnPacket(final Key dimensionKey, final int dimensionTypeId, final int gameMode, final boolean isDebug, final boolean isFlat) {
-        this(dimensionKey, dimensionTypeId, gameMode, KEEP_NOTHING, isDebug, isFlat);
+    public ClientboundRespawnPacket(final Key dimensionKey, final int dimensionTypeId, final long hashedSeed, final int gameMode, final boolean isDebug, final boolean isFlat) {
+        this(dimensionKey, dimensionTypeId, hashedSeed, gameMode, KEEP_NOTHING, isDebug, isFlat);
     }
 
     @Override
@@ -38,9 +38,9 @@ public record ClientboundRespawnPacket(Key dimensionKey, int dimensionTypeId, in
     public void write(final PacketBuffer buf) {
         buf.writeVarInt(dimensionTypeId); // dimension type (minecraft:dimension_type registry id)
         buf.writeKey(dimensionKey); // dimension name
-        buf.writeLong(0L); // hashed seed (biome noise only)
-        buf.writeByte(gameMode); // game mode (unsigned byte)
-        buf.writeByte(-1); // previous game mode (-1 = undefined)
+        buf.writeLong(hashedSeed); // hashed seed (biome noise only)
+        buf.writeVarInt(gameMode); // game mode (unsigned byte)
+        buf.writeVarInt(0); // previous game mode (0 = undefined)
         buf.writeBoolean(isDebug); // isDebug
         buf.writeBoolean(isFlat); // isFlat
         buf.writeBoolean(false); // has death location

@@ -19,10 +19,10 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.Ser
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundPlayerActionPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundPlayerInputPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundPlayerLoadedPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundPunchPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundResourcePackPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundSetCarriedItemPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundSetCreativeModeSlotPacket;
-import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundSwingPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play.ServerboundUseItemOnPacket;
 import fr.fidorial.protocol.PacketListener;
 
@@ -67,7 +67,7 @@ public interface PlayPacketListener extends PacketListener {
 
     void handleInteract(ServerboundInteractPacket packet);
 
-    void handleSwing(ServerboundSwingPacket packet);
+    void handlePunch(ServerboundPunchPacket packet);
 
     void handleClientCommand(ServerboundClientCommandPacket packet);
 

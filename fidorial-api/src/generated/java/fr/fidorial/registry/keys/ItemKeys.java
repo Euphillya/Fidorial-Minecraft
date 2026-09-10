@@ -12,6 +12,11 @@ import net.kyori.adventure.key.KeyPattern;
  */
 public final class ItemKeys {
     /**
+     * Key for {@code minecraft:abandoned_camp_map}.
+     */
+    public static final TypedKey<Item> ABANDONED_CAMP_MAP = create("abandoned_camp_map");
+
+    /**
      * Key for {@code minecraft:acacia_boat}.
      */
     public static final TypedKey<Item> ACACIA_BOAT = create("acacia_boat");
@@ -532,6 +537,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> BLACK_CONCRETE_POWDER = create("black_concrete_powder");
 
     /**
+     * Key for {@code minecraft:black_concrete_slab}.
+     */
+    public static final TypedKey<Item> BLACK_CONCRETE_SLAB = create("black_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:black_concrete_stairs}.
+     */
+    public static final TypedKey<Item> BLACK_CONCRETE_STAIRS = create("black_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:black_cushion}.
+     */
+    public static final TypedKey<Item> BLACK_CUSHION = create("black_cushion");
+
+    /**
      * Key for {@code minecraft:black_dye}.
      */
     public static final TypedKey<Item> BLACK_DYE = create("black_dye");
@@ -570,6 +590,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:black_wool}.
      */
     public static final TypedKey<Item> BLACK_WOOL = create("black_wool");
+
+    /**
+     * Key for {@code minecraft:black_wool_slab}.
+     */
+    public static final TypedKey<Item> BLACK_WOOL_SLAB = create("black_wool_slab");
+
+    /**
+     * Key for {@code minecraft:black_wool_stairs}.
+     */
+    public static final TypedKey<Item> BLACK_WOOL_STAIRS = create("black_wool_stairs");
 
     /**
      * Key for {@code minecraft:blackstone}.
@@ -652,6 +682,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> BLUE_CONCRETE_POWDER = create("blue_concrete_powder");
 
     /**
+     * Key for {@code minecraft:blue_concrete_slab}.
+     */
+    public static final TypedKey<Item> BLUE_CONCRETE_SLAB = create("blue_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:blue_concrete_stairs}.
+     */
+    public static final TypedKey<Item> BLUE_CONCRETE_STAIRS = create("blue_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:blue_cushion}.
+     */
+    public static final TypedKey<Item> BLUE_CUSHION = create("blue_cushion");
+
+    /**
      * Key for {@code minecraft:blue_dye}.
      */
     public static final TypedKey<Item> BLUE_DYE = create("blue_dye");
@@ -705,6 +750,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:blue_wool}.
      */
     public static final TypedKey<Item> BLUE_WOOL = create("blue_wool");
+
+    /**
+     * Key for {@code minecraft:blue_wool_slab}.
+     */
+    public static final TypedKey<Item> BLUE_WOOL_SLAB = create("blue_wool_slab");
+
+    /**
+     * Key for {@code minecraft:blue_wool_stairs}.
+     */
+    public static final TypedKey<Item> BLUE_WOOL_STAIRS = create("blue_wool_stairs");
 
     /**
      * Key for {@code minecraft:bogged_spawn_egg}.
@@ -857,6 +912,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> BROWN_CONCRETE_POWDER = create("brown_concrete_powder");
 
     /**
+     * Key for {@code minecraft:brown_concrete_slab}.
+     */
+    public static final TypedKey<Item> BROWN_CONCRETE_SLAB = create("brown_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:brown_concrete_stairs}.
+     */
+    public static final TypedKey<Item> BROWN_CONCRETE_STAIRS = create("brown_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:brown_cushion}.
+     */
+    public static final TypedKey<Item> BROWN_CUSHION = create("brown_cushion");
+
+    /**
      * Key for {@code minecraft:brown_dye}.
      */
     public static final TypedKey<Item> BROWN_DYE = create("brown_dye");
@@ -912,6 +982,16 @@ public final class ItemKeys {
     public static final TypedKey<Item> BROWN_WOOL = create("brown_wool");
 
     /**
+     * Key for {@code minecraft:brown_wool_slab}.
+     */
+    public static final TypedKey<Item> BROWN_WOOL_SLAB = create("brown_wool_slab");
+
+    /**
+     * Key for {@code minecraft:brown_wool_stairs}.
+     */
+    public static final TypedKey<Item> BROWN_WOOL_STAIRS = create("brown_wool_stairs");
+
+    /**
      * Key for {@code minecraft:brush}.
      */
     public static final TypedKey<Item> BRUSH = create("brush");
@@ -945,6 +1025,26 @@ public final class ItemKeys {
      * Key for {@code minecraft:bundle}.
      */
     public static final TypedKey<Item> BUNDLE = create("bundle");
+
+    /**
+     * Key for {@code minecraft:buried_ancient_city_map}.
+     */
+    public static final TypedKey<Item> BURIED_ANCIENT_CITY_MAP = create("buried_ancient_city_map");
+
+    /**
+     * Key for {@code minecraft:buried_mineshaft_map}.
+     */
+    public static final TypedKey<Item> BURIED_MINESHAFT_MAP = create("buried_mineshaft_map");
+
+    /**
+     * Key for {@code minecraft:buried_treasure_map}.
+     */
+    public static final TypedKey<Item> BURIED_TREASURE_MAP = create("buried_treasure_map");
+
+    /**
+     * Key for {@code minecraft:buried_trial_chambers_map}.
+     */
+    public static final TypedKey<Item> BURIED_TRIAL_CHAMBERS_MAP = create("buried_trial_chambers_map");
 
     /**
      * Key for {@code minecraft:burn_pottery_sherd}.
@@ -1857,6 +1957,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> CYAN_CONCRETE_POWDER = create("cyan_concrete_powder");
 
     /**
+     * Key for {@code minecraft:cyan_concrete_slab}.
+     */
+    public static final TypedKey<Item> CYAN_CONCRETE_SLAB = create("cyan_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:cyan_concrete_stairs}.
+     */
+    public static final TypedKey<Item> CYAN_CONCRETE_STAIRS = create("cyan_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:cyan_cushion}.
+     */
+    public static final TypedKey<Item> CYAN_CUSHION = create("cyan_cushion");
+
+    /**
      * Key for {@code minecraft:cyan_dye}.
      */
     public static final TypedKey<Item> CYAN_DYE = create("cyan_dye");
@@ -1895,6 +2010,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:cyan_wool}.
      */
     public static final TypedKey<Item> CYAN_WOOL = create("cyan_wool");
+
+    /**
+     * Key for {@code minecraft:cyan_wool_slab}.
+     */
+    public static final TypedKey<Item> CYAN_WOOL_SLAB = create("cyan_wool_slab");
+
+    /**
+     * Key for {@code minecraft:cyan_wool_stairs}.
+     */
+    public static final TypedKey<Item> CYAN_WOOL_STAIRS = create("cyan_wool_stairs");
 
     /**
      * Key for {@code minecraft:damaged_anvil}.
@@ -2195,6 +2320,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:deepslate_tiles}.
      */
     public static final TypedKey<Item> DEEPSLATE_TILES = create("deepslate_tiles");
+
+    /**
+     * Key for {@code minecraft:desert_pyramid_map}.
+     */
+    public static final TypedKey<Item> DESERT_PYRAMID_MAP = create("desert_pyramid_map");
+
+    /**
+     * Key for {@code minecraft:desert_village_map}.
+     */
+    public static final TypedKey<Item> DESERT_VILLAGE_MAP = create("desert_village_map");
 
     /**
      * Key for {@code minecraft:detector_rail}.
@@ -2987,6 +3122,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> GRAY_CONCRETE_POWDER = create("gray_concrete_powder");
 
     /**
+     * Key for {@code minecraft:gray_concrete_slab}.
+     */
+    public static final TypedKey<Item> GRAY_CONCRETE_SLAB = create("gray_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:gray_concrete_stairs}.
+     */
+    public static final TypedKey<Item> GRAY_CONCRETE_STAIRS = create("gray_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:gray_cushion}.
+     */
+    public static final TypedKey<Item> GRAY_CUSHION = create("gray_cushion");
+
+    /**
      * Key for {@code minecraft:gray_dye}.
      */
     public static final TypedKey<Item> GRAY_DYE = create("gray_dye");
@@ -3027,6 +3177,16 @@ public final class ItemKeys {
     public static final TypedKey<Item> GRAY_WOOL = create("gray_wool");
 
     /**
+     * Key for {@code minecraft:gray_wool_slab}.
+     */
+    public static final TypedKey<Item> GRAY_WOOL_SLAB = create("gray_wool_slab");
+
+    /**
+     * Key for {@code minecraft:gray_wool_stairs}.
+     */
+    public static final TypedKey<Item> GRAY_WOOL_STAIRS = create("gray_wool_stairs");
+
+    /**
      * Key for {@code minecraft:green_banner}.
      */
     public static final TypedKey<Item> GREEN_BANNER = create("green_banner");
@@ -3060,6 +3220,21 @@ public final class ItemKeys {
      * Key for {@code minecraft:green_concrete_powder}.
      */
     public static final TypedKey<Item> GREEN_CONCRETE_POWDER = create("green_concrete_powder");
+
+    /**
+     * Key for {@code minecraft:green_concrete_slab}.
+     */
+    public static final TypedKey<Item> GREEN_CONCRETE_SLAB = create("green_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:green_concrete_stairs}.
+     */
+    public static final TypedKey<Item> GREEN_CONCRETE_STAIRS = create("green_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:green_cushion}.
+     */
+    public static final TypedKey<Item> GREEN_CUSHION = create("green_cushion");
 
     /**
      * Key for {@code minecraft:green_dye}.
@@ -3100,6 +3275,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:green_wool}.
      */
     public static final TypedKey<Item> GREEN_WOOL = create("green_wool");
+
+    /**
+     * Key for {@code minecraft:green_wool_slab}.
+     */
+    public static final TypedKey<Item> GREEN_WOOL_SLAB = create("green_wool_slab");
+
+    /**
+     * Key for {@code minecraft:green_wool_stairs}.
+     */
+    public static final TypedKey<Item> GREEN_WOOL_STAIRS = create("green_wool_stairs");
 
     /**
      * Key for {@code minecraft:grindstone}.
@@ -3462,6 +3647,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> JUNGLE_PRESSURE_PLATE = create("jungle_pressure_plate");
 
     /**
+     * Key for {@code minecraft:jungle_pyramid_map}.
+     */
+    public static final TypedKey<Item> JUNGLE_PYRAMID_MAP = create("jungle_pyramid_map");
+
+    /**
      * Key for {@code minecraft:jungle_sapling}.
      */
     public static final TypedKey<Item> JUNGLE_SAPLING = create("jungle_sapling");
@@ -3637,6 +3827,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> LIGHT_BLUE_CONCRETE_POWDER = create("light_blue_concrete_powder");
 
     /**
+     * Key for {@code minecraft:light_blue_concrete_slab}.
+     */
+    public static final TypedKey<Item> LIGHT_BLUE_CONCRETE_SLAB = create("light_blue_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:light_blue_concrete_stairs}.
+     */
+    public static final TypedKey<Item> LIGHT_BLUE_CONCRETE_STAIRS = create("light_blue_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:light_blue_cushion}.
+     */
+    public static final TypedKey<Item> LIGHT_BLUE_CUSHION = create("light_blue_cushion");
+
+    /**
      * Key for {@code minecraft:light_blue_dye}.
      */
     public static final TypedKey<Item> LIGHT_BLUE_DYE = create("light_blue_dye");
@@ -3677,6 +3882,16 @@ public final class ItemKeys {
     public static final TypedKey<Item> LIGHT_BLUE_WOOL = create("light_blue_wool");
 
     /**
+     * Key for {@code minecraft:light_blue_wool_slab}.
+     */
+    public static final TypedKey<Item> LIGHT_BLUE_WOOL_SLAB = create("light_blue_wool_slab");
+
+    /**
+     * Key for {@code minecraft:light_blue_wool_stairs}.
+     */
+    public static final TypedKey<Item> LIGHT_BLUE_WOOL_STAIRS = create("light_blue_wool_stairs");
+
+    /**
      * Key for {@code minecraft:light_gray_banner}.
      */
     public static final TypedKey<Item> LIGHT_GRAY_BANNER = create("light_gray_banner");
@@ -3710,6 +3925,21 @@ public final class ItemKeys {
      * Key for {@code minecraft:light_gray_concrete_powder}.
      */
     public static final TypedKey<Item> LIGHT_GRAY_CONCRETE_POWDER = create("light_gray_concrete_powder");
+
+    /**
+     * Key for {@code minecraft:light_gray_concrete_slab}.
+     */
+    public static final TypedKey<Item> LIGHT_GRAY_CONCRETE_SLAB = create("light_gray_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:light_gray_concrete_stairs}.
+     */
+    public static final TypedKey<Item> LIGHT_GRAY_CONCRETE_STAIRS = create("light_gray_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:light_gray_cushion}.
+     */
+    public static final TypedKey<Item> LIGHT_GRAY_CUSHION = create("light_gray_cushion");
 
     /**
      * Key for {@code minecraft:light_gray_dye}.
@@ -3750,6 +3980,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:light_gray_wool}.
      */
     public static final TypedKey<Item> LIGHT_GRAY_WOOL = create("light_gray_wool");
+
+    /**
+     * Key for {@code minecraft:light_gray_wool_slab}.
+     */
+    public static final TypedKey<Item> LIGHT_GRAY_WOOL_SLAB = create("light_gray_wool_slab");
+
+    /**
+     * Key for {@code minecraft:light_gray_wool_stairs}.
+     */
+    public static final TypedKey<Item> LIGHT_GRAY_WOOL_STAIRS = create("light_gray_wool_stairs");
 
     /**
      * Key for {@code minecraft:light_weighted_pressure_plate}.
@@ -3812,6 +4052,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> LIME_CONCRETE_POWDER = create("lime_concrete_powder");
 
     /**
+     * Key for {@code minecraft:lime_concrete_slab}.
+     */
+    public static final TypedKey<Item> LIME_CONCRETE_SLAB = create("lime_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:lime_concrete_stairs}.
+     */
+    public static final TypedKey<Item> LIME_CONCRETE_STAIRS = create("lime_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:lime_cushion}.
+     */
+    public static final TypedKey<Item> LIME_CUSHION = create("lime_cushion");
+
+    /**
      * Key for {@code minecraft:lime_dye}.
      */
     public static final TypedKey<Item> LIME_DYE = create("lime_dye");
@@ -3850,6 +4105,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:lime_wool}.
      */
     public static final TypedKey<Item> LIME_WOOL = create("lime_wool");
+
+    /**
+     * Key for {@code minecraft:lime_wool_slab}.
+     */
+    public static final TypedKey<Item> LIME_WOOL_SLAB = create("lime_wool_slab");
+
+    /**
+     * Key for {@code minecraft:lime_wool_stairs}.
+     */
+    public static final TypedKey<Item> LIME_WOOL_STAIRS = create("lime_wool_stairs");
 
     /**
      * Key for {@code minecraft:lingering_potion}.
@@ -3912,6 +4177,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> MAGENTA_CONCRETE_POWDER = create("magenta_concrete_powder");
 
     /**
+     * Key for {@code minecraft:magenta_concrete_slab}.
+     */
+    public static final TypedKey<Item> MAGENTA_CONCRETE_SLAB = create("magenta_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:magenta_concrete_stairs}.
+     */
+    public static final TypedKey<Item> MAGENTA_CONCRETE_STAIRS = create("magenta_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:magenta_cushion}.
+     */
+    public static final TypedKey<Item> MAGENTA_CUSHION = create("magenta_cushion");
+
+    /**
      * Key for {@code minecraft:magenta_dye}.
      */
     public static final TypedKey<Item> MAGENTA_DYE = create("magenta_dye");
@@ -3950,6 +4230,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:magenta_wool}.
      */
     public static final TypedKey<Item> MAGENTA_WOOL = create("magenta_wool");
+
+    /**
+     * Key for {@code minecraft:magenta_wool_slab}.
+     */
+    public static final TypedKey<Item> MAGENTA_WOOL_SLAB = create("magenta_wool_slab");
+
+    /**
+     * Key for {@code minecraft:magenta_wool_stairs}.
+     */
+    public static final TypedKey<Item> MAGENTA_WOOL_STAIRS = create("magenta_wool_stairs");
 
     /**
      * Key for {@code minecraft:magma_block}.
@@ -4597,6 +4887,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> OBSIDIAN = create("obsidian");
 
     /**
+     * Key for {@code minecraft:ocean_monument_map}.
+     */
+    public static final TypedKey<Item> OCEAN_MONUMENT_MAP = create("ocean_monument_map");
+
+    /**
      * Key for {@code minecraft:ocelot_spawn_egg}.
      */
     public static final TypedKey<Item> OCELOT_SPAWN_EGG = create("ocelot_spawn_egg");
@@ -4657,6 +4952,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> ORANGE_CONCRETE_POWDER = create("orange_concrete_powder");
 
     /**
+     * Key for {@code minecraft:orange_concrete_slab}.
+     */
+    public static final TypedKey<Item> ORANGE_CONCRETE_SLAB = create("orange_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:orange_concrete_stairs}.
+     */
+    public static final TypedKey<Item> ORANGE_CONCRETE_STAIRS = create("orange_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:orange_cushion}.
+     */
+    public static final TypedKey<Item> ORANGE_CUSHION = create("orange_cushion");
+
+    /**
      * Key for {@code minecraft:orange_dye}.
      */
     public static final TypedKey<Item> ORANGE_DYE = create("orange_dye");
@@ -4670,6 +4980,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:orange_harness}.
      */
     public static final TypedKey<Item> ORANGE_HARNESS = create("orange_harness");
+
+    /**
+     * Key for {@code minecraft:orange_poplar_leaves}.
+     */
+    public static final TypedKey<Item> ORANGE_POPLAR_LEAVES = create("orange_poplar_leaves");
 
     /**
      * Key for {@code minecraft:orange_shulker_box}.
@@ -4700,6 +5015,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:orange_wool}.
      */
     public static final TypedKey<Item> ORANGE_WOOL = create("orange_wool");
+
+    /**
+     * Key for {@code minecraft:orange_wool_slab}.
+     */
+    public static final TypedKey<Item> ORANGE_WOOL_SLAB = create("orange_wool_slab");
+
+    /**
+     * Key for {@code minecraft:orange_wool_stairs}.
+     */
+    public static final TypedKey<Item> ORANGE_WOOL_STAIRS = create("orange_wool_stairs");
 
     /**
      * Key for {@code minecraft:oxeye_daisy}.
@@ -5012,6 +5337,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> PINK_CONCRETE_POWDER = create("pink_concrete_powder");
 
     /**
+     * Key for {@code minecraft:pink_concrete_slab}.
+     */
+    public static final TypedKey<Item> PINK_CONCRETE_SLAB = create("pink_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:pink_concrete_stairs}.
+     */
+    public static final TypedKey<Item> PINK_CONCRETE_STAIRS = create("pink_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:pink_cushion}.
+     */
+    public static final TypedKey<Item> PINK_CUSHION = create("pink_cushion");
+
+    /**
      * Key for {@code minecraft:pink_dye}.
      */
     public static final TypedKey<Item> PINK_DYE = create("pink_dye");
@@ -5062,6 +5402,16 @@ public final class ItemKeys {
     public static final TypedKey<Item> PINK_WOOL = create("pink_wool");
 
     /**
+     * Key for {@code minecraft:pink_wool_slab}.
+     */
+    public static final TypedKey<Item> PINK_WOOL_SLAB = create("pink_wool_slab");
+
+    /**
+     * Key for {@code minecraft:pink_wool_stairs}.
+     */
+    public static final TypedKey<Item> PINK_WOOL_STAIRS = create("pink_wool_stairs");
+
+    /**
      * Key for {@code minecraft:piston}.
      */
     public static final TypedKey<Item> PISTON = create("piston");
@@ -5075,6 +5425,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:pitcher_pod}.
      */
     public static final TypedKey<Item> PITCHER_POD = create("pitcher_pod");
+
+    /**
+     * Key for {@code minecraft:plains_village_map}.
+     */
+    public static final TypedKey<Item> PLAINS_VILLAGE_MAP = create("plains_village_map");
 
     /**
      * Key for {@code minecraft:player_head}.
@@ -5287,6 +5642,91 @@ public final class ItemKeys {
     public static final TypedKey<Item> POLISHED_TUFF_WALL = create("polished_tuff_wall");
 
     /**
+     * Key for {@code minecraft:poplar_boat}.
+     */
+    public static final TypedKey<Item> POPLAR_BOAT = create("poplar_boat");
+
+    /**
+     * Key for {@code minecraft:poplar_button}.
+     */
+    public static final TypedKey<Item> POPLAR_BUTTON = create("poplar_button");
+
+    /**
+     * Key for {@code minecraft:poplar_chest_boat}.
+     */
+    public static final TypedKey<Item> POPLAR_CHEST_BOAT = create("poplar_chest_boat");
+
+    /**
+     * Key for {@code minecraft:poplar_door}.
+     */
+    public static final TypedKey<Item> POPLAR_DOOR = create("poplar_door");
+
+    /**
+     * Key for {@code minecraft:poplar_fence}.
+     */
+    public static final TypedKey<Item> POPLAR_FENCE = create("poplar_fence");
+
+    /**
+     * Key for {@code minecraft:poplar_fence_gate}.
+     */
+    public static final TypedKey<Item> POPLAR_FENCE_GATE = create("poplar_fence_gate");
+
+    /**
+     * Key for {@code minecraft:poplar_hanging_sign}.
+     */
+    public static final TypedKey<Item> POPLAR_HANGING_SIGN = create("poplar_hanging_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_log}.
+     */
+    public static final TypedKey<Item> POPLAR_LOG = create("poplar_log");
+
+    /**
+     * Key for {@code minecraft:poplar_planks}.
+     */
+    public static final TypedKey<Item> POPLAR_PLANKS = create("poplar_planks");
+
+    /**
+     * Key for {@code minecraft:poplar_pressure_plate}.
+     */
+    public static final TypedKey<Item> POPLAR_PRESSURE_PLATE = create("poplar_pressure_plate");
+
+    /**
+     * Key for {@code minecraft:poplar_sapling}.
+     */
+    public static final TypedKey<Item> POPLAR_SAPLING = create("poplar_sapling");
+
+    /**
+     * Key for {@code minecraft:poplar_shelf}.
+     */
+    public static final TypedKey<Item> POPLAR_SHELF = create("poplar_shelf");
+
+    /**
+     * Key for {@code minecraft:poplar_sign}.
+     */
+    public static final TypedKey<Item> POPLAR_SIGN = create("poplar_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_slab}.
+     */
+    public static final TypedKey<Item> POPLAR_SLAB = create("poplar_slab");
+
+    /**
+     * Key for {@code minecraft:poplar_stairs}.
+     */
+    public static final TypedKey<Item> POPLAR_STAIRS = create("poplar_stairs");
+
+    /**
+     * Key for {@code minecraft:poplar_trapdoor}.
+     */
+    public static final TypedKey<Item> POPLAR_TRAPDOOR = create("poplar_trapdoor");
+
+    /**
+     * Key for {@code minecraft:poplar_wood}.
+     */
+    public static final TypedKey<Item> POPLAR_WOOD = create("poplar_wood");
+
+    /**
      * Key for {@code minecraft:popped_chorus_fruit}.
      */
     public static final TypedKey<Item> POPPED_CHORUS_FRUIT = create("popped_chorus_fruit");
@@ -5442,6 +5882,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> PURPLE_CONCRETE_POWDER = create("purple_concrete_powder");
 
     /**
+     * Key for {@code minecraft:purple_concrete_slab}.
+     */
+    public static final TypedKey<Item> PURPLE_CONCRETE_SLAB = create("purple_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:purple_concrete_stairs}.
+     */
+    public static final TypedKey<Item> PURPLE_CONCRETE_STAIRS = create("purple_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:purple_cushion}.
+     */
+    public static final TypedKey<Item> PURPLE_CUSHION = create("purple_cushion");
+
+    /**
      * Key for {@code minecraft:purple_dye}.
      */
     public static final TypedKey<Item> PURPLE_DYE = create("purple_dye");
@@ -5480,6 +5935,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:purple_wool}.
      */
     public static final TypedKey<Item> PURPLE_WOOL = create("purple_wool");
+
+    /**
+     * Key for {@code minecraft:purple_wool_slab}.
+     */
+    public static final TypedKey<Item> PURPLE_WOOL_SLAB = create("purple_wool_slab");
+
+    /**
+     * Key for {@code minecraft:purple_wool_stairs}.
+     */
+    public static final TypedKey<Item> PURPLE_WOOL_STAIRS = create("purple_wool_stairs");
 
     /**
      * Key for {@code minecraft:purpur_block}.
@@ -5642,6 +6107,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> RED_CONCRETE_POWDER = create("red_concrete_powder");
 
     /**
+     * Key for {@code minecraft:red_concrete_slab}.
+     */
+    public static final TypedKey<Item> RED_CONCRETE_SLAB = create("red_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:red_concrete_stairs}.
+     */
+    public static final TypedKey<Item> RED_CONCRETE_STAIRS = create("red_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:red_cushion}.
+     */
+    public static final TypedKey<Item> RED_CUSHION = create("red_cushion");
+
+    /**
      * Key for {@code minecraft:red_dye}.
      */
     public static final TypedKey<Item> RED_DYE = create("red_dye");
@@ -5687,6 +6167,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> RED_NETHER_BRICKS = create("red_nether_bricks");
 
     /**
+     * Key for {@code minecraft:red_poplar_leaves}.
+     */
+    public static final TypedKey<Item> RED_POPLAR_LEAVES = create("red_poplar_leaves");
+
+    /**
      * Key for {@code minecraft:red_sand}.
      */
     public static final TypedKey<Item> RED_SAND = create("red_sand");
@@ -5710,6 +6195,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:red_sandstone_wall}.
      */
     public static final TypedKey<Item> RED_SANDSTONE_WALL = create("red_sandstone_wall");
+
+    /**
+     * Key for {@code minecraft:red_shrub}.
+     */
+    public static final TypedKey<Item> RED_SHRUB = create("red_shrub");
 
     /**
      * Key for {@code minecraft:red_shulker_box}.
@@ -5740,6 +6230,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:red_wool}.
      */
     public static final TypedKey<Item> RED_WOOL = create("red_wool");
+
+    /**
+     * Key for {@code minecraft:red_wool_slab}.
+     */
+    public static final TypedKey<Item> RED_WOOL_SLAB = create("red_wool_slab");
+
+    /**
+     * Key for {@code minecraft:red_wool_stairs}.
+     */
+    public static final TypedKey<Item> RED_WOOL_STAIRS = create("red_wool_stairs");
 
     /**
      * Key for {@code minecraft:redstone}.
@@ -5887,6 +6387,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> SANDSTONE_WALL = create("sandstone_wall");
 
     /**
+     * Key for {@code minecraft:savanna_village_map}.
+     */
+    public static final TypedKey<Item> SAVANNA_VILLAGE_MAP = create("savanna_village_map");
+
+    /**
      * Key for {@code minecraft:scaffolding}.
      */
     public static final TypedKey<Item> SCAFFOLDING = create("scaffolding");
@@ -5960,6 +6465,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:sheep_spawn_egg}.
      */
     public static final TypedKey<Item> SHEEP_SPAWN_EGG = create("sheep_spawn_egg");
+
+    /**
+     * Key for {@code minecraft:shelf_mushroom}.
+     */
+    public static final TypedKey<Item> SHELF_MUSHROOM = create("shelf_mushroom");
 
     /**
      * Key for {@code minecraft:shelter_pottery_sherd}.
@@ -6170,6 +6680,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:snowball}.
      */
     public static final TypedKey<Item> SNOWBALL = create("snowball");
+
+    /**
+     * Key for {@code minecraft:snowy_village_map}.
+     */
+    public static final TypedKey<Item> SNOWY_VILLAGE_MAP = create("snowy_village_map");
 
     /**
      * Key for {@code minecraft:soul_campfire}.
@@ -6427,6 +6942,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> STONECUTTER = create("stonecutter");
 
     /**
+     * Key for {@code minecraft:straw_bed}.
+     */
+    public static final TypedKey<Item> STRAW_BED = create("straw_bed");
+
+    /**
      * Key for {@code minecraft:stray_spawn_egg}.
      */
     public static final TypedKey<Item> STRAY_SPAWN_EGG = create("stray_spawn_egg");
@@ -6535,6 +7055,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:stripped_pale_oak_wood}.
      */
     public static final TypedKey<Item> STRIPPED_PALE_OAK_WOOD = create("stripped_pale_oak_wood");
+
+    /**
+     * Key for {@code minecraft:stripped_poplar_log}.
+     */
+    public static final TypedKey<Item> STRIPPED_POPLAR_LOG = create("stripped_poplar_log");
+
+    /**
+     * Key for {@code minecraft:stripped_poplar_wood}.
+     */
+    public static final TypedKey<Item> STRIPPED_POPLAR_WOOD = create("stripped_poplar_wood");
 
     /**
      * Key for {@code minecraft:stripped_spruce_log}.
@@ -6652,6 +7182,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> SUSPICIOUS_STEW = create("suspicious_stew");
 
     /**
+     * Key for {@code minecraft:swamp_hut_map}.
+     */
+    public static final TypedKey<Item> SWAMP_HUT_MAP = create("swamp_hut_map");
+
+    /**
      * Key for {@code minecraft:sweet_berries}.
      */
     public static final TypedKey<Item> SWEET_BERRIES = create("sweet_berries");
@@ -6665,6 +7200,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:tadpole_spawn_egg}.
      */
     public static final TypedKey<Item> TADPOLE_SPAWN_EGG = create("tadpole_spawn_egg");
+
+    /**
+     * Key for {@code minecraft:taiga_village_map}.
+     */
+    public static final TypedKey<Item> TAIGA_VILLAGE_MAP = create("taiga_village_map");
 
     /**
      * Key for {@code minecraft:tall_dry_grass}.
@@ -6915,6 +7455,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:warden_spawn_egg}.
      */
     public static final TypedKey<Item> WARDEN_SPAWN_EGG = create("warden_spawn_egg");
+
+    /**
+     * Key for {@code minecraft:warm_ocean_ruins_map}.
+     */
+    public static final TypedKey<Item> WARM_OCEAN_RUINS_MAP = create("warm_ocean_ruins_map");
 
     /**
      * Key for {@code minecraft:warped_button}.
@@ -7452,6 +7997,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> WHITE_CONCRETE_POWDER = create("white_concrete_powder");
 
     /**
+     * Key for {@code minecraft:white_concrete_slab}.
+     */
+    public static final TypedKey<Item> WHITE_CONCRETE_SLAB = create("white_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:white_concrete_stairs}.
+     */
+    public static final TypedKey<Item> WHITE_CONCRETE_STAIRS = create("white_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:white_cushion}.
+     */
+    public static final TypedKey<Item> WHITE_CUSHION = create("white_cushion");
+
+    /**
      * Key for {@code minecraft:white_dye}.
      */
     public static final TypedKey<Item> WHITE_DYE = create("white_dye");
@@ -7495,6 +8055,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:white_wool}.
      */
     public static final TypedKey<Item> WHITE_WOOL = create("white_wool");
+
+    /**
+     * Key for {@code minecraft:white_wool_slab}.
+     */
+    public static final TypedKey<Item> WHITE_WOOL_SLAB = create("white_wool_slab");
+
+    /**
+     * Key for {@code minecraft:white_wool_stairs}.
+     */
+    public static final TypedKey<Item> WHITE_WOOL_STAIRS = create("white_wool_stairs");
 
     /**
      * Key for {@code minecraft:wild_armor_trim_smithing_template}.
@@ -7577,6 +8147,11 @@ public final class ItemKeys {
     public static final TypedKey<Item> WOODEN_SWORD = create("wooden_sword");
 
     /**
+     * Key for {@code minecraft:woodland_mansion_map}.
+     */
+    public static final TypedKey<Item> WOODLAND_MANSION_MAP = create("woodland_mansion_map");
+
+    /**
      * Key for {@code minecraft:writable_book}.
      */
     public static final TypedKey<Item> WRITABLE_BOOK = create("writable_book");
@@ -7622,6 +8197,21 @@ public final class ItemKeys {
     public static final TypedKey<Item> YELLOW_CONCRETE_POWDER = create("yellow_concrete_powder");
 
     /**
+     * Key for {@code minecraft:yellow_concrete_slab}.
+     */
+    public static final TypedKey<Item> YELLOW_CONCRETE_SLAB = create("yellow_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:yellow_concrete_stairs}.
+     */
+    public static final TypedKey<Item> YELLOW_CONCRETE_STAIRS = create("yellow_concrete_stairs");
+
+    /**
+     * Key for {@code minecraft:yellow_cushion}.
+     */
+    public static final TypedKey<Item> YELLOW_CUSHION = create("yellow_cushion");
+
+    /**
      * Key for {@code minecraft:yellow_dye}.
      */
     public static final TypedKey<Item> YELLOW_DYE = create("yellow_dye");
@@ -7635,6 +8225,11 @@ public final class ItemKeys {
      * Key for {@code minecraft:yellow_harness}.
      */
     public static final TypedKey<Item> YELLOW_HARNESS = create("yellow_harness");
+
+    /**
+     * Key for {@code minecraft:yellow_poplar_leaves}.
+     */
+    public static final TypedKey<Item> YELLOW_POPLAR_LEAVES = create("yellow_poplar_leaves");
 
     /**
      * Key for {@code minecraft:yellow_shulker_box}.
@@ -7660,6 +8255,16 @@ public final class ItemKeys {
      * Key for {@code minecraft:yellow_wool}.
      */
     public static final TypedKey<Item> YELLOW_WOOL = create("yellow_wool");
+
+    /**
+     * Key for {@code minecraft:yellow_wool_slab}.
+     */
+    public static final TypedKey<Item> YELLOW_WOOL_SLAB = create("yellow_wool_slab");
+
+    /**
+     * Key for {@code minecraft:yellow_wool_stairs}.
+     */
+    public static final TypedKey<Item> YELLOW_WOOL_STAIRS = create("yellow_wool_stairs");
 
     /**
      * Key for {@code minecraft:zoglin_spawn_egg}.
@@ -7697,6 +8302,7 @@ public final class ItemKeys {
     public static final TypedKey<Item> ZOMBIFIED_PIGLIN_SPAWN_EGG = create("zombified_piglin_spawn_egg");
 
     private static final List<TypedKey<Item>> VALUES = List.of(
+        ABANDONED_CAMP_MAP,
         ACACIA_BOAT,
         ACACIA_BUTTON,
         ACACIA_CHEST_BOAT,
@@ -7801,6 +8407,9 @@ public final class ItemKeys {
         BLACK_CARPET,
         BLACK_CONCRETE,
         BLACK_CONCRETE_POWDER,
+        BLACK_CONCRETE_SLAB,
+        BLACK_CONCRETE_STAIRS,
+        BLACK_CUSHION,
         BLACK_DYE,
         BLACK_GLAZED_TERRACOTTA,
         BLACK_HARNESS,
@@ -7809,6 +8418,8 @@ public final class ItemKeys {
         BLACK_STAINED_GLASS_PANE,
         BLACK_TERRACOTTA,
         BLACK_WOOL,
+        BLACK_WOOL_SLAB,
+        BLACK_WOOL_STAIRS,
         BLACKSTONE,
         BLACKSTONE_SLAB,
         BLACKSTONE_STAIRS,
@@ -7825,6 +8436,9 @@ public final class ItemKeys {
         BLUE_CARPET,
         BLUE_CONCRETE,
         BLUE_CONCRETE_POWDER,
+        BLUE_CONCRETE_SLAB,
+        BLUE_CONCRETE_STAIRS,
+        BLUE_CUSHION,
         BLUE_DYE,
         BLUE_EGG,
         BLUE_GLAZED_TERRACOTTA,
@@ -7836,6 +8450,8 @@ public final class ItemKeys {
         BLUE_STAINED_GLASS_PANE,
         BLUE_TERRACOTTA,
         BLUE_WOOL,
+        BLUE_WOOL_SLAB,
+        BLUE_WOOL_STAIRS,
         BOGGED_SPAWN_EGG,
         BOLT_ARMOR_TRIM_SMITHING_TEMPLATE,
         BONE,
@@ -7866,6 +8482,9 @@ public final class ItemKeys {
         BROWN_CARPET,
         BROWN_CONCRETE,
         BROWN_CONCRETE_POWDER,
+        BROWN_CONCRETE_SLAB,
+        BROWN_CONCRETE_STAIRS,
+        BROWN_CUSHION,
         BROWN_DYE,
         BROWN_EGG,
         BROWN_GLAZED_TERRACOTTA,
@@ -7877,6 +8496,8 @@ public final class ItemKeys {
         BROWN_STAINED_GLASS_PANE,
         BROWN_TERRACOTTA,
         BROWN_WOOL,
+        BROWN_WOOL_SLAB,
+        BROWN_WOOL_STAIRS,
         BRUSH,
         BUBBLE_CORAL,
         BUBBLE_CORAL_BLOCK,
@@ -7884,6 +8505,10 @@ public final class ItemKeys {
         BUCKET,
         BUDDING_AMETHYST,
         BUNDLE,
+        BURIED_ANCIENT_CITY_MAP,
+        BURIED_MINESHAFT_MAP,
+        BURIED_TREASURE_MAP,
+        BURIED_TRIAL_CHAMBERS_MAP,
         BURN_POTTERY_SHERD,
         BUSH,
         CACTUS,
@@ -8066,6 +8691,9 @@ public final class ItemKeys {
         CYAN_CARPET,
         CYAN_CONCRETE,
         CYAN_CONCRETE_POWDER,
+        CYAN_CONCRETE_SLAB,
+        CYAN_CONCRETE_STAIRS,
+        CYAN_CUSHION,
         CYAN_DYE,
         CYAN_GLAZED_TERRACOTTA,
         CYAN_HARNESS,
@@ -8074,6 +8702,8 @@ public final class ItemKeys {
         CYAN_STAINED_GLASS_PANE,
         CYAN_TERRACOTTA,
         CYAN_WOOL,
+        CYAN_WOOL_SLAB,
+        CYAN_WOOL_STAIRS,
         DAMAGED_ANVIL,
         DANDELION,
         DANGER_POTTERY_SHERD,
@@ -8134,6 +8764,8 @@ public final class ItemKeys {
         DEEPSLATE_TILE_STAIRS,
         DEEPSLATE_TILE_WALL,
         DEEPSLATE_TILES,
+        DESERT_PYRAMID_MAP,
+        DESERT_VILLAGE_MAP,
         DETECTOR_RAIL,
         DIAMOND,
         DIAMOND_AXE,
@@ -8292,6 +8924,9 @@ public final class ItemKeys {
         GRAY_CARPET,
         GRAY_CONCRETE,
         GRAY_CONCRETE_POWDER,
+        GRAY_CONCRETE_SLAB,
+        GRAY_CONCRETE_STAIRS,
+        GRAY_CUSHION,
         GRAY_DYE,
         GRAY_GLAZED_TERRACOTTA,
         GRAY_HARNESS,
@@ -8300,6 +8935,8 @@ public final class ItemKeys {
         GRAY_STAINED_GLASS_PANE,
         GRAY_TERRACOTTA,
         GRAY_WOOL,
+        GRAY_WOOL_SLAB,
+        GRAY_WOOL_STAIRS,
         GREEN_BANNER,
         GREEN_BED,
         GREEN_BUNDLE,
@@ -8307,6 +8944,9 @@ public final class ItemKeys {
         GREEN_CARPET,
         GREEN_CONCRETE,
         GREEN_CONCRETE_POWDER,
+        GREEN_CONCRETE_SLAB,
+        GREEN_CONCRETE_STAIRS,
+        GREEN_CUSHION,
         GREEN_DYE,
         GREEN_GLAZED_TERRACOTTA,
         GREEN_HARNESS,
@@ -8315,6 +8955,8 @@ public final class ItemKeys {
         GREEN_STAINED_GLASS_PANE,
         GREEN_TERRACOTTA,
         GREEN_WOOL,
+        GREEN_WOOL_SLAB,
+        GREEN_WOOL_STAIRS,
         GRINDSTONE,
         GUARDIAN_SPAWN_EGG,
         GUNPOWDER,
@@ -8387,6 +9029,7 @@ public final class ItemKeys {
         JUNGLE_LOG,
         JUNGLE_PLANKS,
         JUNGLE_PRESSURE_PLATE,
+        JUNGLE_PYRAMID_MAP,
         JUNGLE_SAPLING,
         JUNGLE_SHELF,
         JUNGLE_SIGN,
@@ -8422,6 +9065,9 @@ public final class ItemKeys {
         LIGHT_BLUE_CARPET,
         LIGHT_BLUE_CONCRETE,
         LIGHT_BLUE_CONCRETE_POWDER,
+        LIGHT_BLUE_CONCRETE_SLAB,
+        LIGHT_BLUE_CONCRETE_STAIRS,
+        LIGHT_BLUE_CUSHION,
         LIGHT_BLUE_DYE,
         LIGHT_BLUE_GLAZED_TERRACOTTA,
         LIGHT_BLUE_HARNESS,
@@ -8430,6 +9076,8 @@ public final class ItemKeys {
         LIGHT_BLUE_STAINED_GLASS_PANE,
         LIGHT_BLUE_TERRACOTTA,
         LIGHT_BLUE_WOOL,
+        LIGHT_BLUE_WOOL_SLAB,
+        LIGHT_BLUE_WOOL_STAIRS,
         LIGHT_GRAY_BANNER,
         LIGHT_GRAY_BED,
         LIGHT_GRAY_BUNDLE,
@@ -8437,6 +9085,9 @@ public final class ItemKeys {
         LIGHT_GRAY_CARPET,
         LIGHT_GRAY_CONCRETE,
         LIGHT_GRAY_CONCRETE_POWDER,
+        LIGHT_GRAY_CONCRETE_SLAB,
+        LIGHT_GRAY_CONCRETE_STAIRS,
+        LIGHT_GRAY_CUSHION,
         LIGHT_GRAY_DYE,
         LIGHT_GRAY_GLAZED_TERRACOTTA,
         LIGHT_GRAY_HARNESS,
@@ -8445,6 +9096,8 @@ public final class ItemKeys {
         LIGHT_GRAY_STAINED_GLASS_PANE,
         LIGHT_GRAY_TERRACOTTA,
         LIGHT_GRAY_WOOL,
+        LIGHT_GRAY_WOOL_SLAB,
+        LIGHT_GRAY_WOOL_STAIRS,
         LIGHT_WEIGHTED_PRESSURE_PLATE,
         LIGHTNING_ROD,
         LILAC,
@@ -8457,6 +9110,9 @@ public final class ItemKeys {
         LIME_CARPET,
         LIME_CONCRETE,
         LIME_CONCRETE_POWDER,
+        LIME_CONCRETE_SLAB,
+        LIME_CONCRETE_STAIRS,
+        LIME_CUSHION,
         LIME_DYE,
         LIME_GLAZED_TERRACOTTA,
         LIME_HARNESS,
@@ -8465,6 +9121,8 @@ public final class ItemKeys {
         LIME_STAINED_GLASS_PANE,
         LIME_TERRACOTTA,
         LIME_WOOL,
+        LIME_WOOL_SLAB,
+        LIME_WOOL_STAIRS,
         LINGERING_POTION,
         LLAMA_SPAWN_EGG,
         LODESTONE,
@@ -8477,6 +9135,9 @@ public final class ItemKeys {
         MAGENTA_CARPET,
         MAGENTA_CONCRETE,
         MAGENTA_CONCRETE_POWDER,
+        MAGENTA_CONCRETE_SLAB,
+        MAGENTA_CONCRETE_STAIRS,
+        MAGENTA_CUSHION,
         MAGENTA_DYE,
         MAGENTA_GLAZED_TERRACOTTA,
         MAGENTA_HARNESS,
@@ -8485,6 +9146,8 @@ public final class ItemKeys {
         MAGENTA_STAINED_GLASS_PANE,
         MAGENTA_TERRACOTTA,
         MAGENTA_WOOL,
+        MAGENTA_WOOL_SLAB,
+        MAGENTA_WOOL_STAIRS,
         MAGMA_BLOCK,
         MAGMA_CREAM,
         MAGMA_CUBE_SPAWN_EGG,
@@ -8614,6 +9277,7 @@ public final class ItemKeys {
         OAK_WOOD,
         OBSERVER,
         OBSIDIAN,
+        OCEAN_MONUMENT_MAP,
         OCELOT_SPAWN_EGG,
         OCHRE_FROGLIGHT,
         OMINOUS_BOTTLE,
@@ -8626,15 +9290,21 @@ public final class ItemKeys {
         ORANGE_CARPET,
         ORANGE_CONCRETE,
         ORANGE_CONCRETE_POWDER,
+        ORANGE_CONCRETE_SLAB,
+        ORANGE_CONCRETE_STAIRS,
+        ORANGE_CUSHION,
         ORANGE_DYE,
         ORANGE_GLAZED_TERRACOTTA,
         ORANGE_HARNESS,
+        ORANGE_POPLAR_LEAVES,
         ORANGE_SHULKER_BOX,
         ORANGE_STAINED_GLASS,
         ORANGE_STAINED_GLASS_PANE,
         ORANGE_TERRACOTTA,
         ORANGE_TULIP,
         ORANGE_WOOL,
+        ORANGE_WOOL_SLAB,
+        ORANGE_WOOL_STAIRS,
         OXEYE_DAISY,
         OXIDIZED_CHISELED_COPPER,
         OXIDIZED_COPPER,
@@ -8697,6 +9367,9 @@ public final class ItemKeys {
         PINK_CARPET,
         PINK_CONCRETE,
         PINK_CONCRETE_POWDER,
+        PINK_CONCRETE_SLAB,
+        PINK_CONCRETE_STAIRS,
+        PINK_CUSHION,
         PINK_DYE,
         PINK_GLAZED_TERRACOTTA,
         PINK_HARNESS,
@@ -8707,9 +9380,12 @@ public final class ItemKeys {
         PINK_TERRACOTTA,
         PINK_TULIP,
         PINK_WOOL,
+        PINK_WOOL_SLAB,
+        PINK_WOOL_STAIRS,
         PISTON,
         PITCHER_PLANT,
         PITCHER_POD,
+        PLAINS_VILLAGE_MAP,
         PLAYER_HEAD,
         PLENTY_POTTERY_SHERD,
         PODZOL,
@@ -8752,6 +9428,23 @@ public final class ItemKeys {
         POLISHED_TUFF_SLAB,
         POLISHED_TUFF_STAIRS,
         POLISHED_TUFF_WALL,
+        POPLAR_BOAT,
+        POPLAR_BUTTON,
+        POPLAR_CHEST_BOAT,
+        POPLAR_DOOR,
+        POPLAR_FENCE,
+        POPLAR_FENCE_GATE,
+        POPLAR_HANGING_SIGN,
+        POPLAR_LOG,
+        POPLAR_PLANKS,
+        POPLAR_PRESSURE_PLATE,
+        POPLAR_SAPLING,
+        POPLAR_SHELF,
+        POPLAR_SIGN,
+        POPLAR_SLAB,
+        POPLAR_STAIRS,
+        POPLAR_TRAPDOOR,
+        POPLAR_WOOD,
         POPPED_CHORUS_FRUIT,
         POPPY,
         PORKCHOP,
@@ -8783,6 +9476,9 @@ public final class ItemKeys {
         PURPLE_CARPET,
         PURPLE_CONCRETE,
         PURPLE_CONCRETE_POWDER,
+        PURPLE_CONCRETE_SLAB,
+        PURPLE_CONCRETE_STAIRS,
+        PURPLE_CUSHION,
         PURPLE_DYE,
         PURPLE_GLAZED_TERRACOTTA,
         PURPLE_HARNESS,
@@ -8791,6 +9487,8 @@ public final class ItemKeys {
         PURPLE_STAINED_GLASS_PANE,
         PURPLE_TERRACOTTA,
         PURPLE_WOOL,
+        PURPLE_WOOL_SLAB,
+        PURPLE_WOOL_STAIRS,
         PURPUR_BLOCK,
         PURPUR_PILLAR,
         PURPUR_SLAB,
@@ -8823,6 +9521,9 @@ public final class ItemKeys {
         RED_CARPET,
         RED_CONCRETE,
         RED_CONCRETE_POWDER,
+        RED_CONCRETE_SLAB,
+        RED_CONCRETE_STAIRS,
+        RED_CUSHION,
         RED_DYE,
         RED_GLAZED_TERRACOTTA,
         RED_HARNESS,
@@ -8832,17 +9533,21 @@ public final class ItemKeys {
         RED_NETHER_BRICK_STAIRS,
         RED_NETHER_BRICK_WALL,
         RED_NETHER_BRICKS,
+        RED_POPLAR_LEAVES,
         RED_SAND,
         RED_SANDSTONE,
         RED_SANDSTONE_SLAB,
         RED_SANDSTONE_STAIRS,
         RED_SANDSTONE_WALL,
+        RED_SHRUB,
         RED_SHULKER_BOX,
         RED_STAINED_GLASS,
         RED_STAINED_GLASS_PANE,
         RED_TERRACOTTA,
         RED_TULIP,
         RED_WOOL,
+        RED_WOOL_SLAB,
+        RED_WOOL_STAIRS,
         REDSTONE,
         REDSTONE_BLOCK,
         REDSTONE_LAMP,
@@ -8872,6 +9577,7 @@ public final class ItemKeys {
         SANDSTONE_SLAB,
         SANDSTONE_STAIRS,
         SANDSTONE_WALL,
+        SAVANNA_VILLAGE_MAP,
         SCAFFOLDING,
         SCRAPE_POTTERY_SHERD,
         SCULK,
@@ -8887,6 +9593,7 @@ public final class ItemKeys {
         SHEAF_POTTERY_SHERD,
         SHEARS,
         SHEEP_SPAWN_EGG,
+        SHELF_MUSHROOM,
         SHELTER_POTTERY_SHERD,
         SHIELD,
         SHORT_DRY_GRASS,
@@ -8929,6 +9636,7 @@ public final class ItemKeys {
         SNOW_BLOCK,
         SNOW_GOLEM_SPAWN_EGG,
         SNOWBALL,
+        SNOWY_VILLAGE_MAP,
         SOUL_CAMPFIRE,
         SOUL_LANTERN,
         SOUL_SAND,
@@ -8980,6 +9688,7 @@ public final class ItemKeys {
         STONE_STAIRS,
         STONE_SWORD,
         STONECUTTER,
+        STRAW_BED,
         STRAY_SPAWN_EGG,
         STRIDER_SPAWN_EGG,
         STRING,
@@ -9002,6 +9711,8 @@ public final class ItemKeys {
         STRIPPED_OAK_WOOD,
         STRIPPED_PALE_OAK_LOG,
         STRIPPED_PALE_OAK_WOOD,
+        STRIPPED_POPLAR_LOG,
+        STRIPPED_POPLAR_WOOD,
         STRIPPED_SPRUCE_LOG,
         STRIPPED_SPRUCE_WOOD,
         STRIPPED_WARPED_HYPHAE,
@@ -9025,9 +9736,11 @@ public final class ItemKeys {
         SUSPICIOUS_GRAVEL,
         SUSPICIOUS_SAND,
         SUSPICIOUS_STEW,
+        SWAMP_HUT_MAP,
         SWEET_BERRIES,
         TADPOLE_BUCKET,
         TADPOLE_SPAWN_EGG,
+        TAIGA_VILLAGE_MAP,
         TALL_DRY_GRASS,
         TALL_GRASS,
         TARGET,
@@ -9078,6 +9791,7 @@ public final class ItemKeys {
         WANDERING_TRADER_SPAWN_EGG,
         WARD_ARMOR_TRIM_SMITHING_TEMPLATE,
         WARDEN_SPAWN_EGG,
+        WARM_OCEAN_RUINS_MAP,
         WARPED_BUTTON,
         WARPED_DOOR,
         WARPED_FENCE,
@@ -9185,6 +9899,9 @@ public final class ItemKeys {
         WHITE_CARPET,
         WHITE_CONCRETE,
         WHITE_CONCRETE_POWDER,
+        WHITE_CONCRETE_SLAB,
+        WHITE_CONCRETE_STAIRS,
+        WHITE_CUSHION,
         WHITE_DYE,
         WHITE_GLAZED_TERRACOTTA,
         WHITE_HARNESS,
@@ -9194,6 +9911,8 @@ public final class ItemKeys {
         WHITE_TERRACOTTA,
         WHITE_TULIP,
         WHITE_WOOL,
+        WHITE_WOOL_SLAB,
+        WHITE_WOOL_STAIRS,
         WILD_ARMOR_TRIM_SMITHING_TEMPLATE,
         WILDFLOWERS,
         WIND_CHARGE,
@@ -9210,6 +9929,7 @@ public final class ItemKeys {
         WOODEN_SHOVEL,
         WOODEN_SPEAR,
         WOODEN_SWORD,
+        WOODLAND_MANSION_MAP,
         WRITABLE_BOOK,
         WRITTEN_BOOK,
         YELLOW_BANNER,
@@ -9219,14 +9939,20 @@ public final class ItemKeys {
         YELLOW_CARPET,
         YELLOW_CONCRETE,
         YELLOW_CONCRETE_POWDER,
+        YELLOW_CONCRETE_SLAB,
+        YELLOW_CONCRETE_STAIRS,
+        YELLOW_CUSHION,
         YELLOW_DYE,
         YELLOW_GLAZED_TERRACOTTA,
         YELLOW_HARNESS,
+        YELLOW_POPLAR_LEAVES,
         YELLOW_SHULKER_BOX,
         YELLOW_STAINED_GLASS,
         YELLOW_STAINED_GLASS_PANE,
         YELLOW_TERRACOTTA,
         YELLOW_WOOL,
+        YELLOW_WOOL_SLAB,
+        YELLOW_WOOL_STAIRS,
         ZOGLIN_SPAWN_EGG,
         ZOMBIE_HEAD,
         ZOMBIE_HORSE_SPAWN_EGG,

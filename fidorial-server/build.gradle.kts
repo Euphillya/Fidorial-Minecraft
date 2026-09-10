@@ -5,6 +5,7 @@ import fr.fidorial.registrygen.task.GenerateItemPropertiesTask
 
 plugins {
     application
+    alias(libs.plugins.blossom)
     id("fidorial-spotless")
     id("fidorial-build-conventions")
     id("fr.fidorial.dependency-patcher")
@@ -70,6 +71,21 @@ fidorialBuild {
 
 application {
     mainClass.set("fr.euphyllia.fidorial.server.Main")
+}
+
+sourceSets.main {
+    blossom.javaSources {
+        property("minecraftVersionId", providers.gradleProperty("minecraftVersion"))
+        property("minecraftVersionName", providers.gradleProperty("minecraftVersionName"))
+        property(
+            "isRelease",
+            providers
+                .gradleProperty("minecraftVersion")
+                .map { it.matches(Regex("\\d+\\.\\d+(?:\\.\\d+)?")).toString() },
+        ) // MAJOR.MINOR or MAJOR.MINOR.PATCH
+        property("protocolVersion", providers.gradleProperty("protocolVersion"))
+        property("dataVersion", providers.gradleProperty("dataVersion"))
+    }
 }
 
 java {
@@ -195,9 +211,9 @@ tasks.withType<GenerateItemPropertiesTask>().configureEach {
 
 fidorialRegistryGenerator {
     minecraftVersion.set(providers.gradleProperty("minecraftVersion"))
-    prismarineMinecraftData.set("26.2")
+    prismarineMinecraftData.set("26.3-rc-1")
     prismarineDataRepository.set("Fidorial/minecraft-data") // PrismarineJS/minecraft-data
-    prismarineDataRef.set("ver/26.2") // master
+    prismarineDataRef.set("ver/26.3") // master
 
     generatedPackage.set(
         "fr.euphyllia.fidorial.server",

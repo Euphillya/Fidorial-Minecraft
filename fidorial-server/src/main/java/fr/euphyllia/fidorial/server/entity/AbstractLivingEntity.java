@@ -65,6 +65,17 @@ public abstract class AbstractLivingEntity extends AbstractEntity implements Liv
     }
 
     @Override
+    public final float headYaw() {
+        // TODO: implement this
+        return 0.0f;
+    }
+
+    @Override
+    public final void setHeadYaw(final float headYaw) {
+        // TODO: implement this
+    }
+
+    @Override
     public final int fireTicks() {
         return fireTicks;
     }

@@ -25,6 +25,7 @@ import fr.euphyllia.fidorial.server.command.brigadier.argument.generic.DurationA
 import fr.euphyllia.fidorial.server.command.brigadier.argument.generic.TimeArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.item.ItemArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.item.ItemPredicateArgument;
+import fr.euphyllia.fidorial.server.command.brigadier.argument.item.component.SwingAnimationTypeArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.AngleArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.BlockPositionArgument;
 import fr.euphyllia.fidorial.server.command.brigadier.argument.location.DimensionArgument;
@@ -56,6 +57,7 @@ import fr.fidorial.entity.GameMode;
 import fr.fidorial.entity.Player;
 import fr.fidorial.entity.PlayerProfile;
 import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.registry.Registry;
 import fr.fidorial.registry.RegistryKey;
 import fr.fidorial.registry.TypedKey;
@@ -343,5 +345,10 @@ public class ArgumentProviderImpl implements ArgumentProvider {
     @Override
     public ArgumentType<NbtPathResolver> nbtPath() {
         return NbtDataArgument.nbtPath();
+    }
+
+    @Override
+    public ArgumentType<SwingAnimation.SwingAnimationType> swingAnimationType() {
+        return SwingAnimationTypeArgument.swingAnimationType();
     }
 }

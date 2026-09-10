@@ -18,6 +18,7 @@ import fr.fidorial.entity.Entity;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.entity.Player;
 import fr.fidorial.item.ItemStack;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.registry.RegistryKey;
 import fr.fidorial.registry.TypedKey;
 import fr.fidorial.world.World;
@@ -279,4 +280,6 @@ public interface ArgumentProvider {
      * @since 0.1.0
      */
     ArgumentType<NbtPathResolver> nbtPath();
+
+    ArgumentType<SwingAnimation.SwingAnimationType> swingAnimationType();
 }

@@ -4,7 +4,6 @@ import fr.euphyllia.fidorial.server.FidorialServer;
 import fr.euphyllia.fidorial.server.adventure.ClickCallbackManager;
 import fr.euphyllia.fidorial.server.network.ClientConnection;
 import fr.euphyllia.fidorial.server.network.ConnectionState;
-import fr.euphyllia.fidorial.server.network.protocol.ProtocolConstants;
 import fr.euphyllia.fidorial.server.network.protocol.catalog.ConfigurationClientboundPackets;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.common.ClientboundResourcePackPushPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.configuration.ClientboundBrandPacket;
@@ -32,6 +31,8 @@ import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.UUID;
+
+import static fr.euphyllia.fidorial.server.VersionConstants.MINECRAFT_VERSION_ID;
 
 public final class ConfigurationPacketHandler implements ConfigurationPacketListener {
 
@@ -69,7 +70,7 @@ public final class ConfigurationPacketHandler implements ConfigurationPacketList
     }
 
     private void proceedToKnownPacks() {
-        connection.send(new ClientboundSelectKnownPacksPacket("minecraft", "core", ProtocolConstants.MINECRAFT_VERSION));
+        connection.send(new ClientboundSelectKnownPacksPacket("minecraft", "core", MINECRAFT_VERSION_ID));
     }
 
     private void proceedToCodeOfConduct() {

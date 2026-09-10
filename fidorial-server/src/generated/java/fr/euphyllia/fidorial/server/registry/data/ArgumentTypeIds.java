@@ -75,9 +75,19 @@ public interface ArgumentTypeIds {
     int COMPONENT_ARGUMENT_ID = 18;
 
     /**
+     * {@code minecraft:context_float_provider}
+     */
+    int CONTEXT_FLOAT_PROVIDER_ARGUMENT_ID = 55;
+
+    /**
+     * {@code minecraft:context_int_provider}
+     */
+    int CONTEXT_INT_PROVIDER_ARGUMENT_ID = 56;
+
+    /**
      * {@code minecraft:dialog}
      */
-    int DIALOG_ARGUMENT_ID = 55;
+    int DIALOG_ARGUMENT_ID = 58;
 
     /**
      * {@code minecraft:dimension}
@@ -93,6 +103,11 @@ public interface ArgumentTypeIds {
      * {@code minecraft:entity_anchor}
      */
     int ENTITY_ANCHOR_ARGUMENT_ID = 38;
+
+    /**
+     * {@code minecraft:feature}
+     */
+    int FEATURE_ARGUMENT_ID = 59;
 
     /**
      * {@code minecraft:float_range}
@@ -250,9 +265,19 @@ public interface ArgumentTypeIds {
     int SCOREBOARD_SLOT_ARGUMENT_ID = 30;
 
     /**
+     * {@code minecraft:slot_source}
+     */
+    int SLOT_SOURCE_ARGUMENT_ID = 57;
+
+    /**
      * {@code minecraft:style}
      */
     int STYLE_ARGUMENT_ID = 19;
+
+    /**
+     * {@code minecraft:swing_animation}
+     */
+    int SWING_ANIMATION_ARGUMENT_ID = 60;
 
     /**
      * {@code minecraft:swizzle}
@@ -287,7 +312,7 @@ public interface ArgumentTypeIds {
     /**
      * {@code minecraft:uuid}
      */
-    int UUID_ARGUMENT_ID = 56;
+    int UUID_ARGUMENT_ID = 61;
 
     /**
      * {@code minecraft:vec2}
@@ -315,10 +340,13 @@ public interface ArgumentTypeIds {
         Map.entry(Key.key("block_state"), BLOCK_STATE_ARGUMENT_ID),
         Map.entry(Key.key("column_pos"), COLUMN_POS_ARGUMENT_ID),
         Map.entry(Key.key("component"), COMPONENT_ARGUMENT_ID),
+        Map.entry(Key.key("context_float_provider"), CONTEXT_FLOAT_PROVIDER_ARGUMENT_ID),
+        Map.entry(Key.key("context_int_provider"), CONTEXT_INT_PROVIDER_ARGUMENT_ID),
         Map.entry(Key.key("dialog"), DIALOG_ARGUMENT_ID),
         Map.entry(Key.key("dimension"), DIMENSION_ARGUMENT_ID),
         Map.entry(Key.key("entity"), ENTITY_ARGUMENT_ID),
         Map.entry(Key.key("entity_anchor"), ENTITY_ANCHOR_ARGUMENT_ID),
+        Map.entry(Key.key("feature"), FEATURE_ARGUMENT_ID),
         Map.entry(Key.key("float_range"), FLOAT_RANGE_ARGUMENT_ID),
         Map.entry(Key.key("function"), FUNCTION_ARGUMENT_ID),
         Map.entry(Key.key("game_profile"), GAME_PROFILE_ARGUMENT_ID),
@@ -350,7 +378,9 @@ public interface ArgumentTypeIds {
         Map.entry(Key.key("rotation"), ROTATION_ARGUMENT_ID),
         Map.entry(Key.key("score_holder"), SCORE_HOLDER_ARGUMENT_ID),
         Map.entry(Key.key("scoreboard_slot"), SCOREBOARD_SLOT_ARGUMENT_ID),
+        Map.entry(Key.key("slot_source"), SLOT_SOURCE_ARGUMENT_ID),
         Map.entry(Key.key("style"), STYLE_ARGUMENT_ID),
+        Map.entry(Key.key("swing_animation"), SWING_ANIMATION_ARGUMENT_ID),
         Map.entry(Key.key("swizzle"), SWIZZLE_ARGUMENT_ID),
         Map.entry(Key.key("team"), TEAM_ARGUMENT_ID),
         Map.entry(Key.key("team_color"), TEAM_COLOR_ARGUMENT_ID),

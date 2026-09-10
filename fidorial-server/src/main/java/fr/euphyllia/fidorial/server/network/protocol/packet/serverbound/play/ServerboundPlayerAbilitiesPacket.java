@@ -5,6 +5,8 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.listener.PlayPacketL
 import fr.fidorial.protocol.PacketListener;
 import fr.fidorial.protocol.ServerboundPacket;
 
+// currently no-op
+// https://minecraft.wiki/w/Java_Edition_protocol/Packets#Player_Abilities_(serverbound)
 public record ServerboundPlayerAbilitiesPacket(boolean flying) implements ServerboundPacket {
 
     public static final byte FLAG_FLYING = 0x02;
@@ -12,10 +14,6 @@ public record ServerboundPlayerAbilitiesPacket(boolean flying) implements Server
     public static ServerboundPlayerAbilitiesPacket read(final PacketBuffer buf) {
         final byte flags = buf.readByte();
         return new ServerboundPlayerAbilitiesPacket((flags & FLAG_FLYING) != 0);
-    }
-
-    public boolean isFlying() {
-        return flying;
     }
 
     @Override

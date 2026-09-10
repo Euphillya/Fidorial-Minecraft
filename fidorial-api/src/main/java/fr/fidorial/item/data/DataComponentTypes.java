@@ -1,6 +1,7 @@
 package fr.fidorial.item.data;
 
 import fr.fidorial.item.component.ItemLore;
+import fr.fidorial.item.component.SwingAnimation;
 import fr.fidorial.registry.keys.DataComponentTypeKeys;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
@@ -61,6 +62,17 @@ public class DataComponentTypes {
     public static final DataComponentType<ItemLore> LORE =
             register(DataComponentTypeKeys.LORE.key(), ItemLore.class);
 
+    /**
+     * The animation to play when this item is used to attack something.
+     */
+    public static final DataComponentType<SwingAnimation> ATTACK_ANIMATION =
+            register(DataComponentTypeKeys.ATTACK_ANIMATION.key(), SwingAnimation.class);
+
+    /**
+     * The animation to play when this item is used to interact with something.
+     */
+    public static final DataComponentType<SwingAnimation> INTERACT_ANIMATION =
+            register(DataComponentTypeKeys.INTERACT_ANIMATION.key(), SwingAnimation.class);
 
     private DataComponentTypes() {
         throw new UnsupportedOperationException("DataComponentTypes cannot be instantiated.");

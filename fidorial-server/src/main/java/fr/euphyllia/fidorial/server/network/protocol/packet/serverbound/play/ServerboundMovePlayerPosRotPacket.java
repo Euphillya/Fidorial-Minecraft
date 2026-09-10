@@ -1,22 +1,19 @@
 package fr.euphyllia.fidorial.server.network.protocol.packet.serverbound.play;
 
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import fr.euphyllia.fidorial.server.network.protocol.packet.listener.PlayPacketListener;
 import fr.fidorial.protocol.PacketListener;
 import fr.fidorial.protocol.ServerboundPacket;
 
-public record ServerboundMovePlayerPosRotPacket(double x, double y, double z,
-                                                float yaw, float pitch, int flags)
+public record ServerboundMovePlayerPosRotPacket(PositionData.Vec3D position, PositionData.FloatRotation rotation, int flags)
         implements ServerboundPacket {
 
     public static ServerboundMovePlayerPosRotPacket read(final PacketBuffer buf) {
-        final double x = buf.readDouble();
-        final double y = buf.readDouble();
-        final double z = buf.readDouble();
-        final float yaw = buf.readFloat();
-        final float pitch = buf.readFloat();
+        final PositionData.Vec3D position = PositionData.Vec3D.readFrom(buf);
+        final PositionData.FloatRotation rotation = PositionData.FloatRotation.readFrom(buf);
         final int flags = buf.readUByte();
-        return new ServerboundMovePlayerPosRotPacket(x, y, z, yaw, pitch, flags);
+        return new ServerboundMovePlayerPosRotPacket(position, rotation, flags);
     }
 
     @Override

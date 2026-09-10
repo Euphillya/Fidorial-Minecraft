@@ -250,94 +250,94 @@ public interface PlayServerboundPacketIds {
     int PONG_ID = 45;
 
     /**
+     * {@code minecraft:punch}
+     */
+    int PUNCH_ID = 46;
+
+    /**
      * {@code minecraft:recipe_book_change_settings}
      */
-    int RECIPE_BOOK_CHANGE_SETTINGS_ID = 46;
+    int RECIPE_BOOK_CHANGE_SETTINGS_ID = 47;
 
     /**
      * {@code minecraft:recipe_book_seen_recipe}
      */
-    int RECIPE_BOOK_SEEN_RECIPE_ID = 47;
+    int RECIPE_BOOK_SEEN_RECIPE_ID = 48;
 
     /**
      * {@code minecraft:rename_item}
      */
-    int RENAME_ITEM_ID = 48;
+    int RENAME_ITEM_ID = 49;
 
     /**
      * {@code minecraft:resource_pack}
      */
-    int RESOURCE_PACK_ID = 49;
+    int RESOURCE_PACK_ID = 50;
 
     /**
      * {@code minecraft:seen_advancements}
      */
-    int SEEN_ADVANCEMENTS_ID = 50;
+    int SEEN_ADVANCEMENTS_ID = 51;
 
     /**
      * {@code minecraft:select_trade}
      */
-    int SELECT_TRADE_ID = 51;
+    int SELECT_TRADE_ID = 52;
 
     /**
      * {@code minecraft:set_beacon}
      */
-    int SET_BEACON_ID = 52;
+    int SET_BEACON_ID = 53;
 
     /**
      * {@code minecraft:set_carried_item}
      */
-    int SET_CARRIED_ITEM_ID = 53;
+    int SET_CARRIED_ITEM_ID = 54;
 
     /**
      * {@code minecraft:set_command_block}
      */
-    int SET_COMMAND_BLOCK_ID = 54;
+    int SET_COMMAND_BLOCK_ID = 55;
 
     /**
      * {@code minecraft:set_command_minecart}
      */
-    int SET_COMMAND_MINECART_ID = 55;
+    int SET_COMMAND_MINECART_ID = 56;
 
     /**
      * {@code minecraft:set_creative_mode_slot}
      */
-    int SET_CREATIVE_MODE_SLOT_ID = 56;
+    int SET_CREATIVE_MODE_SLOT_ID = 57;
 
     /**
      * {@code minecraft:set_game_rule}
      */
-    int SET_GAME_RULE_ID = 57;
+    int SET_GAME_RULE_ID = 58;
 
     /**
      * {@code minecraft:set_jigsaw_block}
      */
-    int SET_JIGSAW_BLOCK_ID = 58;
+    int SET_JIGSAW_BLOCK_ID = 59;
 
     /**
      * {@code minecraft:set_structure_block}
      */
-    int SET_STRUCTURE_BLOCK_ID = 59;
+    int SET_STRUCTURE_BLOCK_ID = 60;
 
     /**
      * {@code minecraft:set_test_block}
      */
-    int SET_TEST_BLOCK_ID = 60;
+    int SET_TEST_BLOCK_ID = 61;
 
     /**
      * {@code minecraft:sign_update}
      */
-    int SIGN_UPDATE_ID = 61;
+    int SIGN_UPDATE_ID = 62;
 
     /**
      * {@code minecraft:spectator_action}
      */
-    int SPECTATOR_ACTION_ID = 62;
-
-    /**
-     * {@code minecraft:swing}
-     */
-    int SWING_ID = 63;
+    int SPECTATOR_ACTION_ID = 63;
 
     /**
      * {@code minecraft:teleport_to_entity}
@@ -410,6 +410,7 @@ public interface PlayServerboundPacketIds {
         Map.entry(Key.key("player_input"), PLAYER_INPUT_ID),
         Map.entry(Key.key("player_loaded"), PLAYER_LOADED_ID),
         Map.entry(Key.key("pong"), PONG_ID),
+        Map.entry(Key.key("punch"), PUNCH_ID),
         Map.entry(Key.key("recipe_book_change_settings"), RECIPE_BOOK_CHANGE_SETTINGS_ID),
         Map.entry(Key.key("recipe_book_seen_recipe"), RECIPE_BOOK_SEEN_RECIPE_ID),
         Map.entry(Key.key("rename_item"), RENAME_ITEM_ID),
@@ -427,7 +428,6 @@ public interface PlayServerboundPacketIds {
         Map.entry(Key.key("set_test_block"), SET_TEST_BLOCK_ID),
         Map.entry(Key.key("sign_update"), SIGN_UPDATE_ID),
         Map.entry(Key.key("spectator_action"), SPECTATOR_ACTION_ID),
-        Map.entry(Key.key("swing"), SWING_ID),
         Map.entry(Key.key("teleport_to_entity"), TELEPORT_TO_ENTITY_ID),
         Map.entry(Key.key("test_instance_block_action"), TEST_INSTANCE_BLOCK_ACTION_ID),
         Map.entry(Key.key("use_item"), USE_ITEM_ID),

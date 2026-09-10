@@ -26,7 +26,9 @@ public final class BlockState {
                 : Collections.unmodifiableMap(new TreeMap<>(properties));
         this.hashCode = Objects.hash(this.name, this.properties);
         this.air = name.equals(BlockTypeKeys.AIR.key()) || name.equals(BlockTypeKeys.CAVE_AIR.key()) || name.equals(BlockTypeKeys.VOID_AIR.key());
-        this.fluid = name.equals(BlockTypeKeys.WATER.key()) || name.equals(BlockTypeKeys.LAVA.key());
+        this.fluid = name.equals(BlockTypeKeys.WATER.key())
+                || name.equals(BlockTypeKeys.LAVA.key())
+                || "true".equals(this.properties.get("waterlogged"));
     }
 
     public static BlockState of(final Key name) {

@@ -375,6 +375,6 @@ public final class PacketBuffer {
     }
 
     public PacketBuffer writeBitSet(final long[] words) {
-        return writeLongArray(words);
+        return writeByteArray(BitSet.valueOf(words).toByteArray());
     }
 }

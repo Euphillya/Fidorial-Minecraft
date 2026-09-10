@@ -34,12 +34,12 @@ public class BiomeCodecs {
     ).apply(instance, type -> type));
 
     public static final Codec<BiomeEffects> EFFECTS = RecordCodecBuilder.create(instance -> instance.group(
-            EnvironmentAttributeCodecs.RGB_COLOR.fieldOf("water_color").forGetter(BiomeEffects::waterColor),
-            EnvironmentAttributeCodecs.RGB_COLOR.optionalFieldOf("foliage_color")
+            CommonCodecs.RGB_COLOR.fieldOf("water_color").forGetter(BiomeEffects::waterColor),
+            CommonCodecs.RGB_COLOR.optionalFieldOf("foliage_color")
                     .forGetter(effects -> Optional.ofNullable(effects.foliageColor())),
-            EnvironmentAttributeCodecs.RGB_COLOR.optionalFieldOf("grass_color")
+            CommonCodecs.RGB_COLOR.optionalFieldOf("grass_color")
                     .forGetter(effects -> Optional.ofNullable(effects.grassColor())),
-            EnvironmentAttributeCodecs.RGB_COLOR.optionalFieldOf("dry_foliage_color")
+            CommonCodecs.RGB_COLOR.optionalFieldOf("dry_foliage_color")
                     .forGetter(effects -> Optional.ofNullable(effects.dryFoliageColor())),
             GRASS_COLOR_MODIFIER.optionalFieldOf("grass_color_modifier", GrassColorModifier.NONE)
                     .forGetter(BiomeEffects::grassColorModifier)

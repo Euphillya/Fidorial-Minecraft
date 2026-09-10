@@ -462,6 +462,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> BLACK_CONCRETE_POWDER = create("black_concrete_powder");
 
     /**
+     * Key for {@code minecraft:black_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> BLACK_CONCRETE_SLAB = create("black_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:black_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> BLACK_CONCRETE_STAIRS = create("black_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:black_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> BLACK_GLAZED_TERRACOTTA = create("black_glazed_terracotta");
@@ -495,6 +505,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:black_wool}.
      */
     public static final TypedKey<BlockType> BLACK_WOOL = create("black_wool");
+
+    /**
+     * Key for {@code minecraft:black_wool_slab}.
+     */
+    public static final TypedKey<BlockType> BLACK_WOOL_SLAB = create("black_wool_slab");
+
+    /**
+     * Key for {@code minecraft:black_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> BLACK_WOOL_STAIRS = create("black_wool_stairs");
 
     /**
      * Key for {@code minecraft:blackstone}.
@@ -557,6 +577,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> BLUE_CONCRETE_POWDER = create("blue_concrete_powder");
 
     /**
+     * Key for {@code minecraft:blue_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> BLUE_CONCRETE_SLAB = create("blue_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:blue_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> BLUE_CONCRETE_STAIRS = create("blue_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:blue_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> BLUE_GLAZED_TERRACOTTA = create("blue_glazed_terracotta");
@@ -600,6 +630,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:blue_wool}.
      */
     public static final TypedKey<BlockType> BLUE_WOOL = create("blue_wool");
+
+    /**
+     * Key for {@code minecraft:blue_wool_slab}.
+     */
+    public static final TypedKey<BlockType> BLUE_WOOL_SLAB = create("blue_wool_slab");
+
+    /**
+     * Key for {@code minecraft:blue_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> BLUE_WOOL_STAIRS = create("blue_wool_stairs");
 
     /**
      * Key for {@code minecraft:bone_block}.
@@ -692,6 +732,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> BROWN_CONCRETE_POWDER = create("brown_concrete_powder");
 
     /**
+     * Key for {@code minecraft:brown_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> BROWN_CONCRETE_SLAB = create("brown_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:brown_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> BROWN_CONCRETE_STAIRS = create("brown_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:brown_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> BROWN_GLAZED_TERRACOTTA = create("brown_glazed_terracotta");
@@ -735,6 +785,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:brown_wool}.
      */
     public static final TypedKey<BlockType> BROWN_WOOL = create("brown_wool");
+
+    /**
+     * Key for {@code minecraft:brown_wool_slab}.
+     */
+    public static final TypedKey<BlockType> BROWN_WOOL_SLAB = create("brown_wool_slab");
+
+    /**
+     * Key for {@code minecraft:brown_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> BROWN_WOOL_STAIRS = create("brown_wool_stairs");
 
     /**
      * Key for {@code minecraft:bubble_column}.
@@ -1457,6 +1517,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> CYAN_CONCRETE_POWDER = create("cyan_concrete_powder");
 
     /**
+     * Key for {@code minecraft:cyan_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> CYAN_CONCRETE_SLAB = create("cyan_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:cyan_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> CYAN_CONCRETE_STAIRS = create("cyan_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:cyan_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> CYAN_GLAZED_TERRACOTTA = create("cyan_glazed_terracotta");
@@ -1490,6 +1560,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:cyan_wool}.
      */
     public static final TypedKey<BlockType> CYAN_WOOL = create("cyan_wool");
+
+    /**
+     * Key for {@code minecraft:cyan_wool_slab}.
+     */
+    public static final TypedKey<BlockType> CYAN_WOOL_SLAB = create("cyan_wool_slab");
+
+    /**
+     * Key for {@code minecraft:cyan_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> CYAN_WOOL_STAIRS = create("cyan_wool_stairs");
 
     /**
      * Key for {@code minecraft:damaged_anvil}.
@@ -2212,6 +2292,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> GRAY_CONCRETE_POWDER = create("gray_concrete_powder");
 
     /**
+     * Key for {@code minecraft:gray_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> GRAY_CONCRETE_SLAB = create("gray_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:gray_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> GRAY_CONCRETE_STAIRS = create("gray_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:gray_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> GRAY_GLAZED_TERRACOTTA = create("gray_glazed_terracotta");
@@ -2245,6 +2335,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:gray_wool}.
      */
     public static final TypedKey<BlockType> GRAY_WOOL = create("gray_wool");
+
+    /**
+     * Key for {@code minecraft:gray_wool_slab}.
+     */
+    public static final TypedKey<BlockType> GRAY_WOOL_SLAB = create("gray_wool_slab");
+
+    /**
+     * Key for {@code minecraft:gray_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> GRAY_WOOL_STAIRS = create("gray_wool_stairs");
 
     /**
      * Key for {@code minecraft:green_banner}.
@@ -2282,6 +2382,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> GREEN_CONCRETE_POWDER = create("green_concrete_powder");
 
     /**
+     * Key for {@code minecraft:green_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> GREEN_CONCRETE_SLAB = create("green_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:green_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> GREEN_CONCRETE_STAIRS = create("green_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:green_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> GREEN_GLAZED_TERRACOTTA = create("green_glazed_terracotta");
@@ -2315,6 +2425,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:green_wool}.
      */
     public static final TypedKey<BlockType> GREEN_WOOL = create("green_wool");
+
+    /**
+     * Key for {@code minecraft:green_wool_slab}.
+     */
+    public static final TypedKey<BlockType> GREEN_WOOL_SLAB = create("green_wool_slab");
+
+    /**
+     * Key for {@code minecraft:green_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> GREEN_WOOL_STAIRS = create("green_wool_stairs");
 
     /**
      * Key for {@code minecraft:grindstone}.
@@ -2657,6 +2777,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> LIGHT_BLUE_CONCRETE_POWDER = create("light_blue_concrete_powder");
 
     /**
+     * Key for {@code minecraft:light_blue_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> LIGHT_BLUE_CONCRETE_SLAB = create("light_blue_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:light_blue_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> LIGHT_BLUE_CONCRETE_STAIRS = create("light_blue_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:light_blue_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> LIGHT_BLUE_GLAZED_TERRACOTTA = create("light_blue_glazed_terracotta");
@@ -2690,6 +2820,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:light_blue_wool}.
      */
     public static final TypedKey<BlockType> LIGHT_BLUE_WOOL = create("light_blue_wool");
+
+    /**
+     * Key for {@code minecraft:light_blue_wool_slab}.
+     */
+    public static final TypedKey<BlockType> LIGHT_BLUE_WOOL_SLAB = create("light_blue_wool_slab");
+
+    /**
+     * Key for {@code minecraft:light_blue_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> LIGHT_BLUE_WOOL_STAIRS = create("light_blue_wool_stairs");
 
     /**
      * Key for {@code minecraft:light_gray_banner}.
@@ -2727,6 +2867,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> LIGHT_GRAY_CONCRETE_POWDER = create("light_gray_concrete_powder");
 
     /**
+     * Key for {@code minecraft:light_gray_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> LIGHT_GRAY_CONCRETE_SLAB = create("light_gray_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:light_gray_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> LIGHT_GRAY_CONCRETE_STAIRS = create("light_gray_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:light_gray_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> LIGHT_GRAY_GLAZED_TERRACOTTA = create("light_gray_glazed_terracotta");
@@ -2760,6 +2910,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:light_gray_wool}.
      */
     public static final TypedKey<BlockType> LIGHT_GRAY_WOOL = create("light_gray_wool");
+
+    /**
+     * Key for {@code minecraft:light_gray_wool_slab}.
+     */
+    public static final TypedKey<BlockType> LIGHT_GRAY_WOOL_SLAB = create("light_gray_wool_slab");
+
+    /**
+     * Key for {@code minecraft:light_gray_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> LIGHT_GRAY_WOOL_STAIRS = create("light_gray_wool_stairs");
 
     /**
      * Key for {@code minecraft:light_weighted_pressure_plate}.
@@ -2822,6 +2982,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> LIME_CONCRETE_POWDER = create("lime_concrete_powder");
 
     /**
+     * Key for {@code minecraft:lime_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> LIME_CONCRETE_SLAB = create("lime_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:lime_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> LIME_CONCRETE_STAIRS = create("lime_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:lime_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> LIME_GLAZED_TERRACOTTA = create("lime_glazed_terracotta");
@@ -2855,6 +3025,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:lime_wool}.
      */
     public static final TypedKey<BlockType> LIME_WOOL = create("lime_wool");
+
+    /**
+     * Key for {@code minecraft:lime_wool_slab}.
+     */
+    public static final TypedKey<BlockType> LIME_WOOL_SLAB = create("lime_wool_slab");
+
+    /**
+     * Key for {@code minecraft:lime_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> LIME_WOOL_STAIRS = create("lime_wool_stairs");
 
     /**
      * Key for {@code minecraft:lodestone}.
@@ -2902,6 +3082,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> MAGENTA_CONCRETE_POWDER = create("magenta_concrete_powder");
 
     /**
+     * Key for {@code minecraft:magenta_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> MAGENTA_CONCRETE_SLAB = create("magenta_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:magenta_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> MAGENTA_CONCRETE_STAIRS = create("magenta_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:magenta_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> MAGENTA_GLAZED_TERRACOTTA = create("magenta_glazed_terracotta");
@@ -2935,6 +3125,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:magenta_wool}.
      */
     public static final TypedKey<BlockType> MAGENTA_WOOL = create("magenta_wool");
+
+    /**
+     * Key for {@code minecraft:magenta_wool_slab}.
+     */
+    public static final TypedKey<BlockType> MAGENTA_WOOL_SLAB = create("magenta_wool_slab");
+
+    /**
+     * Key for {@code minecraft:magenta_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> MAGENTA_WOOL_STAIRS = create("magenta_wool_stairs");
 
     /**
      * Key for {@code minecraft:magma_block}.
@@ -3362,9 +3562,24 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> ORANGE_CONCRETE_POWDER = create("orange_concrete_powder");
 
     /**
+     * Key for {@code minecraft:orange_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> ORANGE_CONCRETE_SLAB = create("orange_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:orange_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> ORANGE_CONCRETE_STAIRS = create("orange_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:orange_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> ORANGE_GLAZED_TERRACOTTA = create("orange_glazed_terracotta");
+
+    /**
+     * Key for {@code minecraft:orange_poplar_leaves}.
+     */
+    public static final TypedKey<BlockType> ORANGE_POPLAR_LEAVES = create("orange_poplar_leaves");
 
     /**
      * Key for {@code minecraft:orange_shulker_box}.
@@ -3400,6 +3615,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:orange_wool}.
      */
     public static final TypedKey<BlockType> ORANGE_WOOL = create("orange_wool");
+
+    /**
+     * Key for {@code minecraft:orange_wool_slab}.
+     */
+    public static final TypedKey<BlockType> ORANGE_WOOL_SLAB = create("orange_wool_slab");
+
+    /**
+     * Key for {@code minecraft:orange_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> ORANGE_WOOL_STAIRS = create("orange_wool_stairs");
 
     /**
      * Key for {@code minecraft:oxeye_daisy}.
@@ -3657,6 +3882,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> PINK_CONCRETE_POWDER = create("pink_concrete_powder");
 
     /**
+     * Key for {@code minecraft:pink_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> PINK_CONCRETE_SLAB = create("pink_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:pink_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> PINK_CONCRETE_STAIRS = create("pink_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:pink_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> PINK_GLAZED_TERRACOTTA = create("pink_glazed_terracotta");
@@ -3700,6 +3935,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:pink_wool}.
      */
     public static final TypedKey<BlockType> PINK_WOOL = create("pink_wool");
+
+    /**
+     * Key for {@code minecraft:pink_wool_slab}.
+     */
+    public static final TypedKey<BlockType> PINK_WOOL_SLAB = create("pink_wool_slab");
+
+    /**
+     * Key for {@code minecraft:pink_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> PINK_WOOL_STAIRS = create("pink_wool_stairs");
 
     /**
      * Key for {@code minecraft:piston}.
@@ -3922,6 +4167,91 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> POLISHED_TUFF_WALL = create("polished_tuff_wall");
 
     /**
+     * Key for {@code minecraft:poplar_button}.
+     */
+    public static final TypedKey<BlockType> POPLAR_BUTTON = create("poplar_button");
+
+    /**
+     * Key for {@code minecraft:poplar_door}.
+     */
+    public static final TypedKey<BlockType> POPLAR_DOOR = create("poplar_door");
+
+    /**
+     * Key for {@code minecraft:poplar_fence}.
+     */
+    public static final TypedKey<BlockType> POPLAR_FENCE = create("poplar_fence");
+
+    /**
+     * Key for {@code minecraft:poplar_fence_gate}.
+     */
+    public static final TypedKey<BlockType> POPLAR_FENCE_GATE = create("poplar_fence_gate");
+
+    /**
+     * Key for {@code minecraft:poplar_hanging_sign}.
+     */
+    public static final TypedKey<BlockType> POPLAR_HANGING_SIGN = create("poplar_hanging_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_log}.
+     */
+    public static final TypedKey<BlockType> POPLAR_LOG = create("poplar_log");
+
+    /**
+     * Key for {@code minecraft:poplar_planks}.
+     */
+    public static final TypedKey<BlockType> POPLAR_PLANKS = create("poplar_planks");
+
+    /**
+     * Key for {@code minecraft:poplar_pressure_plate}.
+     */
+    public static final TypedKey<BlockType> POPLAR_PRESSURE_PLATE = create("poplar_pressure_plate");
+
+    /**
+     * Key for {@code minecraft:poplar_sapling}.
+     */
+    public static final TypedKey<BlockType> POPLAR_SAPLING = create("poplar_sapling");
+
+    /**
+     * Key for {@code minecraft:poplar_shelf}.
+     */
+    public static final TypedKey<BlockType> POPLAR_SHELF = create("poplar_shelf");
+
+    /**
+     * Key for {@code minecraft:poplar_sign}.
+     */
+    public static final TypedKey<BlockType> POPLAR_SIGN = create("poplar_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_slab}.
+     */
+    public static final TypedKey<BlockType> POPLAR_SLAB = create("poplar_slab");
+
+    /**
+     * Key for {@code minecraft:poplar_stairs}.
+     */
+    public static final TypedKey<BlockType> POPLAR_STAIRS = create("poplar_stairs");
+
+    /**
+     * Key for {@code minecraft:poplar_trapdoor}.
+     */
+    public static final TypedKey<BlockType> POPLAR_TRAPDOOR = create("poplar_trapdoor");
+
+    /**
+     * Key for {@code minecraft:poplar_wall_hanging_sign}.
+     */
+    public static final TypedKey<BlockType> POPLAR_WALL_HANGING_SIGN = create("poplar_wall_hanging_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_wall_sign}.
+     */
+    public static final TypedKey<BlockType> POPLAR_WALL_SIGN = create("poplar_wall_sign");
+
+    /**
+     * Key for {@code minecraft:poplar_wood}.
+     */
+    public static final TypedKey<BlockType> POPLAR_WOOD = create("poplar_wood");
+
+    /**
      * Key for {@code minecraft:poppy}.
      */
     public static final TypedKey<BlockType> POPPY = create("poppy");
@@ -4082,6 +4412,11 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> POTTED_PINK_TULIP = create("potted_pink_tulip");
 
     /**
+     * Key for {@code minecraft:potted_poplar_sapling}.
+     */
+    public static final TypedKey<BlockType> POTTED_POPLAR_SAPLING = create("potted_poplar_sapling");
+
+    /**
      * Key for {@code minecraft:potted_poppy}.
      */
     public static final TypedKey<BlockType> POTTED_POPPY = create("potted_poppy");
@@ -4222,6 +4557,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> PURPLE_CONCRETE_POWDER = create("purple_concrete_powder");
 
     /**
+     * Key for {@code minecraft:purple_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> PURPLE_CONCRETE_SLAB = create("purple_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:purple_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> PURPLE_CONCRETE_STAIRS = create("purple_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:purple_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> PURPLE_GLAZED_TERRACOTTA = create("purple_glazed_terracotta");
@@ -4255,6 +4600,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:purple_wool}.
      */
     public static final TypedKey<BlockType> PURPLE_WOOL = create("purple_wool");
+
+    /**
+     * Key for {@code minecraft:purple_wool_slab}.
+     */
+    public static final TypedKey<BlockType> PURPLE_WOOL_SLAB = create("purple_wool_slab");
+
+    /**
+     * Key for {@code minecraft:purple_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> PURPLE_WOOL_STAIRS = create("purple_wool_stairs");
 
     /**
      * Key for {@code minecraft:purpur_block}.
@@ -4357,6 +4712,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> RED_CONCRETE_POWDER = create("red_concrete_powder");
 
     /**
+     * Key for {@code minecraft:red_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> RED_CONCRETE_SLAB = create("red_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:red_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> RED_CONCRETE_STAIRS = create("red_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:red_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> RED_GLAZED_TERRACOTTA = create("red_glazed_terracotta");
@@ -4392,6 +4757,11 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> RED_NETHER_BRICKS = create("red_nether_bricks");
 
     /**
+     * Key for {@code minecraft:red_poplar_leaves}.
+     */
+    public static final TypedKey<BlockType> RED_POPLAR_LEAVES = create("red_poplar_leaves");
+
+    /**
      * Key for {@code minecraft:red_sand}.
      */
     public static final TypedKey<BlockType> RED_SAND = create("red_sand");
@@ -4415,6 +4785,11 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:red_sandstone_wall}.
      */
     public static final TypedKey<BlockType> RED_SANDSTONE_WALL = create("red_sandstone_wall");
+
+    /**
+     * Key for {@code minecraft:red_shrub}.
+     */
+    public static final TypedKey<BlockType> RED_SHRUB = create("red_shrub");
 
     /**
      * Key for {@code minecraft:red_shulker_box}.
@@ -4450,6 +4825,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:red_wool}.
      */
     public static final TypedKey<BlockType> RED_WOOL = create("red_wool");
+
+    /**
+     * Key for {@code minecraft:red_wool_slab}.
+     */
+    public static final TypedKey<BlockType> RED_WOOL_SLAB = create("red_wool_slab");
+
+    /**
+     * Key for {@code minecraft:red_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> RED_WOOL_STAIRS = create("red_wool_stairs");
 
     /**
      * Key for {@code minecraft:redstone_block}.
@@ -4610,6 +4995,11 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:seagrass}.
      */
     public static final TypedKey<BlockType> SEAGRASS = create("seagrass");
+
+    /**
+     * Key for {@code minecraft:shelf_mushroom}.
+     */
+    public static final TypedKey<BlockType> SHELF_MUSHROOM = create("shelf_mushroom");
 
     /**
      * Key for {@code minecraft:short_dry_grass}.
@@ -4937,6 +5327,11 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> STONECUTTER = create("stonecutter");
 
     /**
+     * Key for {@code minecraft:straw_bed}.
+     */
+    public static final TypedKey<BlockType> STRAW_BED = create("straw_bed");
+
+    /**
      * Key for {@code minecraft:stripped_acacia_log}.
      */
     public static final TypedKey<BlockType> STRIPPED_ACACIA_LOG = create("stripped_acacia_log");
@@ -5030,6 +5425,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:stripped_pale_oak_wood}.
      */
     public static final TypedKey<BlockType> STRIPPED_PALE_OAK_WOOD = create("stripped_pale_oak_wood");
+
+    /**
+     * Key for {@code minecraft:stripped_poplar_log}.
+     */
+    public static final TypedKey<BlockType> STRIPPED_POPLAR_LOG = create("stripped_poplar_log");
+
+    /**
+     * Key for {@code minecraft:stripped_poplar_wood}.
+     */
+    public static final TypedKey<BlockType> STRIPPED_POPLAR_WOOD = create("stripped_poplar_wood");
 
     /**
      * Key for {@code minecraft:stripped_spruce_log}.
@@ -5852,6 +6257,16 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> WHITE_CONCRETE_POWDER = create("white_concrete_powder");
 
     /**
+     * Key for {@code minecraft:white_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> WHITE_CONCRETE_SLAB = create("white_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:white_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> WHITE_CONCRETE_STAIRS = create("white_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:white_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> WHITE_GLAZED_TERRACOTTA = create("white_glazed_terracotta");
@@ -5890,6 +6305,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:white_wool}.
      */
     public static final TypedKey<BlockType> WHITE_WOOL = create("white_wool");
+
+    /**
+     * Key for {@code minecraft:white_wool_slab}.
+     */
+    public static final TypedKey<BlockType> WHITE_WOOL_SLAB = create("white_wool_slab");
+
+    /**
+     * Key for {@code minecraft:white_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> WHITE_WOOL_STAIRS = create("white_wool_stairs");
 
     /**
      * Key for {@code minecraft:wildflowers}.
@@ -5947,9 +6372,24 @@ public final class BlockTypeKeys {
     public static final TypedKey<BlockType> YELLOW_CONCRETE_POWDER = create("yellow_concrete_powder");
 
     /**
+     * Key for {@code minecraft:yellow_concrete_slab}.
+     */
+    public static final TypedKey<BlockType> YELLOW_CONCRETE_SLAB = create("yellow_concrete_slab");
+
+    /**
+     * Key for {@code minecraft:yellow_concrete_stairs}.
+     */
+    public static final TypedKey<BlockType> YELLOW_CONCRETE_STAIRS = create("yellow_concrete_stairs");
+
+    /**
      * Key for {@code minecraft:yellow_glazed_terracotta}.
      */
     public static final TypedKey<BlockType> YELLOW_GLAZED_TERRACOTTA = create("yellow_glazed_terracotta");
+
+    /**
+     * Key for {@code minecraft:yellow_poplar_leaves}.
+     */
+    public static final TypedKey<BlockType> YELLOW_POPLAR_LEAVES = create("yellow_poplar_leaves");
 
     /**
      * Key for {@code minecraft:yellow_shulker_box}.
@@ -5980,6 +6420,16 @@ public final class BlockTypeKeys {
      * Key for {@code minecraft:yellow_wool}.
      */
     public static final TypedKey<BlockType> YELLOW_WOOL = create("yellow_wool");
+
+    /**
+     * Key for {@code minecraft:yellow_wool_slab}.
+     */
+    public static final TypedKey<BlockType> YELLOW_WOOL_SLAB = create("yellow_wool_slab");
+
+    /**
+     * Key for {@code minecraft:yellow_wool_stairs}.
+     */
+    public static final TypedKey<BlockType> YELLOW_WOOL_STAIRS = create("yellow_wool_stairs");
 
     /**
      * Key for {@code minecraft:zombie_head}.
@@ -6082,6 +6532,8 @@ public final class BlockTypeKeys {
         BLACK_CARPET,
         BLACK_CONCRETE,
         BLACK_CONCRETE_POWDER,
+        BLACK_CONCRETE_SLAB,
+        BLACK_CONCRETE_STAIRS,
         BLACK_GLAZED_TERRACOTTA,
         BLACK_SHULKER_BOX,
         BLACK_STAINED_GLASS,
@@ -6089,6 +6541,8 @@ public final class BlockTypeKeys {
         BLACK_TERRACOTTA,
         BLACK_WALL_BANNER,
         BLACK_WOOL,
+        BLACK_WOOL_SLAB,
+        BLACK_WOOL_STAIRS,
         BLACKSTONE,
         BLACKSTONE_SLAB,
         BLACKSTONE_STAIRS,
@@ -6101,6 +6555,8 @@ public final class BlockTypeKeys {
         BLUE_CARPET,
         BLUE_CONCRETE,
         BLUE_CONCRETE_POWDER,
+        BLUE_CONCRETE_SLAB,
+        BLUE_CONCRETE_STAIRS,
         BLUE_GLAZED_TERRACOTTA,
         BLUE_ICE,
         BLUE_ORCHID,
@@ -6110,6 +6566,8 @@ public final class BlockTypeKeys {
         BLUE_TERRACOTTA,
         BLUE_WALL_BANNER,
         BLUE_WOOL,
+        BLUE_WOOL_SLAB,
+        BLUE_WOOL_STAIRS,
         BONE_BLOCK,
         BOOKSHELF,
         BRAIN_CORAL,
@@ -6128,6 +6586,8 @@ public final class BlockTypeKeys {
         BROWN_CARPET,
         BROWN_CONCRETE,
         BROWN_CONCRETE_POWDER,
+        BROWN_CONCRETE_SLAB,
+        BROWN_CONCRETE_STAIRS,
         BROWN_GLAZED_TERRACOTTA,
         BROWN_MUSHROOM,
         BROWN_MUSHROOM_BLOCK,
@@ -6137,6 +6597,8 @@ public final class BlockTypeKeys {
         BROWN_TERRACOTTA,
         BROWN_WALL_BANNER,
         BROWN_WOOL,
+        BROWN_WOOL_SLAB,
+        BROWN_WOOL_STAIRS,
         BUBBLE_COLUMN,
         BUBBLE_CORAL,
         BUBBLE_CORAL_BLOCK,
@@ -6281,6 +6743,8 @@ public final class BlockTypeKeys {
         CYAN_CARPET,
         CYAN_CONCRETE,
         CYAN_CONCRETE_POWDER,
+        CYAN_CONCRETE_SLAB,
+        CYAN_CONCRETE_STAIRS,
         CYAN_GLAZED_TERRACOTTA,
         CYAN_SHULKER_BOX,
         CYAN_STAINED_GLASS,
@@ -6288,6 +6752,8 @@ public final class BlockTypeKeys {
         CYAN_TERRACOTTA,
         CYAN_WALL_BANNER,
         CYAN_WOOL,
+        CYAN_WOOL_SLAB,
+        CYAN_WOOL_STAIRS,
         DAMAGED_ANVIL,
         DANDELION,
         DARK_OAK_BUTTON,
@@ -6432,6 +6898,8 @@ public final class BlockTypeKeys {
         GRAY_CARPET,
         GRAY_CONCRETE,
         GRAY_CONCRETE_POWDER,
+        GRAY_CONCRETE_SLAB,
+        GRAY_CONCRETE_STAIRS,
         GRAY_GLAZED_TERRACOTTA,
         GRAY_SHULKER_BOX,
         GRAY_STAINED_GLASS,
@@ -6439,6 +6907,8 @@ public final class BlockTypeKeys {
         GRAY_TERRACOTTA,
         GRAY_WALL_BANNER,
         GRAY_WOOL,
+        GRAY_WOOL_SLAB,
+        GRAY_WOOL_STAIRS,
         GREEN_BANNER,
         GREEN_BED,
         GREEN_CANDLE,
@@ -6446,6 +6916,8 @@ public final class BlockTypeKeys {
         GREEN_CARPET,
         GREEN_CONCRETE,
         GREEN_CONCRETE_POWDER,
+        GREEN_CONCRETE_SLAB,
+        GREEN_CONCRETE_STAIRS,
         GREEN_GLAZED_TERRACOTTA,
         GREEN_SHULKER_BOX,
         GREEN_STAINED_GLASS,
@@ -6453,6 +6925,8 @@ public final class BlockTypeKeys {
         GREEN_TERRACOTTA,
         GREEN_WALL_BANNER,
         GREEN_WOOL,
+        GREEN_WOOL_SLAB,
+        GREEN_WOOL_STAIRS,
         GRINDSTONE,
         HANGING_ROOTS,
         HAY_BLOCK,
@@ -6521,6 +6995,8 @@ public final class BlockTypeKeys {
         LIGHT_BLUE_CARPET,
         LIGHT_BLUE_CONCRETE,
         LIGHT_BLUE_CONCRETE_POWDER,
+        LIGHT_BLUE_CONCRETE_SLAB,
+        LIGHT_BLUE_CONCRETE_STAIRS,
         LIGHT_BLUE_GLAZED_TERRACOTTA,
         LIGHT_BLUE_SHULKER_BOX,
         LIGHT_BLUE_STAINED_GLASS,
@@ -6528,6 +7004,8 @@ public final class BlockTypeKeys {
         LIGHT_BLUE_TERRACOTTA,
         LIGHT_BLUE_WALL_BANNER,
         LIGHT_BLUE_WOOL,
+        LIGHT_BLUE_WOOL_SLAB,
+        LIGHT_BLUE_WOOL_STAIRS,
         LIGHT_GRAY_BANNER,
         LIGHT_GRAY_BED,
         LIGHT_GRAY_CANDLE,
@@ -6535,6 +7013,8 @@ public final class BlockTypeKeys {
         LIGHT_GRAY_CARPET,
         LIGHT_GRAY_CONCRETE,
         LIGHT_GRAY_CONCRETE_POWDER,
+        LIGHT_GRAY_CONCRETE_SLAB,
+        LIGHT_GRAY_CONCRETE_STAIRS,
         LIGHT_GRAY_GLAZED_TERRACOTTA,
         LIGHT_GRAY_SHULKER_BOX,
         LIGHT_GRAY_STAINED_GLASS,
@@ -6542,6 +7022,8 @@ public final class BlockTypeKeys {
         LIGHT_GRAY_TERRACOTTA,
         LIGHT_GRAY_WALL_BANNER,
         LIGHT_GRAY_WOOL,
+        LIGHT_GRAY_WOOL_SLAB,
+        LIGHT_GRAY_WOOL_STAIRS,
         LIGHT_WEIGHTED_PRESSURE_PLATE,
         LIGHTNING_ROD,
         LILAC,
@@ -6554,6 +7036,8 @@ public final class BlockTypeKeys {
         LIME_CARPET,
         LIME_CONCRETE,
         LIME_CONCRETE_POWDER,
+        LIME_CONCRETE_SLAB,
+        LIME_CONCRETE_STAIRS,
         LIME_GLAZED_TERRACOTTA,
         LIME_SHULKER_BOX,
         LIME_STAINED_GLASS,
@@ -6561,6 +7045,8 @@ public final class BlockTypeKeys {
         LIME_TERRACOTTA,
         LIME_WALL_BANNER,
         LIME_WOOL,
+        LIME_WOOL_SLAB,
+        LIME_WOOL_STAIRS,
         LODESTONE,
         LOOM,
         MAGENTA_BANNER,
@@ -6570,6 +7056,8 @@ public final class BlockTypeKeys {
         MAGENTA_CARPET,
         MAGENTA_CONCRETE,
         MAGENTA_CONCRETE_POWDER,
+        MAGENTA_CONCRETE_SLAB,
+        MAGENTA_CONCRETE_STAIRS,
         MAGENTA_GLAZED_TERRACOTTA,
         MAGENTA_SHULKER_BOX,
         MAGENTA_STAINED_GLASS,
@@ -6577,6 +7065,8 @@ public final class BlockTypeKeys {
         MAGENTA_TERRACOTTA,
         MAGENTA_WALL_BANNER,
         MAGENTA_WOOL,
+        MAGENTA_WOOL_SLAB,
+        MAGENTA_WOOL_STAIRS,
         MAGMA_BLOCK,
         MANGROVE_BUTTON,
         MANGROVE_DOOR,
@@ -6662,7 +7152,10 @@ public final class BlockTypeKeys {
         ORANGE_CARPET,
         ORANGE_CONCRETE,
         ORANGE_CONCRETE_POWDER,
+        ORANGE_CONCRETE_SLAB,
+        ORANGE_CONCRETE_STAIRS,
         ORANGE_GLAZED_TERRACOTTA,
+        ORANGE_POPLAR_LEAVES,
         ORANGE_SHULKER_BOX,
         ORANGE_STAINED_GLASS,
         ORANGE_STAINED_GLASS_PANE,
@@ -6670,6 +7163,8 @@ public final class BlockTypeKeys {
         ORANGE_TULIP,
         ORANGE_WALL_BANNER,
         ORANGE_WOOL,
+        ORANGE_WOOL_SLAB,
+        ORANGE_WOOL_STAIRS,
         OXEYE_DAISY,
         OXIDIZED_CHISELED_COPPER,
         OXIDIZED_COPPER,
@@ -6721,6 +7216,8 @@ public final class BlockTypeKeys {
         PINK_CARPET,
         PINK_CONCRETE,
         PINK_CONCRETE_POWDER,
+        PINK_CONCRETE_SLAB,
+        PINK_CONCRETE_STAIRS,
         PINK_GLAZED_TERRACOTTA,
         PINK_PETALS,
         PINK_SHULKER_BOX,
@@ -6730,6 +7227,8 @@ public final class BlockTypeKeys {
         PINK_TULIP,
         PINK_WALL_BANNER,
         PINK_WOOL,
+        PINK_WOOL_SLAB,
+        PINK_WOOL_STAIRS,
         PISTON,
         PISTON_HEAD,
         PITCHER_CROP,
@@ -6774,6 +7273,23 @@ public final class BlockTypeKeys {
         POLISHED_TUFF_SLAB,
         POLISHED_TUFF_STAIRS,
         POLISHED_TUFF_WALL,
+        POPLAR_BUTTON,
+        POPLAR_DOOR,
+        POPLAR_FENCE,
+        POPLAR_FENCE_GATE,
+        POPLAR_HANGING_SIGN,
+        POPLAR_LOG,
+        POPLAR_PLANKS,
+        POPLAR_PRESSURE_PLATE,
+        POPLAR_SAPLING,
+        POPLAR_SHELF,
+        POPLAR_SIGN,
+        POPLAR_SLAB,
+        POPLAR_STAIRS,
+        POPLAR_TRAPDOOR,
+        POPLAR_WALL_HANGING_SIGN,
+        POPLAR_WALL_SIGN,
+        POPLAR_WOOD,
         POPPY,
         POTATOES,
         POTENT_SULFUR,
@@ -6806,6 +7322,7 @@ public final class BlockTypeKeys {
         POTTED_OXEYE_DAISY,
         POTTED_PALE_OAK_SAPLING,
         POTTED_PINK_TULIP,
+        POTTED_POPLAR_SAPLING,
         POTTED_POPPY,
         POTTED_RED_MUSHROOM,
         POTTED_RED_TULIP,
@@ -6834,6 +7351,8 @@ public final class BlockTypeKeys {
         PURPLE_CARPET,
         PURPLE_CONCRETE,
         PURPLE_CONCRETE_POWDER,
+        PURPLE_CONCRETE_SLAB,
+        PURPLE_CONCRETE_STAIRS,
         PURPLE_GLAZED_TERRACOTTA,
         PURPLE_SHULKER_BOX,
         PURPLE_STAINED_GLASS,
@@ -6841,6 +7360,8 @@ public final class BlockTypeKeys {
         PURPLE_TERRACOTTA,
         PURPLE_WALL_BANNER,
         PURPLE_WOOL,
+        PURPLE_WOOL_SLAB,
+        PURPLE_WOOL_STAIRS,
         PURPUR_BLOCK,
         PURPUR_PILLAR,
         PURPUR_SLAB,
@@ -6861,6 +7382,8 @@ public final class BlockTypeKeys {
         RED_CARPET,
         RED_CONCRETE,
         RED_CONCRETE_POWDER,
+        RED_CONCRETE_SLAB,
+        RED_CONCRETE_STAIRS,
         RED_GLAZED_TERRACOTTA,
         RED_MUSHROOM,
         RED_MUSHROOM_BLOCK,
@@ -6868,11 +7391,13 @@ public final class BlockTypeKeys {
         RED_NETHER_BRICK_STAIRS,
         RED_NETHER_BRICK_WALL,
         RED_NETHER_BRICKS,
+        RED_POPLAR_LEAVES,
         RED_SAND,
         RED_SANDSTONE,
         RED_SANDSTONE_SLAB,
         RED_SANDSTONE_STAIRS,
         RED_SANDSTONE_WALL,
+        RED_SHRUB,
         RED_SHULKER_BOX,
         RED_STAINED_GLASS,
         RED_STAINED_GLASS_PANE,
@@ -6880,6 +7405,8 @@ public final class BlockTypeKeys {
         RED_TULIP,
         RED_WALL_BANNER,
         RED_WOOL,
+        RED_WOOL_SLAB,
+        RED_WOOL_STAIRS,
         REDSTONE_BLOCK,
         REDSTONE_LAMP,
         REDSTONE_ORE,
@@ -6912,6 +7439,7 @@ public final class BlockTypeKeys {
         SEA_LANTERN,
         SEA_PICKLE,
         SEAGRASS,
+        SHELF_MUSHROOM,
         SHORT_DRY_GRASS,
         SHORT_GRASS,
         SHROOMLIGHT,
@@ -6977,6 +7505,7 @@ public final class BlockTypeKeys {
         STONE_SLAB,
         STONE_STAIRS,
         STONECUTTER,
+        STRAW_BED,
         STRIPPED_ACACIA_LOG,
         STRIPPED_ACACIA_WOOD,
         STRIPPED_BAMBOO_BLOCK,
@@ -6996,6 +7525,8 @@ public final class BlockTypeKeys {
         STRIPPED_OAK_WOOD,
         STRIPPED_PALE_OAK_LOG,
         STRIPPED_PALE_OAK_WOOD,
+        STRIPPED_POPLAR_LOG,
+        STRIPPED_POPLAR_WOOD,
         STRIPPED_SPRUCE_LOG,
         STRIPPED_SPRUCE_WOOD,
         STRIPPED_WARPED_HYPHAE,
@@ -7160,6 +7691,8 @@ public final class BlockTypeKeys {
         WHITE_CARPET,
         WHITE_CONCRETE,
         WHITE_CONCRETE_POWDER,
+        WHITE_CONCRETE_SLAB,
+        WHITE_CONCRETE_STAIRS,
         WHITE_GLAZED_TERRACOTTA,
         WHITE_SHULKER_BOX,
         WHITE_STAINED_GLASS,
@@ -7168,6 +7701,8 @@ public final class BlockTypeKeys {
         WHITE_TULIP,
         WHITE_WALL_BANNER,
         WHITE_WOOL,
+        WHITE_WOOL_SLAB,
+        WHITE_WOOL_STAIRS,
         WILDFLOWERS,
         WITHER_ROSE,
         WITHER_SKELETON_SKULL,
@@ -7179,13 +7714,18 @@ public final class BlockTypeKeys {
         YELLOW_CARPET,
         YELLOW_CONCRETE,
         YELLOW_CONCRETE_POWDER,
+        YELLOW_CONCRETE_SLAB,
+        YELLOW_CONCRETE_STAIRS,
         YELLOW_GLAZED_TERRACOTTA,
+        YELLOW_POPLAR_LEAVES,
         YELLOW_SHULKER_BOX,
         YELLOW_STAINED_GLASS,
         YELLOW_STAINED_GLASS_PANE,
         YELLOW_TERRACOTTA,
         YELLOW_WALL_BANNER,
         YELLOW_WOOL,
+        YELLOW_WOOL_SLAB,
+        YELLOW_WOOL_STAIRS,
         ZOMBIE_HEAD,
         ZOMBIE_WALL_HEAD
     );

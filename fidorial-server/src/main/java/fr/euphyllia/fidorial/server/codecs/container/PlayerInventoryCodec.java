@@ -1,6 +1,7 @@
 package fr.euphyllia.fidorial.server.codecs.container;
 
-import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
+import fr.euphyllia.fidorial.server.VersionConstants;
+import fr.euphyllia.fidorial.server.world.storage.datafixers.DataFixerType;
 import fr.fidorial.inventory.PlayerInventory;
 
 import java.io.IOException;
@@ -14,11 +15,12 @@ public final class PlayerInventoryCodec {
     }
 
     public static byte[] encode(final PlayerInventory inventory) throws IOException {
-        return ContainerCodecs.encode(ROOT_NAME, LIST_NAME, AnvilChunkSerializer.DATA_VERSION_26_2,
+        return ContainerCodecs.encode(ROOT_NAME, LIST_NAME, VersionConstants.DATA_VERSION,
                 ContainerCodecs.containerCodec(PlayerInventory::new), inventory);
     }
 
     public static PlayerInventory decode(final byte[] payload) throws IOException {
-        return ContainerCodecs.decode(payload, LIST_NAME, ContainerCodecs.containerCodec(PlayerInventory::new));
+        return ContainerCodecs.decode(payload, LIST_NAME,
+                ContainerCodecs.containerCodec(PlayerInventory::new), DataFixerType.PLAYER);
     }
 }

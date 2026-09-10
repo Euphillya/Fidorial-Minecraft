@@ -12,6 +12,7 @@ public record ClientboundLoginPacket(
         Key[] dimensions,
         Key dimensionKey,
         int dimensionTypeId,
+        long hashedSeed,
         int viewDistance,
         int gameMode,
         boolean isDebug,
@@ -37,9 +38,9 @@ public record ClientboundLoginPacket(
         buf.writeBoolean(false); // doLimitedCrafting
         buf.writeVarInt(dimensionTypeId);
         buf.writeKey(dimensionKey);
-        buf.writeLong(0L); // hashedSeed
-        buf.writeByte(gameMode); // gameMode (survie)
-        buf.writeByte(-1); // previousGameMode
+        buf.writeLong(hashedSeed); // hashedSeed
+        buf.writeVarInt(gameMode); // gameMode (survie)
+        buf.writeVarInt(0); // previousGameMode
         buf.writeBoolean(isDebug); // isDebug
         buf.writeBoolean(isFlat); // isFlat
         buf.writeBoolean(false); // hasDeathLocation

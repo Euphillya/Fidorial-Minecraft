@@ -16,6 +16,7 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSetEntityMotionPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSetHealthPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSystemChatPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import fr.euphyllia.fidorial.server.world.ServerWorld;
 import fr.fidorial.combat.CombatService;
 import fr.fidorial.combat.DamageSource;
@@ -243,13 +244,13 @@ public final class CombatEngine implements CombatService {
                     ? Math.min(MAX_UPWARD_KNOCKBACK, mob.velocityY() / 2.0 + scaled)
                     : mob.velocityY();
             mob.setVelocity(newX, newY, newZ);
-            mob.sendToTrackers(new ClientboundSetEntityMotionPacket(mob.entityId(), newX, newY, newZ));
+            mob.sendToTrackers(new ClientboundSetEntityMotionPacket(mob.entityId(), new PositionData.VelocityVec3D(newX, newY, newZ)));
             return;
         }
 
         if (victim instanceof final ServerPlayer player) {
             player.connection().send(new ClientboundSetEntityMotionPacket(
-                    player.entityId(), dx * scaled, MAX_UPWARD_KNOCKBACK, dz * scaled));
+                    player.entityId(), new PositionData.VelocityVec3D(dx * scaled, MAX_UPWARD_KNOCKBACK, dz * scaled)));
         }
     }
 

@@ -1,12 +1,12 @@
 package fr.euphyllia.fidorial.server.world.entity;
 
+import fr.euphyllia.fidorial.server.VersionConstants;
 import fr.euphyllia.fidorial.server.entity.AbstractEntity;
 import fr.euphyllia.fidorial.server.entity.EntityTypes;
 import fr.euphyllia.fidorial.server.entity.mob.AbstractMob;
 import fr.euphyllia.fidorial.server.entity.mob.AbstractPathfinderMob;
 import fr.euphyllia.fidorial.server.entity.mob.MobFactories;
 import fr.euphyllia.fidorial.server.entity.mob.PluginMob;
-import fr.euphyllia.fidorial.server.world.chunk.AnvilChunkSerializer;
 import fr.fidorial.entity.EntityType;
 import fr.fidorial.entity.LivingEntity;
 import fr.fidorial.world.Location;
@@ -30,7 +30,7 @@ public class AnvilEntitySerializer {
     private final int dataVersion;
 
     public AnvilEntitySerializer() {
-        this(AnvilChunkSerializer.DATA_VERSION_26_2);
+        this(VersionConstants.DATA_VERSION);
     }
 
     public AnvilEntitySerializer(final int dataVersion) {

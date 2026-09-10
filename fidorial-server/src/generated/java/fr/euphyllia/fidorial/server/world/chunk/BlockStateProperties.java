@@ -2912,6 +2912,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.BLACK_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BLACK_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerBlackConcreteSlab() {
+        registerBlock(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBlackConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlackConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlackConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBlackConcreteStairsFill0(states);
+        registerBlackConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.BLACK_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerBlackGlazedTerracotta() {
         registerBlock(BlockTypeKeys.BLACK_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.BLACK_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -2988,6 +3092,110 @@ public final class BlockStateProperties {
 
     private static void registerBlackWool() {
         registerBlock(BlockTypeKeys.BLACK_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BLACK_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerBlackWoolSlab() {
+        registerBlock(BlockTypeKeys.BLACK_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLACK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBlackWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlackWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlackWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBlackWoolStairsFill0(states);
+        registerBlackWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.BLACK_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerBlackstone() {
@@ -3550,6 +3758,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.BLUE_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BLUE_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerBlueConcreteSlab() {
+        registerBlock(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBlueConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlueConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlueConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBlueConcreteStairsFill0(states);
+        registerBlueConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.BLUE_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerBlueGlazedTerracotta() {
         registerBlock(BlockTypeKeys.BLUE_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.BLUE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -3634,6 +3946,110 @@ public final class BlockStateProperties {
 
     private static void registerBlueWool() {
         registerBlock(BlockTypeKeys.BLUE_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BLUE_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerBlueWoolSlab() {
+        registerBlock(BlockTypeKeys.BLUE_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBlueWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlueWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBlueWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBlueWoolStairsFill0(states);
+        registerBlueWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.BLUE_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerBoneBlock() {
@@ -4239,6 +4655,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.BROWN_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BROWN_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerBrownConcreteSlab() {
+        registerBlock(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBrownConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBrownConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBrownConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBrownConcreteStairsFill0(states);
+        registerBrownConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.BROWN_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerBrownGlazedTerracotta() {
         registerBlock(BlockTypeKeys.BROWN_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.BROWN_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -4396,6 +4916,110 @@ public final class BlockStateProperties {
 
     private static void registerBrownWool() {
         registerBlock(BlockTypeKeys.BROWN_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.BROWN_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerBrownWoolSlab() {
+        registerBlock(BlockTypeKeys.BROWN_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.BROWN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerBrownWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBrownWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerBrownWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerBrownWoolStairsFill0(states);
+        registerBrownWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.BROWN_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerBubbleColumn() {
@@ -9471,6 +10095,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.CYAN_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.CYAN_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerCyanConcreteSlab() {
+        registerBlock(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerCyanConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerCyanConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerCyanConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerCyanConcreteStairsFill0(states);
+        registerCyanConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.CYAN_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerCyanGlazedTerracotta() {
         registerBlock(BlockTypeKeys.CYAN_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.CYAN_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -9547,6 +10275,110 @@ public final class BlockStateProperties {
 
     private static void registerCyanWool() {
         registerBlock(BlockTypeKeys.CYAN_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.CYAN_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerCyanWoolSlab() {
+        registerBlock(BlockTypeKeys.CYAN_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.CYAN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerCyanWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerCyanWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerCyanWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerCyanWoolStairsFill0(states);
+        registerCyanWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.CYAN_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerDamagedAnvil() {
@@ -14560,6 +15392,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.GRAY_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.GRAY_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerGrayConcreteSlab() {
+        registerBlock(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerGrayConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGrayConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGrayConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerGrayConcreteStairsFill0(states);
+        registerGrayConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.GRAY_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerGrayGlazedTerracotta() {
         registerBlock(BlockTypeKeys.GRAY_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.GRAY_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -14636,6 +15572,110 @@ public final class BlockStateProperties {
 
     private static void registerGrayWool() {
         registerBlock(BlockTypeKeys.GRAY_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.GRAY_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerGrayWoolSlab() {
+        registerBlock(BlockTypeKeys.GRAY_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerGrayWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGrayWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGrayWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerGrayWoolStairsFill0(states);
+        registerGrayWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.GRAY_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerGreenBanner() {
@@ -14720,6 +15760,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.GREEN_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.GREEN_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerGreenConcreteSlab() {
+        registerBlock(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerGreenConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGreenConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGreenConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerGreenConcreteStairsFill0(states);
+        registerGreenConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.GREEN_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerGreenGlazedTerracotta() {
         registerBlock(BlockTypeKeys.GREEN_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.GREEN_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -14796,6 +15940,110 @@ public final class BlockStateProperties {
 
     private static void registerGreenWool() {
         registerBlock(BlockTypeKeys.GREEN_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.GREEN_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerGreenWoolSlab() {
+        registerBlock(BlockTypeKeys.GREEN_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.GREEN_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerGreenWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGreenWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerGreenWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerGreenWoolStairsFill0(states);
+        registerGreenWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.GREEN_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerGrindstone() {
@@ -16140,6 +17388,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.LIGHT_BLUE_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerLightBlueConcreteSlab() {
+        registerBlock(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLightBlueConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightBlueConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightBlueConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLightBlueConcreteStairsFill0(states);
+        registerLightBlueConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIGHT_BLUE_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerLightBlueGlazedTerracotta() {
         registerBlock(BlockTypeKeys.LIGHT_BLUE_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.LIGHT_BLUE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -16216,6 +17568,110 @@ public final class BlockStateProperties {
 
     private static void registerLightBlueWool() {
         registerBlock(BlockTypeKeys.LIGHT_BLUE_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerLightBlueWoolSlab() {
+        registerBlock(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLightBlueWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightBlueWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightBlueWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLightBlueWoolStairsFill0(states);
+        registerLightBlueWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIGHT_BLUE_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerLightGrayBanner() {
@@ -16300,6 +17756,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.LIGHT_GRAY_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerLightGrayConcreteSlab() {
+        registerBlock(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLightGrayConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightGrayConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightGrayConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLightGrayConcreteStairsFill0(states);
+        registerLightGrayConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIGHT_GRAY_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerLightGrayGlazedTerracotta() {
         registerBlock(BlockTypeKeys.LIGHT_GRAY_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.LIGHT_GRAY_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -16376,6 +17936,110 @@ public final class BlockStateProperties {
 
     private static void registerLightGrayWool() {
         registerBlock(BlockTypeKeys.LIGHT_GRAY_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerLightGrayWoolSlab() {
+        registerBlock(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLightGrayWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightGrayWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLightGrayWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLightGrayWoolStairsFill0(states);
+        registerLightGrayWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIGHT_GRAY_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerLightWeightedPressurePlate() {
@@ -16525,6 +18189,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.LIME_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIME_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerLimeConcreteSlab() {
+        registerBlock(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLimeConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLimeConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLimeConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLimeConcreteStairsFill0(states);
+        registerLimeConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIME_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerLimeGlazedTerracotta() {
         registerBlock(BlockTypeKeys.LIME_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.LIME_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -16601,6 +18369,110 @@ public final class BlockStateProperties {
 
     private static void registerLimeWool() {
         registerBlock(BlockTypeKeys.LIME_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.LIME_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerLimeWoolSlab() {
+        registerBlock(BlockTypeKeys.LIME_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.LIME_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerLimeWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLimeWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.LIME_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerLimeWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerLimeWoolStairsFill0(states);
+        registerLimeWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.LIME_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerLodestone() {
@@ -16698,6 +18570,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.MAGENTA_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerMagentaConcreteSlab() {
+        registerBlock(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerMagentaConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerMagentaConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerMagentaConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerMagentaConcreteStairsFill0(states);
+        registerMagentaConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.MAGENTA_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerMagentaGlazedTerracotta() {
         registerBlock(BlockTypeKeys.MAGENTA_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.MAGENTA_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -16774,6 +18750,110 @@ public final class BlockStateProperties {
 
     private static void registerMagentaWool() {
         registerBlock(BlockTypeKeys.MAGENTA_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.MAGENTA_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerMagentaWoolSlab() {
+        registerBlock(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.MAGENTA_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerMagentaWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerMagentaWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerMagentaWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerMagentaWoolStairsFill0(states);
+        registerMagentaWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.MAGENTA_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerMagmaBlock() {
@@ -21785,12 +23865,149 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.ORANGE_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerOrangeConcreteSlab() {
+        registerBlock(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerOrangeConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerOrangeConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerOrangeConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerOrangeConcreteStairsFill0(states);
+        registerOrangeConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.ORANGE_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerOrangeGlazedTerracotta() {
         registerBlock(BlockTypeKeys.ORANGE_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.ORANGE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
                     BlockState.of(BlockTypeKeys.ORANGE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "south"))),
                     BlockState.of(BlockTypeKeys.ORANGE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "west"))),
                     BlockState.of(BlockTypeKeys.ORANGE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "east")))
+                });
+    }
+
+    private static void registerOrangePoplarLeaves() {
+        registerBlock(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), 27, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false")))
                 });
     }
 
@@ -21865,6 +24082,110 @@ public final class BlockStateProperties {
 
     private static void registerOrangeWool() {
         registerBlock(BlockTypeKeys.ORANGE_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.ORANGE_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerOrangeWoolSlab() {
+        registerBlock(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.ORANGE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerOrangeWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerOrangeWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerOrangeWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerOrangeWoolStairsFill0(states);
+        registerOrangeWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.ORANGE_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerOxeyeDaisy() {
@@ -23314,6 +25635,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.PINK_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.PINK_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerPinkConcreteSlab() {
+        registerBlock(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPinkConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPinkConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPinkConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerPinkConcreteStairsFill0(states);
+        registerPinkConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.PINK_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerPinkGlazedTerracotta() {
         registerBlock(BlockTypeKeys.PINK_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.PINK_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -23415,6 +25840,110 @@ public final class BlockStateProperties {
 
     private static void registerPinkWool() {
         registerBlock(BlockTypeKeys.PINK_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.PINK_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerPinkWoolSlab() {
+        registerBlock(BlockTypeKeys.PINK_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PINK_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPinkWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPinkWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.PINK_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPinkWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerPinkWoolStairsFill0(states);
+        registerPinkWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.PINK_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerPiston() {
@@ -26725,6 +29254,618 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.POLISHED_TUFF_WALL.key(), 3, states);
     }
 
+    private static void registerPoplarButton() {
+        registerBlock(BlockTypeKeys.POPLAR_BUTTON.key(), 9, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "north"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "north"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "south"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "south"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "west"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "west"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "east"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "floor"), Map.entry("facing", "east"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "north"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "north"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "south"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "south"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "west"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "west"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "east"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "wall"), Map.entry("facing", "east"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "north"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "north"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "south"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "south"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "west"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "west"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "east"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_BUTTON.key(), Map.ofEntries(Map.entry("face", "ceiling"), Map.entry("facing", "east"), Map.entry("powered", "false")))
+                });
+    }
+
+    private static void registerPoplarDoorFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+    }
+
+    private static void registerPoplarDoorFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "upper"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "left"), Map.entry("open", "false"), Map.entry("powered", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "true"), Map.entry("powered", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.POPLAR_DOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "lower"), Map.entry("hinge", "right"), Map.entry("open", "false"), Map.entry("powered", "false")));
+    }
+
+    private static void registerPoplarDoor() {
+        final BlockState[] states = new BlockState[64];
+        registerPoplarDoorFill0(states);
+        registerPoplarDoorFill1(states);
+        registerBlock(BlockTypeKeys.POPLAR_DOOR.key(), 11, states);
+    }
+
+    private static void registerPoplarFence() {
+        registerBlock(BlockTypeKeys.POPLAR_FENCE.key(), 31, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "true"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "true"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "true"), Map.entry("waterlogged", "false"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "true"), Map.entry("west", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE.key(), Map.ofEntries(Map.entry("east", "false"), Map.entry("north", "false"), Map.entry("south", "false"), Map.entry("waterlogged", "false"), Map.entry("west", "false")))
+                });
+    }
+
+    private static void registerPoplarFenceGate() {
+        registerBlock(BlockTypeKeys.POPLAR_FENCE_GATE.key(), 7, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "true"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "true"), Map.entry("open", "false"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "false"), Map.entry("open", "true"), Map.entry("powered", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_FENCE_GATE.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("in_wall", "false"), Map.entry("open", "false"), Map.entry("powered", "false")))
+                });
+    }
+
+    private static void registerPoplarHangingSignFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "0"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "0"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "1"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "1"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "2"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "2"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "3"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "3"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "4"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "4"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "5"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "5"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "6"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "6"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "7"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "7"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "8"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "8"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "9"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "9"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "10"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "10"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "11"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "11"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "12"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "12"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "13"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "13"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "14"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "14"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "15"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "true"), Map.entry("rotation", "15"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "0"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "0"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "1"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "1"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "2"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "2"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "3"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "3"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "4"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "4"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "5"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "5"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "6"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "6"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "7"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "7"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "8"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "8"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarHangingSignFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "9"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "9"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "10"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "10"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "11"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "11"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "12"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "12"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "13"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "13"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "14"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "14"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "15"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), Map.ofEntries(Map.entry("attached", "false"), Map.entry("rotation", "15"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarHangingSign() {
+        final BlockState[] states = new BlockState[64];
+        registerPoplarHangingSignFill0(states);
+        registerPoplarHangingSignFill1(states);
+        registerBlock(BlockTypeKeys.POPLAR_HANGING_SIGN.key(), 49, states);
+    }
+
+    private static void registerPoplarLog() {
+        registerBlock(BlockTypeKeys.POPLAR_LOG.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "x"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "y"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "z")))
+                });
+    }
+
+    private static void registerPoplarPlanks() {
+        registerBlock(BlockTypeKeys.POPLAR_PLANKS.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.POPLAR_PLANKS.key(), Map.of()) });
+    }
+
+    private static void registerPoplarPressurePlate() {
+        registerBlock(BlockTypeKeys.POPLAR_PRESSURE_PLATE.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_PRESSURE_PLATE.key(), Map.ofEntries(Map.entry("powered", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_PRESSURE_PLATE.key(), Map.ofEntries(Map.entry("powered", "false")))
+                });
+    }
+
+    private static void registerPoplarSapling() {
+        registerBlock(BlockTypeKeys.POPLAR_SAPLING.key(), 0, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_SAPLING.key(), Map.ofEntries(Map.entry("stage", "0"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SAPLING.key(), Map.ofEntries(Map.entry("stage", "1")))
+                });
+    }
+
+    private static void registerPoplarShelfFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarShelfFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "true"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "unconnected"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "center"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.POPLAR_SHELF.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("powered", "false"), Map.entry("side_chain", "left"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarShelf() {
+        final BlockState[] states = new BlockState[64];
+        registerPoplarShelfFill0(states);
+        registerPoplarShelfFill1(states);
+        registerBlock(BlockTypeKeys.POPLAR_SHELF.key(), 9, states);
+    }
+
+    private static void registerPoplarSign() {
+        registerBlock(BlockTypeKeys.POPLAR_SIGN.key(), 17, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "0"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "0"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "1"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "1"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "2"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "2"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "3"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "3"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "4"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "4"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "5"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "5"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "6"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "6"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "7"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "7"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "8"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "8"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "9"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "9"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "10"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "10"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "11"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "11"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "12"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "12"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "13"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "13"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "14"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "14"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "15"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SIGN.key(), Map.ofEntries(Map.entry("rotation", "15"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPoplarSlab() {
+        registerBlock(BlockTypeKeys.POPLAR_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPoplarStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.POPLAR_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerPoplarStairsFill0(states);
+        registerPoplarStairsFill1(states);
+        registerBlock(BlockTypeKeys.POPLAR_STAIRS.key(), 11, states);
+    }
+
+    private static void registerPoplarTrapdoorFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarTrapdoorFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "true"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "true"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.POPLAR_TRAPDOOR.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("open", "false"), Map.entry("powered", "false"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPoplarTrapdoor() {
+        final BlockState[] states = new BlockState[64];
+        registerPoplarTrapdoorFill0(states);
+        registerPoplarTrapdoorFill1(states);
+        registerBlock(BlockTypeKeys.POPLAR_TRAPDOOR.key(), 15, states);
+    }
+
+    private static void registerPoplarWallHangingSign() {
+        registerBlock(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_HANGING_SIGN.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPoplarWallSign() {
+        registerBlock(BlockTypeKeys.POPLAR_WALL_SIGN.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WALL_SIGN.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPoplarWood() {
+        registerBlock(BlockTypeKeys.POPLAR_WOOD.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "x"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "y"))),
+                    BlockState.of(BlockTypeKeys.POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "z")))
+                });
+    }
+
     private static void registerPoppy() {
         registerBlock(BlockTypeKeys.POPPY.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.POPPY.key(), Map.of()) });
     }
@@ -26866,6 +30007,10 @@ public final class BlockStateProperties {
 
     private static void registerPottedPinkTulip() {
         registerBlock(BlockTypeKeys.POTTED_PINK_TULIP.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.POTTED_PINK_TULIP.key(), Map.of()) });
+    }
+
+    private static void registerPottedPoplarSapling() {
+        registerBlock(BlockTypeKeys.POTTED_POPLAR_SAPLING.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.POTTED_POPLAR_SAPLING.key(), Map.of()) });
     }
 
     private static void registerPottedPoppy() {
@@ -27617,6 +30762,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.PURPLE_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerPurpleConcreteSlab() {
+        registerBlock(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPurpleConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPurpleConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPurpleConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerPurpleConcreteStairsFill0(states);
+        registerPurpleConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.PURPLE_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerPurpleGlazedTerracotta() {
         registerBlock(BlockTypeKeys.PURPLE_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.PURPLE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -27693,6 +30942,110 @@ public final class BlockStateProperties {
 
     private static void registerPurpleWool() {
         registerBlock(BlockTypeKeys.PURPLE_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.PURPLE_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerPurpleWoolSlab() {
+        registerBlock(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.PURPLE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerPurpleWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPurpleWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerPurpleWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerPurpleWoolStairsFill0(states);
+        registerPurpleWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.PURPLE_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerPurpurBlock() {
@@ -28048,6 +31401,110 @@ public final class BlockStateProperties {
 
     private static void registerRedConcretePowder() {
         registerBlock(BlockTypeKeys.RED_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.RED_CONCRETE_POWDER.key(), Map.of()) });
+    }
+
+    private static void registerRedConcreteSlab() {
+        registerBlock(BlockTypeKeys.RED_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerRedConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerRedConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerRedConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerRedConcreteStairsFill0(states);
+        registerRedConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.RED_CONCRETE_STAIRS.key(), 11, states);
     }
 
     private static void registerRedGlazedTerracotta() {
@@ -28605,6 +32062,39 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.RED_NETHER_BRICKS.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.RED_NETHER_BRICKS.key(), Map.of()) });
     }
 
+    private static void registerRedPoplarLeaves() {
+        registerBlock(BlockTypeKeys.RED_POPLAR_LEAVES.key(), 27, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false")))
+                });
+    }
+
     private static void registerRedSand() {
         registerBlock(BlockTypeKeys.RED_SAND.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.RED_SAND.key(), Map.of()) });
     }
@@ -29074,6 +32564,10 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.RED_SANDSTONE_WALL.key(), 3, states);
     }
 
+    private static void registerRedShrub() {
+        registerBlock(BlockTypeKeys.RED_SHRUB.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.RED_SHRUB.key(), Map.of()) });
+    }
+
     private static void registerRedShulkerBox() {
         registerBlock(BlockTypeKeys.RED_SHULKER_BOX.key(), 4, new BlockState[] {
                     BlockState.of(BlockTypeKeys.RED_SHULKER_BOX.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -29145,6 +32639,110 @@ public final class BlockStateProperties {
 
     private static void registerRedWool() {
         registerBlock(BlockTypeKeys.RED_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.RED_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerRedWoolSlab() {
+        registerBlock(BlockTypeKeys.RED_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.RED_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerRedWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerRedWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.RED_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerRedWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerRedWoolStairsFill0(states);
+        registerRedWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.RED_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerRedstoneBlock() {
@@ -32128,6 +35726,19 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.SEAGRASS.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.SEAGRASS.key(), Map.of()) });
     }
 
+    private static void registerShelfMushroom() {
+        registerBlock(BlockTypeKeys.SHELF_MUSHROOM.key(), 0, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "0"), Map.entry("facing", "north"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "0"), Map.entry("facing", "south"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "0"), Map.entry("facing", "west"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "0"), Map.entry("facing", "east"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "1"), Map.entry("facing", "north"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "1"), Map.entry("facing", "south"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "1"), Map.entry("facing", "west"))),
+                    BlockState.of(BlockTypeKeys.SHELF_MUSHROOM.key(), Map.ofEntries(Map.entry("age", "1"), Map.entry("facing", "east")))
+                });
+    }
+
     private static void registerShortDryGrass() {
         registerBlock(BlockTypeKeys.SHORT_DRY_GRASS.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.SHORT_DRY_GRASS.key(), Map.of()) });
     }
@@ -33991,6 +37602,27 @@ public final class BlockStateProperties {
                 });
     }
 
+    private static void registerStrawBed() {
+        registerBlock(BlockTypeKeys.STRAW_BED.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("occupied", "true"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("occupied", "true"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("occupied", "false"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("occupied", "false"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("occupied", "true"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("occupied", "true"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("occupied", "false"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("occupied", "false"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("occupied", "true"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("occupied", "true"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("occupied", "false"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("occupied", "false"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("occupied", "true"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("occupied", "true"), Map.entry("part", "foot"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("occupied", "false"), Map.entry("part", "head"))),
+                    BlockState.of(BlockTypeKeys.STRAW_BED.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("occupied", "false"), Map.entry("part", "foot")))
+                });
+    }
+
     private static void registerStrippedAcaciaLog() {
         registerBlock(BlockTypeKeys.STRIPPED_ACACIA_LOG.key(), 1, new BlockState[] {
                     BlockState.of(BlockTypeKeys.STRIPPED_ACACIA_LOG.key(), Map.ofEntries(Map.entry("axis", "x"))),
@@ -34140,6 +37772,22 @@ public final class BlockStateProperties {
                     BlockState.of(BlockTypeKeys.STRIPPED_PALE_OAK_WOOD.key(), Map.ofEntries(Map.entry("axis", "x"))),
                     BlockState.of(BlockTypeKeys.STRIPPED_PALE_OAK_WOOD.key(), Map.ofEntries(Map.entry("axis", "y"))),
                     BlockState.of(BlockTypeKeys.STRIPPED_PALE_OAK_WOOD.key(), Map.ofEntries(Map.entry("axis", "z")))
+                });
+    }
+
+    private static void registerStrippedPoplarLog() {
+        registerBlock(BlockTypeKeys.STRIPPED_POPLAR_LOG.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "x"))),
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "y"))),
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_LOG.key(), Map.ofEntries(Map.entry("axis", "z")))
+                });
+    }
+
+    private static void registerStrippedPoplarWood() {
+        registerBlock(BlockTypeKeys.STRIPPED_POPLAR_WOOD.key(), 1, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "x"))),
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "y"))),
+                    BlockState.of(BlockTypeKeys.STRIPPED_POPLAR_WOOD.key(), Map.ofEntries(Map.entry("axis", "z")))
                 });
     }
 
@@ -39574,6 +43222,110 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.WHITE_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.WHITE_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerWhiteConcreteSlab() {
+        registerBlock(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerWhiteConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerWhiteConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerWhiteConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerWhiteConcreteStairsFill0(states);
+        registerWhiteConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.WHITE_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerWhiteGlazedTerracotta() {
         registerBlock(BlockTypeKeys.WHITE_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.WHITE_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
@@ -39654,6 +43406,110 @@ public final class BlockStateProperties {
 
     private static void registerWhiteWool() {
         registerBlock(BlockTypeKeys.WHITE_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.WHITE_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerWhiteWoolSlab() {
+        registerBlock(BlockTypeKeys.WHITE_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.WHITE_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerWhiteWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerWhiteWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerWhiteWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerWhiteWoolStairsFill0(states);
+        registerWhiteWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.WHITE_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerWildflowers() {
@@ -39813,12 +43669,149 @@ public final class BlockStateProperties {
         registerBlock(BlockTypeKeys.YELLOW_CONCRETE_POWDER.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_POWDER.key(), Map.of()) });
     }
 
+    private static void registerYellowConcreteSlab() {
+        registerBlock(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerYellowConcreteStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerYellowConcreteStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerYellowConcreteStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerYellowConcreteStairsFill0(states);
+        registerYellowConcreteStairsFill1(states);
+        registerBlock(BlockTypeKeys.YELLOW_CONCRETE_STAIRS.key(), 11, states);
+    }
+
     private static void registerYellowGlazedTerracotta() {
         registerBlock(BlockTypeKeys.YELLOW_GLAZED_TERRACOTTA.key(), 0, new BlockState[] {
                     BlockState.of(BlockTypeKeys.YELLOW_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "north"))),
                     BlockState.of(BlockTypeKeys.YELLOW_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "south"))),
                     BlockState.of(BlockTypeKeys.YELLOW_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "west"))),
                     BlockState.of(BlockTypeKeys.YELLOW_GLAZED_TERRACOTTA.key(), Map.ofEntries(Map.entry("facing", "east")))
+                });
+    }
+
+    private static void registerYellowPoplarLeaves() {
+        registerBlock(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), 27, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "1"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "2"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "3"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "4"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "5"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "6"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "true"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_POPLAR_LEAVES.key(), Map.ofEntries(Map.entry("distance", "7"), Map.entry("persistent", "false"), Map.entry("waterlogged", "false")))
                 });
     }
 
@@ -39889,6 +43882,110 @@ public final class BlockStateProperties {
 
     private static void registerYellowWool() {
         registerBlock(BlockTypeKeys.YELLOW_WOOL.key(), 0, new BlockState[] { BlockState.of(BlockTypeKeys.YELLOW_WOOL.key(), Map.of()) });
+    }
+
+    private static void registerYellowWoolSlab() {
+        registerBlock(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), 3, new BlockState[] {
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "top"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "bottom"), Map.entry("waterlogged", "false"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "true"))),
+                    BlockState.of(BlockTypeKeys.YELLOW_WOOL_SLAB.key(), Map.ofEntries(Map.entry("type", "double"), Map.entry("waterlogged", "false")))
+                });
+    }
+
+    private static void registerYellowWoolStairsFill0(final BlockState[] states) {
+        states[0] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[1] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[2] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[3] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[4] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[5] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[6] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[7] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[8] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[9] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[10] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[11] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[12] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[13] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[14] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[15] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[16] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[17] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[18] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[19] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "north"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[20] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[21] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[22] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[23] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[24] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[25] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[26] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[27] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[28] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[29] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[30] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[31] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[32] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[33] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[34] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[35] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[36] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[37] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[38] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[39] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "south"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[40] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[41] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[42] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[43] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[44] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[45] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[46] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[47] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[48] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[49] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerYellowWoolStairsFill1(final BlockState[] states) {
+        states[50] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[51] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[52] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[53] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[54] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[55] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[56] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[57] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[58] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[59] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "west"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[60] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[61] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[62] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[63] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[64] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[65] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[66] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[67] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[68] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[69] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "top"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+        states[70] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "true")));
+        states[71] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "straight"), Map.entry("waterlogged", "false")));
+        states[72] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "true")));
+        states[73] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_left"), Map.entry("waterlogged", "false")));
+        states[74] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "true")));
+        states[75] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "inner_right"), Map.entry("waterlogged", "false")));
+        states[76] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "true")));
+        states[77] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_left"), Map.entry("waterlogged", "false")));
+        states[78] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "true")));
+        states[79] = BlockState.of(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), Map.ofEntries(Map.entry("facing", "east"), Map.entry("half", "bottom"), Map.entry("shape", "outer_right"), Map.entry("waterlogged", "false")));
+    }
+
+    private static void registerYellowWoolStairs() {
+        final BlockState[] states = new BlockState[80];
+        registerYellowWoolStairsFill0(states);
+        registerYellowWoolStairsFill1(states);
+        registerBlock(BlockTypeKeys.YELLOW_WOOL_STAIRS.key(), 11, states);
     }
 
     private static void registerZombieHead() {
@@ -40063,6 +44160,8 @@ public final class BlockStateProperties {
         registerBlackCarpet();
         registerBlackConcrete();
         registerBlackConcretePowder();
+        registerBlackConcreteSlab();
+        registerBlackConcreteStairs();
         registerBlackGlazedTerracotta();
         registerBlackShulkerBox();
         registerBlackStainedGlass();
@@ -40070,6 +44169,8 @@ public final class BlockStateProperties {
         registerBlackTerracotta();
         registerBlackWallBanner();
         registerBlackWool();
+        registerBlackWoolSlab();
+        registerBlackWoolStairs();
         registerBlackstone();
         registerBlackstoneSlab();
         registerBlackstoneStairs();
@@ -40082,6 +44183,8 @@ public final class BlockStateProperties {
         registerBlueCarpet();
         registerBlueConcrete();
         registerBlueConcretePowder();
+        registerBlueConcreteSlab();
+        registerBlueConcreteStairs();
         registerBlueGlazedTerracotta();
         registerBlueIce();
         registerBlueOrchid();
@@ -40091,6 +44194,8 @@ public final class BlockStateProperties {
         registerBlueTerracotta();
         registerBlueWallBanner();
         registerBlueWool();
+        registerBlueWoolSlab();
+        registerBlueWoolStairs();
         registerBoneBlock();
         registerBookshelf();
         registerBrainCoral();
@@ -40109,6 +44214,8 @@ public final class BlockStateProperties {
         registerBrownCarpet();
         registerBrownConcrete();
         registerBrownConcretePowder();
+        registerBrownConcreteSlab();
+        registerBrownConcreteStairs();
         registerBrownGlazedTerracotta();
         registerBrownMushroom();
         registerBrownMushroomBlock();
@@ -40118,6 +44225,8 @@ public final class BlockStateProperties {
         registerBrownTerracotta();
         registerBrownWallBanner();
         registerBrownWool();
+        registerBrownWoolSlab();
+        registerBrownWoolStairs();
         registerBubbleColumn();
         registerBubbleCoral();
         registerBubbleCoralBlock();
@@ -40262,6 +44371,8 @@ public final class BlockStateProperties {
         registerCyanCarpet();
         registerCyanConcrete();
         registerCyanConcretePowder();
+        registerCyanConcreteSlab();
+        registerCyanConcreteStairs();
         registerCyanGlazedTerracotta();
         registerCyanShulkerBox();
         registerCyanStainedGlass();
@@ -40269,6 +44380,8 @@ public final class BlockStateProperties {
         registerCyanTerracotta();
         registerCyanWallBanner();
         registerCyanWool();
+        registerCyanWoolSlab();
+        registerCyanWoolStairs();
         registerDamagedAnvil();
         registerDandelion();
         registerDarkOakButton();
@@ -40413,6 +44526,8 @@ public final class BlockStateProperties {
         registerGrayCarpet();
         registerGrayConcrete();
         registerGrayConcretePowder();
+        registerGrayConcreteSlab();
+        registerGrayConcreteStairs();
         registerGrayGlazedTerracotta();
         registerGrayShulkerBox();
         registerGrayStainedGlass();
@@ -40420,6 +44535,8 @@ public final class BlockStateProperties {
         registerGrayTerracotta();
         registerGrayWallBanner();
         registerGrayWool();
+        registerGrayWoolSlab();
+        registerGrayWoolStairs();
         registerGreenBanner();
         registerGreenBed();
         registerGreenCandle();
@@ -40427,6 +44544,8 @@ public final class BlockStateProperties {
         registerGreenCarpet();
         registerGreenConcrete();
         registerGreenConcretePowder();
+        registerGreenConcreteSlab();
+        registerGreenConcreteStairs();
         registerGreenGlazedTerracotta();
         registerGreenShulkerBox();
         registerGreenStainedGlass();
@@ -40434,6 +44553,8 @@ public final class BlockStateProperties {
         registerGreenTerracotta();
         registerGreenWallBanner();
         registerGreenWool();
+        registerGreenWoolSlab();
+        registerGreenWoolStairs();
         registerGrindstone();
         registerHangingRoots();
         registerHayBlock();
@@ -40502,6 +44623,8 @@ public final class BlockStateProperties {
         registerLightBlueCarpet();
         registerLightBlueConcrete();
         registerLightBlueConcretePowder();
+        registerLightBlueConcreteSlab();
+        registerLightBlueConcreteStairs();
         registerLightBlueGlazedTerracotta();
         registerLightBlueShulkerBox();
         registerLightBlueStainedGlass();
@@ -40509,6 +44632,8 @@ public final class BlockStateProperties {
         registerLightBlueTerracotta();
         registerLightBlueWallBanner();
         registerLightBlueWool();
+        registerLightBlueWoolSlab();
+        registerLightBlueWoolStairs();
         registerLightGrayBanner();
         registerLightGrayBed();
         registerLightGrayCandle();
@@ -40516,6 +44641,8 @@ public final class BlockStateProperties {
         registerLightGrayCarpet();
         registerLightGrayConcrete();
         registerLightGrayConcretePowder();
+        registerLightGrayConcreteSlab();
+        registerLightGrayConcreteStairs();
         registerLightGrayGlazedTerracotta();
         registerLightGrayShulkerBox();
         registerLightGrayStainedGlass();
@@ -40523,6 +44650,8 @@ public final class BlockStateProperties {
         registerLightGrayTerracotta();
         registerLightGrayWallBanner();
         registerLightGrayWool();
+        registerLightGrayWoolSlab();
+        registerLightGrayWoolStairs();
         registerLightWeightedPressurePlate();
         registerLightningRod();
         registerLilac();
@@ -40535,6 +44664,8 @@ public final class BlockStateProperties {
         registerLimeCarpet();
         registerLimeConcrete();
         registerLimeConcretePowder();
+        registerLimeConcreteSlab();
+        registerLimeConcreteStairs();
         registerLimeGlazedTerracotta();
         registerLimeShulkerBox();
         registerLimeStainedGlass();
@@ -40542,6 +44673,8 @@ public final class BlockStateProperties {
         registerLimeTerracotta();
         registerLimeWallBanner();
         registerLimeWool();
+        registerLimeWoolSlab();
+        registerLimeWoolStairs();
         registerLodestone();
         registerLoom();
         registerMagentaBanner();
@@ -40551,6 +44684,8 @@ public final class BlockStateProperties {
         registerMagentaCarpet();
         registerMagentaConcrete();
         registerMagentaConcretePowder();
+        registerMagentaConcreteSlab();
+        registerMagentaConcreteStairs();
         registerMagentaGlazedTerracotta();
         registerMagentaShulkerBox();
         registerMagentaStainedGlass();
@@ -40558,6 +44693,8 @@ public final class BlockStateProperties {
         registerMagentaTerracotta();
         registerMagentaWallBanner();
         registerMagentaWool();
+        registerMagentaWoolSlab();
+        registerMagentaWoolStairs();
         registerMagmaBlock();
         registerMangroveButton();
         registerMangroveDoor();
@@ -40643,7 +44780,10 @@ public final class BlockStateProperties {
         registerOrangeCarpet();
         registerOrangeConcrete();
         registerOrangeConcretePowder();
+        registerOrangeConcreteSlab();
+        registerOrangeConcreteStairs();
         registerOrangeGlazedTerracotta();
+        registerOrangePoplarLeaves();
         registerOrangeShulkerBox();
         registerOrangeStainedGlass();
         registerOrangeStainedGlassPane();
@@ -40651,6 +44791,8 @@ public final class BlockStateProperties {
         registerOrangeTulip();
         registerOrangeWallBanner();
         registerOrangeWool();
+        registerOrangeWoolSlab();
+        registerOrangeWoolStairs();
         registerOxeyeDaisy();
         registerOxidizedChiseledCopper();
         registerOxidizedCopper();
@@ -40702,6 +44844,8 @@ public final class BlockStateProperties {
         registerPinkCarpet();
         registerPinkConcrete();
         registerPinkConcretePowder();
+        registerPinkConcreteSlab();
+        registerPinkConcreteStairs();
         registerPinkGlazedTerracotta();
         registerPinkPetals();
         registerPinkShulkerBox();
@@ -40711,6 +44855,8 @@ public final class BlockStateProperties {
         registerPinkTulip();
         registerPinkWallBanner();
         registerPinkWool();
+        registerPinkWoolSlab();
+        registerPinkWoolStairs();
         registerPiston();
         registerPistonHead();
         registerPitcherCrop();
@@ -40755,6 +44901,23 @@ public final class BlockStateProperties {
         registerPolishedTuffSlab();
         registerPolishedTuffStairs();
         registerPolishedTuffWall();
+        registerPoplarButton();
+        registerPoplarDoor();
+        registerPoplarFence();
+        registerPoplarFenceGate();
+        registerPoplarHangingSign();
+        registerPoplarLog();
+        registerPoplarPlanks();
+        registerPoplarPressurePlate();
+        registerPoplarSapling();
+        registerPoplarShelf();
+        registerPoplarSign();
+        registerPoplarSlab();
+        registerPoplarStairs();
+        registerPoplarTrapdoor();
+        registerPoplarWallHangingSign();
+        registerPoplarWallSign();
+        registerPoplarWood();
         registerPoppy();
         registerPotatoes();
         registerPotentSulfur();
@@ -40787,6 +44950,7 @@ public final class BlockStateProperties {
         registerPottedOxeyeDaisy();
         registerPottedPaleOakSapling();
         registerPottedPinkTulip();
+        registerPottedPoplarSapling();
         registerPottedPoppy();
         registerPottedRedMushroom();
         registerPottedRedTulip();
@@ -40815,6 +44979,8 @@ public final class BlockStateProperties {
         registerPurpleCarpet();
         registerPurpleConcrete();
         registerPurpleConcretePowder();
+        registerPurpleConcreteSlab();
+        registerPurpleConcreteStairs();
         registerPurpleGlazedTerracotta();
         registerPurpleShulkerBox();
         registerPurpleStainedGlass();
@@ -40822,6 +44988,8 @@ public final class BlockStateProperties {
         registerPurpleTerracotta();
         registerPurpleWallBanner();
         registerPurpleWool();
+        registerPurpleWoolSlab();
+        registerPurpleWoolStairs();
         registerPurpurBlock();
         registerPurpurPillar();
         registerPurpurSlab();
@@ -40842,6 +45010,8 @@ public final class BlockStateProperties {
         registerRedCarpet();
         registerRedConcrete();
         registerRedConcretePowder();
+        registerRedConcreteSlab();
+        registerRedConcreteStairs();
         registerRedGlazedTerracotta();
         registerRedMushroom();
         registerRedMushroomBlock();
@@ -40849,11 +45019,13 @@ public final class BlockStateProperties {
         registerRedNetherBrickStairs();
         registerRedNetherBrickWall();
         registerRedNetherBricks();
+        registerRedPoplarLeaves();
         registerRedSand();
         registerRedSandstone();
         registerRedSandstoneSlab();
         registerRedSandstoneStairs();
         registerRedSandstoneWall();
+        registerRedShrub();
         registerRedShulkerBox();
         registerRedStainedGlass();
         registerRedStainedGlassPane();
@@ -40861,6 +45033,8 @@ public final class BlockStateProperties {
         registerRedTulip();
         registerRedWallBanner();
         registerRedWool();
+        registerRedWoolSlab();
+        registerRedWoolStairs();
         registerRedstoneBlock();
         registerRedstoneLamp();
         registerRedstoneOre();
@@ -40893,6 +45067,7 @@ public final class BlockStateProperties {
         registerSeaLantern();
         registerSeaPickle();
         registerSeagrass();
+        registerShelfMushroom();
         registerShortDryGrass();
         registerShortGrass();
         registerShroomlight();
@@ -40958,6 +45133,7 @@ public final class BlockStateProperties {
         registerStoneSlab();
         registerStoneStairs();
         registerStonecutter();
+        registerStrawBed();
         registerStrippedAcaciaLog();
         registerStrippedAcaciaWood();
         registerStrippedBambooBlock();
@@ -40977,6 +45153,8 @@ public final class BlockStateProperties {
         registerStrippedOakWood();
         registerStrippedPaleOakLog();
         registerStrippedPaleOakWood();
+        registerStrippedPoplarLog();
+        registerStrippedPoplarWood();
         registerStrippedSpruceLog();
         registerStrippedSpruceWood();
         registerStrippedWarpedHyphae();
@@ -41141,6 +45319,8 @@ public final class BlockStateProperties {
         registerWhiteCarpet();
         registerWhiteConcrete();
         registerWhiteConcretePowder();
+        registerWhiteConcreteSlab();
+        registerWhiteConcreteStairs();
         registerWhiteGlazedTerracotta();
         registerWhiteShulkerBox();
         registerWhiteStainedGlass();
@@ -41149,6 +45329,8 @@ public final class BlockStateProperties {
         registerWhiteTulip();
         registerWhiteWallBanner();
         registerWhiteWool();
+        registerWhiteWoolSlab();
+        registerWhiteWoolStairs();
         registerWildflowers();
         registerWitherRose();
         registerWitherSkeletonSkull();
@@ -41160,13 +45342,18 @@ public final class BlockStateProperties {
         registerYellowCarpet();
         registerYellowConcrete();
         registerYellowConcretePowder();
+        registerYellowConcreteSlab();
+        registerYellowConcreteStairs();
         registerYellowGlazedTerracotta();
+        registerYellowPoplarLeaves();
         registerYellowShulkerBox();
         registerYellowStainedGlass();
         registerYellowStainedGlassPane();
         registerYellowTerracotta();
         registerYellowWallBanner();
         registerYellowWool();
+        registerYellowWoolSlab();
+        registerYellowWoolStairs();
         registerZombieHead();
         registerZombieWallHead();
     }

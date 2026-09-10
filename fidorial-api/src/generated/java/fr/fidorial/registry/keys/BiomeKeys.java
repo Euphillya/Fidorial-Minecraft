@@ -52,6 +52,11 @@ public final class BiomeKeys {
     public static final TypedKey<Biome> CRIMSON_FOREST = create("crimson_forest");
 
     /**
+     * Key for {@code minecraft:dappled_forest}.
+     */
+    public static final TypedKey<Biome> DAPPLED_FOREST = create("dappled_forest");
+
+    /**
      * Key for {@code minecraft:dark_forest}.
      */
     public static final TypedKey<Biome> DARK_FOREST = create("dark_forest");
@@ -350,6 +355,7 @@ public final class BiomeKeys {
         CHERRY_GROVE,
         COLD_OCEAN,
         CRIMSON_FOREST,
+        DAPPLED_FOREST,
         DARK_FOREST,
         DEEP_COLD_OCEAN,
         DEEP_DARK,

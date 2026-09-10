@@ -107,6 +107,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_planks"));
         entries.add(Key.key("pale_oak_planks"));
         entries.add(Key.key("mangrove_planks"));
+        entries.add(Key.key("poplar_planks"));
         entries.add(Key.key("bamboo_planks"));
         entries.add(Key.key("crimson_planks"));
         entries.add(Key.key("warped_planks"));
@@ -120,6 +121,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_sapling"));
         entries.add(Key.key("pale_oak_sapling"));
         entries.add(Key.key("mangrove_propagule"));
+        entries.add(Key.key("poplar_sapling"));
         entries.add(Key.key("bedrock"));
         entries.add(Key.key("sand"));
         entries.add(Key.key("suspicious_sand"));
@@ -205,6 +207,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("pale_oak_log"));
         entries.add(Key.key("dark_oak_log"));
         entries.add(Key.key("mangrove_log"));
+        entries.add(Key.key("poplar_log"));
         entries.add(Key.key("mangrove_roots"));
         entries.add(Key.key("muddy_mangrove_roots"));
         entries.add(Key.key("crimson_stem"));
@@ -219,6 +222,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("stripped_dark_oak_log"));
         entries.add(Key.key("stripped_pale_oak_log"));
         entries.add(Key.key("stripped_mangrove_log"));
+        entries.add(Key.key("stripped_poplar_log"));
         entries.add(Key.key("stripped_crimson_stem"));
         entries.add(Key.key("stripped_warped_stem"));
         entries.add(Key.key("stripped_oak_wood"));
@@ -230,14 +234,15 @@ public final class FrozenRegistries {
         entries.add(Key.key("stripped_dark_oak_wood"));
         entries.add(Key.key("stripped_pale_oak_wood"));
         entries.add(Key.key("stripped_mangrove_wood"));
+        entries.add(Key.key("stripped_poplar_wood"));
+    }
+
+    private static void item1(final List<Key> entries) {
         entries.add(Key.key("stripped_crimson_hyphae"));
         entries.add(Key.key("stripped_warped_hyphae"));
         entries.add(Key.key("stripped_bamboo_block"));
         entries.add(Key.key("oak_wood"));
         entries.add(Key.key("spruce_wood"));
-    }
-
-    private static void item1(final List<Key> entries) {
         entries.add(Key.key("birch_wood"));
         entries.add(Key.key("jungle_wood"));
         entries.add(Key.key("acacia_wood"));
@@ -245,6 +250,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("pale_oak_wood"));
         entries.add(Key.key("dark_oak_wood"));
         entries.add(Key.key("mangrove_wood"));
+        entries.add(Key.key("poplar_wood"));
         entries.add(Key.key("crimson_hyphae"));
         entries.add(Key.key("warped_hyphae"));
         entries.add(Key.key("oak_leaves"));
@@ -256,6 +262,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_leaves"));
         entries.add(Key.key("pale_oak_leaves"));
         entries.add(Key.key("mangrove_leaves"));
+        entries.add(Key.key("red_poplar_leaves"));
+        entries.add(Key.key("orange_poplar_leaves"));
+        entries.add(Key.key("yellow_poplar_leaves"));
         entries.add(Key.key("azalea_leaves"));
         entries.add(Key.key("flowering_azalea_leaves"));
         entries.add(Key.key("sponge"));
@@ -270,6 +279,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("short_grass"));
         entries.add(Key.key("fern"));
         entries.add(Key.key("bush"));
+        entries.add(Key.key("red_shrub"));
         entries.add(Key.key("azalea"));
         entries.add(Key.key("flowering_azalea"));
         entries.add(Key.key("dead_bush"));
@@ -294,6 +304,38 @@ public final class FrozenRegistries {
         entries.add(Key.key("green_wool"));
         entries.add(Key.key("red_wool"));
         entries.add(Key.key("black_wool"));
+        entries.add(Key.key("white_wool_stairs"));
+        entries.add(Key.key("orange_wool_stairs"));
+        entries.add(Key.key("magenta_wool_stairs"));
+        entries.add(Key.key("light_blue_wool_stairs"));
+        entries.add(Key.key("yellow_wool_stairs"));
+        entries.add(Key.key("lime_wool_stairs"));
+        entries.add(Key.key("pink_wool_stairs"));
+        entries.add(Key.key("gray_wool_stairs"));
+        entries.add(Key.key("light_gray_wool_stairs"));
+        entries.add(Key.key("cyan_wool_stairs"));
+        entries.add(Key.key("purple_wool_stairs"));
+        entries.add(Key.key("blue_wool_stairs"));
+        entries.add(Key.key("brown_wool_stairs"));
+        entries.add(Key.key("green_wool_stairs"));
+        entries.add(Key.key("red_wool_stairs"));
+        entries.add(Key.key("black_wool_stairs"));
+        entries.add(Key.key("white_wool_slab"));
+        entries.add(Key.key("orange_wool_slab"));
+        entries.add(Key.key("magenta_wool_slab"));
+        entries.add(Key.key("light_blue_wool_slab"));
+        entries.add(Key.key("yellow_wool_slab"));
+        entries.add(Key.key("lime_wool_slab"));
+        entries.add(Key.key("pink_wool_slab"));
+        entries.add(Key.key("gray_wool_slab"));
+        entries.add(Key.key("light_gray_wool_slab"));
+        entries.add(Key.key("cyan_wool_slab"));
+        entries.add(Key.key("purple_wool_slab"));
+        entries.add(Key.key("blue_wool_slab"));
+        entries.add(Key.key("brown_wool_slab"));
+        entries.add(Key.key("green_wool_slab"));
+        entries.add(Key.key("red_wool_slab"));
+        entries.add(Key.key("black_wool_slab"));
         entries.add(Key.key("dandelion"));
         entries.add(Key.key("golden_dandelion"));
         entries.add(Key.key("open_eyeblossom"));
@@ -315,6 +357,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("spore_blossom"));
         entries.add(Key.key("brown_mushroom"));
         entries.add(Key.key("red_mushroom"));
+        entries.add(Key.key("shelf_mushroom"));
         entries.add(Key.key("crimson_fungus"));
         entries.add(Key.key("warped_fungus"));
         entries.add(Key.key("crimson_roots"));
@@ -345,6 +388,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_slab"));
         entries.add(Key.key("pale_oak_slab"));
         entries.add(Key.key("mangrove_slab"));
+        entries.add(Key.key("poplar_slab"));
         entries.add(Key.key("bamboo_slab"));
         entries.add(Key.key("bamboo_mosaic_slab"));
         entries.add(Key.key("crimson_slab"));
@@ -379,6 +423,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_shelf"));
         entries.add(Key.key("jungle_shelf"));
         entries.add(Key.key("mangrove_shelf"));
+        entries.add(Key.key("poplar_shelf"));
         entries.add(Key.key("oak_shelf"));
         entries.add(Key.key("pale_oak_shelf"));
         entries.add(Key.key("spruce_shelf"));
@@ -393,6 +438,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("chorus_plant"));
         entries.add(Key.key("chorus_flower"));
         entries.add(Key.key("purpur_block"));
+    }
+
+    private static void item2(final List<Key> entries) {
         entries.add(Key.key("purpur_pillar"));
         entries.add(Key.key("purpur_stairs"));
         entries.add(Key.key("spawner"));
@@ -419,6 +467,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_fence"));
         entries.add(Key.key("pale_oak_fence"));
         entries.add(Key.key("mangrove_fence"));
+        entries.add(Key.key("poplar_fence"));
         entries.add(Key.key("bamboo_fence"));
         entries.add(Key.key("crimson_fence"));
         entries.add(Key.key("warped_fence"));
@@ -438,9 +487,6 @@ public final class FrozenRegistries {
         entries.add(Key.key("infested_cobblestone"));
         entries.add(Key.key("infested_stone_bricks"));
         entries.add(Key.key("infested_mossy_stone_bricks"));
-    }
-
-    private static void item2(final List<Key> entries) {
         entries.add(Key.key("infested_cracked_stone_bricks"));
         entries.add(Key.key("infested_chiseled_stone_bricks"));
         entries.add(Key.key("infested_deepslate"));
@@ -519,6 +565,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_stairs"));
         entries.add(Key.key("pale_oak_stairs"));
         entries.add(Key.key("mangrove_stairs"));
+        entries.add(Key.key("poplar_stairs"));
         entries.add(Key.key("bamboo_stairs"));
         entries.add(Key.key("bamboo_mosaic_stairs"));
         entries.add(Key.key("crimson_stairs"));
@@ -594,6 +641,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("packed_ice"));
         entries.add(Key.key("dirt_path"));
         entries.add(Key.key("sunflower"));
+    }
+
+    private static void item3(final List<Key> entries) {
         entries.add(Key.key("lilac"));
         entries.add(Key.key("rose_bush"));
         entries.add(Key.key("peony"));
@@ -641,9 +691,6 @@ public final class FrozenRegistries {
         entries.add(Key.key("red_sandstone"));
         entries.add(Key.key("chiseled_red_sandstone"));
         entries.add(Key.key("cut_red_sandstone"));
-    }
-
-    private static void item3(final List<Key> entries) {
         entries.add(Key.key("red_sandstone_stairs"));
         entries.add(Key.key("repeating_command_block"));
         entries.add(Key.key("chain_command_block"));
@@ -702,6 +749,38 @@ public final class FrozenRegistries {
         entries.add(Key.key("green_concrete"));
         entries.add(Key.key("red_concrete"));
         entries.add(Key.key("black_concrete"));
+        entries.add(Key.key("white_concrete_stairs"));
+        entries.add(Key.key("orange_concrete_stairs"));
+        entries.add(Key.key("magenta_concrete_stairs"));
+        entries.add(Key.key("light_blue_concrete_stairs"));
+        entries.add(Key.key("yellow_concrete_stairs"));
+        entries.add(Key.key("lime_concrete_stairs"));
+        entries.add(Key.key("pink_concrete_stairs"));
+        entries.add(Key.key("gray_concrete_stairs"));
+        entries.add(Key.key("light_gray_concrete_stairs"));
+        entries.add(Key.key("cyan_concrete_stairs"));
+        entries.add(Key.key("purple_concrete_stairs"));
+        entries.add(Key.key("blue_concrete_stairs"));
+        entries.add(Key.key("brown_concrete_stairs"));
+        entries.add(Key.key("green_concrete_stairs"));
+        entries.add(Key.key("red_concrete_stairs"));
+        entries.add(Key.key("black_concrete_stairs"));
+        entries.add(Key.key("white_concrete_slab"));
+        entries.add(Key.key("orange_concrete_slab"));
+        entries.add(Key.key("magenta_concrete_slab"));
+        entries.add(Key.key("light_blue_concrete_slab"));
+        entries.add(Key.key("yellow_concrete_slab"));
+        entries.add(Key.key("lime_concrete_slab"));
+        entries.add(Key.key("pink_concrete_slab"));
+        entries.add(Key.key("gray_concrete_slab"));
+        entries.add(Key.key("light_gray_concrete_slab"));
+        entries.add(Key.key("cyan_concrete_slab"));
+        entries.add(Key.key("purple_concrete_slab"));
+        entries.add(Key.key("blue_concrete_slab"));
+        entries.add(Key.key("brown_concrete_slab"));
+        entries.add(Key.key("green_concrete_slab"));
+        entries.add(Key.key("red_concrete_slab"));
+        entries.add(Key.key("black_concrete_slab"));
         entries.add(Key.key("white_concrete_powder"));
         entries.add(Key.key("orange_concrete_powder"));
         entries.add(Key.key("magenta_concrete_powder"));
@@ -765,6 +844,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("granite_stairs"));
         entries.add(Key.key("andesite_stairs"));
         entries.add(Key.key("red_nether_brick_stairs"));
+    }
+
+    private static void item4(final List<Key> entries) {
         entries.add(Key.key("polished_andesite_stairs"));
         entries.add(Key.key("diorite_stairs"));
         entries.add(Key.key("cobbled_deepslate_stairs"));
@@ -832,6 +914,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_button"));
         entries.add(Key.key("pale_oak_button"));
         entries.add(Key.key("mangrove_button"));
+        entries.add(Key.key("poplar_button"));
         entries.add(Key.key("bamboo_button"));
         entries.add(Key.key("crimson_button"));
         entries.add(Key.key("warped_button"));
@@ -844,13 +927,11 @@ public final class FrozenRegistries {
         entries.add(Key.key("birch_pressure_plate"));
         entries.add(Key.key("jungle_pressure_plate"));
         entries.add(Key.key("acacia_pressure_plate"));
-    }
-
-    private static void item4(final List<Key> entries) {
         entries.add(Key.key("cherry_pressure_plate"));
         entries.add(Key.key("dark_oak_pressure_plate"));
         entries.add(Key.key("pale_oak_pressure_plate"));
         entries.add(Key.key("mangrove_pressure_plate"));
+        entries.add(Key.key("poplar_pressure_plate"));
         entries.add(Key.key("bamboo_pressure_plate"));
         entries.add(Key.key("crimson_pressure_plate"));
         entries.add(Key.key("warped_pressure_plate"));
@@ -864,6 +945,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_door"));
         entries.add(Key.key("pale_oak_door"));
         entries.add(Key.key("mangrove_door"));
+        entries.add(Key.key("poplar_door"));
         entries.add(Key.key("bamboo_door"));
         entries.add(Key.key("crimson_door"));
         entries.add(Key.key("warped_door"));
@@ -885,6 +967,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_trapdoor"));
         entries.add(Key.key("pale_oak_trapdoor"));
         entries.add(Key.key("mangrove_trapdoor"));
+        entries.add(Key.key("poplar_trapdoor"));
         entries.add(Key.key("bamboo_trapdoor"));
         entries.add(Key.key("crimson_trapdoor"));
         entries.add(Key.key("warped_trapdoor"));
@@ -905,6 +988,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_fence_gate"));
         entries.add(Key.key("pale_oak_fence_gate"));
         entries.add(Key.key("mangrove_fence_gate"));
+        entries.add(Key.key("poplar_fence_gate"));
         entries.add(Key.key("bamboo_fence_gate"));
         entries.add(Key.key("crimson_fence_gate"));
         entries.add(Key.key("warped_fence_gate"));
@@ -956,11 +1040,16 @@ public final class FrozenRegistries {
         entries.add(Key.key("pale_oak_chest_boat"));
         entries.add(Key.key("mangrove_boat"));
         entries.add(Key.key("mangrove_chest_boat"));
+        entries.add(Key.key("poplar_boat"));
+        entries.add(Key.key("poplar_chest_boat"));
         entries.add(Key.key("bamboo_raft"));
         entries.add(Key.key("bamboo_chest_raft"));
         entries.add(Key.key("structure_block"));
         entries.add(Key.key("jigsaw"));
         entries.add(Key.key("test_block"));
+    }
+
+    private static void item5(final List<Key> entries) {
         entries.add(Key.key("test_instance_block"));
         entries.add(Key.key("turtle_helmet"));
         entries.add(Key.key("turtle_scute"));
@@ -1047,9 +1136,6 @@ public final class FrozenRegistries {
         entries.add(Key.key("iron_boots"));
         entries.add(Key.key("diamond_helmet"));
         entries.add(Key.key("diamond_chestplate"));
-    }
-
-    private static void item5(final List<Key> entries) {
         entries.add(Key.key("diamond_leggings"));
         entries.add(Key.key("diamond_boots"));
         entries.add(Key.key("golden_helmet"));
@@ -1075,6 +1161,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_sign"));
         entries.add(Key.key("pale_oak_sign"));
         entries.add(Key.key("mangrove_sign"));
+        entries.add(Key.key("poplar_sign"));
         entries.add(Key.key("bamboo_sign"));
         entries.add(Key.key("crimson_sign"));
         entries.add(Key.key("warped_sign"));
@@ -1087,6 +1174,7 @@ public final class FrozenRegistries {
         entries.add(Key.key("dark_oak_hanging_sign"));
         entries.add(Key.key("pale_oak_hanging_sign"));
         entries.add(Key.key("mangrove_hanging_sign"));
+        entries.add(Key.key("poplar_hanging_sign"));
         entries.add(Key.key("bamboo_hanging_sign"));
         entries.add(Key.key("crimson_hanging_sign"));
         entries.add(Key.key("warped_hanging_sign"));
@@ -1132,6 +1220,22 @@ public final class FrozenRegistries {
         entries.add(Key.key("green_bundle"));
         entries.add(Key.key("red_bundle"));
         entries.add(Key.key("black_bundle"));
+        entries.add(Key.key("white_cushion"));
+        entries.add(Key.key("orange_cushion"));
+        entries.add(Key.key("magenta_cushion"));
+        entries.add(Key.key("light_blue_cushion"));
+        entries.add(Key.key("yellow_cushion"));
+        entries.add(Key.key("lime_cushion"));
+        entries.add(Key.key("pink_cushion"));
+        entries.add(Key.key("gray_cushion"));
+        entries.add(Key.key("light_gray_cushion"));
+        entries.add(Key.key("cyan_cushion"));
+        entries.add(Key.key("purple_cushion"));
+        entries.add(Key.key("blue_cushion"));
+        entries.add(Key.key("brown_cushion"));
+        entries.add(Key.key("green_cushion"));
+        entries.add(Key.key("red_cushion"));
+        entries.add(Key.key("black_cushion"));
         entries.add(Key.key("fishing_rod"));
         entries.add(Key.key("clock"));
         entries.add(Key.key("spyglass"));
@@ -1146,6 +1250,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("glow_ink_sac"));
         entries.add(Key.key("cocoa_beans"));
         entries.add(Key.key("white_dye"));
+    }
+
+    private static void item6(final List<Key> entries) {
         entries.add(Key.key("orange_dye"));
         entries.add(Key.key("magenta_dye"));
         entries.add(Key.key("light_blue_dye"));
@@ -1181,9 +1288,26 @@ public final class FrozenRegistries {
         entries.add(Key.key("green_bed"));
         entries.add(Key.key("red_bed"));
         entries.add(Key.key("black_bed"));
+        entries.add(Key.key("straw_bed"));
         entries.add(Key.key("cookie"));
         entries.add(Key.key("crafter"));
         entries.add(Key.key("filled_map"));
+        entries.add(Key.key("ocean_monument_map"));
+        entries.add(Key.key("woodland_mansion_map"));
+        entries.add(Key.key("buried_trial_chambers_map"));
+        entries.add(Key.key("jungle_pyramid_map"));
+        entries.add(Key.key("swamp_hut_map"));
+        entries.add(Key.key("desert_village_map"));
+        entries.add(Key.key("plains_village_map"));
+        entries.add(Key.key("savanna_village_map"));
+        entries.add(Key.key("snowy_village_map"));
+        entries.add(Key.key("taiga_village_map"));
+        entries.add(Key.key("buried_treasure_map"));
+        entries.add(Key.key("buried_ancient_city_map"));
+        entries.add(Key.key("buried_mineshaft_map"));
+        entries.add(Key.key("desert_pyramid_map"));
+        entries.add(Key.key("abandoned_camp_map"));
+        entries.add(Key.key("warm_ocean_ruins_map"));
         entries.add(Key.key("shears"));
         entries.add(Key.key("melon_slice"));
         entries.add(Key.key("dried_kelp"));
@@ -1250,9 +1374,6 @@ public final class FrozenRegistries {
         entries.add(Key.key("iron_golem_spawn_egg"));
         entries.add(Key.key("snow_golem_spawn_egg"));
         entries.add(Key.key("trader_llama_spawn_egg"));
-    }
-
-    private static void item6(final List<Key> entries) {
         entries.add(Key.key("villager_spawn_egg"));
         entries.add(Key.key("wandering_trader_spawn_egg"));
         entries.add(Key.key("bogged_spawn_egg"));
@@ -1332,6 +1453,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("resin_brick"));
         entries.add(Key.key("prismarine_shard"));
         entries.add(Key.key("prismarine_crystals"));
+    }
+
+    private static void item7(final List<Key> entries) {
         entries.add(Key.key("rabbit"));
         entries.add(Key.key("cooked_rabbit"));
         entries.add(Key.key("rabbit_stew"));
@@ -1453,9 +1577,6 @@ public final class FrozenRegistries {
         entries.add(Key.key("exposed_copper_lantern"));
         entries.add(Key.key("weathered_copper_lantern"));
         entries.add(Key.key("oxidized_copper_lantern"));
-    }
-
-    private static void item7(final List<Key> entries) {
         entries.add(Key.key("waxed_copper_lantern"));
         entries.add(Key.key("waxed_exposed_copper_lantern"));
         entries.add(Key.key("waxed_weathered_copper_lantern"));
@@ -1535,6 +1656,9 @@ public final class FrozenRegistries {
         entries.add(Key.key("bolt_armor_trim_smithing_template"));
         entries.add(Key.key("angler_pottery_sherd"));
         entries.add(Key.key("archer_pottery_sherd"));
+    }
+
+    private static void item8(final List<Key> entries) {
         entries.add(Key.key("arms_up_pottery_sherd"));
         entries.add(Key.key("blade_pottery_sherd"));
         entries.add(Key.key("brewer_pottery_sherd"));
@@ -1599,7 +1723,7 @@ public final class FrozenRegistries {
      * @return {@code minecraft:item}, indexed by network ID
      */
     private static List<Key> item() {
-        final List<Key> entries = new ArrayList<>(1537);
+        final List<Key> entries = new ArrayList<>(1658);
         item0(entries);
         item1(entries);
         item2(entries);
@@ -1608,6 +1732,7 @@ public final class FrozenRegistries {
         item5(entries);
         item6(entries);
         item7(entries);
+        item8(entries);
         return List.copyOf(entries);
     }
 
@@ -1652,12 +1777,14 @@ public final class FrozenRegistries {
         entries.add(Key.key("blocks_attacks"));
         entries.add(Key.key("piercing_weapon"));
         entries.add(Key.key("kinetic_weapon"));
-        entries.add(Key.key("swing_animation"));
+        entries.add(Key.key("attack_animation"));
+        entries.add(Key.key("interact_animation"));
         entries.add(Key.key("additional_trade_cost"));
+        entries.add(Key.key("block_transformer"));
+        entries.add(Key.key("villager_food"));
         entries.add(Key.key("stored_enchantments"));
         entries.add(Key.key("dye"));
         entries.add(Key.key("dyed_color"));
-        entries.add(Key.key("map_color"));
         entries.add(Key.key("map_id"));
         entries.add(Key.key("map_decorations"));
         entries.add(Key.key("map_post_processing"));
@@ -1694,6 +1821,10 @@ public final class FrozenRegistries {
         entries.add(Key.key("lock"));
         entries.add(Key.key("container_loot"));
         entries.add(Key.key("break_sound"));
+        entries.add(Key.key("compostable"));
+        entries.add(Key.key("cooking_fuel"));
+        entries.add(Key.key("brewing_fuel"));
+        entries.add(Key.key("mob_visibility"));
         entries.add(Key.key("villager/variant"));
         entries.add(Key.key("wolf/variant"));
         entries.add(Key.key("wolf/sound_variant"));
@@ -1723,13 +1854,18 @@ public final class FrozenRegistries {
         entries.add(Key.key("cat/collar"));
         entries.add(Key.key("sheep/color"));
         entries.add(Key.key("shulker/color"));
+        entries.add(Key.key("provides_pottery_pattern"));
+        entries.add(Key.key("sign_text_front"));
+        entries.add(Key.key("sign_text_back"));
+        entries.add(Key.key("waxed"));
+        entries.add(Key.key("cushion/color"));
     }
 
     /**
      * @return {@code minecraft:data_component_type}, indexed by network ID
      */
     private static List<Key> dataComponentType() {
-        final List<Key> entries = new ArrayList<>(111);
+        final List<Key> entries = new ArrayList<>(122);
         dataComponentType0(entries);
         return List.copyOf(entries);
     }
