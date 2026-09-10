@@ -170,15 +170,13 @@ public final class Registries {
         registries.put(RegistryKey.ZOMBIE_NAUTILUS_VARIANT, simple(RegistryKey.ZOMBIE_NAUTILUS_VARIANT, ZombieNautilusVariant.class, ZombieNautilusVariantKeys.values()));
         registries.put(RegistryKey.ENTITY_TYPE, new EntityTypeRegistry());
 
-        return new Registries(dynamic, loadFrozen(), registries, biomes, dialogs, dimensionTypes);
+        return new Registries(dynamic, loadFrozen(data), registries, biomes, dialogs, dimensionTypes);
     }
 
-    private static RegistryHolder loadFrozen() {
-
-        final Map<Key, fr.euphyllia.fidorial.server.registry.Registry> frozen = new LinkedHashMap<>();
-
+    private static RegistryHolder loadFrozen(final RegistryDataLoader data) {
+        final Map<Key, fr.euphyllia.fidorial.server.registry.Registry> frozen = new LinkedHashMap<>(data.frozen());
         FrozenRegistries.entries().forEach((name, entries) ->
-                frozen.put(name, fr.euphyllia.fidorial.server.registry.Registry.of(name, entries)));
+                frozen.putIfAbsent(name, fr.euphyllia.fidorial.server.registry.Registry.of(name, entries)));
 
         return RegistryHolder.of(frozen);
     }

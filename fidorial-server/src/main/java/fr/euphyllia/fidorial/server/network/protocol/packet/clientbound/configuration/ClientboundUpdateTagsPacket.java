@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.function.ToIntFunction;
 
 public record ClientboundUpdateTagsPacket(
-        RegistryHolder dynamic,
+        RegistryHolder network,
         FidorialBiomeRegistry biomes,
         FidorialDialogRegistry dialogs,
         FidorialDimensionTypeRegistry dimensionTypes
@@ -29,9 +29,9 @@ public record ClientboundUpdateTagsPacket(
 
     @Override
     public void write(final PacketBuffer buf) {
-        buf.writeVarInt(dynamic.size() + 1);
+        buf.writeVarInt(network.size());
 
-        for (final Registry reg : dynamic.all()) {
+        for (final Registry reg : network.all()) {
             final Map<Key, List<Key>> tags;
             final ToIntFunction<Key> networkId;
 
@@ -70,14 +70,5 @@ public record ClientboundUpdateTagsPacket(
                 }
             }
         }
-
-        buf.writeKey(Key.key("block"));
-        buf.writeVarInt(3);
-        buf.writeKey(Key.key("infiniburn_overworld"));
-        buf.writeVarInt(2).writeVarInt(285).writeVarInt(671);
-        buf.writeKey(Key.key("infiniburn_nether"));
-        buf.writeVarInt(2).writeVarInt(285).writeVarInt(671);
-        buf.writeKey(Key.key("infiniburn_end"));
-        buf.writeVarInt(3).writeVarInt(285).writeVarInt(671).writeVarInt(34);
     }
 }
