@@ -319,15 +319,6 @@ public final class ServerWorld implements World {
         }
     }
 
-    public void refreshBlockLight(final int x, final int y, final int z) {
-        final LightUpdateDispatcher dispatcher = lightDispatcher;
-        if (dispatcher != null) {
-            dispatcher.queueBlockChange(dimension.id(), x, y, z);
-        } else {
-            lightManager.checkBlock(x, y, z, fallbackEngine);
-        }
-    }
-
     private void ensureEntitiesLoaded(final int chunkX, final int chunkZ) {
         final long k = ChunkPos.chunkKey(chunkX, chunkZ);
         if (!entitiesLoaded.add(k)) {
@@ -423,7 +414,6 @@ public final class ServerWorld implements World {
             return false;
         }
         column.setBlock(x & 15, y, z & 15, state);
-        refreshBlockLight(x, y, z);
         markDirty(x >> 4, z >> 4);
         return true;
     }

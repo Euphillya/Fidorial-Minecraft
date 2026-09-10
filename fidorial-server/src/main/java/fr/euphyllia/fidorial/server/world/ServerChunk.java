@@ -60,7 +60,6 @@ public final class ServerChunk implements Chunk {
         }
         final BlockState state = blockStates.byId(stateId);
         column.setBlock(localX & 15, worldY, localZ & 15, state);
-        world.refreshBlockLight(worldX(localX), worldY, worldZ(localZ));
         world.markDirty(column.chunkX(), column.chunkZ());
         return true;
     }
