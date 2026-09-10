@@ -40,7 +40,7 @@ public record ClientboundLoginPacket(
         buf.writeKey(dimensionKey);
         buf.writeLong(hashedSeed); // hashedSeed
         buf.writeVarInt(gameMode); // gameMode (survie)
-        buf.writeByte(0); // previousGameMode
+        buf.writeVarInt(0); // previousGameMode
         buf.writeBoolean(isDebug); // isDebug
         buf.writeBoolean(isFlat); // isFlat
         buf.writeBoolean(false); // hasDeathLocation

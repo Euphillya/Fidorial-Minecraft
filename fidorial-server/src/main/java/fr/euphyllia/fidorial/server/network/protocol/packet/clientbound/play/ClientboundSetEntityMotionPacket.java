@@ -3,13 +3,13 @@ package fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play;
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
 import fr.euphyllia.fidorial.server.network.protocol.catalog.PlayClientboundPackets;
 import fr.euphyllia.fidorial.server.network.protocol.packet.ClientboundPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import net.kyori.adventure.key.Key;
 
 /**
  * https://minecraft.wiki/w/Java_Edition_protocol/Packets#Set_Entity_Velocity
  */
-public record ClientboundSetEntityMotionPacket(int entityId,
-                                               double velocityX, double velocityY, double velocityZ)
+public record ClientboundSetEntityMotionPacket(int entityId, PositionData.VelocityVec3D velocity)
         implements ClientboundPacket {
 
     @Override
@@ -20,6 +20,6 @@ public record ClientboundSetEntityMotionPacket(int entityId,
     @Override
     public void write(PacketBuffer buf) {
         buf.writeVarInt(entityId);
-        buf.writeLpVec3(velocityX, velocityY, velocityZ);
+        velocity.writeTo(buf);
     }
 }

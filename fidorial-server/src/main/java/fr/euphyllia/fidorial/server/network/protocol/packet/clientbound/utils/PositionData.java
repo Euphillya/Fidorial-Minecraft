@@ -3,6 +3,7 @@ package fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils;
 import fr.euphyllia.fidorial.server.network.PacketBuffer;
 import org.jspecify.annotations.Nullable;
 
+@SuppressWarnings("unused")
 public final class PositionData {
 
     private PositionData() {
@@ -13,6 +14,12 @@ public final class PositionData {
             buf.writeDouble(x);
             buf.writeDouble(y);
             buf.writeDouble(z);
+        }
+        public static Vec3D readFrom(PacketBuffer buf) {
+            final double x = buf.readDouble();
+            final double y = buf.readDouble();
+            final double z = buf.readDouble();
+            return new Vec3D(x, y, z);
         }
     }
 
@@ -45,11 +52,21 @@ public final class PositionData {
             buf.writeShort(y);
             buf.writeShort(z);
         }
+        public static DeltaVec3D readFrom(PacketBuffer buf) {
+            final short x = buf.readShort();
+            final short y = buf.readShort();
+            final short z = buf.readShort();
+            return new DeltaVec3D(x, y, z);
+        }
     }
 
     public record VelocityVec3D(double x, double y, double z) {
         public void writeTo(PacketBuffer buf) {
             buf.writeLpVec3(x, y, z);
+        }
+        public static VelocityVec3D readFrom(PacketBuffer buf) {
+            final double[] velocity = buf.readLpVec3();
+            return new VelocityVec3D(velocity[0], velocity[1], velocity[2]);
         }
     }
 
@@ -57,6 +74,11 @@ public final class PositionData {
         public void writeTo(PacketBuffer buf) {
             buf.writeFloat(yaw);
             buf.writeFloat(pitch);
+        }
+        public static FloatRotation readFrom(PacketBuffer buf) {
+            final float yaw = buf.readFloat();
+            final float pitch = buf.readFloat();
+            return new FloatRotation(yaw, pitch);
         }
     }
 
@@ -72,6 +94,12 @@ public final class PositionData {
             position.writeTo(buf);
             deltaMovement.writeTo(buf);
             rotation.writeTo(buf);
+        }
+        public static PositionMoveRotationData readFrom(PacketBuffer buf) {
+            final Vec3D position = Vec3D.readFrom(buf);
+            final Vec3D deltaMovement = Vec3D.readFrom(buf);
+            final FloatRotation rotation = FloatRotation.readFrom(buf);
+            return new PositionMoveRotationData(position, deltaMovement, rotation);
         }
     }
 

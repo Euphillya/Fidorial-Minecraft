@@ -10,6 +10,7 @@ import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.Cli
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSetEntityMotionPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSetHealthPacket;
 import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.play.ClientboundSoundPacket;
+import fr.euphyllia.fidorial.server.network.protocol.packet.clientbound.utils.PositionData;
 import fr.euphyllia.fidorial.server.world.chunk.BlockState;
 import fr.fidorial.entity.GameMode;
 import fr.fidorial.registry.keys.BlockTypeKeys;
@@ -223,7 +224,7 @@ public final class Explosion {
                     player.setHealth(player.health() - finalDamage);
                     player.connection().send(new ClientboundSetHealthPacket(player.health(), 20, 5f));
                     player.connection()
-                            .send(new ClientboundSetEntityMotionPacket(player.entityId(), knockX, knockY, knockZ));
+                            .send(new ClientboundSetEntityMotionPacket(player.entityId(), new PositionData.VelocityVec3D(knockX, knockY, knockZ)));
                     server.broadcastNear(world, pos.x(), pos.y(), pos.z(),
                             new ClientboundHurtAnimationPacket(player.entityId(), pos.yaw()));
                 }

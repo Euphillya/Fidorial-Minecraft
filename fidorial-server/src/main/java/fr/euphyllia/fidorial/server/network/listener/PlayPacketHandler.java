@@ -659,12 +659,12 @@ public final class PlayPacketHandler implements PlayPacketListener {
     @Override
     public void handleMovePlayerPos(final ServerboundMovePlayerPosPacket packet) {
         final Location old = player.location();
-        onMoved(packet.x(), packet.y(), packet.z(), old.yaw(), old.pitch(), packet.flags());
+        onMoved(packet.position().x(), packet.position().y(), packet.position().z(), old.yaw(), old.pitch(), packet.flags());
     }
 
     @Override
     public void handleMovePlayerPosRot(final ServerboundMovePlayerPosRotPacket packet) {
-        onMoved(packet.x(), packet.y(), packet.z(), packet.yaw(), packet.pitch(), packet.flags());
+        onMoved(packet.position().x(), packet.position().y(), packet.position().z(), packet.rotation().yaw(), packet.rotation().pitch(), packet.flags());
     }
 
     private void onMoved(final double x, final double y, final double z, final float yaw, final float pitch, final int flags) {
