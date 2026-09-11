@@ -164,6 +164,11 @@ public class FloodFillLightEngine implements LightEngine {
             return dirtyChunks;
         }
 
+        final int blockScanTop = Math.min(maxY - 1,
+                Math.max(((access.topNonEmptySectionY(chunkX, chunkZ) + 1) << 4) - 1,
+                        ((access.topNonEmptySectionY(neighborChunkX, neighborChunkZ) + 1) << 4) - 1)
+        );
+
         for (int i = 0; i < 16; i++) {
             final int thisX = xDirection ? baseThisX + fixedThisLocal : baseThisX + i;
             final int thisZ = xDirection ? baseThisZ + i : baseThisZ + fixedThisLocal;
@@ -173,7 +178,7 @@ public class FloodFillLightEngine implements LightEngine {
             final int thisTop = thisData.topOpaqueY(thisX & 15, thisZ & 15);
             final int neighborTop = neighborData.topOpaqueY(neighborX & 15, neighborZ & 15);
 
-            for (int y = minY; y < maxY; y++) {
+            for (int y = minY; y <= blockScanTop; y++) {
                 checkEdgePosition(LightType.BLOCK, thisX, y, thisZ, thisData, access, dirtyChunks);
                 checkEdgePosition(LightType.BLOCK, neighborX, y, neighborZ, neighborData, access, dirtyChunks);
                 if (y <= thisTop) {
@@ -368,22 +373,32 @@ public class FloodFillLightEngine implements LightEngine {
                     final int worldZ = baseZ + lz;
                     int sky = MAX_LEVEL;
                     int topOpaque = minY - 1;
+                    boolean seeded = false;
 
                     for (int y = scanStart; y >= minY; y--) {
                         final BlockState block = col.blockAt(lx, y, lz);
                         final int opacity = BlockLightProperties.opacity(block);
+
                         if (opacity > 0 && topOpaque == minY - 1) {
                             topOpaque = y;
+                            if (!seeded) {
+                                queue.add(packPos(worldX, y + 1, worldZ), -1);
+                                seeded = true;
+                            }
                         }
+
                         if (BlockLightProperties.occludes(block)) {
                             break;
                         }
                         if (sky <= 0) break;
-                        data.set(LightType.SKY, worldX, y, worldZ, sky);
-                        if (sky == MAX_LEVEL) queue.add(packPos(worldX, y, worldZ), -1);
-                        if (opacity > 0) {
-                            sky = Math.max(0, sky - opacity);
-                            queue.add(packPos(worldX, y, worldZ), -1);
+                        if (topOpaque != minY - 1) {
+                            data.set(LightType.SKY, worldX, y, worldZ, sky);
+                            if (opacity > 0) {
+                                sky = Math.max(0, sky - opacity);
+                                if (sky > 1) {
+                                    queue.add(packPos(worldX, y, worldZ), -1);
+                                }
+                            }
                         }
                     }
                     data.setTopOpaqueY(lx, lz, topOpaque);
