@@ -4,7 +4,6 @@ import fr.fidorial.registrygen.task.GenerateBlockStatesTask
 import fr.fidorial.registrygen.task.GenerateItemPropertiesTask
 
 plugins {
-    application
     alias(libs.plugins.blossom)
     id("fidorial-spotless")
     id("fidorial-build-conventions")
@@ -69,8 +68,12 @@ fidorialBuild {
     readUnnamedModules = setOf("fr.fidorial", "fr.fidorial.server")
 }
 
-application {
-    mainClass.set("fr.euphyllia.fidorial.server.Main")
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "fr.euphyllia.fidorial.server.Main",
+        )
+    }
 }
 
 sourceSets.main {
@@ -90,8 +93,8 @@ sourceSets.main {
 
 java {
     sourceSets.main {
-        java.srcDir("src/generated/java")
-        resources.srcDir("src/generated/resources")
+        java.srcDirs(layout.projectDirectory.dir("src/generated/java"))
+        resources.srcDirs(layout.projectDirectory.dir("src/generated/resources"))
     }
 }
 
@@ -163,10 +166,11 @@ tasks.assemble {
     dependsOn(bootstrapJar)
 }
 
-tasks.run {
+tasks.register<JavaExec>("run") {
     description = "Spin up a test server without assembling a jar"
     standardInput = System.`in`
     classpath(sourceSets.main.map { it.runtimeClasspath })
+    mainClass.set("fr.euphyllia.fidorial.server.Main")
     workingDir = project.file("run")
     jvmArgs = listOf("--enable-native-access=ALL-UNNAMED")
     dependsOn(":fidorial-test-plugin:deployToRun")
