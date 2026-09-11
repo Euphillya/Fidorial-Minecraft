@@ -27,8 +27,8 @@ java {
     withJavadocJar()
     withSourcesJar()
     sourceSets.main {
-        java.srcDir("src/generated/java")
-        resources.srcDir("src/generated/resources")
+        java.srcDirs(layout.projectDirectory.dir("src/generated/java"))
+        resources.srcDirs(layout.projectDirectory.dir("src/generated/resources"))
     }
 }
 
